@@ -8,13 +8,15 @@ class Card extends Component {
     const { name, ShopNow, id } = product;
 
     return (
-      <div className="card-container">
+      <div className="category-container">
         <img
           alt={`product ${name}`}
           src={`https://robohash.org/${id}?set=set4&size=180x180`}
         />
-        <h3>{name}</h3>
-        <p>{ShopNow}</p>
+        <div className="category-body-container">
+          <h3>{name}</h3>
+          <p>{ShopNow}</p>
+        </div>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-.card-container {
+.category-container {
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.5);
@@ -13,6 +13,6 @@
   transition: transform 0.25s ease-out;
 }
 
-.card-container:hover {
+.category-container:hover {
   transform: scale(1.05);
 }
