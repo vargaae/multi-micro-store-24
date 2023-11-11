@@ -1,14 +1,14 @@
 import { Component } from "react";
 
 import Card from "./card.component";
-import "./card-list.styles.css";
+import "./categories.styles.scss";
 
 class CardList extends Component {
   render() {
     const { products } = this.props;
 
     return (
-      <div className="category-list">
+      <div className="categories-container">
         {products.map((product) => {
           return <Card product={product} key={product.id} />;
         })}

@@ -1,20 +1,21 @@
 import { Component } from "react";
 
-import "./card.styles.css";
+// import "./card.styles.css";
 
 class Card extends Component {
   render() {
     const { product } = this.props;
-    const { name, ShopNow, id } = product;
+    const { title, ShopNow, id } = product;
 
     return (
       <div className="category-container">
         <img
-          alt={`product ${name}`}
-          src={`https://robohash.org/${id}?set=set4&size=180x180`}
+          alt={`product ${title}`}
+          src={`https://i.ibb.co/cvpntL1/hats.png`}
         />
+        <div className="background-image" />
         <div className="category-body-container">
-          <h3>{name}</h3>
+          <h3>{title}</h3>
           <p>{ShopNow}</p>
         </div>
       </div>

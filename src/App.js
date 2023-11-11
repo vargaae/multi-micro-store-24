@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import "./App.css";
+import "./App.scss";
 import Footer from "./components/footer/footer.component";
 import SearchBox from "./components/search-box/search-box.component";
 import CardList from "./components/card-list/card-list.component";
@@ -21,7 +21,7 @@ const App = () => {
   };
 
   const filteredProducts = products.filter((user) => {
-    return user.name.toLocaleLowerCase().includes(searchField);
+    return user.title.toLocaleLowerCase().includes(searchField);
   });
 
   return (
