@@ -1,7 +1,0 @@
-.category-list {
-  width: 85vw;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(500px, max-content) repeat(auto-fill, 500px) 15%;
-  grid-gap: 20px;
-}
