@@ -5,8 +5,8 @@ const CategoryItem = ({ product: {title, imgURL}  })  => {
         <div className="category-container">
           <div className="background-image" style={{backgroundImage: `url(${imgURL})`}} />
           <div className="category-body-container">
-            <h3>{title}</h3>
-            <p>ShopNow</p>
+            <h2>{title}</h2>
+            <p>Shop Now</p>
           </div>
         </div>
       );
