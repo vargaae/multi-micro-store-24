@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import Footer from "./components/footer/footer.component";
 import SearchBox from "./components/search-box/search-box.component";
-import Categories from "./components/category-item/categories.component";
+import CategoryDirectory from "./components/category-dir/category-dir.component";
 
 import categories from "./data";
 
@@ -38,7 +38,7 @@ const App = () => {
         placeholder="search products"
         className="products-search-box"
       />
-      <Categories products={filteredProducts} />
+      <CategoryDirectory products={filteredProducts} />
       <Footer />
     </div>
   );
