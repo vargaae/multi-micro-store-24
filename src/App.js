@@ -5,14 +5,14 @@ import Footer from "./components/footer/footer.component";
 import SearchBox from "./components/search-box/search-box.component";
 import Categories from "./components/category-item/categories.component";
 
-import data from "./data";
+import categories from "./data";
 
 const App = () => {
   const [searchField, setSearchField] = useState("");
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    setProducts(data);
+    setProducts(categories);
   }, []);
 
   const onSearchChange = (event) => {

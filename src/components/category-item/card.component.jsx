@@ -3,18 +3,14 @@ import { Component } from "react";
 class Card extends Component {
   render() {
     const { product } = this.props;
-    const { title, ShopNow, id } = product;
+    const { title, imgURL, id } = product;
 
     return (
       <div className="category-container">
-        <img
-          alt={`product ${title}`}
-          src={`https://i.ibb.co/cvpntL1/hats.png`}
-        />
-        <div className="background-image" />
+        <div className="background-image" style={{backgroundImage: `url(${imgURL})`}} />
         <div className="category-body-container">
           <h3>{title}</h3>
-          <p>{ShopNow}</p>
+          <p>ShopNow</p>
         </div>
       </div>
     );
