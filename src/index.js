@@ -4,12 +4,29 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import ErrorPage from "./error-page";
+import Home from "./routes/home/home.component";
+
+const Shop = () => {
+  return <h1>SHOP component</h1>;
+};
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "*",
     element: <App />,
+    errorElement: <ErrorPage />,
   },
+  // {
+  //   path: "/home",
+  //   element: <Home />,
+  //   children: [
+  //     {
+  //       path: "shop",
+  //       element: <Shop />,
+  //     },
+  //   ],
+  // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -4,6 +4,7 @@ import SearchBox from "./../../components/search-box/search-box.component";
 import CategoryDirectory from "./../../components/category-dir/category-dir.component";
 
 import categories from "./../../data";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
   const [searchField, setSearchField] = useState("");
@@ -37,6 +38,7 @@ const Home = () => {
         className="products-search-box"
       />
       <CategoryDirectory products={filteredProducts} />
+      <Outlet />
     </div>
   );
 };
