@@ -11,9 +11,9 @@ body {
   text-align: center;
 }
 
-.App {
-  text-align: center;
-}
+// .App {
+//   text-align: center;
+// }
 
 .App-logo {
   height: 10vmin;
@@ -24,11 +24,6 @@ body {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
   }
-}
-
-.App-header {
-  text-align: left;
-  padding: 0.3rem;
 }
 
 @keyframes App-logo-float {

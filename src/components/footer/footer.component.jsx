@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Footer extends Component {
   constructor() {
@@ -6,9 +7,9 @@ class Footer extends Component {
 
     this.state = {
       list: [
-        { name: "Company", id: "213124ea" },
-        { name: "Shop", id: "113124br" },
-        { name: "Contact", id: "313124hg" },
+        { name: "Company", id: "213124ea", link: "/company" },
+        { name: "Shop", id: "113124br", link: "/shop" },
+        { name: "Contact", id: "313124hg", link: "/contact" },
       ],
     };
   }
@@ -19,9 +20,9 @@ class Footer extends Component {
         <h2>Footer:</h2>
         {this.state.list.map((list) => {
           return (
-            <div key={list.id}>
+            <Link key={list.id} className="nav-link" to={list.link}>
               <h3>{list.name}</h3>
-            </div>
+            </Link>
           );
         })}
       </>

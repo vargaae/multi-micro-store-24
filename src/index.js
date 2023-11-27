@@ -5,11 +5,7 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ErrorPage from "./error-page";
-import Home from "./routes/home/home.component";
 
-const Shop = () => {
-  return <h1>SHOP component</h1>;
-};
 
 const router = createBrowserRouter([
   {
