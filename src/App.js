@@ -4,14 +4,8 @@ import "./App.scss";
 import Home from "./routes/home/home.component";
 import Footer from "./components/footer/footer.component";
 import Navigation from "./routes/navigation/navigation.component";
-
-function Shop() {
-  return (
-    <div>
-      <h1>- SHOP will be here!!! -</h1>
-    </div>
-  );
-}
+import SignIn from "./routes/sign-in/sign-in.component";
+import Shop from "./routes/shop/shop.component";
 
 const App = () => {
   return (
@@ -20,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
+          <Route path="sign-in" element={<SignIn />} />
         </Route>
       </Routes>
       <Footer />
