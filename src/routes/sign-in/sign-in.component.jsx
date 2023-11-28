@@ -1,8 +1,21 @@
 import "./sign-in.styles.scss";
 import { Outlet, Link } from "react-router-dom";
+import { signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
 
 const SingIn = () => {
-  return <div className="sign"><h1>- SIGN IN will be here!!! -</h1></div>;
+  const logGoogleUser = async () => {
+    const response = await signInWithGooglePopup();
+    console.log(response);
+  };
+
+  return (
+    <div className="sign">
+      <h1>- SIGN IN PAGE -</h1>
+      <button onClick={logGoogleUser}>
+      Sign in with Google Popup
+      </button>
+    </div>
+  );
 };
 
 export default SingIn;
