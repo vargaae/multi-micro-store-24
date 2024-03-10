@@ -1,11 +1,11 @@
 import "./sign-in.styles.scss";
-import { Outlet, Link } from "react-router-dom";
-import { signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
+// import { Outlet, Link } from "react-router-dom";
+import { signInWithGooglePopup, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 
 const SingIn = () => {
   const logGoogleUser = async () => {
-    const response = await signInWithGooglePopup();
-    console.log(response);
+    const { user } = await signInWithGooglePopup();
+    createUserDocumentFromAuth(user);
   };
 
   return (
