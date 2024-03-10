@@ -10,7 +10,7 @@ const SingIn = () => {
 
   return (
     <div className="sign">
-      <h1>- SIGN IN PAGE -</h1>
+      <h1>- Sign In Page -</h1>
       <button onClick={logGoogleUser}>
       Sign in with Google Popup
       </button>
