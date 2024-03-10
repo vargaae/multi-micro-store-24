@@ -1,27 +1,52 @@
 .navigation {
-    height: 70px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
-  
-    .logo-container {
-      height: 100%;
-      width: 70px;
-      padding: 25px;
-    }
-  
-    .nav-links-container {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-  
-      .nav-link {
-        padding: 10px 15px;
-        cursor: pointer;
-      }
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+
+    .logo {
+      pointer-events: none;
     }
   }
-  
+
+  .nav-links-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .nav-link {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    .sign-in-link {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
