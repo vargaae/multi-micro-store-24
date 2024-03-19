@@ -35,9 +35,9 @@ export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (
   userAuth,
-  additionalInformation = {} // TODO:if there is no displayName, we will create it from SignUp instead of null
+  additionalInformation = {} // additionalInformation:if there is no displayName, we will create it from SignUp instead of null
 ) => {
-  if (!userAuth) return; // TODO:when it will be ready, it runs if it's a new user, and if it exists, it will login
+  if (!userAuth) return; // TODO:if the User closes the popup->error handling is needed: Firebase: Error (auth/popup-closed-by-user).
 
   const userDocRef = doc(db, "users", userAuth.uid);
 
