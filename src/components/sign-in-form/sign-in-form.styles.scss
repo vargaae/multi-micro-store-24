@@ -1,12 +1,16 @@
 .sign-up-container {
   display: flex;
   flex: 2;
-
   flex-direction: column;
   width: 380px;
   margin: 0 10px; // later it will be changed
 
   h2 {
     margin: 10px 0;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
   }
 }

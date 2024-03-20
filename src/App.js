@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { Fragment } from "react";
 import "./App.scss";
-import Home from "./routes/home/home.component";
-import Footer from "./components/footer/footer.component";
-import Navigation from "./routes/navigation/navigation.component";
-import SignIn from "./routes/sign-in/SignIn";
-import Shop from "./routes/shop/shop.component";
+import Home from "./routes/home/Home";
+import Footer from "./components/footer/Footer";
+import Navigation from "./routes/navigation/Navigation";
+import Authentication from "./routes/authentication/Authentication";
+import Shop from "./routes/shop/Shop";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="sign-in" element={<SignIn />} />
+          <Route path="authentication" element={<Authentication />} />
         </Route>
       </Routes>
       <Footer />
