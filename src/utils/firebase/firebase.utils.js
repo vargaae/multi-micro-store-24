@@ -38,7 +38,7 @@ export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInformation = {} // additionalInformation:if there is no displayName, we will create it from SignUp instead of null
 ) => {
-  if (!userAuth) return; // TODO:if the User closes the popup->error handling is needed: Firebase: Error (auth/popup-closed-by-user).
+  if (!userAuth) return;
 
   const userDocRef = doc(db, "users", userAuth.uid);
 

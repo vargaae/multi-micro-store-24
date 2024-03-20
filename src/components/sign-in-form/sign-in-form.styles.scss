@@ -1,9 +1,7 @@
-.sign-up-container {
+.sign-in-container {
   display: flex;
-  flex: 2;
   flex-direction: column;
   width: 380px;
-  margin: 0 10px; // later it will be changed
 
   h2 {
     margin: 10px 0;
@@ -12,5 +10,19 @@
   .buttons-container {
     display: flex;
     justify-content: space-between;
+  }
+  .group {
+    .form-input {
+      background-color: #E3EDFB;
+      color: black;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input[type="password"] {
+      letter-spacing: 0.3em;
+    }
   }
 }

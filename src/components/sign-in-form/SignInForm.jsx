@@ -16,7 +16,7 @@ const defaultFormFields = {
   password: "",
 };
 
-const SignUpForm = () => {
+const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
@@ -25,25 +25,46 @@ const SignUpForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    // eslint-disable-next-line no-unused-vars
-    const userDocRef = await createUserDocumentFromAuth(user);
+    try {
+      const { user } = await signInWithGooglePopup();
+      // eslint-disable-next-line no-unused-vars
+      const userDocRef = await createUserDocumentFromAuth(user);
+    } catch (error) {
+      console.error(
+        "Caught error Popup closed. Error signing in with Google: ",
+        error
+      );
+      alert(
+        "Google Popup closed. Click again to Sign In or Sign In with Google PopUp for Signingin"
+      );
+    }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(email, password);
-      console.log(response)
+      const response = await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+      console.log(response); // TODO: use response for Authentication
       resetFormFields();
     } catch (error) {
-      if (error.code === "auth/popup-closed-by-user") {
-        alert(
-          "Click again to Sign In or Sign In with Google PopUp for Signingin"
-        );
-      } else {
-        console.log("user signing in encountered an error", error);
+      switch (error.code) {
+        case "auth/invalid-credential":
+          alert(
+            "No user associated with this email or Incorrect password for this email! Try it again"
+          );
+          break;
+        case "auth/wrong-password": // Previous error code: ACTUALLY USED: auth/invalid-credential
+          alert("Incorrect password for this email! Try it again");
+          break;
+        case "auth/user-not-found": // Previous error code: ACTUALLY USED: auth/invalid-credential
+          alert("No user associated with this email");
+          break;
+        default:
+          console.log("User signing in encountered an error", error);
       }
     }
   };
@@ -55,7 +76,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <div className="sign-in-container">
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -80,8 +101,9 @@ const SignUpForm = () => {
           <Button label="Sign In" type="submit" />
           <Button
             buttonType="google"
-            label="Sign in with Google Popup"
+            label="Google Sign In"
             onClick={signInWithGoogle}
+            type="button"
           />
         </div>
       </form>
@@ -89,4 +111,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default SignInForm;
