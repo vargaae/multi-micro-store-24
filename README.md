@@ -8,12 +8,13 @@
 
 # ECOMMERCE 2024 APPLICATION
 
-🚀
+🚀Sign in with Google Authentication is built in this branch
 
 ## 🛠 Front End:
 
 - React 18.2
 - SASS
+- Firebase
 
 ## ECOMMERCE 2024 ClientSide Application - Screenshots
 

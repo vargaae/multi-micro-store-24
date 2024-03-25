@@ -1,5 +1,5 @@
 import "./shop.styles.scss";
-import { Outlet, Link } from "react-router-dom";
+// import { Outlet, Link } from "react-router-dom";
 
 function Shop() {
   return (
