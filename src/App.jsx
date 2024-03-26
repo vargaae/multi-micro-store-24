@@ -1,11 +1,10 @@
-import { Routes, Route } from "react-router-dom";
 import { Fragment } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-import Home from "./routes/home/Home";
-import Footer from "./components/footer/Footer";
-import Navigation from "./routes/navigation/Navigation";
-import Authentication from "./routes/authentication/Authentication";
-import Shop from "./routes/shop/Shop";
+
+import ButtonGradient from "./assets/svg/ButtonGradient";
+import { Home, Authentication, Navigation, Shop } from "./routes";
+import { Footer } from "./containers";
 
 const App = () => {
   return (
@@ -17,6 +16,7 @@ const App = () => {
           <Route path="authentication" element={<Authentication />} />
         </Route>
       </Routes>
+      <ButtonGradient />
       <Footer />
     </Fragment>
   );

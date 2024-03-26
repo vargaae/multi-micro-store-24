@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
+:root {
+  --font-family: "Open Sans Condensed", sans-serif;
+  --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
+
+  --color-bg: #ffffff;
+  --color-footer: #031b34;
+  --color-blog: #042c54;
+  --color-text: #81afdd;
+  --color-subtext: #ff8a71;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans Condensed", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg);
+  background: linear-gradient(
+    90deg,
+    rgb(255, 254, 254) 10%,
+    rgb(41, 135, 197) 53%,
+    rgb(155, 195, 204) 95%
+  );
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border;
+  scroll-behavior: smooth;
+}

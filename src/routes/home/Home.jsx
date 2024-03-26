@@ -3,7 +3,7 @@ import "./../../App.scss";
 import SearchBox from "./../../components/search-box/SearchBox";
 import CategoryDirectory from "./../../components/category-dir/CategoryDir";
 
-import categories from "../../data";
+import { categories } from "../../constants/index";
 
 const Home = () => {
   const [searchField, setSearchField] = useState("");
