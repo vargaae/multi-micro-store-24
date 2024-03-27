@@ -1,15 +1,21 @@
-import "./navigation.styles.scss";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+
 import { logo } from "../../assets";
 // import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { UserContext } from "../../contexts/user.context";
+
+import "./navigation.styles.scss";
 
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+  console.log(currentUser);
+
   return (
     <Fragment>
       <div className="navigation">
         <Link className="logo-container" to="/">
-        <img src={logo} className="logo" alt="logo" />
+          <img src={logo} className="logo" alt="logo" />
         </Link>
         <div className="nav-links-container">
           <Link className="nav-link" to="/shop">
