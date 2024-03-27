@@ -11,7 +11,7 @@ import {
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAHWmN8NdZlRaScB5ZEHb7PTVUyC0qEy2c",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "ecomm-react-2024.firebaseapp.com",
   projectId: "ecomm-react-2024",
   storageBucket: "ecomm-react-2024.appspot.com",

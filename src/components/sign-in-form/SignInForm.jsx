@@ -36,10 +36,10 @@ const SignInForm = () => {
     try {
       const { user } = await signInWithGooglePopup();
       // eslint-disable-next-line no-unused-vars
-      const userDocRef = await createUserDocumentFromAuth(user);
-      
+      await createUserDocumentFromAuth(user);
+
       setCurrentUser(user);
-      
+
       navigate(`/`);
     } catch (error) {
       console.error(
@@ -60,7 +60,7 @@ const SignInForm = () => {
         email,
         password
       );
-      console.log(user)
+      
       setCurrentUser(user);
 
       resetFormFields();
