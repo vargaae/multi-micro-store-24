@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 
-import ButtonGradient from "./assets/svg/ButtonGradient";
 import { Home, Authentication, Navigation, Shop } from "./routes";
 import { Footer } from "./containers";
 
@@ -16,7 +15,6 @@ const App = () => {
           <Route path="authentication" element={<Authentication />} />
         </Route>
       </Routes>
-      <ButtonGradient />
       <Footer />
     </Fragment>
   );
