@@ -5,11 +5,23 @@ import { logo } from "../../assets";
 // import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { UserContext } from "../../contexts/user.context";
 
+import { signOutUser } from "../../utils/firebase/firebase.utils";
+
 import "./navigation.styles.scss";
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+
+  const signOutHandler = async () => {
+    try {
+      const res = await signOutUser();
+      console.log(res)
+      setCurrentUser(null);
+    } catch (error) {
+      console.error("Error with signing out: ", error);
+      alert("Error with signing out");
+    }
+  };
 
   return (
     <Fragment>
@@ -21,9 +33,15 @@ const Navigation = () => {
           <Link className="nav-link" to="/shop">
             SHOP
           </Link>
-          <Link className="sign-in-link" to="/authentication">
-            SIGN-IN
-          </Link>
+          {currentUser?.email ? (
+            <Link className="nav-link" onClick={signOutHandler}>
+              SIGN-OUT - {currentUser.email}
+            </Link>
+          ) : (
+            <Link className="sign-in-link" to="/authentication">
+              SIGN-IN
+            </Link>
+          )}
         </div>
       </div>
       <Outlet />

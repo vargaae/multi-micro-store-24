@@ -1,5 +1,7 @@
 import { useState, useContext } from "react";
 
+import { useNavigate } from "react-router";
+
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
@@ -28,11 +30,17 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
 
+  const navigate = useNavigate();
+
   const signInWithGoogle = async () => {
     try {
       const { user } = await signInWithGooglePopup();
       // eslint-disable-next-line no-unused-vars
       const userDocRef = await createUserDocumentFromAuth(user);
+      
+      setCurrentUser(user);
+      
+      navigate(`/`);
     } catch (error) {
       console.error(
         "Caught error Popup closed. Error signing in with Google: ",
@@ -52,9 +60,11 @@ const SignInForm = () => {
         email,
         password
       );
+      
       setCurrentUser(user);
 
       resetFormFields();
+      navigate(`/`);
     } catch (error) {
       switch (error.code) {
         case "auth/invalid-credential":
