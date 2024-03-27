@@ -1,13 +1,24 @@
-import { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Fragment, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.scss";
 
 import { Home, Authentication, Navigation, Shop } from "./routes";
 import { Footer } from "./containers";
 
+export function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 const App = () => {
   return (
     <Fragment>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />

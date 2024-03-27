@@ -14,8 +14,7 @@ const Navigation = () => {
 
   const signOutHandler = async () => {
     try {
-      const res = await signOutUser();
-      console.log(res)
+      await signOutUser();
       setCurrentUser(null);
     } catch (error) {
       console.error("Error with signing out: ", error);
