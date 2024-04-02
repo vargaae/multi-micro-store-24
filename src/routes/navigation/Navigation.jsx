@@ -10,21 +10,11 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 import "./navigation.styles.scss";
 
 const Navigation = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-
-  const signOutHandler = async () => {
-    try {
-      await signOutUser();
-      setCurrentUser(null);
-    } catch (error) {
-      console.error("Error with signing out: ", error);
-      alert("Error with signing out");
-    }
-  };
+  const { currentUser } = useContext(UserContext);
 
   return (
     <Fragment>
-      <div className="navigation">
+      <div className="navigation gradient__bg">
         <Link className="logo-container" to="/">
           <img src={logo} className="logo" alt="logo" />
         </Link>
@@ -32,8 +22,8 @@ const Navigation = () => {
           <Link className="nav-link" to="/shop">
             SHOP
           </Link>
-          {currentUser?.email ? (
-            <Link className="nav-link" onClick={signOutHandler}>
+          {currentUser ? (
+            <Link className="nav-link" onClick={signOutUser}>
               SIGN-OUT - {currentUser.email}
             </Link>
           ) : (

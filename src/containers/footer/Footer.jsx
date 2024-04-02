@@ -14,7 +14,7 @@ const Footer = () => {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div className="ecommerce__footer section__padding" id="openai">
+    <div className="ecommerce__footer section__padding gradient__bg" id="openai">
       {currentUser?.email ? (
         <div className="ecommerce__footer-heading">
           <h1 className="gradient__text">

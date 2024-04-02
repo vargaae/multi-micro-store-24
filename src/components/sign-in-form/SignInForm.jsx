@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 import { useNavigate } from "react-router";
 
@@ -11,8 +11,6 @@ import {
 import { FormInput } from "../form-input/FormInput";
 import { Button } from "../button/Button";
 
-import { UserContext } from "../../contexts/user.context";
-
 import "./sign-in-form.styles.scss";
 
 const defaultFormFields = {
@@ -24,8 +22,6 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  const { setCurrentUser } = useContext(UserContext);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -36,9 +32,7 @@ const SignInForm = () => {
     try {
       const { user } = await signInWithGooglePopup();
       // eslint-disable-next-line no-unused-vars
-      await createUserDocumentFromAuth(user);
-
-      setCurrentUser(user);
+      createUserDocumentFromAuth(user);
 
       navigate(`/`);
     } catch (error) {
@@ -60,8 +54,6 @@ const SignInForm = () => {
         email,
         password
       );
-      
-      setCurrentUser(user);
 
       resetFormFields();
       navigate(`/`);
