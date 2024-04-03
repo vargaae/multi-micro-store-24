@@ -22,10 +22,24 @@ const Navigation = () => {
           <Link className="nav-link" to="/shop">
             SHOP
           </Link>
-          {currentUser ? (
-            <Link className="nav-link" onClick={signOutUser}>
-              SIGN-OUT - {currentUser.email}
-            </Link>
+          {currentUser !== null ? (
+            <div className="sign-out-displayname-container">
+              <Link className="nav-link" onClick={signOutUser}>
+                SIGN-OUT -{">"}
+              </Link>
+              <div className="displayname">
+                {currentUser.displayName
+                  ? currentUser.displayName
+                  : currentUser.email}
+              </div>
+              {currentUser.photoURL ? (
+                <img
+                  src={currentUser.photoURL}
+                  className="user-logo"
+                  alt="User's Logo"
+                />
+              ) : null}
+            </div>
           ) : (
             <Link className="sign-in-link" to="/authentication">
               SIGN-IN

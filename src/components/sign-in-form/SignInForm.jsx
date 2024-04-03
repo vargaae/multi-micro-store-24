@@ -5,7 +5,6 @@ import { useNavigate } from "react-router";
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
 import { FormInput } from "../form-input/FormInput";
@@ -30,9 +29,7 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     try {
-      const { user } = await signInWithGooglePopup();
-      // eslint-disable-next-line no-unused-vars
-      createUserDocumentFromAuth(user);
+      await signInWithGooglePopup();
 
       navigate(`/`);
     } catch (error) {
@@ -50,11 +47,7 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const { user } = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-
+      await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
       navigate(`/`);
     } catch (error) {

@@ -11,10 +11,26 @@
   .logo-container {
     height: 100%;
     width: 70px;
-    padding: 25px;
+    padding: 8px;
 
     .logo {
       pointer-events: none;
+    }
+  }
+  .sign-out-displayname-container {
+    color: lightblue;
+
+    .displayname {
+      padding: 0 10px;
+    }
+
+    .user-logo {
+      padding: 0px 10px;
+
+      pointer-events: none;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
     }
   }
 
@@ -26,8 +42,9 @@
     justify-content: flex-end;
 
     .nav-link {
-      padding: 10px 15px;
+      padding: 10px 10px;
       cursor: pointer;
+      line-height: 20px;
     }
     .sign-in-link {
       padding: 10px 15px;
