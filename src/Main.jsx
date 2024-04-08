@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import { UserProvider } from "./contexts/user.context";
+import { ProductsProvider } from "./contexts/products.context";
 import ErrorPage from "./ErrorPage";
 
 import "./Main.scss";
@@ -30,7 +31,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserProvider>
-      <RouterProvider router={router} />
+      <ProductsProvider>
+        <RouterProvider router={router} />
+      </ProductsProvider>
     </UserProvider>
   </React.StrictMode>
 );

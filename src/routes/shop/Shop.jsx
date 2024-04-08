@@ -1,12 +1,17 @@
 import "./shop.styles.scss";
 
-import SHOP_DATA from "../../shop-data.json";
+import { useContext } from "react";
+
+import { ProductsContext } from "../../contexts/products.context";
 
 const Shop = () => {
+  const { products } = useContext(ProductsContext);
+
   return (
     <div>
-      {SHOP_DATA.map(({ id, productName }) => (
+      {products.map(({ id, productName, imageUrl }) => (
         <div key={id}>
+          <img src={imageUrl} alt={productName} />
           <h1>{productName}</h1>
         </div>
       ))}
