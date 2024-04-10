@@ -8,7 +8,7 @@
 
 # ECOMMERCE 2024 APPLICATION
 
-🚀Sign in with Google Authentication is built in this branch
+🚀Context API, SHOP, CART+USERMENU DROPDOWN, Adding to CART and STYLING are built in this branch (🪵07-Context)
 
 ## 🛠 Front End:
 
@@ -35,18 +35,14 @@ Currently, two official plugins are available:
 2. Run `npm install`
 3. You must add your own API key in the `src/App.js` file to connect to Clarifai, Rapid API, Open AI.
 
-You can grab ClarifAI API key [here](https://www.clarifai.com/)
-You can grab RapidAPI key [here](https://rapidapi.com/)
-You can grab OpenAI API key [here](https://openai.com/)
+You can grab FIREBASEfirebase API key [here](https://firebase.google.com/)
 
 **Set Up Environment Variables**
 
 Create a new file named `.env` in the root of your project and add the following content:
 
 ```env
-VITE_CLARIFAI_API_KEY=
-VITE_RAPID_API_ARTICLE_KEY=
-VITE_OPENAI_API_KEY=
+VITE_FIREBASE_API_KEY=
 ```
 
 1. **Running the Project**
