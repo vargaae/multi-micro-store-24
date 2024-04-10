@@ -36,9 +36,9 @@ Currently, two official plugins are available:
 
 1. Clone this repo
 2. Run `npm install`
-3. You must add your own API key in the `src/App.js` file to connect to Clarifai, Rapid API, Open AI.
+3. You must add your own API key in the `utils/firebase/firebase-utils.js` file to connect to your Database.
 
-You can grab FIREBASEfirebase API key [here](https://firebase.google.com/)
+You can grab FIREBASE API key [here](https://firebase.google.com/)
 
 **Set Up Environment Variables**
 
