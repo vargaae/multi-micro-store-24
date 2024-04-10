@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import { UserProvider } from "./contexts/user.context";
+import { UserMenuProvider } from "./contexts/user-menu.context";
+import { CartProvider } from "./contexts/cart.context";
 import { ProductsProvider } from "./contexts/products.context";
 import ErrorPage from "./ErrorPage";
 
@@ -31,9 +33,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserProvider>
-      <ProductsProvider>
-        <RouterProvider router={router} />
-      </ProductsProvider>
+      <UserMenuProvider>
+        <ProductsProvider>
+          <CartProvider>
+            <RouterProvider router={router} />
+          </CartProvider>
+        </ProductsProvider>
+      </UserMenuProvider>
     </UserProvider>
   </React.StrictMode>
 );

@@ -1,0 +1,26 @@
+.auth-dropdown-container {
+  position: absolute;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid rgba(4, 12, 24, 1);
+  background-color: rgba(4, 12, 24, 1);
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+
+  .empty-message {
+    font-size: 18px;
+    margin: 50px auto;
+  }
+
+  .auth-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    margin-top: auto;
+  }
+}
