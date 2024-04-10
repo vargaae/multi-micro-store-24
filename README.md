@@ -8,7 +8,10 @@
 
 # ECOMMERCE 2024 APPLICATION
 
-🚀Context API, SHOP, CART+USERMENU DROPDOWN, Adding to CART and STYLING are built in this branch (🪵07-Context)
+- 🚀Context API, 
+- 🚀SHOP, 
+- 🚀CART+USERMENU DROPDOWN, 
+- 🚀Adding to CART and STYLING are built in this branch (🪵07-Context)
 
 ## 🛠 Front End:
 
