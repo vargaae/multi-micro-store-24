@@ -21,9 +21,7 @@
 
 ## ECOMMERCE 2024 ClientSide Application - Screenshots
 
-<div align="center">
-  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024.png" width="700" />
-</div>
+coming soon... and the deployed version...
 
 ## React + Vite
 
