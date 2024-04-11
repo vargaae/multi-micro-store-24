@@ -22,11 +22,6 @@
 ## ECOMMERCE 2024 ClientSide Application - Screenshots
 
 coming soon... and the deployed version...application is in process...loading... :)
-<div align="center">
-  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024.png" width="700" />
-</div>
-h2 align="center"> Deployed on Render :  </h2>
-<p align="center"> [here](https://sportdata-next-2024.onrender.com) </p>
 
 ## React + Vite
 
