@@ -2,7 +2,7 @@ import { Fragment, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.scss";
 
-import { Home, Authentication, Navigation, Shop } from "./routes";
+import { Home, Authentication, Navigation, Shop, Checkout } from "./routes";
 import { Footer } from "./containers";
 
 export function ScrollToTop() {
@@ -24,6 +24,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="authentication" element={<Authentication />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
       <Footer />

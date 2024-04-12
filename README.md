@@ -11,7 +11,8 @@
 - 🚀Context API, 
 - 🚀SHOP, 
 - 🚀CART+USERMENU DROPDOWN, 
-- 🚀Adding to CART and STYLING are built in this branch (🪵07-Context)
+- 🚀Adding to CART / Removing from CART
+- 🚀CHECKOUT and STYLING are built in this branch (🪵07-Context)
 
 ## 🛠 Front End:
 
@@ -22,6 +23,12 @@
 ## ECOMMERCE 2024 ClientSide Application - Screenshots
 
 coming soon... and the deployed version...application is in process...loading... :)
+
+<div align="center">
+  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024.png" width="700" />
+</div>
+h2 align="center"> Deployed on Render :  </h2>
+ [here](https://ecommerce-2024-y49k.onrender.com/)
 
 ## React + Vite
 

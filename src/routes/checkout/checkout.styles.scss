@@ -1,0 +1,23 @@
+.checkout-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+
+  .empty-message {
+    color: red;
+    font-weight: 900;
+    margin: auto;
+  }
+
+  .checkout-items {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  button {
+    margin-top: auto;
+  }
+}
