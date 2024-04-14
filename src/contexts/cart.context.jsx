@@ -15,18 +15,19 @@ const addCartItem = (cartItems, productToAdd) => {
     );
   }
 
-  // return new array with modified cartItems/ new cart item
+  // return new array with modified cartItems/ new cart item -> this part won't be true, because now we add the product to the Cart at the Shop page, so we increase the amount if it's existing in the Cart
   return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
 
 const removeCartItem = (cartItems, productToRemove) => {
-  // find if cartItems contains productToRemove
-  const existingCartItem = cartItems.find(
+  // find if cartItems contains productToRemove (to remove it)
+  // Avoid mutating: create a new variable that is not the same as the one I used for adding and filtering a product
+  const existingCartItemToRemove = cartItems.find(
     (cartItem) => cartItem.id === productToRemove.id
   );
 
   // check if quantity is equal to 1, if it is remove that item from the cart
-  if (existingCartItem.quantity === 1) {
+  if (existingCartItemToRemove.quantity === 1) {
     return cartItems
       .slice()
       .filter((cartItem) => cartItem.id !== productToRemove.id);
@@ -74,6 +75,7 @@ Cart Item shape
 
 */
 
+// eslint-disable-next-line react/prop-types
 export const CartProvider = ({ children }) => {
   const [cartOpen, setCartOpen] = useState(false);
 
