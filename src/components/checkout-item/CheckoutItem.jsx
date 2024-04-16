@@ -20,33 +20,19 @@ const CheckoutItem = ({ product }) => {
         <img src={imageUrl} alt={`${productName}`} />
       </div>
       <span className="name">{productName}</span>
-      <div className="quantity">
-      <div onClick={removeProductHandler}>-</div>
-      {quantity} <div onClick={addProductHandler}>
-        +
-      </div>
-      </div>
-      <div className="price">
-        €{price}
-      </div>
+      <span className="quantity">
+        <div className="arrow" onClick={removeProductHandler}>
+          -
+        </div>
+        <span className="value">{quantity}</span>{" "}
+        <div className="arrow" onClick={addProductHandler}>
+          +
+        </div>
+      </span>
+      <span className="price">€{price}</span>
       <div className="remove-button" onClick={clearProductHandler}>
         &#10005;
       </div>
-      {/*
-      <Button onClick={removeProductHandler}>-</Button>
-      <div className="item-details">
-        <span className="name">{productName}</span>
-        <span className="price">
-          {quantity} x €{price}
-        </span>
-      </div>
-      <Button buttonType="inverted" onClick={addProductHandler}>
-        +
-      </Button>
-      <div className="remove-button" onClick={clearProductHandler}>
-        &#10005;
-      </div>
-  */}
     </div>
   );
 };
