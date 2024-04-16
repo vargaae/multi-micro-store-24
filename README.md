@@ -11,7 +11,9 @@
 - 🚀Context API, 
 - 🚀SHOP, 
 - 🚀CART+USERMENU DROPDOWNs, 
-- 🚀Adding to CART and STYLING<br> are built in this branch (🪵07-Context)
+- 🚀Adding to CART,
+- 🚀CHECKOUT,
+- 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount) and STYLING<br> are built in this branch (🪵07-Context)
 
 ## 🛠 Front End:
 
