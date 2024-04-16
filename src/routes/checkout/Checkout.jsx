@@ -9,7 +9,7 @@ import CheckoutItem from "../../components/checkout-item/CheckoutItem";
 import "./checkout.styles.scss";
 
 const Checkout = () => {
-  const { cartItems, totalCount } = useContext(CartContext);
+  const { cartItems, cartTotalPriceCount } = useContext(CartContext);
 
   return (
     <div className="checkout-container">
@@ -25,6 +25,9 @@ const Checkout = () => {
         </div>
         <div className="header-block">
           <span>Piece-Price</span>
+        </div>
+        <div className="header-block">
+          <span>Price</span>
         </div>
         <div className="header-block">
           <span>Remove</span>
@@ -46,7 +49,7 @@ const Checkout = () => {
       )}
       {cartItems != 0 ? (
         <>
-          <span className="total">Total: €{totalCount}</span>
+          <span className="total">Total: €{cartTotalPriceCount}</span>
           <Button>GO TO PAY</Button>
         </>
       ) : null}
