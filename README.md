@@ -8,12 +8,17 @@
 
 # ECOMMERCE 2024 APPLICATION
 
+Features/Structure:
+- 🚀AUTHENTICATION->Sign Up with email, 
+- 🚀AUTHENTICATION->Log in with email, 
+- 🚀AUTHENTICATION->Sign Up and Log In with Google account, 
 - 🚀Context API, 
 - 🚀SHOP, 
 - 🚀CART+USERMENU DROPDOWNs, 
 - 🚀Adding to CART,
 - 🚀CHECKOUT,
 - 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount) and STYLING<br> are built in this branch (🪵07-Context)
+- 🚀Database and STYLING<br> are built in this branch (🪵08-DB)
 
 ## 🛠 Front End:
 
