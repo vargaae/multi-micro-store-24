@@ -13,23 +13,40 @@ const Checkout = () => {
 
   return (
     <div className="checkout-container">
-      <div className="checkout-items">
-        {cartItems != 0 ? (
-          cartItems.map((item) => <CheckoutItem key={item.id} product={item} />)
-        ) : (
-          <div className="empty-message">
-            <h2>There is no products in your cart?!</h2>
-            <h3>
-              <Link className="shop-link" to="/shop">
-                Back to SHOP something nice!
-              </Link>
-            </h3>
-          </div>
-        )}
+      <div className="checkout-header">
+        <div className="header-block">
+          <span>Product</span>
+        </div>
+        <div className="header-block">
+          <span>Description</span>
+        </div>
+        <div className="header-block">
+          <span>Quantity</span>
+        </div>
+        <div className="header-block">
+          <span>Price</span>
+        </div>
+        <div className="header-block">
+          <span>Remove</span>
+        </div>
       </div>
       {cartItems != 0 ? (
+        cartItems.map((cartItem) => (
+          <CheckoutItem key={cartItem.id} product={cartItem} />
+        ))
+      ) : (
+        <div className="empty-message">
+          <h2>There is no products in your cart?!</h2>
+          <h3>
+            <Link className="shop-link" to="/shop">
+              Back to SHOP something nice!
+            </Link>
+          </h3>
+        </div>
+      )}
+      {cartItems != 0 ? (
         <>
-          <div className="total">TOTAL: €{totalCount}</div>
+          <span className="total">Total: €{totalCount}</span>
           <Button>GO TO PAY</Button>
         </>
       ) : null}
