@@ -6,7 +6,7 @@ import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import { UserMenuProvider } from "./contexts/user-menu.context";
 import { CartProvider } from "./contexts/cart.context";
-import { ProductsProvider } from "./contexts/products.context";
+import { CategoriesProvider } from "./contexts/Categories.context";
 import ErrorPage from "./ErrorPage";
 
 import "./Main.scss";
@@ -34,11 +34,11 @@ root.render(
   <React.StrictMode>
     <UserProvider>
       <UserMenuProvider>
-        <ProductsProvider>
+        <CategoriesProvider>
           <CartProvider>
             <RouterProvider router={router} />
           </CartProvider>
-        </ProductsProvider>
+        </CategoriesProvider>
       </UserMenuProvider>
     </UserProvider>
   </React.StrictMode>
