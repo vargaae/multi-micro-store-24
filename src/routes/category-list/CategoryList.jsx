@@ -7,7 +7,7 @@ import { CategoriesContext } from "../../contexts/Categories.context";
 
 import "./category.styles.scss";
 
-const Category = () => {
+const CategoryList = () => {
   const { category } = useParams();
   const { categoriesMap } = useContext(CategoriesContext);
   const [products, setProducts] = useState(categoriesMap[category]);
@@ -32,4 +32,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default CategoryList;
