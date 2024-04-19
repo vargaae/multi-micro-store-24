@@ -2,17 +2,16 @@
   padding: 20px 40px;
   margin-bottom: 2rem;
 
-  .shop__category-container {
+  .shop__category-product-list-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;
     row-gap: 50px;
   }
 
-  .shop__category-title {
-    font-size: 38px;
-    margin-bottom: 25px;
-    text-align: center;
-    cursor: pointer;
+  .shop__category-product-list-title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: left;
   }
 }

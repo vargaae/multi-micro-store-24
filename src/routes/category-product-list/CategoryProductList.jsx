@@ -5,9 +5,9 @@ import ProductCard from "../../components/product-card/ProductCard";
 
 import { CategoriesContext } from "../../contexts/Categories.context";
 
-import "./category.styles.scss";
+import "./category-product-list.styles.scss";
 
-const CategoryList = () => {
+const CategoryProductList = () => {
   const { category } = useParams();
   const { categoriesMap } = useContext(CategoriesContext);
   const [products, setProducts] = useState(categoriesMap[category]);
@@ -15,14 +15,16 @@ const CategoryList = () => {
   useEffect(() => {
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
+
   return (
     <div className="shop-container shop__large-screen-container">
-      <h2 className="shop__category-title">
-        <Link className="shop__category-title" to={"/shop"}>
-          {category.toUpperCase()}
+      <h2 className="shop__category-product-list-title">
+        <Link className="shop__category-title_link" to={"/shop"}>
+          SHOP{` `}
         </Link>
+        &#10095;{` `}{category.toUpperCase()}
       </h2>
-      <div className="shop__category-container">
+      <div className="shop__category-product-list-container">
         {products &&
           products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -32,4 +34,4 @@ const CategoryList = () => {
   );
 };
 
-export default CategoryList;
+export default CategoryProductList;

@@ -1,3 +1,10 @@
+// MY MOBILE FIRST DESIGN for SHOP's containers
+// TODO: MAKE SHOP's STYLIING UNIFIED
+.shop-container {
+  padding: 20px 40px;
+  margin-bottom: 1rem;
+}
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -5,16 +12,18 @@
   row-gap: 50px;
 }
 
-// MY MOBILE FIRST DESIGN for SHOP's containers
-// TODO: MAKE SHOP's STYLIING UNIFIED
-.shop-container {
-  padding: 20px 40px;
-  margin-bottom: 2rem;
+.shop__category-title_link {
+  cursor: pointer;
+  &:hover {
+    color: lightblue;
+  }
 }
+
 .shop__large-screen-container {
   padding: 20px 40px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
+
 @media screen and (min-width: 1200px) {
   .shop__large-screen-container {
     width: 55%;
