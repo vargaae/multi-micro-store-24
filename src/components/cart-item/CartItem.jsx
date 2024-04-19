@@ -5,7 +5,7 @@ import { CartContext } from "../../contexts/cart.context";
 import "./cart-item.styles.scss";
 
 const CartItem = ({ product }) => {
-  const { productName, imageUrl, price, quantity } = product;
+  const { name, imageUrl, price, quantity } = product;
 
   const { addItemToCart, removeItemFromCart } = useContext(CartContext);
 
@@ -14,9 +14,9 @@ const CartItem = ({ product }) => {
 
   return (
     <div className="cart-item-container">
-      <img src={imageUrl} alt={`${productName}`} />
+      <img src={imageUrl} alt={`${name}`} />
       <div className="item-details">
-        <span className="name">{productName}</span>
+        <span className="name">{name}</span>
         <button onClick={removeProductToCart}>-</button>
         <span className="price">
           {quantity} x €{price}

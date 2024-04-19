@@ -59,7 +59,7 @@ export const CartContext = createContext({
 product shape
 {
   id,
-  productName,
+  name,
   price,
   imageUrl
 }
@@ -67,7 +67,7 @@ product shape
 Cart Item shape
 {
   id,
-  productName,
+  name,
   price,
   imageUrl,
   +quantity
