@@ -12,6 +12,9 @@
     height: 24px;
     fill: #add8e6;
     // I deleted 'fill' from the shopping-bag.svg icon to be colorable
+    &:hover {
+      fill: #73a5c6;
+    }
   }
 
   .item-count {

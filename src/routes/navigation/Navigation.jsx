@@ -7,10 +7,18 @@ import { UserContext } from "../../contexts/user.context";
 import { UserMenuContext } from "../../contexts/user-menu.context";
 import { CartContext } from "../../contexts/cart.context";
 
-import "./navigation.styles.scss";
 import CartIcon from "../../components/cart-icon/CartIcon";
 import CartDropdown from "../../components/cart-dropdown/CartDropdown";
 import AuthDropdown from "../../components/auth-dropdown/AuthDropdown";
+
+import {
+  NavigationContainer,
+  LogoContainer,
+  NavLinksContainer,
+  NavLink,
+  UserContainer,
+  DisplayNameContainer,
+} from "./navigation.styles.jsx";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
@@ -20,22 +28,20 @@ const Navigation = () => {
   const toggleAuthMenuOpen = () => setUserMenuOpen(!userMenuOpen);
 
   return (
-    <Fragment>
-      <div className="navigation gradient__bg">
-        <Link className="logo-container" to="/">
-          <img src={logo} className="logo" alt="logo" />
-        </Link>
-        <div className="nav-links-container">
-          <Link className="nav-link" to="/shop">
-            SHOP
-          </Link>
+    <>
+      <NavigationContainer className="gradient__bg">
+        <LogoContainer to="/">
+          <img src={logo} className="logo" alt="logo of Andras Varga" />
+        </LogoContainer>
+        <NavLinksContainer>
+          <NavLink to="/shop">SHOP</NavLink>
           {currentUser !== null ? (
-            <div className="user-container" onClick={toggleAuthMenuOpen}>
-              <div className="displayname">
+            <UserContainer onClick={toggleAuthMenuOpen}>
+              <DisplayNameContainer>
                 {currentUser.displayName
                   ? currentUser.displayName
                   : currentUser.email}
-              </div>
+              </DisplayNameContainer>
               {currentUser.photoURL ? (
                 <>
                   <img
@@ -46,18 +52,16 @@ const Navigation = () => {
                 </>
               ) : null}
               {userMenuOpen && <AuthDropdown />}
-            </div>
+            </UserContainer>
           ) : (
-            <Link className="sign-in-link" to="/authentication">
-              SIGN-IN
-            </Link>
+            <NavLink to="/authentication">SIGN-IN</NavLink>
           )}
           <CartIcon id="nav-shopping-icon" />
-        </div>
+        </NavLinksContainer>
         {cartOpen && <CartDropdown />}
-      </div>
+      </NavigationContainer>
       <Outlet />
-    </Fragment>
+    </>
   );
 };
 
