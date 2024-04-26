@@ -1,5 +1,5 @@
-import { Fragment, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { useContext } from "react";
+import { Outlet } from "react-router-dom";
 
 import { logo } from "../../assets";
 
@@ -18,7 +18,7 @@ import {
   NavLink,
   UserContainer,
   DisplayNameContainer,
-} from "./navigation.styles.jsx";
+} from "./navigation.styles";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);

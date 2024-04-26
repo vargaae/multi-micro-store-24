@@ -1,10 +1,10 @@
 import { useContext } from "react";
 
-import { Button } from "../button/Button";
-
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import { UserContext } from "../../contexts/user.context";
+
+import { Button, BUTTON_TYPE_CLASSES } from "../button/Button";
 
 import "./auth-dropdown.styles.scss";
 
@@ -33,7 +33,9 @@ const AuthDropdown = () => {
           </div>
         ) : null}
       </div>
-      <Button buttonType="inverted" onClick={signOutUser}>SIGN OUT</Button>
+      <Button buttonType={BUTTON_TYPE_CLASSES.signout} onClick={signOutUser}>
+        SIGN OUT
+      </Button>
     </div>
   );
 };
