@@ -8,8 +8,9 @@ import { Button } from "../button/Button";
 import CartItem from "../cart-item/CartItem";
 import {
   CartDropdownContainer,
-  EmptyMessage,
   CartItemsContainer,
+  EmptyMessage,
+  Total,
 } from "./cart-dropdown.styles";
 
 const CartDropdown = () => {
@@ -44,7 +45,7 @@ const CartDropdown = () => {
       </CartItemsContainer>
       {cartItems != 0 ? (
         <>
-          <span className="total">Total: €{cartTotalPriceCount}</span>
+          <Total>Total: €{cartTotalPriceCount}</Total>
           <Button onClick={handleCheckoutClick}>CHECKOUT</Button>
         </>
       ) : null}
