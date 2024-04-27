@@ -17,13 +17,15 @@ Features/Structure:
 - 🚀CART+USERMENU DROPDOWNs, 
 - 🚀Adding to CART,
 - 🚀CHECKOUT,
-- 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount) and STYLING<br> are built in this branch (🪵07-Context)
-- 🚀Database and STYLING<br> are built in this branch (🪵08-DB)
+- 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount),
+- 🚀Database for products and users,
+- 🚀Styled components<br> are set up in this branch (🪵11-Styled)
 
 ## 🛠 Front End:
 
 - React 18.2
 - SASS
+- styled components
 - Firebase
 
 ## ECOMMERCE 2024 ClientSide Application - Screenshots
