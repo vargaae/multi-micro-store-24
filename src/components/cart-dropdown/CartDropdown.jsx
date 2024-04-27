@@ -6,7 +6,11 @@ import { CartContext } from "../../contexts/cart.context";
 
 import { Button } from "../button/Button";
 import CartItem from "../cart-item/CartItem";
-import "./cart-dropdown.styles.scss";
+import {
+  CartDropdownContainer,
+  EmptyMessage,
+  CartItemsContainer,
+} from "./cart-dropdown.styles";
 
 const CartDropdown = () => {
   const { cartItems, setCartOpen, cartTotalPriceCount } =
@@ -25,26 +29,26 @@ const CartDropdown = () => {
   };
 
   return (
-    <div className="cart-dropdown-container">
-      <div className="cart-items">
+    <CartDropdownContainer>
+      <CartItemsContainer>
         {cartItems != 0 ? (
           cartItems.map((item) => <CartItem key={item.id} product={item} />)
         ) : (
-          <div className="empty-message">
+          <EmptyMessage>
             <h2>There is no products in your cart:</h2>
             <Button onClick={handleBackToShopClick}>
               Back to SHOP something nice!
             </Button>
-          </div>
+          </EmptyMessage>
         )}
-      </div>
+      </CartItemsContainer>
       {cartItems != 0 ? (
         <>
           <span className="total">Total: €{cartTotalPriceCount}</span>
           <Button onClick={handleCheckoutClick}>CHECKOUT</Button>
         </>
       ) : null}
-    </div>
+    </CartDropdownContainer>
   );
 };
 
