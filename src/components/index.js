@@ -11,7 +11,7 @@ export { default as CheckoutItem } from "./checkout-item/CheckoutItem";
 
 export { default as DirectoryItem } from "./directory-item/DirectoryItem";
 
-// export { default as FormInput } from "./form-input/FormInput";
+export { default as InputComponent } from "./input-component/InputComponent";
 
 export { default as ProductCard } from "./product-card/ProductCard";
 

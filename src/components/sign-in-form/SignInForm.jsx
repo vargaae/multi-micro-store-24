@@ -7,7 +7,7 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
-import { FormInput } from "../form-input/FormInput";
+import { InputComponent } from "../";
 import { Button, BUTTON_TYPE_CLASSES } from "../button/Button";
 
 import "./sign-in-form.styles.scss";
@@ -80,7 +80,7 @@ const SignInForm = () => {
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
-        <FormInput
+        <InputComponent
           label="Email"
           type="email"
           required
@@ -89,7 +89,7 @@ const SignInForm = () => {
           value={email}
         />
 
-        <FormInput
+        <InputComponent
           label="Password"
           type="password"
           required
