@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./../../App.scss";
 import SearchBox from "./../../components/search-box/SearchBox";
-import CategoryDirectory from "./../../containers/category-dir/CategoryDir";
+import CategoryDirectory from "./../../containers/category-directory/CategoryDirectory";
 
 import { categories } from "../../constants/index";
 
