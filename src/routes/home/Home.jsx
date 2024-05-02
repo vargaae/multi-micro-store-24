@@ -26,7 +26,7 @@ const Home = () => {
     <div className="App">
       <SearchBox
         onChangeHandler={onSearchChange}
-        placeholder="search products"
+        placeholder="search product categories"
         className="products-search-box"
       />
       <CategoryDirectory products={filteredProducts} />

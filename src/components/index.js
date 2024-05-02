@@ -1,7 +1,10 @@
 export { default as AuthDropdown } from "./auth-dropdown/AuthDropdown";
 
-// export { default as Button } from "./button/Button";
+export { default as ButtonComponent } from "./button-component/ButtonComponent";
+export { BUTTON_TYPE_CLASSES } from "./button-component/ButtonComponent";
+export { default as GradientButtonComponent } from "./button-component/GradientButtonComponent";
 
+export { default as CartIcon } from "./cart-icon/CartIcon";
 export { default as CartDropdown } from "./cart-dropdown/CartDropdown";
 export { default as CartItem } from "./cart-item/CartItem";
 

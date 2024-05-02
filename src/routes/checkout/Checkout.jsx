@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 import { CartContext } from "../../contexts/cart.context";
 
-import { Button } from "../../components/button/Button";
+import { ButtonComponent } from "../../components";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
+
 import "./checkout.styles.scss";
+import { Input } from "../../components/input-component/input-component.styles";
 
 const Checkout = () => {
   const { cartItems, cartTotalPriceCount } = useContext(CartContext);
@@ -50,7 +52,16 @@ const Checkout = () => {
       {cartItems != 0 ? (
         <>
           <span className="total">Total: €{cartTotalPriceCount}</span>
-          <Button>GO TO PAY</Button>
+          <div className="pay-container">
+            <h2>Payment details</h2>
+            <h3>Card Number</h3>
+            <Input placeholder="4242 4242 4242 4242" />
+            <h3>Expiration date</h3>
+            <Input placeholder="04/25" />
+            <h3>CV CODE</h3>
+            <Input placeholder="123" />
+            <ButtonComponent>PAY</ButtonComponent>
+          </div>
         </>
       ) : null}
     </div>

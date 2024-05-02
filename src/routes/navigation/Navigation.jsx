@@ -7,9 +7,9 @@ import { UserContext } from "../../contexts/user.context";
 import { UserMenuContext } from "../../contexts/user-menu.context";
 import { CartContext } from "../../contexts/cart.context";
 
-import CartIcon from "../../components/cart-icon/CartIcon";
-import CartDropdown from "../../components/cart-dropdown/CartDropdown";
-import AuthDropdown from "../../components/auth-dropdown/AuthDropdown";
+import { CartIcon, CartDropdown, AuthDropdown } from "../../components";
+
+import useComponentVisible from "../../hooks/useComponentVisible";
 
 import {
   NavigationContainer,
@@ -22,21 +22,40 @@ import {
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
-  const { userMenuOpen, setUserMenuOpen } = useContext(UserMenuContext);
-  const { cartOpen } = useContext(CartContext);
 
-  const toggleAuthMenuOpen = () => setUserMenuOpen(!userMenuOpen);
+  const { ref, isComponentVisible, setIsComponentVisible } =
+    useComponentVisible(false);
+
+  // TODO: Clean unnecessary parts, if customHook works properly
+  // const { userMenuOpen, setUserMenuOpen } = useContext(UserMenuContext);
+  const { cartOpen, setCartOpen } = useContext(CartContext);
+
+  const toggleAuthMenuOpen = () => {
+    setIsComponentVisible(!isComponentVisible);
+    if (cartOpen) setCartOpen(!cartOpen);
+  };
+
+  // const navigate = useNavigate()
+
+  const goToShopCloseDropdowns = () => {
+    if (cartOpen) setCartOpen(!cartOpen);
+    // if (userMenuOpen) setUserMenuOpen(!userMenuOpen);
+    // navigate("/")
+  };
 
   return (
     <>
       <NavigationContainer className="gradient__bg">
-        <LogoContainer to="/">
+        <LogoContainer onClick={goToShopCloseDropdowns} to="/">
           <img src={logo} className="logo" alt="logo of Andras Varga" />
         </LogoContainer>
         <NavLinksContainer>
-          <NavLink to="/shop">SHOP</NavLink>
+          if (userMenuOpen) setUserMenuOpen(!userMenuOpen);
+          <NavLink onClick={goToShopCloseDropdowns} to="/shop">
+            SHOP
+          </NavLink>
           {currentUser !== null ? (
-            <UserContainer onClick={toggleAuthMenuOpen}>
+            <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
               <DisplayNameContainer>
                 {currentUser.displayName
                   ? currentUser.displayName
@@ -51,7 +70,7 @@ const Navigation = () => {
                   />
                 </>
               ) : null}
-              {userMenuOpen && <AuthDropdown />}
+              {isComponentVisible && <AuthDropdown ref={ref} />}
             </UserContainer>
           ) : (
             <NavLink to="/authentication">SIGN-IN</NavLink>

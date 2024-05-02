@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { CartContext } from "../../contexts/cart.context";
 
-import { Button } from "../button/Button";
+import { ButtonComponent } from "../";
 import CartItem from "../cart-item/CartItem";
 import {
   CartDropdownContainer,
@@ -37,16 +37,18 @@ const CartDropdown = () => {
         ) : (
           <EmptyMessage>
             <h2>There is no products in your cart:</h2>
-            <Button onClick={handleBackToShopClick}>
+            <ButtonComponent onClick={handleBackToShopClick}>
               Back to SHOP something nice!
-            </Button>
+            </ButtonComponent>
           </EmptyMessage>
         )}
       </CartItemsContainer>
       {cartItems != 0 ? (
         <>
           <Total>Total: €{cartTotalPriceCount}</Total>
-          <Button onClick={handleCheckoutClick}>CHECKOUT</Button>
+          <ButtonComponent onClick={handleCheckoutClick}>
+            CHECKOUT
+          </ButtonComponent>
         </>
       ) : null}
     </CartDropdownContainer>

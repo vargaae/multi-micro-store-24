@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { CartContext } from "../../contexts/cart.context";
 
-import "./cart-item.styles.scss";
+import { CartItemContainer, ItemDetails } from "./cart-item.styles";
 
 const CartItem = ({ product }) => {
   const { name, imageUrl, price, quantity } = product;
@@ -13,17 +13,17 @@ const CartItem = ({ product }) => {
   const removeProductToCart = () => removeItemFromCart(product);
 
   return (
-    <div className="cart-item-container">
+    <CartItemContainer>
       <img src={imageUrl} alt={`${name}`} />
-      <div className="item-details">
+      <ItemDetails>
         <span className="name">{name}</span>
         <button onClick={removeProductToCart}>-</button>
         <span className="price">
           {quantity} x €{price}
         </span>
         <button onClick={addProductToCart}>+</button>
-      </div>
-    </div>
+      </ItemDetails>
+    </CartItemContainer>
   );
 };
 
