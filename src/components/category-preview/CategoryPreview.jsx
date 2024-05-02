@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
-
 import ProductCard from "../../components/product-card/ProductCard";
 
 import {
   CategoryPreviewContainer,
   Title,
+  CategoryTitleLink,
   Preview,
 } from "./category-preview.styles";
 
@@ -12,7 +11,7 @@ const CategoryPreview = ({ title, products }) => {
   return (
     <CategoryPreviewContainer>
       <Title>
-        <Link to={title}>{title}</Link>
+        <CategoryTitleLink to={title}>{title}</CategoryTitleLink>
       </Title>
       <Preview>
         {products

@@ -1,11 +1,16 @@
 import { useContext, useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import ProductCard from "../../components/product-card/ProductCard";
 
 import { CategoriesContext } from "../../contexts/Categories.context";
 
-import "./category-product-list.styles.scss";
+import {
+  ShopContainer,
+  CategoryProductListContainer,
+  Title,
+  CategoryTitleLink,
+} from "./category-product-list.styles";
 
 const CategoryProductList = () => {
   const { category } = useParams();
@@ -17,20 +22,19 @@ const CategoryProductList = () => {
   }, [category, categoriesMap]);
 
   return (
-    <div className="shop-container shop__large-screen-container">
-      <h2 className="shop__category-product-list-title">
-        <Link className="shop__category-title_link" to={"/shop"}>
-          SHOP{` `}
-        </Link>
-        &#10095;{` `}{category.toUpperCase()}
-      </h2>
-      <div className="shop__category-product-list-container">
+    <ShopContainer>
+      <Title>
+        <CategoryTitleLink to={"/shop"}>SHOP{` `}</CategoryTitleLink>
+        &#10095;{` `}
+        {category.toUpperCase()}
+      </Title>
+      <CategoryProductListContainer>
         {products &&
           products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-      </div>
-    </div>
+      </CategoryProductListContainer>
+    </ShopContainer>
   );
 };
 
