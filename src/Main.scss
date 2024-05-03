@@ -27,6 +27,11 @@ body {
   text-align: center;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -35,4 +40,110 @@ a {
 * {
   box-sizing: border;
   scroll-behavior: smooth;
+  // padding: 0;
+  margin: 0;
 }
+
+/* BACKGROUND SETTINGS:APP-> gradient/gradient__bg... világos színátmenetet lehet, hogy visszahelyezem, ha túl sötét lesz így */
+.gradient__bg {
+  background: -moz-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+}
+
+.gradient__text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// TODO: USED in HOME component:
+// TODO: PROBLEM WITH SEARCH BOX LARGE SCREEN!!!
+.App {
+  padding: 20px 40px;
+}
+// MY MOBILE FIRST DESIGN for SHOP's containers
+// TODO: MAKE SHOP's STYLIING UNIFIED
+.shop-container {
+  padding: 20px 40px;
+  margin-bottom: 1rem;
+}
+
+.section__padding {
+  padding: 20px 40px;
+}
+
+.section__margin {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .section__width {
+    width: 55%;
+  }
+
+  .section__margin {
+    margin: 0px auto 20px;
+  }
+}
+
+// TODO: SCALE UP-> in dir_item
+
+// .scale-up-center {
+//   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+//     both;
+//   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+// }
+
+// @-webkit-keyframes scale-up-center {
+//   0% {
+//     -webkit-transform: scale(0.5);
+//     transform: scale(0.5);
+//   }
+//   100% {
+//     -webkit-transform: scale(1);
+//     transform: scale(1);
+//   }
+// }
+
+// @keyframes scale-up-center {
+//   0% {
+//     -webkit-transform: scale(0.5);
+//     transform: scale(0.5);
+//   }
+//   100% {
+//     -webkit-transform: scale(1);
+//     transform: scale(1);
+//   }
+// }

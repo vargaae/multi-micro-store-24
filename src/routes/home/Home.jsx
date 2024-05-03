@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import "./../../App.scss";
+
+import { categories } from "../../constants/index";
+
 import SearchBox from "./../../components/search-box/SearchBox";
 import CategoryDirectory from "./../../containers/category-directory/CategoryDirectory";
 
-import { categories } from "../../constants/index";
 
 const Home = () => {
   const [searchField, setSearchField] = useState("");

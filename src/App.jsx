@@ -1,6 +1,5 @@
 import { Fragment, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import "./App.scss";
 
 import { Home, Authentication, Navigation, Shop, Checkout } from "./routes";
 import { Footer } from "./containers";

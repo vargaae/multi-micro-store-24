@@ -50,7 +50,6 @@ const Navigation = () => {
           <img src={logo} className="logo" alt="logo of Andras Varga" />
         </LogoContainer>
         <NavLinksContainer>
-          if (userMenuOpen) setUserMenuOpen(!userMenuOpen);
           <NavLink onClick={goToShopCloseDropdowns} to="/shop">
             SHOP
           </NavLink>
