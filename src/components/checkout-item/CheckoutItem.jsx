@@ -11,7 +11,7 @@ import {
   IncreaseDecrease,
   Value,
   RemoveButton,
-} from "./checkout-item.styles";
+} from "./CheckoutItem.styles";
 
 const CheckoutItem = ({ product }) => {
   const { name, imageUrl, price, quantity } = product;

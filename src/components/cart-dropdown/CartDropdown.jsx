@@ -11,7 +11,7 @@ import {
   CartItemsContainer,
   EmptyMessage,
   Total,
-} from "./cart-dropdown.styles";
+} from "./CartDropdown.styles";
 
 const CartDropdown = () => {
   const { cartItems, setCartOpen, cartTotalPriceCount } =

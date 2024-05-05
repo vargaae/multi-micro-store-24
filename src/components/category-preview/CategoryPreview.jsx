@@ -5,11 +5,11 @@ import {
   Title,
   CategoryTitleLink,
   Preview,
-} from "./category-preview.styles";
+} from "./CategoryPreview.styles";
 
 const CategoryPreview = ({ title, products }) => {
   return (
-    <CategoryPreviewContainer>
+    <CategoryPreviewContainer className="section__padding section__margin section__width">
       <Title>
         <CategoryTitleLink to={title}>{title}</CategoryTitleLink>
       </Title>

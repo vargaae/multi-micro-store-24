@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import { logo } from "../../assets";
 
 import { UserContext } from "../../contexts/user.context";
-import { UserMenuContext } from "../../contexts/user-menu.context";
+// import { UserMenuContext } from "../../contexts/user-menu.context";
 import { CartContext } from "../../contexts/cart.context";
 
 import { CartIcon, CartDropdown, AuthDropdown } from "../../components";
@@ -18,7 +18,7 @@ import {
   NavLink,
   UserContainer,
   DisplayNameContainer,
-} from "./navigation.styles";
+} from "./Navigation.styles";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);

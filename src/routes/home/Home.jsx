@@ -24,7 +24,7 @@ const Home = () => {
   });
 
   return (
-    <div className="App">
+    <div className="section__padding section__margin section__width">
       <SearchBox
         onChangeHandler={onSearchChange}
         placeholder="search product categories"

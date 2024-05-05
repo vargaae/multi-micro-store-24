@@ -10,7 +10,7 @@ import {
   AuthDropdownContainer,
   AuthDetailsContainer,
   DisplayNameContainer
-} from './auth-dropdown.styles';
+} from './AuthDropdown.styles';
 
 const AuthDropdown = () => {
   const { currentUser } = useContext(UserContext);

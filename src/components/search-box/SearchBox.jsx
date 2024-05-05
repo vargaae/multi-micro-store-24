@@ -1,4 +1,4 @@
-import { Input } from "../input-component/input-component.styles";
+import { Input } from "../input-component/InputComponent.styles";
 
 const SearchBox = ({ onChangeHandler, placeholder, className }) => {
   return (

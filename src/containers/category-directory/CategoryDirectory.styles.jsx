@@ -5,9 +5,4 @@ export const DirectoryContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  @media screen and (min-width: 1200px) {
-    width: 55%;
-    margin: 0px auto 20px;
-  }
 `;

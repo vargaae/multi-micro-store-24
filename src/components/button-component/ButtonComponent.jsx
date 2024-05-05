@@ -3,7 +3,7 @@ import {
   GoogleSignInButton,
   DropDownSignOutButton,
   InvertedButton,
-} from "./button-component.styles";
+} from "./ButtonComponent.styles";
 
 export const BUTTON_TYPE_CLASSES = {
   base: "base",

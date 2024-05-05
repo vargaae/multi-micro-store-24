@@ -5,7 +5,7 @@ import {
   GoogleSignInButton,
   DropDownSignOutButton,
   InvertedButton,
-} from "../button-component/button-component.styles";
+} from "../button-component/ButtonComponent.styles";
 
 export const AuthDropdownContainer = styled.div`
   position: absolute;

@@ -9,7 +9,7 @@ import {
 
 import { InputComponent, ButtonComponent, BUTTON_TYPE_CLASSES } from "../";
 
-import { SignFormContainer, ButtonsContainer } from "./sign-in-form.styles";
+import { SignFormContainer, ButtonsContainer } from "./SignInForm.styles";
 
 const defaultFormFields = {
   email: "",

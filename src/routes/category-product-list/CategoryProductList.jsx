@@ -10,7 +10,7 @@ import {
   CategoryProductListContainer,
   Title,
   CategoryTitleLink,
-} from "./category-product-list.styles";
+} from "./CategoryProductList.styles";
 
 const CategoryProductList = () => {
   const { category } = useParams();
@@ -22,7 +22,7 @@ const CategoryProductList = () => {
   }, [category, categoriesMap]);
 
   return (
-    <ShopContainer>
+    <ShopContainer className="section__padding section__margin section__width">
       <Title>
         <CategoryTitleLink to={"/shop"}>SHOP{` `}</CategoryTitleLink>
         &#10095;{` `}

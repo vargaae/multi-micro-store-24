@@ -81,6 +81,7 @@ a {
   );
 }
 
+// TODO: clean if not used elsewhere: Footer?
 .gradient__text {
   background: var(--gradient-text);
   background-clip: text;
@@ -88,20 +89,9 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
-// TODO: USED in HOME component:
-// TODO: PROBLEM WITH SEARCH BOX LARGE SCREEN!!!
-.App {
-  padding: 20px 40px;
-}
 // MY MOBILE FIRST DESIGN for SHOP's containers
-// TODO: MAKE SHOP's STYLIING UNIFIED
-.shop-container {
-  padding: 20px 40px;
-  margin-bottom: 1rem;
-}
-
 .section__padding {
-  padding: 20px 40px;
+  padding: 1.5rem 3rem;
 }
 
 .section__margin {
@@ -114,36 +104,6 @@ a {
   }
 
   .section__margin {
-    margin: 0px auto 20px;
+    margin: 3rem auto 3rem;
   }
 }
-
-// TODO: SCALE UP-> in dir_item
-
-// .scale-up-center {
-//   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-//     both;
-//   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-// }
-
-// @-webkit-keyframes scale-up-center {
-//   0% {
-//     -webkit-transform: scale(0.5);
-//     transform: scale(0.5);
-//   }
-//   100% {
-//     -webkit-transform: scale(1);
-//     transform: scale(1);
-//   }
-// }
-
-// @keyframes scale-up-center {
-//   0% {
-//     -webkit-transform: scale(0.5);
-//     transform: scale(0.5);
-//   }
-//   100% {
-//     -webkit-transform: scale(1);
-//     transform: scale(1);
-//   }
-// }

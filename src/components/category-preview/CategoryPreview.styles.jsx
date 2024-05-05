@@ -5,14 +5,6 @@ import { Link } from "react-router-dom";
 export const CategoryPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-  padding: 20px 40px;
-  margin-bottom: 1rem;
-
-  @media screen and (min-width: 1200px) {
-    width: 55%;
-    margin: 0px auto 20px;
-  }
 `;
 
 export const Title = styled.h2`
@@ -29,8 +21,8 @@ export const Preview = styled.div`
 `;
 
 export const CategoryTitleLink = styled(Link)`
-    cursor: pointer;
-    &:hover {
-      color: darkblue;
-    }
+  cursor: pointer;
+  &:hover {
+    color: darkblue;
+  }
 `;

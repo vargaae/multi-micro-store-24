@@ -9,7 +9,7 @@ import {
 
 import { ButtonComponent, InputComponent } from "../";
 
-import { SignFormContainer } from "../sign-in-form/sign-in-form.styles";
+import { SignFormContainer } from "../sign-in-form/SignInForm.styles";
 
 const defaultFormFields = {
   displayName: "",

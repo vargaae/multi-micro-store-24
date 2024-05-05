@@ -8,71 +8,77 @@ import { list } from "../../constants/index";
 
 import logo from "../../assets/logo.svg";
 
-import "./footer.scss";
+import {
+  FooterContainer,
+  Heading,
+  ButtonContainer,
+  LinksContainer,
+  LinksLogoContainer,
+  LinksDivContainer,
+  CopyrightContainer,
+} from "./Footer.styles";
 
 const Footer = () => {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div className="ecommerce__footer section__padding gradient__bg" id="openai">
+    <FooterContainer className="gradient__bg">
       {currentUser?.email ? (
-        <div className="ecommerce__footer-heading">
-          <h1 className="gradient__text">
+        <Heading>
+          <h1>
             {"Hello "}
             {currentUser.displayName
               ? currentUser.displayName
               : currentUser.email}
             {"! What do you want to buy today?"}
           </h1>
-        </div>
+        </Heading>
       ) : (
         <>
-          <div className="ecommerce__footer-heading">
-            <h1 className="gradient__text">
-              Do you want to shop as a Registered Customer?
-            </h1>
-          </div>
-          <div className="ecommerce__footer-btn">
+          <Heading>
+            <h1>Do you want to shop as a Registered Customer?</h1>
+          </Heading>
+          <ButtonContainer>
             <Link to="/authentication">Request Access or Sign In</Link>
-          </div>
+          </ButtonContainer>
         </>
       )}
 
-      <div className="ecommerce__footer-links">
-        <div className="ecommerce__footer-links_logo">
+      <LinksContainer>
+        <LinksLogoContainer>
           <img src={logo} alt="ai_logo" />
           <p>
             vargaae <br /> All Rights Reserved
           </p>
-        </div>
-        <div className="ecommerce__footer-links_div">
+        </LinksLogoContainer>
+        <LinksDivContainer>
           <h4>Links</h4>
           {list.map((list) => {
             return (
-              <Link key={list.id} className="nav-link" to={list.link}>
+              <Link key={list.id} to={list.link}>
                 <p>{list.name}</p>
               </Link>
             );
           })}
-        </div>
-        <div className="ecommerce__footer-links_div">
+        </LinksDivContainer>
+        <LinksDivContainer>
           <h4>Company</h4>
           <p>Terms & Conditions </p>
           <p>Privacy Policy</p>
           <p>Contact</p>
-        </div>
-        <div className="ecommerce__footer-links_div">
+        </LinksDivContainer>
+        <LinksDivContainer>
           <h4>Get in touch</h4>
           <p>Budapest K12 182 DK Alknjkcb</p>
           <p>085-132567</p>
           <p>info@aiforlife.net</p>
-        </div>
-      </div>
+        </LinksDivContainer>
+      </LinksContainer>
 
-      <div className="ecommerce__footer-copyright">
+      <CopyrightContainer>
         <p>@2024 Andras Varga. All rights reserved.</p>
-      </div>
-    </div>
+      </CopyrightContainer>
+    </FooterContainer>
   );
 };
 

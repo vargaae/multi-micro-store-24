@@ -2,7 +2,7 @@ import {
   DirectoryItemContainer,
   BackgroundImage,
   Body,
-} from "./directory-item.styles";
+} from "./DirectoryItem.styles";
 
 const DirectoryItem = ({ product: { title, imageUrl, ShopNow } }) => {
   return (
