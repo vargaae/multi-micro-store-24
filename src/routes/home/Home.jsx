@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 
 import { categories } from "../../constants/index";
 
-import SearchBox from "./../../components/search-box/SearchBox";
-import CategoryDirectory from "./../../containers/category-directory/CategoryDirectory";
-
+import { Slider, SearchBox } from "./../../components";
+import { CategoryDirectory } from "./../../containers";
 
 const Home = () => {
   const [searchField, setSearchField] = useState("");
@@ -24,14 +23,17 @@ const Home = () => {
   });
 
   return (
-    <div className="section__padding section__margin section__width">
-      <SearchBox
-        onChangeHandler={onSearchChange}
-        placeholder="search product categories"
-        className="products-search-box"
-      />
-      <CategoryDirectory products={filteredProducts} />
-    </div>
+    <>
+      <Slider />
+      <div className="section__padding section__margin section__width">
+        <SearchBox
+          onChangeHandler={onSearchChange}
+          placeholder="search product categories"
+          className="products-search-box"
+        />
+        <CategoryDirectory products={filteredProducts} />
+      </div>
+    </>
   );
 };
 
