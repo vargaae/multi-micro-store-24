@@ -22,3 +22,5 @@ export { default as SearchBox } from "./search-box/SearchBox";
 
 export { default as SignInForm } from "./sign-in-form/SignInForm";
 export { default as SignUpForm } from "./sign-up-form/SignUpForm";
+
+export { default as Slider } from "./slider/Slider";
