@@ -98,12 +98,18 @@ a {
   margin-bottom: 1rem;
 }
 
+@media screen and (min-width: 900px) {
+  .section__margin {
+    margin: 7rem auto 7rem;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .section__width {
     width: 55%;
   }
 
   .section__margin {
-    margin: 3rem auto 3rem;
+    margin: 10rem auto 10rem;
   }
 }
