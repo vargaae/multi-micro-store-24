@@ -29,11 +29,13 @@ const App = () => {
       if (user) {
         createUserDocumentFromAuth(user);
       }
-      const pickedUser =
-        user && (({ accessToken, email }) => ({ accessToken, email }))(user);
+      // dispatch(setCurrentUser(user));
+          const pickedUser =
+            user && (({ accessToken, email, displayName, photoURL }) => ({ accessToken, email, displayName, photoURL }))(user);
 
-      console.log(setCurrentUser(pickedUser));
-      dispatch(setCurrentUser(pickedUser));
+          console.log(setCurrentUser(pickedUser));
+          dispatch(setCurrentUser(pickedUser));
+      //   });
     });
 
     return unsubscribe;

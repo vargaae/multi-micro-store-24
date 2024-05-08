@@ -1,19 +1,18 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
-
-import { UserContext } from "../../contexts/user.context";
 
 import { ButtonComponent, BUTTON_TYPE_CLASSES } from "../";
 
 import {
   AuthDropdownContainer,
   AuthDetailsContainer,
-  DisplayNameContainer
-} from './AuthDropdown.styles';
+  DisplayNameContainer,
+} from "./AuthDropdown.styles";
 
 const AuthDropdown = () => {
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
 
   return (
     <AuthDropdownContainer>
@@ -27,17 +26,17 @@ const AuthDropdown = () => {
             </DisplayNameContainer>
             {currentUser.photoURL ? (
               <>
-              {currentUser.email}
-                <img
-                  src={currentUser.photoURL}
-                  alt="User's Logo"
-                />
+                {currentUser.email}
+                <img src={currentUser.photoURL} alt="User's Logo" />
               </>
             ) : null}
           </div>
         ) : null}
       </AuthDetailsContainer>
-      <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.signout} onClick={signOutUser}>
+      <ButtonComponent
+        buttonType={BUTTON_TYPE_CLASSES.signout}
+        onClick={signOutUser}
+      >
         SIGN OUT
       </ButtonComponent>
     </AuthDropdownContainer>

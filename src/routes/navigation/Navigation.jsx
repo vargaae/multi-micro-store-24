@@ -6,7 +6,6 @@ import { selectCurrentUser } from "../../store/user/user.selector";
 
 import { logo } from "../../assets";
 
-// import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
 
 import { CartIcon, CartDropdown, AuthDropdown } from "../../components";
@@ -23,7 +22,6 @@ import {
 } from "./Navigation.styles";
 
 const Navigation = () => {
-  // const { currentUser } = useContext(UserContext);
   const currentUser = useSelector(selectCurrentUser);
 
   const { ref, isComponentVisible, setIsComponentVisible } =
@@ -56,11 +54,11 @@ const Navigation = () => {
           {currentUser !== null ? (
             <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
               <DisplayNameContainer>
-                {currentUser.displayName
-                  ? currentUser.displayName
-                  : currentUser.email}
+                {currentUser?.displayName
+                  ? currentUser?.displayName
+                  : currentUser?.email}
               </DisplayNameContainer>
-              {currentUser.photoURL ? (
+              {currentUser?.photoURL ? (
                 <>
                   <img
                     src={currentUser.photoURL}

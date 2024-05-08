@@ -10,8 +10,6 @@ import { store } from "./store/store";
 
 import App from "./App";
 
-// import { UserProvider } from "./contexts/user.context";
-// import { UserMenuProvider } from "./contexts/user-menu.context";
 import { CartProvider } from "./contexts/cart.context";
 import { CategoriesProvider } from "./contexts/Categories.context";
 
@@ -32,15 +30,11 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       {/* <PersistGate loading={null} persistor={persistor}> */}
-      {/*  <UserProvider>
-<UserMenuProvider> */}
       <CategoriesProvider>
         <CartProvider>
           <RouterProvider router={router} />
         </CartProvider>
       </CategoriesProvider>
-      {/*    </UserMenuProvider>
-      </UserProvider> */}
       {/* </PersistGate> */}
     </Provider>
   </React.StrictMode>

@@ -1,8 +1,7 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 import { Link } from "react-router-dom";
-
-import { UserContext } from "../../contexts/user.context";
 
 import { list } from "../../constants/index";
 
@@ -19,7 +18,7 @@ import {
 } from "./Footer.styles";
 
 const Footer = () => {
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
 
   return (
     <FooterContainer className="gradient__bg">
