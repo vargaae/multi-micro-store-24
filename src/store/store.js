@@ -1,4 +1,4 @@
-import { applyMiddleware, compose, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 // import { compose, createStore, applyMiddleware } from 'redux';
 // import { persistStore, persistReducer } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
@@ -33,9 +33,6 @@ import { rootReducer } from "./root-reducer";
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-  //   persistedReducer,
-  //   undefined,
-    // composedEnhancers
 });
 
 // export const persistor = persistStore(store);

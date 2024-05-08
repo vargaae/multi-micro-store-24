@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/user.selector";
+
 import { logo } from "../../assets";
 
-import { UserContext } from "../../contexts/user.context";
-// import { UserMenuContext } from "../../contexts/user-menu.context";
+// import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
 
 import { CartIcon, CartDropdown, AuthDropdown } from "../../components";
@@ -21,13 +23,12 @@ import {
 } from "./Navigation.styles";
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
+  // const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
 
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
 
-  // TODO: Clean unnecessary parts, if customHook works properly
-  // const { userMenuOpen, setUserMenuOpen } = useContext(UserMenuContext);
   const { cartOpen, setCartOpen } = useContext(CartContext);
 
   const toggleAuthMenuOpen = () => {
@@ -39,7 +40,6 @@ const Navigation = () => {
 
   const goToShopCloseDropdowns = () => {
     if (cartOpen) setCartOpen(!cartOpen);
-    // if (userMenuOpen) setUserMenuOpen(!userMenuOpen);
     // navigate("/")
   };
 
@@ -69,7 +69,7 @@ const Navigation = () => {
                   />
                 </>
               ) : null}
-              {isComponentVisible && <AuthDropdown ref={ref} />}
+              {isComponentVisible && <AuthDropdown />}
             </UserContainer>
           ) : (
             <NavLink to="/authentication">SIGN-IN</NavLink>
