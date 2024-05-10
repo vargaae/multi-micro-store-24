@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+import { createSelector } from "reselect";
 
 const selectCategoryReducer = (state) => state.categories;
 
@@ -16,14 +16,3 @@ export const selectCategoriesMap = createSelector(
       return acc;
     }, {})
 );
-
-// TODO: it's from:
-// const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-//     const { title, items } = docSnapshot.data();
-//     acc[title.toLowerCase()] = items;
-//     return acc;
-//   }, {});
-
-// useEffect(() => {
-//   setProducts(categoriesMap[category]);
-// }, [category, categoriesMap]);

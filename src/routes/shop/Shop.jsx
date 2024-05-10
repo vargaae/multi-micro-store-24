@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
-import { setCategories } from "../../store/categories/category.reducer";
+import { setCategories } from "../../store/categories/categories.reducer";
 
 import CategoriesPreview from "../categories-preview/CategoriesPreview";
 import CategoryProductList from "../category-product-list/CategoryProductList";
