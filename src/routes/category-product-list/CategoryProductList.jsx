@@ -1,5 +1,9 @@
+// import { useState, useEffect } from "react";
 import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+import { useSelector } from "react-redux";
+import { selectCategoriesMap } from "../../store/categories/category.selector";
 
 import ProductCard from "../../components/product-card/ProductCard";
 
@@ -15,6 +19,7 @@ import {
 const CategoryProductList = () => {
   const { category } = useParams();
   const { categoriesMap } = useContext(CategoriesContext);
+  // const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
@@ -26,7 +31,7 @@ const CategoryProductList = () => {
       <Title>
         <CategoryTitleLink to={"/shop"}>SHOP{` `}</CategoryTitleLink>
         &#10095;{` `}
-        {category.toUpperCase()}
+        {category}
       </Title>
       <CategoryProductListContainer>
         {products &&
