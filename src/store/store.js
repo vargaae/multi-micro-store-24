@@ -7,10 +7,9 @@ import logger from "redux-logger";
 
 import { rootReducer } from "./root-reducer";
 
-// eslint-disable-next-line no-undef
-// const middleWares = [process.env.NODE_ENV === "development" && logger].filter(
-//   Boolean
-// );
+const middleWares = [
+  import.meta.env.NODE_ENV === "development" && logger,
+].filter(Boolean);
 
 // const composeEnhancer =
 //   // eslint-disable-next-line no-undef
@@ -32,7 +31,8 @@ import { rootReducer } from "./root-reducer";
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleWares),
 });
 
 // export const persistor = persistStore(store);

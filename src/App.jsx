@@ -23,19 +23,26 @@ export function ScrollToTop() {
 
 const App = () => {
   const dispatch = useDispatch();
+  // Immutability Check Middleware TEST:
+  // let test = useSelector((state) => state.user.test);
+
+  // test.a = 2;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
         createUserDocumentFromAuth(user);
       }
-      // dispatch(setCurrentUser(user));
-          const pickedUser =
-            user && (({ accessToken, email, displayName, photoURL }) => ({ accessToken, email, displayName, photoURL }))(user);
+      const pickedUser =
+        user &&
+        (({ accessToken, email, displayName, photoURL }) => ({
+          accessToken,
+          email,
+          displayName,
+          photoURL,
+        }))(user);
 
-          console.log(setCurrentUser(pickedUser));
-          dispatch(setCurrentUser(pickedUser));
-      //   });
+      dispatch(setCurrentUser(pickedUser));
     });
 
     return unsubscribe;
