@@ -14,6 +14,7 @@ const Shop = () => {
 
   useEffect(() => {
     const getCategoriesMap = async () => {
+      // it's now categoriesArray!!!, not categoriesMap with OBJECT anymore:
       const categoriesArray = await getCategoriesAndDocuments("categories");
       dispatch(setCategories(categoriesArray));
     };
