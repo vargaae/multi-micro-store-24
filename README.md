@@ -9,24 +9,30 @@
 # ECOMMERCE 2024 APPLICATION
 
 Features/Structure:
+- 🚀Redux for State Management<br> is set up in this branch (🪵18-Redux)
+- (Migrated from Context API), 
 - 🚀AUTHENTICATION->Sign Up with email, 
 - 🚀AUTHENTICATION->Log in with email, 
 - 🚀AUTHENTICATION->Sign Up and Log In with Google account, 
-- 🚀Context API, 
 - 🚀SHOP, 
 - 🚀CART+USERMENU DROPDOWNs, 
 - 🚀Adding to CART,
 - 🚀CHECKOUT,
 - 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount),
 - 🚀Database for products and users,
-- 🚀Styled components<br> are set up in this branch (🪵11-Styled)
+- 🚀Styled components
 
 ## 🛠 Front End:
 
 - React 18.2
+- Redux (Redux Toolkit)
 - SASS
 - styled components
+- Firebase connected
+
+## 🛠 Back End:
 - Firebase
+- Firestore Database
 
 ## ECOMMERCE 2024 ClientSide Application - Screenshots
 
