@@ -1,6 +1,15 @@
-import { useContext } from "react";
+// TODO: CLEAN
+// import { useContext } from "react";
 
-import { CartContext } from "../../contexts/cart.context";
+// import { CartContext } from "../../contexts/cart.context";
+import { useDispatch } from "react-redux";
+
+import {
+  addItemToCart,
+  clearItemFromCart,
+  removeItemFromCart,
+} from "../../store/cart/cart.reducer";
+
 
 import {
   CheckoutItemContainer,
@@ -16,12 +25,14 @@ import {
 const CheckoutItem = ({ product }) => {
   const { name, imageUrl, price, quantity } = product;
 
-  const { addItemToCart, removeItemFromCart, clearItemFromCart } =
-    useContext(CartContext);
+  // const { addItemToCart, removeItemFromCart, clearItemFromCart } =
+  //   useContext(CartContext);
 
-  const clearProductHandler = () => clearItemFromCart(product);
-  const addProductHandler = () => addItemToCart(product);
-  const removeProductHandler = () => removeItemFromCart(product);
+  const dispatch = useDispatch();
+
+  const clearProductHandler = () => dispatch(clearItemFromCart(product));
+  const addProductHandler = () => dispatch(addItemToCart(product));
+  const removeProductHandler = () => dispatch(removeItemFromCart(product));
 
   return (
     <CheckoutItemContainer>
@@ -30,19 +41,13 @@ const CheckoutItem = ({ product }) => {
       </ImageContainer>
       <Name>{name}</Name>
       <Quantity>
-        <IncreaseDecrease onClick={removeProductHandler}>
-          -
-        </IncreaseDecrease>
+        <IncreaseDecrease onClick={removeProductHandler}>-</IncreaseDecrease>
         <Value>{quantity}</Value>{" "}
-        <IncreaseDecrease onClick={addProductHandler}>
-          +
-        </IncreaseDecrease>
+        <IncreaseDecrease onClick={addProductHandler}>+</IncreaseDecrease>
       </Quantity>
       <BaseSpan>x €{price}</BaseSpan>
       <BaseSpan>€{price * quantity}</BaseSpan>
-      <RemoveButton onClick={clearProductHandler}>
-        &#10005;
-      </RemoveButton>
+      <RemoveButton onClick={clearProductHandler}>&#10005;</RemoveButton>
     </CheckoutItemContainer>
   );
 };

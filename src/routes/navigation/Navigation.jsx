@@ -1,16 +1,27 @@
+// TODO: CLEAN
 import { useContext } from "react";
-import { Outlet } from "react-router-dom";
+import { CartContext } from "../../contexts/cart.context";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setIsCartOpen } from "../../store/cart/cart.reducer";
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
+
+import useComponentVisible from "../../hooks/useComponentVisible";
+
+import { Outlet, useNavigate } from "react-router-dom";
+
 import { selectCurrentUser } from "../../store/user/user.selector";
 
 import { logo } from "../../assets";
 
-import { CartContext } from "../../contexts/cart.context";
-
-import { CartIcon, CartDropdown, AuthDropdown } from "../../components";
-
-import useComponentVisible from "../../hooks/useComponentVisible";
+import {
+  CartIcon,
+  CartDropdown,
+  AuthDropdown,
+  ButtonComponent,
+  BUTTON_TYPE_CLASSES,
+} from "../../components";
 
 import {
   NavigationContainer,
@@ -22,42 +33,54 @@ import {
 } from "./Navigation.styles";
 
 const Navigation = () => {
+  // const { cartOpen, setCartOpen } = useContext(CartContext);
   const currentUser = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
 
-  const { cartOpen, setCartOpen } = useContext(CartContext);
-
   const toggleAuthMenuOpen = () => {
     setIsComponentVisible(!isComponentVisible);
-    if (cartOpen) setCartOpen(!cartOpen);
+    if (isCartOpen) dispatch(setIsCartOpen(!isCartOpen));
   };
 
-  // const navigate = useNavigate()
+  const navigateTo = useNavigate();
 
-  const goToShopCloseDropdowns = () => {
-    if (cartOpen) setCartOpen(!cartOpen);
-    // navigate("/")
+  const goHomeCloseCart = () => {
+    if (isCartOpen) dispatch(setIsCartOpen(!isCartOpen));
+
+    navigateTo("/");
+  };
+
+  const goToShopCloseCart = () => {
+    if (isCartOpen) dispatch(setIsCartOpen(false));
+
+    navigateTo("/shop");
+  };
+
+  const signUpIn = () => {
+    if (isCartOpen) dispatch(setIsCartOpen(false));
+
+    navigateTo("/authentication");
   };
 
   return (
     <>
       <NavigationContainer className="gradient__bg">
-        <LogoContainer onClick={goToShopCloseDropdowns} to="/">
+        <LogoContainer onClick={goHomeCloseCart} to="/">
           <img src={logo} className="logo" alt="logo of Andras Varga" />
         </LogoContainer>
         <NavLinksContainer>
-          <NavLink onClick={goToShopCloseDropdowns} to="/shop">
-            SHOP
-          </NavLink>
+          <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.navigation} onClick={goToShopCloseCart}>SHOP</ButtonComponent>
           {currentUser !== null ? (
             <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
-              <DisplayNameContainer>
+              <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.signout}>
                 {currentUser?.displayName
                   ? currentUser?.displayName
                   : currentUser?.email}
-              </DisplayNameContainer>
+              </ButtonComponent>
               {currentUser?.photoURL ? (
                 <>
                   <img
@@ -70,11 +93,11 @@ const Navigation = () => {
               {isComponentVisible && <AuthDropdown />}
             </UserContainer>
           ) : (
-            <NavLink to="/authentication">SIGN-IN</NavLink>
+            <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.navigation} onClick={signUpIn}>SIGN{"/"}UP{"/"}IN</ButtonComponent>
           )}
           <CartIcon id="nav-shopping-icon" />
         </NavLinksContainer>
-        {cartOpen && <CartDropdown />}
+        {isCartOpen && <CartDropdown />}
       </NavigationContainer>
       <Outlet />
     </>

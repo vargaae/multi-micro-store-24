@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
@@ -47,4 +48,13 @@ export const EmptyMessage = styled.div`
   color: red;
   font-weight: 900;
   margin: auto;
+
+`;
+
+export const ShopLink = styled(Link)`
+  font-size: 2rem;
+  &:hover {
+    color: darkblue;
+    text-decoration: underline;
+  }
 `;

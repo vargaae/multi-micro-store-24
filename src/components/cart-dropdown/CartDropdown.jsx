@@ -1,8 +1,17 @@
-import { useContext } from "react";
+//TODO:CLEAN UP:
+// import { useContext } from "react";
+// import { CartContext } from "../../contexts/cart.context";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setIsCartOpen } from "../../store/cart/cart.reducer";
+import {
+  selectCartItems,
+  selectCartTotalPriceCount,
+  selectIsCartOpen,
+} from "../../store/cart/cart.selector";
+
 
 import { useNavigate } from "react-router-dom";
-
-import { CartContext } from "../../contexts/cart.context";
 
 import { ButtonComponent } from "../";
 import CartItem from "../cart-item/CartItem";
@@ -14,19 +23,24 @@ import {
 } from "./CartDropdown.styles";
 
 const CartDropdown = () => {
-  const { cartItems, setCartOpen, cartTotalPriceCount } =
-    useContext(CartContext);
+  const dispatch = useDispatch();
+  // const isCartOpen = useSelector(selectIsCartOpen);
+  const cartItems = useSelector(selectCartItems);
+  const cartTotalPriceCount = useSelector(selectCartTotalPriceCount);
+  // const { cartItems, setIsCartOpen, cartTotalPriceCount } = useContext(CartContext);
+
+  const closeCartIfClickToLink = () => dispatch(setIsCartOpen(false));
 
   const navigateTo = useNavigate();
 
   const handleCheckoutClick = () => {
     navigateTo("/checkout");
-    setCartOpen(false);
+    closeCartIfClickToLink();
   };
 
   const handleBackToShopClick = () => {
     navigateTo("/shop");
-    setCartOpen(false);
+    closeCartIfClickToLink();
   };
 
   return (

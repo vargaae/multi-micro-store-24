@@ -10,7 +10,7 @@ import { store } from "./store/store";
 
 import App from "./App";
 
-import { CartProvider } from "./contexts/cart.context";
+// import { CartProvider } from "./contexts/cart.context";
 
 import ErrorPage from "./ErrorPage";
 
@@ -29,9 +29,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       {/* <PersistGate loading={null} persistor={persistor}> */}
-      <CartProvider>
-        <RouterProvider router={router} />
-      </CartProvider>
+      {/* <CartProvider> */}
+      <RouterProvider router={router} />
+      {/*  </CartProvider> */}
       {/* </PersistGate> */}
     </Provider>
   </React.StrictMode>

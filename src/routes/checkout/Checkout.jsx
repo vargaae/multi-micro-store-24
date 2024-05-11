@@ -1,8 +1,13 @@
-import { useContext } from "react";
+// TODO: CLEAN
+// import { useContext } from "react";
+// import { CartContext } from "../../contexts/cart.context";
+import { useSelector } from "react-redux";
+import {
+  selectCartItems,
+  selectCartTotalPriceCount,
+} from "../../store/cart/cart.selector";
 
 import { Link } from "react-router-dom";
-
-import { CartContext } from "../../contexts/cart.context";
 
 import { ButtonComponent } from "../../components";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
@@ -14,11 +19,13 @@ import {
   Total,
   PayContainer,
   EmptyMessage,
+  ShopLink,
 } from "./Checkout.styles";
 import { Input } from "../../components/input-component/InputComponent.styles";
 
 const Checkout = () => {
-  const { cartItems, cartTotalPriceCount } = useContext(CartContext);
+  const cartItems = useSelector(selectCartItems);
+  const cartTotalPriceCount = useSelector(selectCartTotalPriceCount);
 
   return (
     <CheckoutContainer className="section__padding">
@@ -50,9 +57,7 @@ const Checkout = () => {
         <EmptyMessage>
           <h2>There is no products in your cart?!</h2>
           <h3>
-            <Link className="shop-link" to="/shop">
-              Back to SHOP something nice!
-            </Link>
+            <ShopLink to="/shop">Back to SHOP something nice!</ShopLink>
           </h3>
         </EmptyMessage>
       )}

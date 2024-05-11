@@ -67,10 +67,8 @@ export const UserContainer = styled.div`
 
   .user-logo {
     padding: 0px 10px;
-
+    width: 1.3rem;
     pointer-events: none;
-    height: 15px;
-    width: 15px;
     border-radius: 50%;
   }
 `;
