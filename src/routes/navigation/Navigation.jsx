@@ -1,7 +1,3 @@
-// TODO: CLEAN
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
-
 import { useDispatch, useSelector } from "react-redux";
 
 import { setIsCartOpen } from "../../store/cart/cart.reducer";
@@ -27,13 +23,10 @@ import {
   NavigationContainer,
   LogoContainer,
   NavLinksContainer,
-  NavLink,
   UserContainer,
-  DisplayNameContainer,
 } from "./Navigation.styles";
 
 const Navigation = () => {
-  // const { cartOpen, setCartOpen } = useContext(CartContext);
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
   const isCartOpen = useSelector(selectIsCartOpen);
@@ -73,7 +66,12 @@ const Navigation = () => {
           <img src={logo} className="logo" alt="logo of Andras Varga" />
         </LogoContainer>
         <NavLinksContainer>
-          <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.navigation} onClick={goToShopCloseCart}>SHOP</ButtonComponent>
+          <ButtonComponent
+            buttonType={BUTTON_TYPE_CLASSES.navigation}
+            onClick={goToShopCloseCart}
+          >
+            SHOP
+          </ButtonComponent>
           {currentUser !== null ? (
             <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
               <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.signout}>
@@ -93,7 +91,12 @@ const Navigation = () => {
               {isComponentVisible && <AuthDropdown />}
             </UserContainer>
           ) : (
-            <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.navigation} onClick={signUpIn}>SIGN{"/"}UP{"/"}IN</ButtonComponent>
+            <ButtonComponent
+              buttonType={BUTTON_TYPE_CLASSES.navigation}
+              onClick={signUpIn}
+            >
+              SIGN{"/"}UP{"/"}IN
+            </ButtonComponent>
           )}
           <CartIcon id="nav-shopping-icon" />
         </NavLinksContainer>

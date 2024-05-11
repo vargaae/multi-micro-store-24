@@ -55,27 +55,16 @@ export const NavLinksContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const NavLink = styled(Link)`
-  padding: 10px 15px;
-  line-height: 20px;
-  cursor: pointer;
-`;
-
 export const UserContainer = styled.div`
   color: lightblue;
   cursor: pointer;
 
   .user-logo {
     padding: 0px 10px;
-    width: 1.3rem;
-    pointer-events: none;
-    border-radius: 50%;
-  }
-`;
 
-export const DisplayNameContainer = styled.div`
-  padding: 0 15px;
-  &:hover {
-    color: #73a5c6;
+    pointer-events: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
   }
 `;

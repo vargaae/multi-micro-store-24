@@ -1,7 +1,3 @@
-// TODO: CLEAN
-// import { useContext } from "react";
-
-// import { CartContext } from "../../contexts/cart.context";
 import { useDispatch } from "react-redux";
 
 import {
@@ -9,7 +5,6 @@ import {
   clearItemFromCart,
   removeItemFromCart,
 } from "../../store/cart/cart.reducer";
-
 
 import {
   CheckoutItemContainer,
@@ -24,9 +19,6 @@ import {
 
 const CheckoutItem = ({ product }) => {
   const { name, imageUrl, price, quantity } = product;
-
-  // const { addItemToCart, removeItemFromCart, clearItemFromCart } =
-  //   useContext(CartContext);
 
   const dispatch = useDispatch();
 

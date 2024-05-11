@@ -1,13 +1,8 @@
-// TODO: CLEAN
-// import { useContext } from "react";
-// import { CartContext } from "../../contexts/cart.context";
 import { useSelector } from "react-redux";
 import {
   selectCartItems,
   selectCartTotalPriceCount,
 } from "../../store/cart/cart.selector";
-
-import { Link } from "react-router-dom";
 
 import { ButtonComponent } from "../../components";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
