@@ -9,7 +9,6 @@ import {
   Name,
   Price,
 } from "./ProductCard.styles";
-import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;
@@ -20,9 +19,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <ProductCartContainer>
-      <Link to={`/shop/1/1`}>
-        <img src={imageUrl} alt={`${name}`} />
-      </Link>
+      <img src={imageUrl} alt={`${name}`} />
       <Footer>
         <Name>{name}</Name>
         <Price>€{price}</Price>

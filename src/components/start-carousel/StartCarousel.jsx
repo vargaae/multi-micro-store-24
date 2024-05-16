@@ -5,6 +5,7 @@ import "react-awesome-slider/dist/styles.css";
 import "react-awesome-slider/dist/custom-animations/cube-animation.css";
 
 import { logo } from "../../assets";
+import { CarouselContainer, CarouselTitle } from "./StartCarousel.styles";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -33,7 +34,7 @@ const StartCarousel = () => {
   ];
 
   return (
-    <div className="carousel-container">
+    <CarouselContainer>
       <AutoplaySlider
         play={true}
         fillParent={false}
@@ -46,14 +47,14 @@ const StartCarousel = () => {
         {data &&
           data.map((image) => (
             <div data-src={image.img} key={image.id}>
-              <h1 className="carousel-title">
+              <CarouselTitle>
                 <img src={logo} className="logo" alt="logo of Andras Varga" />{" "}
                 {image.title}
-              </h1>
+              </CarouselTitle>
             </div>
           ))}
       </AutoplaySlider>
-    </div>
+    </CarouselContainer>
   );
 };
 
