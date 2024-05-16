@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const CategoryPreviewContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   /* width: 450px; */
   @media screen and (max-width: 550px) {
     width: 440px;
@@ -20,14 +20,26 @@ export const Title = styled.h2`
 `;
 
 export const Preview = styled.div`
-  display: grid;
+    display: grid;
+    column-gap: 4px;
+    grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  row-gap: 50px;
+*/
+  @media screen and (min-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+  } 
   /* grid-template-columns: repeat(4, 1fr); */
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   column-gap: 4px;
 
   @media screen and (min-width: 769px) {
     column-gap: 20px;
-  }
+  } */
 `;
 
 export const CategoryTitleLink = styled(Link)`
