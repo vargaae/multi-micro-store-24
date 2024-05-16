@@ -44,6 +44,69 @@ a {
   margin: 0;
 }
 
+// HOME>CAROUSEL styling
+
+.carousel-container {
+  @media screen and (min-width: 1200px) {
+    height: calc(100vh - 110px);
+    overflow: hidden;
+  }
+}
+
+.carousel-title {
+  color: #ffffff;
+  font-size: 3.5rem;
+  letter-spacing: 7px;
+  border-radius: 50%;
+  opacity: 0.6;
+  background: -moz-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+  z-index: 999;
+  padding: 1.5rem;
+  // text-align: center;
+  margin: 0;
+  position: absolute; /* 2 */
+  // top: calc(50% - 110px); /* 3 */
+  top: 50%;
+  left: 50%; /* 3 */
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  /* 4 */
+  @media screen and (min-width: 1200px) {
+    top: calc(50% - 220px);
+  }
+}
 /* BACKGROUND SETTINGS:APP-> gradient/gradient__bg... világos színátmenetet lehet, hogy visszahelyezem, ha túl sötét lesz így */
 .gradient__bg {
   background: -moz-radial-gradient(
@@ -90,23 +153,42 @@ a {
 }
 
 // MY MOBILE FIRST DESIGN for SHOP's containers
+.section__width {
+  // width: 100%;
+}
+
 .section__padding {
-  padding: 1.5rem 3rem;
+  padding: 1rem 0;
 }
 
 .section__margin {
+  // margin: 0;
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 550px) {
+  .section__padding {
+    padding: 1.2rem 2rem;
+  }
+
   .section__margin {
-    margin: 6.5rem auto 6.5rem;
+    margin: 2.5rem auto 2.5rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .section__padding {
+    padding: 1.5rem 3rem;
+  }
+
+  .section__margin {
+    margin: 3.5rem auto 3.5rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .section__width {
-    width: 55%;
+    width: 85%;
   }
 
   .section__margin {

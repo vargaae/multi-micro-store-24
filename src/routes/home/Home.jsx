@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { categories } from "../../constants/index";
 
-import { Slider, SearchBox } from "./../../components";
+import { StartCarousel, SearchBox } from "./../../components";
 import { CategoryDirectory } from "./../../containers";
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      <Slider />
+      <StartCarousel />
       <div className="section__padding section__margin section__width">
         <SearchBox
           onChangeHandler={onSearchChange}

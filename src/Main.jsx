@@ -11,6 +11,8 @@ import ErrorPage from "./ErrorPage";
 
 import "./Main.scss";
 
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 const router = createBrowserRouter([
   {
     path: "*",

@@ -23,9 +23,9 @@ export const BaseButton = styled.button`
 `;
 
 export const ShopButton = styled(BaseButton)`
-  line-height: 20px;
+  line-height: 23px;
 
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 769px) {
     min-width: 165px;
     width: auto;
     height: 50px;

@@ -24,3 +24,4 @@ export { default as SignInForm } from "./sign-in-form/SignInForm";
 export { default as SignUpForm } from "./sign-up-form/SignUpForm";
 
 export { default as Slider } from "./slider/Slider";
+export { default as StartCarousel } from "./start-carousel/StartCarousel";
