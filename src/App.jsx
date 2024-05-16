@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/user/user.reducer";
 
-import { Home, Authentication, Navigation, Shop, Checkout } from "./routes";
+import { Home, Authentication, Navigation, Shop, Checkout, ProductPage } from "./routes";
 import { Footer } from "./containers";
 import {
   createUserDocumentFromAuth,
@@ -55,6 +55,7 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="shop/*" element={<Shop />} />
+          <Route path="shop/*/*" element={<ProductPage />} />
           <Route path="authentication" element={<Authentication />} />
           <Route path="checkout" element={<Checkout />} />
         </Route>

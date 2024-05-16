@@ -10,11 +10,11 @@ export const ShopContainer = styled.div`
 `;
 
 export const CategoryProductListContainer = styled.div`
-    /* display: flex;
-    flex-direction: column; */
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
     column-gap: 4px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); */
   /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   row-gap: 50px;
 */
