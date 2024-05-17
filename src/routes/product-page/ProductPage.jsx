@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import "./ProductPage.styles.scss";
 
@@ -66,60 +66,99 @@ const Product = () => {
   ];
 
   return (
-    <div className="product">
-      <div className="left">
-        <div className="images">
-          <img
-            src={data[0].img}
-            alt="Show image 1"
-            onClick={(e) => setSelectedImg("img")}
-          />
-          <img
-            src={data[0].img2}
-            alt="Show image 2"
-            onClick={(e) => setSelectedImg("img2")}
-          />
-        </div>
-        <div className="mainImg">
-          <img src={data[0]?.[selectedImg]} alt="Selected Show image" />
-        </div>
-      </div>
-      <div className="right">
-        <h1>{data[0].title}</h1>
-        <span className="price">${data[0].price}</span>
-        <p>{data[0].desc}</p>
-        <div className="quantity">
-          <button
-            onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
-          >
-            -
-          </button>
-          {quantity}
-          <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
-        </div>
-        <button className="add">
-          ADD TO CART
-        </button>
-        <div className="links">
-          <div className="item">
-            ADD TO WISH LIST
+    <div className="product-container">
+      <h2>
+        <Link className="link" to="/">
+          Home
+        </Link>{" "}
+        /{" "}
+        <Link className="link" to="/">
+          Products
+        </Link>{" "}
+        /{" "}
+        <Link
+          className="link"
+          to={`/products/${data?.attributes?.categories.data[0].id}`}
+        >
+          {"Category"}
+        </Link>{" "}
+        /{" "}
+        <Link
+          className="link"
+          to={`/products/${data?.attributes?.sub_categories.data[0].id}`}
+        >
+          {"SubCategory"}
+        </Link>{" "}
+        / {"Coat"}
+        {id}
+      </h2>
+      <div className="product">
+        <div className="left">
+          <div className="mainImg">
+            <img src={data[1]?.[selectedImg]} alt="Selected Show image" />
           </div>
-          <div className="item">
-            ADD TO COMPARE
+          <div className="images">
+            <img
+              src={data[1].img}
+              alt="Show image 1"
+              onClick={(e) => setSelectedImg("img")}
+            />
+            <img
+              src={data[1].img2}
+              alt="Show image 2"
+              onClick={(e) => setSelectedImg("img2")}
+            />
           </div>
         </div>
-        <div className="info">
-          <span>Vendor: Polo</span>
-          <span>Product Type: T-Shirt</span>
-          <span>Tag: T-Shirt, Women, Top</span>
-        </div>
-        <hr />
-        <div className="info">
-          <span>DESCRIPTION</span>
+        <div className="right">
+          <h1>{data[1].title}</h1>
+          <span className="price">${data[1].price}</span>
+          <p>{data[1].desc}</p>
+          <div className="quantity">
+            <button
+              onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
+            >
+              -
+            </button>
+            {quantity}
+            <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
+          </div>
+          <button className="add">ADD TO CART</button>
+          <div className="links">
+            <div className="item">ADD TO WISH LIST</div>
+            <div className="item">ADD TO COMPARE</div>
+          </div>
           <hr />
-          <span>ADDITIONAL INFORMATION</span>
+          <p>
+            <strong>Available: </strong>
+            {"data?.attributes?.isAvailable"}
+          </p>
+          <p>
+            <strong>Available Colors: </strong>
+            {"data?.attributes?.Colors"}
+          </p>
+          <p>
+            <strong>SKU: </strong>
+            {"data?.attributes?.SKU"}
+          </p>
+          <p>
+            <strong>Brand: </strong>
+            {"data?.attributes?.Brand"}
+          </p>
           <hr />
-          <span>FAQ</span>
+          <div className="info">
+            <span>Vendor: Polo</span>
+            <span>Product Type: T-Shirt</span>
+            <span>Tag: T-Shirt, Women, Top</span>
+          </div>
+          <hr />
+          <div className="info">
+            <span>DESCRIPTION</span>
+            <hr />
+            <span>ADDITIONAL INFORMATION</span>
+            <hr />
+            <span>FAQ</span>
+          </div>
         </div>
       </div>
     </div>

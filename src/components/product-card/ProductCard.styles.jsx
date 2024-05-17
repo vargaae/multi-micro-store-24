@@ -7,7 +7,7 @@ export const ProductCartContainer = styled.div`
   align-items: center;
   position: relative;
   margin: 0 0 10px;
-  
+
   @media screen and (max-width: 550px) {
     height: 350px;
   }
@@ -36,6 +36,15 @@ export const ProductCartContainer = styled.div`
     button {
       opacity: 0.85;
       display: flex;
+      z-index: 2;
+    }
+    .productpagelink {
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      z-index: 1;
+      color: transparent;
     }
   }
 `;
@@ -44,7 +53,7 @@ export const Footer = styled.div`
   width: 100%;
   height: 5%;
   display: flex;
-  
+
   font-size: 14px;
   @media screen and (min-width: 550px) {
     font-size: 18px;

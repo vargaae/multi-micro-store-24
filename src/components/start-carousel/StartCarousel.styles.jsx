@@ -9,6 +9,7 @@ export const CarouselContainer = styled.div`
 `;
 
 export const CarouselTitle = styled.h1`
+  cursor: default;
   color: #ffffff;
   font-size: 2rem;
   letter-spacing: 7px;

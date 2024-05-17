@@ -37,10 +37,12 @@ export const LogoContainer = styled(Link)`
   .logo {
     pointer-events: none;
     /* animation: ${float} infinite 3s ease-in-out; */
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .logo {
+    @media (prefers-reduced-motion: no-preference) {
       animation: ${float} infinite 3s ease-in-out;
+    }
+    @media screen and (max-width: 550px) {
+      height: 1.5rem;
+      width: 10px;
     }
   }
 `;
