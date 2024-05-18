@@ -25,3 +25,5 @@ export { default as SignUpForm } from "./sign-up-form/SignUpForm";
 
 export { default as Slider } from "./slider/Slider";
 export { default as StartCarousel } from "./start-carousel/StartCarousel";
+
+export { default as StartCategories } from "./start-categories/StartCategories";

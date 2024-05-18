@@ -29,21 +29,23 @@ const float = keyframes`
 `;
 
 export const LogoContainer = styled(Link)`
-  height: 100%;
-  width: 70px;
-  padding: 8px;
-  padding-left: 32px;
+  width: 30px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 
   .logo {
+    height: 40%;
     pointer-events: none;
     /* animation: ${float} infinite 3s ease-in-out; */
     @media (prefers-reduced-motion: no-preference) {
       animation: ${float} infinite 3s ease-in-out;
     }
-    @media screen and (max-width: 550px) {
-      height: 1.5rem;
-      width: 10px;
+    @media screen and (min-width: 550px) {
+      height: 80%;
     }
+  }
+  @media screen and (min-width: 550px) {
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    width: 70px;
   }
 `;
 

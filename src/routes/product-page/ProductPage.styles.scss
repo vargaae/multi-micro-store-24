@@ -6,6 +6,7 @@
   .product {
     padding: 20px 50px;
     display: flex;
+    flex-direction: column;
     gap: 50px;
 
     .left {
@@ -116,6 +117,9 @@
       hr {
         border: 1px solid rgb(238, 237, 237);
       }
+    }
+    @media screen and (min-width: 550px) {
+      flex-direction: row;
     }
   }
 }

@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <ProductCartContainer>
-      <Link className="productpagelink" to={`/shop/1/1`}>Checkout</Link>
+      <Link className="productpagelink" to={`/shop/1/1`}></Link>
       <img src={imageUrl} alt={`${name}`} />
       <Footer>
         <Name>{name}</Name>

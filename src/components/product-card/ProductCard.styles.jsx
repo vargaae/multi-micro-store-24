@@ -18,6 +18,8 @@ export const ProductCartContainer = styled.div`
     object-fit: cover;
     margin-bottom: 5px;
     border-radius: 0.25rem;
+
+    transition: 10s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   }
 
   button {
@@ -28,9 +30,17 @@ export const ProductCartContainer = styled.div`
     display: none;
   }
 
+  .productpagelink {
+    color: transparent;
+  }
+
   &:hover {
+    transform: scale(1.3);
+    transition: transform 8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+
+    opacity: 0.9;
     img {
-      opacity: 0.8;
+      /* opacity: 0.8; */
     }
 
     button {
