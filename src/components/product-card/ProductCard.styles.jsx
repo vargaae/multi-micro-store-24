@@ -18,8 +18,6 @@ export const ProductCartContainer = styled.div`
     object-fit: cover;
     margin-bottom: 5px;
     border-radius: 0.25rem;
-
-    transition: 10s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   }
 
   button {
