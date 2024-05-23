@@ -60,50 +60,47 @@ const Navigation = () => {
   };
 
   return (
-    <>
-      <NavigationContainer className="gradient__bg">
-        <LogoContainer onClick={goHomeCloseCart} to="/">
-          <img src={logo} className="logo" alt="logo of Andras Varga" />
-        </LogoContainer>
-        <NavLinksContainer>
+    <NavigationContainer className="gradient__bg">
+      <LogoContainer onClick={goHomeCloseCart} to="/">
+        <img src={logo} className="logo" alt="logo of Andras Varga" />
+      </LogoContainer>
+      <NavLinksContainer>
+        <ButtonComponent
+          buttonType={BUTTON_TYPE_CLASSES.navigation}
+          onClick={goToShopCloseCart}
+        >
+          SHOP
+        </ButtonComponent>
+        {currentUser !== null ? (
+          <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
+            <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.signout}>
+              {currentUser?.displayName
+                ? currentUser?.displayName
+                : currentUser?.email}
+            </ButtonComponent>
+            {currentUser?.photoURL ? (
+              <>
+                <img
+                  src={currentUser.photoURL}
+                  className="user-logo"
+                  alt="User's Logo"
+                />
+              </>
+            ) : null}
+            {isComponentVisible && <AuthDropdown />}
+          </UserContainer>
+        ) : (
           <ButtonComponent
             buttonType={BUTTON_TYPE_CLASSES.navigation}
-            onClick={goToShopCloseCart}
+            onClick={signUpIn}
           >
-            SHOP
+            SIGN{"/"}UP{"/"}IN
           </ButtonComponent>
-          {currentUser !== null ? (
-            <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
-              <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.signout}>
-                {currentUser?.displayName
-                  ? currentUser?.displayName
-                  : currentUser?.email}
-              </ButtonComponent>
-              {currentUser?.photoURL ? (
-                <>
-                  <img
-                    src={currentUser.photoURL}
-                    className="user-logo"
-                    alt="User's Logo"
-                  />
-                </>
-              ) : null}
-              {isComponentVisible && <AuthDropdown />}
-            </UserContainer>
-          ) : (
-            <ButtonComponent
-              buttonType={BUTTON_TYPE_CLASSES.navigation}
-              onClick={signUpIn}
-            >
-              SIGN{"/"}UP{"/"}IN
-            </ButtonComponent>
-          )}
-          <CartIcon id="nav-shopping-icon" />
-        </NavLinksContainer>
-        {isCartOpen && <CartDropdown />}
-      </NavigationContainer>
-      <Outlet />
-    </>
+        )}
+        <CartIcon id="nav-shopping-icon" />
+      </NavLinksContainer>
+      {isCartOpen && <CartDropdown />}
+    </NavigationContainer>
   );
 };
 

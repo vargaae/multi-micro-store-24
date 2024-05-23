@@ -1,11 +1,25 @@
 import { Fragment, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+// import { Routes, Route, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+import ErrorPage from "./ErrorPage";
 
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/user/user.reducer";
 
-import { Home, Authentication, Navigation, Shop, Checkout, ProductPage } from "./routes";
+import {
+  Home,
+  Authentication,
+  Navigation,
+  Shop,
+  Checkout,
+  ProductPage,
+  ProductsPage,
+} from "./routes";
 import { Footer } from "./containers";
+
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
@@ -20,6 +34,65 @@ export function ScrollToTop() {
 
   return null;
 }
+
+const Layout = () => {
+  return (
+    <div className="app">
+      <ScrollToTop />
+      <Navigation />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
+
+const router = createBrowserRouter([
+  // {
+  //   path: "*",
+  //   element: <App />,
+  //   errorElement: <ErrorPage />,
+  // },
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductsPage />,
+      },
+      {
+        path: "/shop/1/:id",
+        element: <ProductPage />,
+      },
+      {
+        path: "/shop/*",
+        element: <Shop />,
+      },
+      {
+        path: "/authentication",
+        element: <Authentication />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
+    ],
+  },
+]);
+// <Routes>
+// <Route path="/" element={<Navigation />}>
+//   <Route index element={<Home />} />
+//   <Route path="shop/*" element={<Shop />} />
+//   <Route path="shop/1/*" element={<ProductPage />} />
+//   <Route path="authentication" element={<Authentication />} />
+//   <Route path="checkout" element={<Checkout />} />
+// </Route>
+// </Routes>
 
 const App = () => {
   const dispatch = useDispatch();
@@ -50,17 +123,7 @@ const App = () => {
 
   return (
     <Fragment>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route path="shop/*" element={<Shop />} />
-          <Route path="shop/1/*" element={<ProductPage />} />
-          <Route path="authentication" element={<Authentication />} />
-          <Route path="checkout" element={<Checkout />} />
-        </Route>
-      </Routes>
-      <Footer />
+      <RouterProvider router={router} />
     </Fragment>
   );
 };

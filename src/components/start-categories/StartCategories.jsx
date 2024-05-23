@@ -1,4 +1,3 @@
-import React from "react";
 import "./StartCategories.styles.scss";
 import { Link } from "react-router-dom";
 
@@ -12,7 +11,7 @@ const StartCategories = () => {
             alt=""
           />
           <button>
-            <Link className="link" to="/shop/jackets">
+            <Link className="link" to="/products/1">
               Sale
             </Link>
           </button>
@@ -23,7 +22,7 @@ const StartCategories = () => {
             alt=""
           />
           <button>
-            <Link to="/shop/jackets" className="link">
+            <Link to="/products/1" className="link">
               Women
             </Link>
           </button>
@@ -37,7 +36,7 @@ const StartCategories = () => {
             alt=""
           />
           <button>
-            <Link to="/shop/jackets" className="link">
+            <Link to="/products/1" className="link">
               New Season
             </Link>
           </button>
@@ -52,7 +51,7 @@ const StartCategories = () => {
                 alt=""
               />
               <button>
-                <Link to="/shop/jackets" className="link">
+                <Link to="/products/1" className="link">
                   Men
                 </Link>
               </button>
@@ -66,7 +65,7 @@ const StartCategories = () => {
                 alt=""
               />
               <button>
-                <Link to="/shop/jackets" className="link">
+                <Link to="/products/1" className="link">
                   Accessories
                 </Link>
               </button>
@@ -79,7 +78,7 @@ const StartCategories = () => {
             alt=""
           />
           <button>
-            <Link to="/shop/jackets" className="link">
+            <Link to="/products/1" className="link">
               Shoes
             </Link>
           </button>

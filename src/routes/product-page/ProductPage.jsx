@@ -9,7 +9,7 @@ import { Link, useParams } from "react-router-dom";
 
 import "./ProductPage.styles.scss";
 
-const Product = () => {
+const ProductPage = () => {
   let { id } = useParams();
 
   const { data, loading, error, errorMessage } = useFetch(
@@ -33,7 +33,7 @@ const Product = () => {
               Home
             </Link>{" "}
             /{" "}
-            <Link className="link" to="/">
+            <Link className="link" to="/products/1">
               Products
             </Link>{" "}
             /{" "}
@@ -154,4 +154,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductPage;
