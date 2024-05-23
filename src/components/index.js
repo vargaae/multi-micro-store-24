@@ -27,3 +27,10 @@ export { default as Slider } from "./slider/Slider";
 export { default as StartCarousel } from "./start-carousel/StartCarousel";
 
 export { default as StartCategories } from "./start-categories/StartCategories";
+
+export { default as FeaturedProducts } from "./featured-products/FeaturedProducts";
+
+export { default as Card } from "./card/Card";
+export { default as List } from "./list/List";
+
+export { default as Contact } from "./contact/Contact";

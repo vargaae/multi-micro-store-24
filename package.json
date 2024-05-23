@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-2024",
   "private": true,
-  "version": "1.1.0",
+  "version": "3.0.1",
   "type": "module",
   "scripts": {
     "v": "vite",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
+    "axios": "^1.7.1",
     "firebase": "^10.9.0",
     "react": "^18.2.0",
     "react-awesome-slider": "^4.1.0",

@@ -10,16 +10,18 @@
 
 Features/Structure:
 - 🚀Redux for State Management<br> is set up in this branch (🪵18-Redux)
+- 🚀API and Database for products with headless CMS: Strapi and PostgreSQL database,
 - (Migrated from Context API), 
 - 🚀AUTHENTICATION->Sign Up with email, 
 - 🚀AUTHENTICATION->Log in with email, 
 - 🚀AUTHENTICATION->Sign Up and Log In with Google account, 
-- 🚀SHOP, 
+- 🚀SHOP,
+- 🚀ProductPage,  
 - 🚀CART+USERMENU DROPDOWNs, 
 - 🚀Adding to CART,
 - 🚀CHECKOUT,
 - 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount),
-- 🚀Database for products and users,
+- 🚀Database for products and users with Firebase,
 - 🚀Styled components
 
 ## 🛠 Front End:
@@ -29,8 +31,12 @@ Features/Structure:
 - SASS
 - styled components
 - Firebase connected
+- Strapi connected
 
 ## 🛠 Back End:
+- NodeJS
+- PostgreSQL
+- Strapi
 - Firebase
 - Firestore Database
 
