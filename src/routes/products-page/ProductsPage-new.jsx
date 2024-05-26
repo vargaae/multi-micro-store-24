@@ -8,17 +8,20 @@ import { List } from "../../components";
 
 import "./ProductsPage.styles.scss";
 
-const Products = () => {
+const ProductsPage = () => {
   // We can get the id in string:
   // const param = useParams()
   const catId = parseInt(useParams().id);
   const rangeMinimum = 0;
-  const rangeMaximum = 1510;
+  const rangeMaximum = 1000;
   const [maxPrice, setMaxPrice] = useState(1000);
   const [sort, setSort] = useState(`asc`);
   // const [sort, setSort] = useState("asc")
   const [selectedSubCats, setSelectedSubCats] = useState([]);
-
+// TODO: cleaanup
+  // const { data, loading, error, errorMessage } = useFetch(
+  //   `/products?[filters][categories][id][$eq]=${catId}`
+  // );
   const { data, loading, error, errorMessage } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
   );
@@ -130,4 +133,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsPage;

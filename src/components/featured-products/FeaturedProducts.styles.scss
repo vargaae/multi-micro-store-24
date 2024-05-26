@@ -3,6 +3,11 @@
   // width: 100%;
   overflow-x: auto;
 
+  ::-webkit-scrollbar {
+    height: 10px;              /* height of horizontal scrollbar ← You're missing this */
+    border: 1px solid lightblue;
+  }
+
   .top {
     display: flex;
     align-items: center;

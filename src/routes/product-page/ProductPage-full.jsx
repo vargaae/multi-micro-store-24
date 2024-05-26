@@ -1,4 +1,3 @@
-import useFetch from "../../hooks/useFetch";
 import { useState } from "react";
 
 import { Link, useParams } from "react-router-dom";
@@ -8,9 +7,10 @@ import { Link, useParams } from "react-router-dom";
 // import BalanceIcon from "@mui/icons-material/Balance";
 
 import "./ProductPage.styles.scss";
+import useFetch from "../../hooks/useFetch";
 
-const ProductPage = () => {
-  let { id } = useParams();
+const Product = () => {
+  const id = useParams().id;
 
   const { data, loading, error, errorMessage } = useFetch(
     `/products/${id}?populate=*`
@@ -32,7 +32,7 @@ const ProductPage = () => {
               Home
             </Link>{" "}
             /{" "}
-            <Link className="link" to="/products/1">
+            <Link className="link" to="/">
               Products
             </Link>{" "}
             /{" "}
@@ -45,9 +45,9 @@ const ProductPage = () => {
             /{" "}
             <Link
               className="link"
-              to={`/products/${data?.attributes?.sub_category.data.id}`}
+              to={`/products/${data?.attributes?.sub_categories.data[0].id}`}
             >
-              {data?.attributes?.sub_category.data.attributes.title}
+              {data?.attributes?.sub_categories.data[0].attributes.title}
             </Link>{" "}
             / {data?.attributes?.title}
           </h2>
@@ -55,27 +55,18 @@ const ProductPage = () => {
             <div className="left">
               <div className="mainImg">
                 <img
-                  src={
-                    import.meta.env.VITE_APP_STRAPI_UPLOAD_URL +
-                    data?.attributes?.[selectedImg]?.data?.attributes?.url
-                  }
+                  src={data?.attributes?.[selectedImg]?.data?.attributes?.url}
                   alt="Selected Show image"
                 />
               </div>
               <div className="images">
                 <img
-                  src={
-                    import.meta.env.VITE_APP_STRAPI_UPLOAD_URL +
-                    data?.attributes?.img?.data?.attributes?.url
-                  }
+                  src={data?.attributes?.img?.data?.attributes?.url}
                   alt="Show image 1"
                   onClick={(e) => setSelectedImg("img")}
                 />
                 <img
-                  src={
-                    import.meta.env.VITE_APP_STRAPI_UPLOAD_URL +
-                    data?.attributes?.img2?.data?.attributes?.url
-                  }
+                  src={data?.attributes?.img2?.data?.attributes?.url}
                   alt="Show image 2"
                   onClick={(e) => setSelectedImg("img2")}
                 />
@@ -99,10 +90,16 @@ const ProductPage = () => {
                   +
                 </button>
               </div>
-              <button className="add">ADD TO CART</button>
+              <button className="add">
+                {/*<AddShoppingCartIcon /> */}ADD TO CART
+              </button>
               <div className="links">
-                <div className="item">ADD TO WISH LIST</div>
-                <div className="item">ADD TO COMPARE</div>
+                <div className="item">
+                  {/*<FavoriteBorderIcon /> */} ADD TO WISH LIST
+                </div>
+                <div className="item">
+                  {/*<BalanceIcon /> */} ADD TO COMPARE
+                </div>
               </div>
               <hr />
               <p>
@@ -122,15 +119,16 @@ const ProductPage = () => {
                 {data?.attributes?.brand}
               </p>
               <hr />
+
               <div className="info">
                 <span>Vendor: {data?.attributes?.brand}</span>
                 <span>
-                  Product Type: {data?.attributes?.type},{""}
+                  Product Type:{" "}
                   {data?.attributes?.categories.data[0].attributes.title}
                 </span>
                 <span>
                   Tag: {data?.attributes?.categories.data[0].attributes.title},{" "}
-                  {data?.attributes?.sub_category.data.attributes.title},
+                  {data?.attributes?.sub_categories.data[0].attributes.title},
                   Furniture, Interior Design
                 </span>
               </div>
@@ -150,4 +148,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default Product;

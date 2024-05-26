@@ -54,7 +54,7 @@ const CategoryDirectory = () => (
     <DirectoryColContainer>
       <DirectoryLastItemContainer>
         <DirectoryColContainer>
-          <DirectoryItemContainer to={`products/4`}>
+          <DirectoryItemContainer to={`products/5`}>
             <BackgroundImage
               $imgurl={
                 "https://images.pexels.com/photos/272056/pexels-photo-272056.jpeg?auto=compress&cs=tinysrgb&w=1600"
@@ -67,7 +67,7 @@ const CategoryDirectory = () => (
           </DirectoryItemContainer>
         </DirectoryColContainer>
         <DirectoryColContainer>
-          <DirectoryItemContainer to={`products/5`}>
+          <DirectoryItemContainer to={`products/6`}>
             <BackgroundImage
               $imgurl={
                 "https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=1600"
@@ -80,7 +80,7 @@ const CategoryDirectory = () => (
           </DirectoryItemContainer>
         </DirectoryColContainer>
       </DirectoryLastItemContainer>
-      <DirectoryItemContainer to={`products/6`}>
+      <DirectoryItemContainer to={`products/4`}>
         <BackgroundImage
           $imgurl={
             "https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=1600"

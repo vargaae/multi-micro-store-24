@@ -6,8 +6,8 @@ import "./FeaturedProducts.styles.scss";
 
 const FeaturedProducts = ({ type }) => {
   const { data, loading, error, errorMessage } = useFetch(
-    `/products?populate=*`
-    // `/products?populate=*&filters[type][$eq]=${type}`
+    `/products?populate=*&filters[type][$eq]=${type}`
+    // `/products?populate=*`
   );
 
   return (
