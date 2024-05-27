@@ -44,68 +44,79 @@ const removeCartItem = (cartItems, productToRemove) => {
 const clearCartItem = (cartItems, cartItemToClear) =>
   cartItems.slice().filter((cartItem) => cartItem.id !== cartItemToClear.id);
 
-const initialState = {
-  products: [],
+const SCART_INITIAL_STATE = {
+  isCartOpen: false,
+  cartItems: [],
 };
 
-export const scartSlice = createSlice({
-  name: "strapicart",
-  initialState,
-  reducers: {
-    // addToCart: (state, action) => {
-    //   const item = state.products.find((item) => item.id === action.payload.id);
-    //   if (item) {
-    //     item.quantity += action.payload.quantity;
-    //   } else {
-    //     state.products.push(action.payload);
-    //   }
-    // },
-    addItemToCart(state, action) {
-      state.cartItems = addCartItem(state.cartItems, action.payload);
-    },
-    removeItem: (state, action) => {
-      state.products = state.products.filter(
-        (item) => item.id !== action.payload
-      );
-    },
-    resetCart: (state) => {
-      state.products = [];
-    },
-  },
-});
-
-// const CART_INITIAL_STATE = {
-//   isCartOpen: false,
-//   cartItems: [],
+// const initialState = {
+//   products: [],
 // };
 
-// export const cartSlice = createSlice({
-//   name: "cart",
-//   initialState: CART_INITIAL_STATE,
+// export const scartSlice = createSlice({
+//   name: "strapicart",
+//   initialState,
 //   reducers: {
-//     setIsCartOpen(state, action) {
-//       state.isCartOpen = action.payload;
+//     addToCart: (state, action) => {
+//       const item = state.products.find((item) => item.id === action.payload.id);
+//       if (item) {
+//         item.quantity += action.payload.quantity;
+//       } else {
+//         state.products.push(action.payload);
+//       }
 //     },
 //     addItemToCart(state, action) {
 //       state.cartItems = addCartItem(state.cartItems, action.payload);
 //     },
-//     removeItemFromCart(state, action) {
-//       state.cartItems = removeCartItem(state.cartItems, action.payload);
+//     removeItem: (state, action) => {
+//       state.products = state.products.filter(
+//         (item) => item.id !== action.payload
+//       );
 //     },
-//     clearItemFromCart(state, action) {
-//       state.cartItems = clearCartItem(state.cartItems, action.payload);
+//     resetCart: (state) => {
+//       state.products = [];
 //     },
 //   },
 // });
 
-// export const {
-//   setIsCartOpen,
-//   addItemToCart,
-//   removeItemFromCart,
-//   clearItemFromCart,
-// } = cartSlice.actions;
+export const scartSlice = createSlice({
+  name: "strapicart",
+  initialState: SCART_INITIAL_STATE,
+  reducers: {
+    setIsCartOpen(state, action) {
+      state.isCartOpen = action.payload;
+    },
+    addItemToCart(state, action) {
+      state.cartItems = addCartItem(state.cartItems, action.payload);
+    },
+    //TODO: change to this solution:
+    // removeItemFromCart(state, action) {
+    //   state.cartItems = removeCartItem(state.cartItems, action.payload);
+    // },
+    removeItem: (state, action) => {
+      state.cartItems = state.cartItems.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+    clearItemFromCart(state, action) {
+      state.cartItems = clearCartItem(state.cartItems, action.payload);
+    },
+    resetCart: (state) => {
+      state.cartItems = [];
+    },
+  },
+});
+
+export const {
+  setIsCartOpen,
+  addItemToCart,
+  removeItemFromCart,
+  removeItem,
+  clearItemFromCart,
+  resetCart,
+} = scartSlice.actions;
 
 // Action creators are generated for each case reducer function
-export const { addToCart, addItemToCart, removeItem, resetCart } = scartSlice.actions;
+// export const { addItemToCart, removeItem, resetCart } = scartSlice.actions;
 
 export const scartReducer = scartSlice.reducer;

@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 // import { loadStripe } from "@stripe/stripe-js";
 
 const SCart = () => {
-  const products = useSelector((state) => state.strapicart.products);
+  const products = useSelector((state) => state.strapicart.cartItems);
   const dispatch = useDispatch();
 
   const totalPrice = () => {
@@ -56,7 +56,7 @@ const SCart = () => {
           </button>
           {/*<DeleteOutlinedIcon
             className="delete"
-            onClick={() => dispatch(removeItem(item.id))}
+            onClick={() => dispatch(removeItemFromCart(item.id))}
       />*/}
         </div>
       ))}
