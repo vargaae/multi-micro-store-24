@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import {
   DirectoryContainer,
   BackgroundImage,
@@ -7,10 +6,6 @@ import {
   DirectoryLastItemContainer,
   DirectoryColContainer,
 } from "./CategoryDirectory.styles";
-import { Link } from "react-router-dom";
-// {products.map((product) => {
-//   return <DirectoryItem product={product} key={product.id} />;
-// })}
 
 const CategoryDirectory = () => (
   <DirectoryContainer>

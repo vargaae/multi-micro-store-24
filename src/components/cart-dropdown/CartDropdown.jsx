@@ -21,6 +21,8 @@ const CartDropdown = () => {
   const dispatch = useDispatch();
 
   const cartItems = useSelector(selectCartItems);
+  const products = useSelector(state=>state.strapicart.products);
+
   const cartTotalPriceCount = useSelector(selectCartTotalPriceCount);
 
   const closeCartIfClickToLink = () => dispatch(setIsCartOpen(false));

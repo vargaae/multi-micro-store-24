@@ -1,23 +1,74 @@
 import useFetch from "../../hooks/useFetch";
 import { useState } from "react";
 
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 
 // import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 // import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 // import BalanceIcon from "@mui/icons-material/Balance";
+
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../store/cart/scart.slice";
 
 import "./ProductPage.styles.scss";
 
 const ProductPage = () => {
   let { id } = useParams();
 
+  const [selectedImg, setSelectedImg] = useState("img");
+  const [quantity, setQuantity] = useState(1);
+
+  const dispatch = useDispatch();
+
   const { data, loading, error, errorMessage } = useFetch(
     `/products/${id}?populate=*`
   );
 
-  const [selectedImg, setSelectedImg] = useState("img");
-  const [quantity, setQuantity] = useState(0);
+  const navigateTo = useNavigate();
+
+  const goToSCart = () => {
+    navigateTo("/scart");
+  };
+
+  // TODO: Products link to breadcrumb??? - most a SHOP-ra tettem a linket
+  // TODO: PRODUCTS link to breadcrumb??? - most a category-ra tettem a linket
+  // <Link
+  //               className="link"
+  //               to={`/products/${data?.attributes?.categories.data[0].id}`}
+  //             >
+  //               {data?.attributes?.categories.data[0].attributes.title}
+  //             </Link>{" "}
+  //             /{" "}
+  //             <Link
+  //               className="link"
+  //               to={`/products/${data?.attributes?.categories.data[0].id}`}
+  //             >
+  //               {data?.attributes?.sub_category.data.attributes.title}
+  //             </Link>{" "}
+  // TODO: sub_categories link to breadcrumb??? - most a category-ra tettem a linket
+  // <Link
+  //               className="link"
+  //               to={`/products/${data?.attributes?.sub_category.data.id}`}
+  //             >
+  //               {data?.attributes?.sub_category.data.attributes.title}
+  //             </Link>{" "}
+
+  // TODO: map categories/sub_categories:
+  // {error
+  //   ? `Something went wrong! ${errorMessage}`
+  //   : loading
+  //   ? "loading"
+  //   : data?.map((item) => (
+  //       <div className="inputItem" key={item.id}>
+  //         <input
+  //           type="checkbox"
+  //           id={item.id}
+  //           value={item.id}
+  //           onChange={handleChange}
+  //         />
+  //         <label htmlFor={item.id}>{item.attributes.title}</label>
+  //       </div>
+  //     ))}
 
   return (
     <div className="product-container">
@@ -32,22 +83,8 @@ const ProductPage = () => {
               Home
             </Link>{" "}
             /{" "}
-            <Link className="link" to="/products/1">
+            <Link className="link" to="/shop">
               Products
-            </Link>{" "}
-            /{" "}
-            <Link
-              className="link"
-              to={`/products/${data?.attributes?.categories.data[0].id}`}
-            >
-              {data?.attributes?.categories.data[0].attributes.title}
-            </Link>{" "}
-            /{" "}
-            <Link
-              className="link"
-              to={`/products/${data?.attributes?.sub_category.data.id}`}
-            >
-              {data?.attributes?.sub_category.data.attributes.title}
             </Link>{" "}
             / {data?.attributes?.title}
           </h2>
@@ -99,7 +136,26 @@ const ProductPage = () => {
                   +
                 </button>
               </div>
-              <button className="add">ADD TO CART</button>
+              <button
+                className="add"
+                onClick={() =>
+                  dispatch(
+                    addItemToCart({
+                      id: data.id,
+                      title: data.attributes.title,
+                      desc: data.attributes.desc,
+                      price: data.attributes.price,
+                      img: data.attributes.img.data.attributes.url,
+                      quantity,
+                    })
+                  )
+                }
+              >
+                ADD TO CART
+              </button>
+              <button className="add" onClick={goToSCart}>
+                GO TO CART
+              </button>
               <div className="links">
                 <div className="item">ADD TO WISH LIST</div>
                 <div className="item">ADD TO COMPARE</div>

@@ -12,6 +12,7 @@
     .left {
       flex: 1;
       gap: 20px;
+
       .images {
         flex: 1;
         display: flex;
@@ -24,6 +25,7 @@
           cursor: pointer;
           padding: 0 0.1rem 0 0;
           margin-bottom: 10px;
+          border: 1px solid black;
           border-radius: 5px;
         }
       }
@@ -35,6 +37,7 @@
           max-height: 800px;
           object-fit: cover;
           border-radius: 15px;
+          border: 1px solid black;
         }
       }
     }

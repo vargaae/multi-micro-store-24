@@ -5,7 +5,7 @@ import { selectIsCartOpen } from "../../store/cart/cart.selector";
 
 import useComponentVisible from "../../hooks/useComponentVisible";
 
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { selectCurrentUser } from "../../store/user/user.selector";
 

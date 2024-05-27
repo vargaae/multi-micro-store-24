@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { ButtonComponent, BUTTON_TYPE_CLASSES } from "../";
 
 import {
-  ProductCartContainer,
+  ProductCardContainer,
   Footer,
   Name,
   Price,
@@ -18,9 +18,11 @@ const ProductCard = ({ product }) => {
 
   const addProductToCart = () => dispatch(addItemToCart(product));
 
+  // TODO: link to={`/product/1/1`}
+
   return (
-    <ProductCartContainer>
-      <Link className="productpagelink" to={`/shop/1/1`}></Link>
+    <ProductCardContainer>
+      <Link className="productpagelink" to={`/product/1/1`}></Link>
       <img src={imageUrl} alt={`${name}`} />
       <Footer>
         <Name>{name}</Name>
@@ -32,7 +34,7 @@ const ProductCard = ({ product }) => {
       >
         Add to cart
       </ButtonComponent>
-    </ProductCartContainer>
+    </ProductCardContainer>
   );
 };
 

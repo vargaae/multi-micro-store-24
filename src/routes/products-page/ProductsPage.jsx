@@ -14,11 +14,19 @@ const Products = () => {
   const catId = parseInt(useParams().id);
   const rangeMinimum = 0;
   const rangeMaximum = 1510;
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(rangeMaximum);
   const [sort, setSort] = useState(`asc`);
   // const [sort, setSort] = useState("asc")
   const [selectedSubCats, setSelectedSubCats] = useState([]);
+  
+  // TODO: Title: {data?.attributes?.categories.data[0].attributes.title}
+  // let { id } = 1;
+  // const { dataCategory, loadingC, errorC, errorMessageC } = useFetch(
+  //   `/products/${id}`
+  // );
+  // console.log(dataCategory);
 
+  // !!!TODO: subcategories-t így remekül behozza:
   const { data, loading, error, errorMessage } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
   );
@@ -37,6 +45,7 @@ const Products = () => {
   const onOptionChange = (e) => {
     setSort(e.target.value);
   };
+
   return (
     <>
       <div className="product-container">

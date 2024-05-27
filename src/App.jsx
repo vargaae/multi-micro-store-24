@@ -1,8 +1,11 @@
 import { Fragment, useEffect } from "react";
-// import { Routes, Route, useLocation } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  useLocation,
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+} from "react-router-dom";
 
 import ErrorPage from "./ErrorPage";
 
@@ -17,6 +20,7 @@ import {
   Checkout,
   ProductPage,
   ProductsPage,
+  SCart,
 } from "./routes";
 import { Footer } from "./containers";
 
@@ -47,11 +51,6 @@ const Layout = () => {
 };
 
 const router = createBrowserRouter([
-  // {
-  //   path: "*",
-  //   element: <App />,
-  //   errorElement: <ErrorPage />,
-  // },
   {
     path: "/",
     element: <Layout />,
@@ -66,7 +65,7 @@ const router = createBrowserRouter([
         element: <ProductsPage />,
       },
       {
-        path: "/shop/1/:id",
+        path: "/product/1/:id",
         element: <ProductPage />,
       },
       {
@@ -78,21 +77,16 @@ const router = createBrowserRouter([
         element: <Authentication />,
       },
       {
+        path: "/scart",
+        element: <SCart />,
+      },
+      {
         path: "/checkout",
         element: <Checkout />,
       },
     ],
   },
 ]);
-// <Routes>
-// <Route path="/" element={<Navigation />}>
-//   <Route index element={<Home />} />
-//   <Route path="shop/*" element={<Shop />} />
-//   <Route path="shop/1/*" element={<ProductPage />} />
-//   <Route path="authentication" element={<Authentication />} />
-//   <Route path="checkout" element={<Checkout />} />
-// </Route>
-// </Routes>
 
 const App = () => {
   const dispatch = useDispatch();
