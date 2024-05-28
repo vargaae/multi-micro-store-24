@@ -13,22 +13,22 @@ const StartCarousel = () => {
   const data = [
     {
       id: 1,
-      img: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      img: "/src/assets/start-carousel/pexels-photo-667838.webp",
       title: "STORE",
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/1571457/pexels-photo-1571457.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      img: "/src/assets/start-carousel/pexels-photo-1571457.webp",
       title: "STORE",
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      img: "/src/assets/start-carousel/pexels-photo-1648776.jpeg",
       title: "STORE",
     },
     {
       id: 4,
-      img: "https://images.pexels.com/photos/8580720/pexels-photo-8580720.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      img: "/src/assets/start-carousel/pexels-photo-8580720.webp",
       title: "STORE",
     },
   ];
