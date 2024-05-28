@@ -15,6 +15,10 @@ export const strApi = createApi({
     getProducts: builder.query({
       query: () => createRequest(`/products?populate=*`),
     }),
+    getProductsByType: builder.query({
+      query: (type) =>
+        createRequest(`/products?populate=*&filters[type][$eq]=${type}`),
+    }),
     getAllProductsPlusFilter: builder.query({
       query: ({ subCats, maxPrice, sort }) =>
         createRequest(
@@ -48,6 +52,7 @@ export const strApi = createApi({
 
 export const {
   useGetProductsQuery,
+  useGetProductsByTypeQuery,
   useGetAllProductsPlusFilterQuery,
   useGetSubCategoriesByCategoryIdQuery,
   useGetProductByIdQuery,

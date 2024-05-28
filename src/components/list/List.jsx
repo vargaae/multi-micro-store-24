@@ -2,6 +2,8 @@
 // TODO: !!!CleanUP!!!
 // import useFetch from "../../hooks/useFetch";
 import { useState } from "react";
+// import ClipLoader from "react-spinners/ClipLoader";
+import { FadeLoader } from "react-spinners";
 
 import { useDispatch } from "react-redux";
 
@@ -11,8 +13,15 @@ import { Card } from "../";
 
 import "./List.styles.scss";
 
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
+
 const List = ({ subCats, maxPrice, sort, catId }) => {
   const [count, setCount] = useState(0);
+  let [color, setColor] = useState("#54b3d6");
 
   const dispatch = useDispatch();
 
@@ -60,6 +69,7 @@ const List = ({ subCats, maxPrice, sort, catId }) => {
       </div>
     );
 
+  // TODO: CleanUp:
   // if (isFetching) return <LinearProgress style={{ backgroundColor: "gold" }} />;
 
   // TODO: CleanUp:
@@ -74,13 +84,22 @@ const List = ({ subCats, maxPrice, sort, catId }) => {
 
   return (
     <div className="list">
-      {error
-        ? `Something went wrong! Errormessage: "${errorMessage}"`
-        : isFetching
-        ? "loading"
-        : categoryProductList?.data?.map((item) => (
-            <Card item={item} key={item.id} />
-          ))}
+      {error ? (
+        `Something went wrong! Errormessage: "${error}"`
+      ) : isFetching ? (
+        <FadeLoader
+          color={color}
+          loading={isFetching}
+          cssOverride={override}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      ) : (
+        categoryProductList?.data?.map((item) => (
+          <Card item={item} key={item.id} />
+        ))
+      )}
     </div>
   );
 };

@@ -1,7 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const cardEntrance = keyframes`
+from {
+    opacity: 0;
+    filter: hue-rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    filter: hue-rotate(0deg);
+  }
+`;
 
 export const CarouselContainer = styled.div`
-  // HOME>CAROUSEL styling
+  // HOME>CAROUSEL animation and styling
+  /* background-color: rgb(36, 243, 147); */
+  animation: ${cardEntrance} 1000ms ease-out;
+  animation-fill-mode: backwards;
+  animation-delay: calc(1 * 100ms);
+
   @media screen and (min-width: 1200px) {
     height: calc(100vh - 110px);
     overflow: hidden;
@@ -48,6 +64,11 @@ export const CarouselTitle = styled.h1`
     rgba(0, 40, 83, 1) 0%,
     rgba(4, 12, 24, 1) 25%
   );
+
+  animation: ${cardEntrance} 700ms ease-out;
+  animation-fill-mode: backwards;
+  animation-delay: calc(3 * 100ms);
+
   z-index: 999;
   padding: 1.5rem;
   // text-align: center;

@@ -188,11 +188,11 @@ const ProductPage = () => {
                 onClick={() =>
                   dispatch(
                     addItemToCart({
-                      id: data.id,
-                      title: data.attributes.title,
-                      desc: data.attributes.desc,
-                      price: data.attributes.price,
-                      img: data.attributes.img.data.attributes.url,
+                      id: productDataById.data.id,
+                      title: productDataById.data.attributes.title,
+                      desc: productDataById.data.attributes.desc,
+                      price: productDataById.data.attributes.price,
+                      img: productDataById.data.attributes.img.data.attributes.url,
                       quantity,
                     })
                   )

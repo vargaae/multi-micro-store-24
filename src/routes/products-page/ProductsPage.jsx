@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import {
   useGetSubCategoriesByCategoryIdQuery,
   useGetCategoryByIdQuery,
+  strApi,
 } from "../../services/strApi";
 // import useFetch from "../../hooks/useFetch";
 
@@ -14,11 +15,24 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 import "./ProductsPage.styles.scss";
+import { useDispatch } from "react-redux";
+
+import { FadeLoader } from "react-spinners";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 
 const Products = () => {
+  const dispatch = useDispatch();
   // We can get the id in string:
   // const param = useParams()
   const catId = parseInt(useParams().id);
+
+  const [count, setCount] = useState(0);
+  let [color, setColor] = useState("#54b3d6");
   // <img src={imgSrc} onError = {() => setImgSrc("https://picsum.photos/1600")} />
   const rangeMinimum = 0;
   const rangeMaximum = 1600;
@@ -27,6 +41,46 @@ const Products = () => {
   const [sort, setSort] = useState(`asc`);
   // const [sort, setSort] = useState("asc")
   const [selectedSubCats, setSelectedSubCats] = useState([]);
+
+  const {
+    data: subCategoriesByCategoryId,
+    isFetching,
+    error,
+    refetch,
+  } = useGetSubCategoriesByCategoryIdQuery(catId);
+  const { data: categoryByCategoryId } = useGetCategoryByIdQuery(catId);
+
+  function handleRefetchOne() {
+    // force re-fetches the data
+    refetch();
+  }
+
+  function handleRefetchTwo() {
+    // has the same effect as `refetch` for the associated query
+    dispatch(
+      strApi.endpoints.getProductById.initiate(
+        { count: 5 },
+        { subscribe: false, forceRefetch: true }
+      )
+    );
+  }
+
+  if (error) {
+    const timer = setTimeout(() => {
+      setCount("Timeout called!");
+      console.log("fetch API Error, Refetch in 15s");
+      refetch();
+    }, 15000);
+    return () => clearTimeout(timer);
+  }
+
+  if (error)
+    return (
+      <div>
+        <button onClick={handleRefetchOne}>Force re-fetch 1</button>
+        <button onClick={handleRefetchTwo}>Force re-fetch 2</button>
+      </div>
+    );
 
   // TODO: Title: {data?.attributes?.categories.data[0].attributes.title}
   // let { id } = 1;
@@ -39,14 +93,6 @@ const Products = () => {
   // const { data, loading, error, errorMessage } = useFetch(
   //   `/sub-categories?[filters][categories][id][$eq]=${catId}`
   // );
-
-  const {
-    data: subCategoriesByCategoryId,
-    isFetching,
-    error,
-    refetch,
-  } = useGetSubCategoriesByCategoryIdQuery(catId);
-  const { data: categoryByCategoryId } = useGetCategoryByIdQuery(catId);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -83,7 +129,7 @@ const Products = () => {
           <Link className="link" to="/shop">
             Categories Preview
           </Link>{" "}
-          / {categoryByCategoryId?.data?.attributes?.title}
+          / <strong>{categoryByCategoryId?.data?.attributes?.title}</strong>
         </h2>
       </div>
       <div className="products">
@@ -93,21 +139,29 @@ const Products = () => {
               <strong>{categoryByCategoryId?.data?.attributes?.title}</strong> /
               Product Categories
             </h2>
-            {error
-              ? `Something went wrong! ${error}`
-              : isFetching
-              ? "loading"
-              : subCategoriesByCategoryId?.data?.map((item) => (
-                  <div className="inputItem" key={item.id}>
-                    <input
-                      type="checkbox"
-                      id={item.id}
-                      value={item.id}
-                      onChange={handleChange}
-                    />
-                    <label htmlFor={item.id}>{item.attributes.title}</label>
-                  </div>
-                ))}
+            {error ? (
+              `Something went wrong! ${error}`
+            ) : isFetching ? (
+              <FadeLoader
+                color={color}
+                loading={isFetching}
+                cssOverride={override}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            ) : (
+              subCategoriesByCategoryId?.data?.map((item) => (
+                <div className="inputItem" key={item.id}>
+                  <input
+                    type="checkbox"
+                    id={item.id}
+                    value={item.id}
+                    onChange={handleChange}
+                  />
+                  <label htmlFor={item.id}>{item.attributes.title}</label>
+                </div>
+              ))
+            )}
           </div>
           <div className="filterItem">
             <h2>Filter by price</h2>
