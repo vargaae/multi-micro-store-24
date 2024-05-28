@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { useNavigate, Link, useParams } from "react-router-dom";
 
-// TODO: !!!CleanUP!!!
 // import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 // import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 // import BalanceIcon from "@mui/icons-material/Balance";
@@ -11,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../store/cart/scart.slice";
 
 import "./ProductPage.styles.scss";
-import { useGetProductByIdQuery, strApi } from "../../services/strApi";
+import { useGetProductByIdQuery } from "../../services/strApi";
 
 const ProductPage = () => {
   const navigateTo = useNavigate();
@@ -25,49 +24,45 @@ const ProductPage = () => {
 
   const dispatch = useDispatch();
 
-  const {
-    data: productDataById,
-    isFetching,
-    error,
-    refetch,
-  } = useGetProductByIdQuery(id);
+  const { data: product } = useGetProductByIdQuery(id);
+  // const { data: product, isFetching, error, refetch } = useGetProductByIdQuery(id);
 
   // const { data, loading, error, errorMessage } = useFetch(
   //   `/products/${id}?populate=*`
   // );
 
   // TODO: Use Refetch + Loader
-  function handleRefetchOne() {
-    // force re-fetches the data
-    refetch();
-  }
+  // function handleRefetchOne() {
+  //   // force re-fetches the data
+  //   refetch();
+  // }
 
-  function handleRefetchTwo() {
-    // has the same effect as `refetch` for the associated query
-    dispatch(
-      strApi.endpoints.getProductById.initiate(
-        { count: 5 },
-        { subscribe: false, forceRefetch: true }
-      )
-    );
-  }
+  // function handleRefetchTwo() {
+  //   // has the same effect as `refetch` for the associated query
+  //   dispatch(
+  //     strApi.endpoints.getProductById.initiate(
+  //       { count: 5 },
+  //       { subscribe: false, forceRefetch: true }
+  //     )
+  //   );
+  // }
 
-  if (error) {
-    const timer = setTimeout(() => {
-      setCount("Timeout called!");
-      console.log("fetch API Error, Refetch in 15s");
-      refetch();
-    }, 15000);
-    return () => clearTimeout(timer);
-  }
+  // if (error) {
+  //   const timer = setTimeout(() => {
+  //     setCount("Timeout called!");
+  //     console.log("fetch API Error, Refetch in 15s");
+  //     refetch();
+  //   }, 15000);
+  //   return () => clearTimeout(timer);
+  // }
 
-  if (error)
-    return (
-      <div>
-        <button onClick={handleRefetchOne}>Force re-fetch 1</button>
-        <button onClick={handleRefetchTwo}>Force re-fetch 2</button>
-      </div>
-    );
+  // if (error)
+  //   return (
+  //     <div>
+  //       <button onClick={handleRefetchOne}>Force re-fetch 1</button>
+  //       <button onClick={handleRefetchTwo}>Force re-fetch 2</button>
+  //     </div>
+  //   );
 
   // if (isFetching) return <LinearProgress style={{ backgroundColor: "gold" }} />;
 
@@ -128,18 +123,18 @@ const ProductPage = () => {
               Home
             </Link>{" "}
             /{" "}
-            <Link className="link" to="/products/7">
+            <Link className="link" to="/shop">
               Products
             </Link>{" "}
-            / {productDataById?.data?.attributes?.title}
+            / {product?.attributes?.title}
           </h2>
           <div className="product">
             <div className="left">
               <div className="mainImg">
                 <img
                   src={
-                    productDataById?.data?.attributes?.[selectedImg]?.data
-                      ?.attributes?.url
+                    import.meta.env.VITE_APP_STRAPI_UPLOAD_URL +
+                    product?.attributes?.[selectedImg]?.product?.attributes?.url
                   }
                   alt="Selected Show image"
                 />
@@ -147,16 +142,16 @@ const ProductPage = () => {
               <div className="images">
                 <img
                   src={
-                    productDataById?.data?.attributes?.img?.data?.attributes
-                      ?.url
+                    import.meta.env.VITE_APP_STRAPI_UPLOAD_URL +
+                    product?.attributes?.img?.product?.attributes?.url
                   }
                   alt="Show image 1"
                   onClick={(e) => setSelectedImg("img")}
                 />
                 <img
                   src={
-                    productDataById?.data?.attributes?.img2?.data?.attributes
-                      ?.url
+                    import.meta.env.VITE_APP_STRAPI_UPLOAD_URL +
+                    product?.attributes?.img2?.product?.attributes?.url
                   }
                   alt="Show image 2"
                   onClick={(e) => setSelectedImg("img2")}
@@ -164,11 +159,9 @@ const ProductPage = () => {
               </div>
             </div>
             <div className="right">
-              <h1>{productDataById?.data?.attributes?.title}</h1>
-              <span className="price">
-              €{productDataById?.data?.attributes?.price}
-              </span>
-              <p>{productDataById?.data?.attributes?.desc}</p>
+              <h1>{product?.attributes?.title}</h1>
+              <span className="price">${product?.attributes?.price}</span>
+              <p>{product?.attributes?.desc}</p>
 
               <div className="quantity">
                 <button
@@ -188,11 +181,11 @@ const ProductPage = () => {
                 onClick={() =>
                   dispatch(
                     addItemToCart({
-                      id: data.id,
-                      title: data.attributes.title,
-                      desc: data.attributes.desc,
-                      price: data.attributes.price,
-                      img: data.attributes.img.data.attributes.url,
+                      id: product.id,
+                      title: product.attributes.title,
+                      desc: product.attributes.desc,
+                      price: product.attributes.price,
+                      img: product.attributes.img.product.attributes.url,
                       quantity,
                     })
                   )
@@ -210,42 +203,32 @@ const ProductPage = () => {
               <hr />
               <p>
                 <strong>Available: </strong>
-                {productDataById?.data?.attributes?.isAvailable}
+                {product?.attributes?.isAvailable}
               </p>
               <p>
                 <strong>Available Colors: </strong>
-                {productDataById?.data?.attributes?.colors}
+                {product?.attributes?.colors}
               </p>
               <p>
                 <strong>SKU: </strong>
-                {productDataById?.data?.attributes?.SKU}
+                {product?.attributes?.SKU}
               </p>
               <p>
                 <strong>Brand: </strong>
-                {productDataById?.data?.attributes?.brand}
+                {product?.attributes?.brand}
               </p>
               <hr />
               <div className="info">
-                <span>Vendor: {productDataById?.data?.attributes?.brand}</span>
+                <span>Vendor: {product?.attributes?.brand}</span>
                 <span>
-                  Product Type: {productDataById?.data?.attributes?.type},{""}
-                  {
-                    productDataById?.data?.attributes?.categories.data[0]
-                      .attributes.title
-                  }
+                  Product Type: {product?.attributes?.type},{""}
+                  {product?.attributes?.categories.product[0].attributes.title}
                 </span>
                 <span>
                   Tag:{" "}
-                  {
-                    productDataById?.data?.attributes?.categories.data[0]
-                      .attributes.title
-                  }
-                  ,{" "}
-                  {
-                    productDataById?.data?.attributes?.sub_category.data
-                      .attributes.title
-                  }
-                  , Furniture, Interior Design
+                  {product?.attributes?.categories.product[0].attributes.title},{" "}
+                  {product?.attributes?.sub_category.product.attributes.title},
+                  Furniture, Interior Design
                 </span>
               </div>
               <hr />

@@ -9,15 +9,16 @@
 # ECOMMERCE 2024 APPLICATION
 
 Features/Structure:
+
 - 🚀Redux for State Management<br> is set up in this branch (🪵18-Redux)
 - 🚀API and Database for products with headless CMS: Strapi and PostgreSQL database,
-- (Migrated from Context API), 
-- 🚀AUTHENTICATION->Sign Up with email, 
-- 🚀AUTHENTICATION->Log in with email, 
-- 🚀AUTHENTICATION->Sign Up and Log In with Google account, 
+- (Migrated from Context API),
+- 🚀AUTHENTICATION->Sign Up with email,
+- 🚀AUTHENTICATION->Log in with email,
+- 🚀AUTHENTICATION->Sign Up and Log In with Google account,
 - 🚀SHOP,
-- 🚀ProductPage,  
-- 🚀CART+USERMENU DROPDOWNs, 
+- 🚀ProductPage,
+- 🚀CART+USERMENU DROPDOWNs,
 - 🚀Adding to CART,
 - 🚀CHECKOUT,
 - 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount),
@@ -27,13 +28,19 @@ Features/Structure:
 ## 🛠 Front End:
 
 - React 18.2
-- Redux (Redux Toolkit)
+- Redux (+Redux Toolkit)
 - SASS
 - styled components
+- plugins:
+  "react-awesome-slider": "^4.1.0",
+  "react-responsive-carousel": "^3.2.23",
+  "react-lazy-load-image-component": "^1.6.0",
+  "react-optimized-image": "^0.4.1",
 - Firebase connected
 - Strapi connected
 
 ## 🛠 Back End:
+
 - NodeJS
 - PostgreSQL
 - Strapi

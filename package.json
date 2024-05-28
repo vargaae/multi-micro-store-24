@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-2024",
   "private": true,
-  "version": "3.0.1",
+  "version": "3.5.1",
   "type": "module",
   "scripts": {
     "v": "vite",
@@ -17,6 +17,8 @@
     "react": "^18.2.0",
     "react-awesome-slider": "^4.1.0",
     "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-optimized-image": "^0.4.1",
     "react-redux": "^9.1.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.22.2",

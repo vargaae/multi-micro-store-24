@@ -2,9 +2,16 @@ import { useState } from "react";
 
 import { Link, useParams } from "react-router-dom";
 
-import useFetch from "../../hooks/useFetch";
+import {
+  useGetSubCategoriesByCategoryIdQuery,
+  useGetCategoryByIdQuery,
+} from "../../services/strApi";
+// import useFetch from "../../hooks/useFetch";
 
 import { List } from "../../components";
+
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import "./ProductsPage.styles.scss";
 
@@ -12,13 +19,15 @@ const Products = () => {
   // We can get the id in string:
   // const param = useParams()
   const catId = parseInt(useParams().id);
+  // <img src={imgSrc} onError = {() => setImgSrc("https://picsum.photos/1600")} />
   const rangeMinimum = 0;
-  const rangeMaximum = 1510;
+  const rangeMaximum = 1600;
+
   const [maxPrice, setMaxPrice] = useState(rangeMaximum);
   const [sort, setSort] = useState(`asc`);
   // const [sort, setSort] = useState("asc")
   const [selectedSubCats, setSelectedSubCats] = useState([]);
-  
+
   // TODO: Title: {data?.attributes?.categories.data[0].attributes.title}
   // let { id } = 1;
   // const { dataCategory, loadingC, errorC, errorMessageC } = useFetch(
@@ -27,9 +36,17 @@ const Products = () => {
   // console.log(dataCategory);
 
   // !!!TODO: subcategories-t így remekül behozza:
-  const { data, loading, error, errorMessage } = useFetch(
-    `/sub-categories?[filters][categories][id][$eq]=${catId}`
-  );
+  // const { data, loading, error, errorMessage } = useFetch(
+  //   `/sub-categories?[filters][categories][id][$eq]=${catId}`
+  // );
+
+  const {
+    data: subCategoriesByCategoryId,
+    isFetching,
+    error,
+    refetch,
+  } = useGetSubCategoriesByCategoryIdQuery(catId);
+  const { data: categoryByCategoryId } = useGetCategoryByIdQuery(catId);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -46,6 +63,11 @@ const Products = () => {
     setSort(e.target.value);
   };
 
+  const addDefaultImg = (ev) => {
+    ev.target.src =
+      "https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600";
+  };
+
   return (
     <>
       <div className="product-container">
@@ -54,21 +76,28 @@ const Products = () => {
             Home
           </Link>{" "}
           /{" "}
-          <Link className="link" to="/">
+          <Link className="link" to="/products/7">
             Products
           </Link>{" "}
-          / Category
+          /{" "}
+          <Link className="link" to="/shop">
+            Categories Preview
+          </Link>{" "}
+          / {categoryByCategoryId?.data?.attributes?.title}
         </h2>
       </div>
       <div className="products">
         <div className="left">
           <div className="filterItem">
-            <h2>Product Categories</h2>
+            <h2>
+              <strong>{categoryByCategoryId?.data?.attributes?.title}</strong> /
+              Product Categories
+            </h2>
             {error
-              ? `Something went wrong! ${errorMessage}`
-              : loading
+              ? `Something went wrong! ${error}`
+              : isFetching
               ? "loading"
-              : data?.map((item) => (
+              : subCategoriesByCategoryId?.data?.map((item) => (
                   <div className="inputItem" key={item.id}>
                     <input
                       type="checkbox"
@@ -122,10 +151,14 @@ const Products = () => {
           <button onClick={handleChange}>Filter</button>
         </div>
         <div className="right">
-          <img
+          <LazyLoadImage
+            src={
+              categoryByCategoryId?.data?.attributes?.img?.data?.attributes?.url
+            }
+            onError={addDefaultImg}
+            alt="Category Image"
+            /* effect="blur" */
             className="catImg"
-            src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt=""
           />
           <List
             catId={catId}
