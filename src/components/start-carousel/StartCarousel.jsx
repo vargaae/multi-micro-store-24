@@ -1,8 +1,10 @@
 import AwesomeSlider from "react-awesome-slider";
+// import withAutoplay from "react-awesome-slider/src/hoc/autoplay";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
-import "react-awesome-slider/dist/styles.css";
+import "react-awesome-slider/src/core/styles.scss";
 // Cube animation recipe :
-import "react-awesome-slider/dist/custom-animations/cube-animation.css";
+// import "react-awesome-slider/dist/custom-animations/cube-animation.css";
+import "react-awesome-slider/src/styled/cube-animation/cube-animation.scss";
 
 import { logo } from "../../assets";
 import { CarouselContainer, CarouselTitle } from "./StartCarousel.styles";
