@@ -1,0 +1,21 @@
+.banner {
+  // background-image: url(./);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 65vh;
+}
+.bannerContent {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  justify-content: space-around;
+  // height: 300px;
+}
+.tagline {
+  display: flex;
+  height: 40%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}

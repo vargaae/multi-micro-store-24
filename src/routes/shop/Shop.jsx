@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
@@ -8,9 +8,11 @@ import { setCategories } from "../../store/categories/categories.reducer";
 
 import CategoriesPreview from "../categories-preview/CategoriesPreview";
 import CategoryProductList from "../category-product-list/CategoryProductList";
+import { Contact } from "../../components";
 
 const Shop = () => {
   const dispatch = useDispatch();
+  const headerTitle = "SHOP";
 
   useEffect(() => {
     const getCategoriesMap = async () => {
@@ -23,10 +25,22 @@ const Shop = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route index element={<CategoriesPreview />} />
-      <Route path=":category" element={<CategoryProductList />} />
-    </Routes>
+    <>
+      <h2 className="breadcrumb-nav">
+        <Link className="link" to="/">
+          Home
+        </Link>{" "}
+        / Design {headerTitle}
+      </h2>
+      <Routes>
+        <Route
+          index
+          element={<CategoriesPreview headerTitle={headerTitle} />}
+        />
+        <Route path=":category" element={<CategoryProductList />} />
+      </Routes>
+      <Contact />
+    </>
   );
 };
 

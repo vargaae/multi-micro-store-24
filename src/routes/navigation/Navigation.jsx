@@ -53,6 +53,12 @@ const Navigation = () => {
     navigateTo("/shop");
   };
 
+  const goToStoreCloseCart = () => {
+    if (isCartOpen) dispatch(setIsCartOpen(false));
+
+    navigateTo("/interior");
+  };
+
   const signUpIn = () => {
     if (isCartOpen) dispatch(setIsCartOpen(false));
 
@@ -70,6 +76,12 @@ const Navigation = () => {
           onClick={goToShopCloseCart}
         >
           SHOP
+        </ButtonComponent>
+        <ButtonComponent
+          buttonType={BUTTON_TYPE_CLASSES.navigation}
+          onClick={goToStoreCloseCart}
+        >
+          STORE
         </ButtonComponent>
         {currentUser !== null ? (
           <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>

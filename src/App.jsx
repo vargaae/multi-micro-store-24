@@ -13,13 +13,14 @@ import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/user/user.reducer";
 
 import {
-  Home,
-  Authentication,
   Navigation,
+  Authentication,
+  Start,
+  StartStore,
   Shop,
-  Checkout,
   ProductPage,
   ProductsPage,
+  Checkout,
   SCart,
 } from "./routes";
 import { Footer } from "./containers";
@@ -58,11 +59,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Start />,
+      },
+      {
+        path: "/interior/products/:id",
+        element: <ProductsPage />,
       },
       {
         path: "/products/:id",
         element: <ProductsPage />,
+      },
+      {
+        path: "/interior/product/:catId/:id",
+        element: <ProductPage />,
       },
       {
         path: "/product/:catId/:id",
@@ -71,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/shop/*",
         element: <Shop />,
+      },
+      {
+        path: "/interior/*",
+        element: <StartStore />,
       },
       {
         path: "/authentication",

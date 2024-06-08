@@ -123,7 +123,7 @@ const ProductPage = () => {
         "loading"
       ) : (
         <>
-          <h2>
+          <h2 className="breadcrumb-nav">
             <Link className="link" to="/">
               Home
             </Link>{" "}

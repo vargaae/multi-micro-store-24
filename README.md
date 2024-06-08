@@ -6,17 +6,18 @@
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
   </div>
 
-# ECOMMERCE 2024 APPLICATION
+# MICRO-STORE-24 - ECOMMERCE APPLICATION 2024
 
 Features/Structure:
 
 - 🚀Redux for State Management<br> is set up in this branch (🪵18-Redux)
-- 🚀API and Database for products with headless CMS: Strapi and PostgreSQL database,
 - (Migrated from Context API),
+- 🚀STORE,
+- 🚀API and Database for products with headless CMS: Strapi and PostgreSQL database,
+- 🚀SHOP: Database for products with Firebase,
 - 🚀AUTHENTICATION->Sign Up with email,
 - 🚀AUTHENTICATION->Log in with email,
 - 🚀AUTHENTICATION->Sign Up and Log In with Google account,
-- 🚀SHOP,
 - 🚀ProductPage,
 - 🚀CART+USERMENU DROPDOWNs,
 - 🚀Adding to CART,
@@ -33,9 +34,14 @@ Features/Structure:
 - styled components
 - plugins:
   "react-awesome-slider": "^4.1.0",
-  "react-responsive-carousel": "^3.2.23",
+  "react-alice-carousel": "^2.9.1",
+  "react-slick": "^0.30.2",
   "react-lazy-load-image-component": "^1.6.0",
   "react-optimized-image": "^0.4.1",
+  "framer-motion": "^11.2.10",
+  "react-icons": "^5.2.1",
+  "react-spinners": "^0.13.8",
+  "scroll-lock": "^2.1.5",
 - Firebase connected
 - Strapi connected
 

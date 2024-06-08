@@ -4,20 +4,32 @@
   padding: 15px;
   display: flex;
   justify-content: center;
+  min-height: 5rem;
 
   .wrapper {
-    width: 50%;
+    // flex:1;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    span {
+      flex: 3;
+    }
+    .mail {
+      flex: auto;
+    }
+
     input {
+      flex: 2;
+
       padding: 10px;
       border: none;
       border-radius: 5px 0 0 5px;
     }
 
     button {
+      flex: 1;
+
       padding: 10px;
       color: white;
       background: #333;

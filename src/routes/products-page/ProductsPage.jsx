@@ -117,7 +117,7 @@ const Products = () => {
   return (
     <>
       <div className="product-container">
-        <h2>
+        <h2 className="breadcrumb-nav">
           <Link className="link" to="/">
             Home
           </Link>{" "}

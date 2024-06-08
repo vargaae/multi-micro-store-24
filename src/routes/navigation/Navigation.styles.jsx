@@ -2,7 +2,7 @@ import { styled, keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavigationContainer = styled.div`
-  height: 70px;
+  height: 90px;
   width: 100%;
   padding: 20px 0px;
   display: flex;
@@ -29,8 +29,8 @@ const float = keyframes`
 `;
 
 export const LogoContainer = styled(Link)`
-  width: 30px;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  width: 50px;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
 
   .logo {
     height: 40%;

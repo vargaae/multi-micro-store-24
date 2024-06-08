@@ -28,6 +28,7 @@ export const CarouselTitle = styled.h1`
   cursor: default;
   color: #ffffff;
   font-size: 2rem;
+  text-transform: uppercase;
   letter-spacing: 7px;
   border-radius: 50%;
   opacity: 0.6;

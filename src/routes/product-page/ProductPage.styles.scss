@@ -1,23 +1,23 @@
 .product-container {
-  h2 {
-    padding: 1rem 3rem 1rem;
-    background-color: lightblue;
-    font-weight: 500;
+  // h2 {
+  //   padding: 1rem 3rem 1rem;
+  //   background-color: lightblue;
+  //   font-weight: 500;
 
-    a:hover {
-      color: white;
-    }
-    a {
-      background: linear-gradient(0deg, lightblue, #54b3d6 50%) no-repeat right
-        bottom / 0 var(--bg-h);
-      transition: background-size 550ms;
-      --bg-h: 200%;
-    }
-    a:where(:hover, :focus-visible) {
-      background-size: 100% var(--bg-h);
-      background-position-x: left;
-    }
-  }
+  //   a:hover {
+  //     color: white;
+  //   }
+  //   a {
+  //     background: linear-gradient(0deg, lightblue, #54b3d6 50%) no-repeat right
+  //       bottom / 0 var(--bg-h);
+  //     transition: background-size 550ms;
+  //     --bg-h: 200%;
+  //   }
+  //   a:where(:hover, :focus-visible) {
+  //     background-size: 100% var(--bg-h);
+  //     background-position-x: left;
+  //   }
+  // }
   .product {
     padding: 20px 50px;
     display: flex;
