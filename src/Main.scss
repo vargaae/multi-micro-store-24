@@ -21,8 +21,9 @@ body {
   background: linear-gradient(
     90deg,
     rgb(255, 254, 254) 10%,
-    rgb(41, 135, 197) 53%,
-    rgb(155, 195, 204) 95%
+    #4170e8 53%,
+    /* rgb(41, 135, 197) 53%, */
+     rgb(155, 195, 204) 95%
   );
   text-align: center;
 }
