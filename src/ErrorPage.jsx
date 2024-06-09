@@ -9,7 +9,7 @@ export default function ErrorPage() {
     <div id="error-page">
     <h2 className="breadcrumb-nav">
         <Link className="link" to="/">
-          Go back Home
+          Go back to MICRO-STORE-24
         </Link>{" "}
       </h2>
       <h1>Oops!</h1>
