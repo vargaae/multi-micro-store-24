@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-import { StartCarousel, FeaturedProducts, Contact } from "../../components";
+import {
+  StartCarousel,
+  FeaturedProducts,
+  Contact,
+  BestSeller,
+} from "../../components";
 import { CategoryDirectory } from "../../containers";
 
 const StartStore = () => {
@@ -14,7 +19,11 @@ const StartStore = () => {
       </h2>
       <StartCarousel headerTitle={headerTitle} />
       <div className="section__padding section__margin">
-        <FeaturedProducts type="featured" />
+        <div className="featured__container">
+          <h2 className="bestseller">Featured Products</h2>
+          <BestSeller type="featured" />
+        </div>
+        {/* <FeaturedProducts type="featured" /> */}
         <CategoryDirectory />
         <FeaturedProducts type="trending" />
       </div>

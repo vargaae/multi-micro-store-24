@@ -60,7 +60,7 @@ export const NavigationButton = styled(BaseButton)`
   border-radius: 5px;
 
   &:hover {
-    background-color: #357ae8;
+    background-color: #4170e8;
     border: none;
   }
 `;

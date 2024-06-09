@@ -62,7 +62,7 @@ const SCart = () => {
       ))}
       <div className="total">
         <span>SUBTOTAL</span>
-        <span>${totalPrice()}</span>
+        <span>€{totalPrice()}</span>
       </div>
       <button>PROCEED TO CHECKOUT</button>
       {/*<button onClick={handlePayment}>PROCEED TO CHECKOUT</button>*/}

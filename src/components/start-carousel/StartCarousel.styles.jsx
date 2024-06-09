@@ -17,9 +17,9 @@ export const CarouselContainer = styled.div`
   animation: ${cardEntrance} 1000ms ease-out;
   animation-fill-mode: backwards;
   animation-delay: calc(1 * 100ms);
-
+  
   @media screen and (min-width: 1200px) {
-    height: calc(100vh - 110px);
+    height: calc(100vh - 192px);
     overflow: hidden;
   }
 `;
@@ -83,7 +83,7 @@ export const CarouselTitle = styled.h1`
   /* 4 */
 
   @media screen and (min-width: 1200px) {
-    top: calc(50% - 220px);
+    top: calc(50% - 282px);
     font-size: 3.5rem;
   }
   @media screen and (max-width: 1200px) {

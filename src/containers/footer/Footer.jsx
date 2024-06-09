@@ -3,7 +3,7 @@ import { selectCurrentUser } from "../../store/user/user.selector";
 
 import { Link } from "react-router-dom";
 
-import { list } from "../../constants/index";
+import { list } from "../../constants";
 
 import logo from "../../assets/logo.svg";
 
