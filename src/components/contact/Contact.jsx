@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div className="contact" id="contact">
       <div className="wrapper">
-        <span>BE IN TOUCH WITH US:{" "} </span>
+        <span>Sign up to our newsletter & get 20% off{" "} </span>
         <div className="mail">
           <input type="text" placeholder="Enter your e-mail..." />
           <button>JOIN US</button>

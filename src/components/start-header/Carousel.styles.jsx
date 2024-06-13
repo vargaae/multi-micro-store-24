@@ -53,13 +53,20 @@ export const CarouselContainer = styled.div`
 export const CarouselTitle = styled.h1`
   cursor: default;
   color: #ffffff;
-  font-size: 2rem;
+  font-size: calc(5vw + 1rem);
+  /* font-size: 110px; */
+
+  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   font-weight: 800;
-  letter-spacing: 7px;
+
+  letter-spacing: 10px;
+  
   border-radius: 20px;
   margin-bottom: 15px;
 
-  opacity: 0.6;
+  opacity: 0.3;
   background: -moz-radial-gradient(
     circle at 3% 25%,
     rgba(0, 40, 83, 1) 0%,

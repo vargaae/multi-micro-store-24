@@ -4,6 +4,7 @@ import "./Start.scss";
 
 import { brands } from "../../constants";
 import { BestSeller, Contact, StartHeader } from "../../components";
+import { BestSellerContainer, BestSellerTitle } from "./Start.styles";
 
 const Start = () => {
   // const [brands, setBrands] = useState([]);
@@ -30,12 +31,11 @@ const Start = () => {
           </motion.div>
         ))}
       </div>
-
-      <div className="bestseller__container">
-        <h2 className="bestseller">BEST SELLER</h2>
-        <BestSeller type={"featured"} />
+      <BestSellerContainer>
+        <BestSellerTitle>BEST SELLER</BestSellerTitle>
+        <BestSeller type="featured" />
         {/* <BestSeller type={"bestseller"} /> */}
-      </div>
+      </BestSellerContainer>
       <Contact />
     </>
   );

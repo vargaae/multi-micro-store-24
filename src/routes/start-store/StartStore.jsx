@@ -7,6 +7,8 @@ import {
 } from "../../components";
 import { CategoryDirectory } from "../../containers";
 
+import { FeaturedContainer, FeaturedTitle } from "./StartStore.styles";
+
 const StartStore = () => {
   const headerTitle = "STORE";
   return (
@@ -18,11 +20,11 @@ const StartStore = () => {
         / Interior Design {headerTitle}
       </h2>
       <StartCarousel headerTitle={headerTitle} />
+      <FeaturedContainer>
+        <FeaturedTitle>Featured Products</FeaturedTitle>
+        <BestSeller type="featured" />
+      </FeaturedContainer>
       <div className="section__padding section__margin">
-        <div className="featured__container">
-          <h2 className="bestseller">Featured Products</h2>
-          <BestSeller type="featured" />
-        </div>
         {/* <FeaturedProducts type="featured" /> */}
         <CategoryDirectory />
         <FeaturedProducts type="trending" />

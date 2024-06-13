@@ -1,19 +1,28 @@
 .contact {
+  min-height: calc(5vw + 5rem);
+  font-size: calc(1vw + 1rem);
+
+  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -1px;
+
   background-color: #4170e8;
   color: white;
   padding: 15px;
   display: flex;
   justify-content: center;
-  min-height: 5rem;
 
   .wrapper {
     // flex:1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     span {
       flex: 3;
+      text-align: start;
     }
     .mail {
       flex: auto;
