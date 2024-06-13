@@ -10,12 +10,12 @@ const Start = () => {
   return (
     <>
       <div className="breadcrumb animatedtext">
-        <div>GET UPTO 65% OFF</div>
-        <div>
-          <span>FREE SHIPPING ON ORDERS €50+</span>
+        <div className="adtext">GET UPTO 65% OFF</div>
+        <div className="adtext">
+          <span className="adtextspan">FREE SHIPPING ON ORDERS €50+</span>
         </div>
-        <div>
-          <span>GET YOUR €20 BONUS REWARD</span>
+        <div className="adtext">
+          <span className="adtextspan">GET YOUR €20 BONUS REWARD</span>
         </div>
       </div>
       <StartHeader />

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+// @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 
 h2.breadcrumb-nav {
   padding: 1rem 3rem 1rem;
@@ -19,58 +19,43 @@ h2.breadcrumb-nav {
     background-position-x: left;
   }
 }
+
 div.breadcrumb {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 0.5rem 3rem 0.5rem;
   background-color: #4170e8;
-  font-weight: 500;
-
-  a:hover {
-    color: white;
-  }
-  a {
-    background: linear-gradient(0deg, lightblue, #54b3d6 50%) no-repeat right
-      bottom / 0 var(--bg-h);
-    transition: background-size 550ms;
-    --bg-h: 200%;
-  }
-  a:where(:hover, :focus-visible) {
-    background-size: 100% var(--bg-h);
-    background-position-x: left;
-  }
 }
 // TEXT ANIMATION
 .animatedtext {
   text-align: center;
-  font-family: "Roboto";
+  // font-family: "Roboto";
   font-weight: 600;
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   -webkit-transform: translate3d(0, 0, 0);
 
-  div {
+  .adtext {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+    @media screen and (max-width: 600px) {
+      font-size: 10px;
+    }
   }
 
-  div:first-of-type {
-    /* For increasing performance 
-                       ID/Class should've been used. 
-                       For a small demo 
-                       it's okaish for now */
+  .adtext:first-of-type {
     animation: showup 7s infinite;
   }
 
-  div:last-of-type {
+  .adtext:last-of-type {
     width: 0px;
     animation: reveal 7s infinite;
   }
 
-  div:last-of-type span {
+  .adtext:last-of-type .adtextspan {
     margin-left: -355px;
     animation: slidein 7s infinite;
   }
