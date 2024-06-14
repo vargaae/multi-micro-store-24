@@ -33,13 +33,13 @@ const Start = () => {
       </div>
       <BestSellerContainer>
         <BestSellerTitle>DESIGN STORE / SHOP FEATURED</BestSellerTitle>
-        <FeaturedProducts type="trending" />
+        <FeaturedProducts type="featured" />
         {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
       <StartVideo />
       <BestSellerContainer>
         <BestSellerTitle>BEST SELLER</BestSellerTitle>
-        <BestSeller type="featured" />
+        <BestSeller type="trending" />
         {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
 
