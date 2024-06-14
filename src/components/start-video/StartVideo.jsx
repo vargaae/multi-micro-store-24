@@ -1,5 +1,6 @@
 // TODO: !!!CleanUP!!!
-import BgVideo from "../../assets/video/vid-bg.mp4";
+import { videos } from "../../constants";
+// import startVideoBg from "../../assets";
 import Arrow from "../../assets/svg/arrow.svg";
 
 import {
@@ -15,7 +16,7 @@ const StartVideo = () => {
     <StartVideoContainer>
       <video autoPlay loop muted className="bg-vid">
         {" "}
-        <source src={BgVideo} type="video/mp4" />{" "}
+        <source src={videos.startVideoBg} type="video/mp4" />{" "}
       </video>
       <VideoTextBox>
         <VideoTextBoxTitle>MultiStore-24 Exclusive Deal</VideoTextBoxTitle>
@@ -27,9 +28,14 @@ const StartVideo = () => {
         </VideoTextBoxParagraph>
 
         <VisitShopLink>
-          Visit Store{" "}
+          Visit Store
           <span className="arrow">
-            <img src={Arrow} height={40} width={40} />
+          <svg fill="none" viewBox="0 0 24 24" height="1em" width="1em">
+          <path
+            fill="currentColor"
+            d="M23.068 11.993l-4.25-4.236-1.412 1.417 1.835 1.83L.932 11v2l18.305.002-1.821 1.828 1.416 1.412 4.236-4.25z"
+          />
+        </svg>
           </span>{" "}
         </VisitShopLink>
       </VideoTextBox>
