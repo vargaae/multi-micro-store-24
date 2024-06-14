@@ -1,12 +1,15 @@
-//TODO: CleanUp
+//TODO: CleanUp ->styled!!!
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const BestSellerContainer = styled.div`
-  padding: calc(4vw + 1rem);
+padding: calc(2vw + 1rem);
 
+@media screen and (min-width: 1200px) {
+    padding: calc(4vw + 1rem) 200px;
+  }
   @media screen and (min-width: 1600px) {
-    padding: 150px;
+    padding: 150px 250px;
   }
 `;
 export const BestSellerTitle = styled.h2`
@@ -18,7 +21,9 @@ export const BestSellerTitle = styled.h2`
   /* font-size: 60px; */
   font-size: calc(3vw + 0.7rem);
 
-  letter-spacing: -1px;
+  letter-spacing: -0.02em;
+  /* letter-spacing: -1px; */
+
   text-align: start;
   text-decoration: none;
   text-transform: uppercase;

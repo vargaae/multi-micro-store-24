@@ -22,13 +22,20 @@ const StartStore = () => {
       <StartCarousel headerTitle={headerTitle} />
       <FeaturedContainer>
         <FeaturedTitle>Featured Products</FeaturedTitle>
-        <BestSeller type="featured" />
+        <FeaturedProducts type="featured" />
       </FeaturedContainer>
       <div className="section__padding section__margin">
-        {/* <FeaturedProducts type="featured" /> */}
         <CategoryDirectory />
-        <FeaturedProducts type="trending" />
       </div>
+      <FeaturedContainer>
+        <FeaturedTitle>Trending Products</FeaturedTitle>
+        <FeaturedProducts type="trending" />
+      </FeaturedContainer>
+      <FeaturedContainer>
+        <FeaturedTitle>You may also like</FeaturedTitle>
+        <BestSeller type="featured" />
+      </FeaturedContainer>
+
       <Contact />
     </>
   );

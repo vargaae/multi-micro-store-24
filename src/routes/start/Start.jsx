@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "./Start.scss";
 
 import { brands } from "../../constants";
-import { BestSeller, Contact, StartHeader } from "../../components";
+import { BestSeller, Contact, FeaturedProducts, StartHeader, StartVideo } from "../../components";
 import { BestSellerContainer, BestSellerTitle } from "./Start.styles";
 
 const Start = () => {
@@ -32,10 +32,17 @@ const Start = () => {
         ))}
       </div>
       <BestSellerContainer>
+        <BestSellerTitle>DESIGN STORE / SHOP FEATURED</BestSellerTitle>
+        <FeaturedProducts type="trending" />
+        {/* <BestSeller type={"bestseller"} /> */}
+      </BestSellerContainer>
+      <StartVideo />
+      <BestSellerContainer>
         <BestSellerTitle>BEST SELLER</BestSellerTitle>
         <BestSeller type="featured" />
         {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
+
       <Contact />
     </>
   );

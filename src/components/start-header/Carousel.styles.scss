@@ -1,8 +1,20 @@
+//TODO:->styled + SET fontfamily + font-size + font-weight
+
 .carousel {
   height: 50%;
   display: flex;
   align-items: center;
   padding: 0.1rem;
+
+  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+
+  /* font-size: 60px; */
+  // font-size: calc(3vw + 0.7rem);
+
+  letter-spacing: -0.02em;
 }
 .carouselItem {
   display: flex;

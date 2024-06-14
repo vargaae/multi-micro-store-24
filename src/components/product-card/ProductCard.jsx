@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
         buttonType={BUTTON_TYPE_CLASSES.shop}
         onClick={addProductToCart}
       >
-        Add to cart
+        Buy Now
       </ButtonComponent>
     </ProductCardContainer>
   );

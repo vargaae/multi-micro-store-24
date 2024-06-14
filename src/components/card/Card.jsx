@@ -8,7 +8,7 @@ const Card = ({ item }) => {
       "https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600";
   };
   return (
-    <Link className="link" to={`/product/1/€{item.id}`}>
+    <Link className="link" to={`/product/1/${item.id}`}>
       <div className="card">
         <div className="card-image">
           {item?.attributes.isNew && <span>New Season</span>}

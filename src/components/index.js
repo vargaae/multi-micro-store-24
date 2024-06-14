@@ -20,14 +20,17 @@ export { default as InputComponent } from "./input-component/InputComponent";
 export { default as Slider } from "./slider/Slider";
 export { default as StartCarousel } from "./start-carousel/StartCarousel";
 
+export { default as StartHeader } from "./start-header/StartHeader";
+
 export { default as BestSeller } from "./start-carousel/BestSeller";
 export { default as BestSellerCard } from "./start-carousel/bestseller-card/BestSellerCard";
 
-export { default as StartHeader } from "./start-header/StartHeader";
+export { default as StartVideo } from "./start-video/StartVideo";
 
 export { default as StartCategories } from "./start-categories/StartCategories";
 
 export { default as FeaturedProducts } from "./featured-products/FeaturedProducts";
+export { default as FeaturedShop } from "./featured-shop/FeaturedProducts";
 // PRODUCT
 export { default as ProductCard } from "./product-card/ProductCard";
 export { default as Card } from "./card/Card";

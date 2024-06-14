@@ -95,9 +95,11 @@ const BestSeller = ({ type }) => {
   const settings = {
     lazyLoad: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 5000,
     initialSlide: 0,
     responsive: [
       {
