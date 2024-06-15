@@ -86,10 +86,19 @@ export const scartSlice = createSlice({
     setIsCartOpen(state, action) {
       state.isCartOpen = action.payload;
     },
+    // TODO: make good solution for add quantity - more items at one time
+    // addItemToCart: (state, action) => {
+    //         const item = state.cartItems.find((item) => item.id === action.payload.id);
+    //         if (item) {
+    //           item.quantity += action.payload.quantity;
+    //         } else {
+    //           state.cartItems = addCartItem(state.cartItems, action.payload);
+    //         }
+    //       },
     addItemToCart(state, action) {
       state.cartItems = addCartItem(state.cartItems, action.payload);
     },
-    //TODO: change to this solution:
+    //TODO: change to this solution: -> changed the shape of cart items?
     // removeItemFromCart(state, action) {
     //   state.cartItems = removeCartItem(state.cartItems, action.payload);
     // },

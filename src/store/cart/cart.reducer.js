@@ -11,12 +11,17 @@ const addCartItem = (cartItems, productToAdd) => {
     return cartItems.map((cartItem) =>
       cartItem.id === productToAdd.id
         ? { ...cartItem, quantity: cartItem.quantity + 1 }
-        : cartItem
+        : 
+        //TODO: CLEAN->
+          // ? { ...cartItem }
+          cartItem
     );
   }
 
   // return new array with modified cartItems/ new cart item -> this part won't be true, because now we add the product to the Cart at the Shop page, so we increase the amount if it's existing in the Cart
+  //TODO: CLEAN->
   return [...cartItems, { ...productToAdd, quantity: 1 }];
+  // return [...cartItems, { ...productToAdd }];
 };
 
 const removeCartItem = (cartItems, productToRemove) => {
@@ -56,9 +61,21 @@ export const cartSlice = createSlice({
     setIsCartOpen(state, action) {
       state.isCartOpen = action.payload;
     },
+    //TODO: CLEAN->
     addItemToCart(state, action) {
       state.cartItems = addCartItem(state.cartItems, action.payload);
     },
+    // TODO: make good solution for add quantity - more items at one time
+    // addItemToCart: (state, action) => {
+    //   const item = state.cartItems.find(
+    //     (item) => item.id === action.payload.id
+    //   );
+    //   if (item) {
+    //     item.quantity += action.payload.quantity;
+    //   } else {
+    //     state.cartItems = addCartItem(state.cartItems, action.payload);
+    //   }
+    // },
     removeItemFromCart(state, action) {
       state.cartItems = removeCartItem(state.cartItems, action.payload);
     },

@@ -11,7 +11,7 @@ export const BaseButton = styled.button`
   text-transform: uppercase;
   /* font-family: "Open Sans Condensed"; */
   font-weight: bolder;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   display: flex;
   justify-content: center;

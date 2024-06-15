@@ -21,7 +21,8 @@ const CartDropdown = () => {
   const dispatch = useDispatch();
 
   const cartItems = useSelector(selectCartItems);
-  const products = useSelector(state=>state.strapicart.products);
+  //TODO:Clean->
+  // const products = useSelector(state=>state.strapicart.products);
 
   const cartTotalPriceCount = useSelector(selectCartTotalPriceCount);
 
@@ -33,9 +34,13 @@ const CartDropdown = () => {
     navigateTo("/checkout");
     closeCartIfClickToLink();
   };
-
+  //TODO:Clean->
+  const handleBackToStoreClick = () => {
+    navigateTo("/interior");
+    closeCartIfClickToLink();
+  };
   const handleBackToShopClick = () => {
-    navigateTo("/shop");
+    navigateTo("/");
     closeCartIfClickToLink();
   };
 
@@ -47,6 +52,9 @@ const CartDropdown = () => {
         ) : (
           <EmptyMessage>
             <h2>There is no products in your cart:</h2>
+          {/*  <ButtonComponent onClick={handleBackToStoreClick}>
+              Back to STORE something nice!
+        </ButtonComponent> */}
             <ButtonComponent onClick={handleBackToShopClick}>
               Back to SHOP something nice!
             </ButtonComponent>

@@ -8,10 +8,13 @@ import { useNavigate, Link, useParams } from "react-router-dom";
 // import BalanceIcon from "@mui/icons-material/Balance";
 
 import { useDispatch } from "react-redux";
-import { addItemToCart } from "../../store/cart/scart.slice";
+// TODO: Change scart to cart HERE and in Productcard
+// import { addItemToCart } from "../../store/cart/scart.slice";
+import { addItemToCart } from "../../store/cart/cart.reducer";
 
 import "./ProductPage.styles.scss";
 import { useGetProductByIdQuery, strApi } from "../../services/strApi";
+import { ButtonComponent } from "../../components";
 
 const ProductPage = () => {
   const navigateTo = useNavigate();
@@ -21,9 +24,32 @@ const ProductPage = () => {
   const [count, setCount] = useState(0);
 
   const [selectedImg, setSelectedImg] = useState("img");
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
+  //TODO:Clean->
+  // const addProductToCart = () => dispatch(addItemToCart(product));
+  const addProductToCart = () =>
+    dispatch(
+      addItemToCart({
+        id: productDataById.data.id,
+        name: productDataById.data.attributes.title,
+        price: productDataById.data.attributes.price,
+        imageUrl: productDataById.data.attributes.img.data.attributes.url,
+      })
+    );
+  // TODO: !!!Delete or save out to my notes
+  // const addProductToCart = () =>
+  //   dispatch(
+  //     addItemToCart({
+  //       id: productDataById.data.id,
+  //       name: productDataById.data.attributes.title,
+  //       desc: productDataById.data.attributes.desc,
+  //       price: productDataById.data.attributes.price,
+  //       imageUrl: productDataById.data.attributes.img.data.attributes.url,
+  //       quantity,
+  //     })
+  //   );
 
   const {
     data: productDataById,
@@ -166,10 +192,10 @@ const ProductPage = () => {
             <div className="right">
               <h1>{productDataById?.data?.attributes?.title}</h1>
               <span className="price">
-              €{productDataById?.data?.attributes?.price}
+                €{productDataById?.data?.attributes?.price}
               </span>
               <p>{productDataById?.data?.attributes?.desc}</p>
-
+              {/*
               <div className="quantity">
                 <button
                   onClick={() =>
@@ -183,30 +209,18 @@ const ProductPage = () => {
                   +
                 </button>
               </div>
-              <button
-                className="add"
-                onClick={() =>
-                  dispatch(
-                    addItemToCart({
-                      id: productDataById.data.id,
-                      title: productDataById.data.attributes.title,
-                      desc: productDataById.data.attributes.desc,
-                      price: productDataById.data.attributes.price,
-                      img: productDataById.data.attributes.img.data.attributes.url,
-                      quantity,
-                    })
-                  )
-                }
-              >
+                */}
+              <ButtonComponent onClick={addProductToCart}>
                 ADD TO CART
-              </button>
-              <button className="add" onClick={goToSCart}>
+              </ButtonComponent>
+              {/*   <button className="add" onClick={goToSCart}>
                 GO TO CART
               </button>
-              <div className="links">
+            */}
+              {/*   <div className="links">
                 <div className="item">ADD TO WISH LIST</div>
                 <div className="item">ADD TO COMPARE</div>
-              </div>
+          </div> */}
               <hr />
               <p>
                 <strong>Available: </strong>
@@ -249,13 +263,14 @@ const ProductPage = () => {
                 </span>
               </div>
               <hr />
-              <div className="info">
+          {/*   
+           <div className="info">
                 <span>DESCRIPTION</span>
                 <hr />
                 <span>ADDITIONAL INFORMATION</span>
                 <hr />
                 <span>FAQ</span>
-              </div>
+                </div> */}
             </div>
           </div>
         </>

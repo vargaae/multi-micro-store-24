@@ -1,6 +1,10 @@
 import { addItemToCart } from "../../store/cart/cart.reducer";
 import { useDispatch } from "react-redux";
 
+import { useState } from "react";
+
+import { Link } from "react-router-dom";
+
 import { ButtonComponent, BUTTON_TYPE_CLASSES } from "../";
 
 import {
@@ -9,14 +13,25 @@ import {
   Name,
   Price,
 } from "./ProductCard.styles";
-import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
+  //TODO:Clean->
   const { name, price, imageUrl } = product;
 
-  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
 
+  const dispatch = useDispatch();
+  //TODO:Clean->
   const addProductToCart = () => dispatch(addItemToCart(product));
+  // const addProductToCart = () =>
+  //   dispatch(
+  //     addItemToCart({
+  //       name: name,
+  //       price: price,
+  //       imageUrl: imageUrl,
+  //       quantity: quantity,
+  //     })
+  //   );
 
   // TODO: link to={`/product/1/1`}
 
