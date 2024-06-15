@@ -1,7 +1,6 @@
  <div align="center">
-  <img alt="Application image" src="https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_apps.jpg?v=1665592014" width="400" />
+  <img alt="Application image" src="https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_apps.jpg?v=1665592014" width="350" />
 </div>
-<br>
   <div align="center">
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
     <img src="https://img.shields.io/badge/-Redux-black?style=for-the-badge&logoColor=white&logo=redux&color=764ABC" alt="redux" />
@@ -26,6 +25,13 @@ Features/Structure:
 - 🚀Database for products and users with Firebase,
 - 🚀Styled components
 
+## ClientSide Applicatiom
+
+<div align="center">
+  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024-git.png" width="700" />
+</div>
+[Deployed here]([https://ecommerce-2024-y49k.onrender.com/])
+
 ## 🛠 Front End:
 
 - React 18.2
@@ -46,13 +52,6 @@ Features/Structure:
 - Firebase
 - Firestore Database
 
-## ECOMMERCE 2024 ClientSide Application - Screenshots
-
-<div align="center">
-  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024.png" width="700" />
-</div>
-[Deployed here]([https://ecommerce-2024-y49k.onrender.com/])
-
 ## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -66,6 +65,7 @@ Currently, two official plugins are available:
 2. Run `npm install`
 3. You must add your own API key in the `utils/firebase/firebase-utils.js` file to connect to your Database.
 
+You can grab STRAPI API key and TOKEN [here](https://strapi.io/)
 You can grab FIREBASE API key [here](https://firebase.google.com/)
 
 **Set Up Environment Variables**
@@ -73,6 +73,8 @@ You can grab FIREBASE API key [here](https://firebase.google.com/)
 Create a new file named `.env` in the root of your project and add the following content:
 
 ```env
+VITE_APP_STRAPI_TOKEN=
+VITE_APP_STRAPI_API_URL=
 VITE_FIREBASE_API_KEY=
 ```
 
