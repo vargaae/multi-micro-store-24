@@ -1,5 +1,5 @@
  <div align="center">
-  <img alt="Application image" src="https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_apps.jpg?v=1665592014" width="350" />
+  <img alt="Application image" src="https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_apps.jpg?v=1665592014" />
 </div>
   <div align="center">
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
@@ -14,23 +14,28 @@ Features/Structure:
 - 🚀React APP -> Redux for State Management<br> is set up in this branch (🪵18-Redux - Migrated from Context API),
 - 🚀STORE SERVICE: API and Database for products with headless CMS: Strapi and PostgreSQL database,
 - 🚀SHOP SERVICE: Database for products with Firebase,
+- 🚀AUTHENTICATION/USER SERVICE - USER SLICE,
 - 🚀AUTHENTICATION->Sign Up with email,
 - 🚀AUTHENTICATION->Log in with email,
 - 🚀AUTHENTICATION->Sign Up and Log In with Google account,
-- 🚀ProductPage,
-- 🚀CART+USERMENU DROPDOWNs,
-- 🚀Adding to CART,
-- 🚀CHECKOUT,
+- 🚀CART SERVICE - CART SLICE,
 - 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount),
+- 🚀Adding to CART,
+- 🚀CART+USERMENU DROPDOWNs,
+- 🚀CHECKOUT,
+- 🚀CATEGORIES SERVICE - CATEGORIES SLICE,
 - 🚀Database for products and users with Firebase,
+- 🚀ProductPage,
 - 🚀Styled components
 
-## ClientSide Applicatiom
+## ClientSide Application
 
 <div align="center">
   <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024-git.png" width="700" />
 </div>
-[Deployed here]([https://ecommerce-2024-y49k.onrender.com/])
+
+You can check out the deployed application [here](https://ecommerce-2024-y49k.onrender.com/)
+->deployed on Render: ClientSide App+API+PostgreSQL DB
 
 ## 🛠 Front End:
 
@@ -63,10 +68,10 @@ Currently, two official plugins are available:
 
 1. Clone this repo
 2. Run `npm install`
-3. You must add your own API key in the `utils/firebase/firebase-utils.js` file to connect to your Database.
+3. Connect to STRAPI and FIREBASE -> You must add your own API key in the `utils/firebase/firebase-utils.js` file to connect to your Database.
 
 You can grab STRAPI API key and TOKEN [here](https://strapi.io/)
-You can grab FIREBASE API key [here](https://firebase.google.com/)
+and you can grab FIREBASE API key [here](https://firebase.google.com/)
 
 **Set Up Environment Variables**
 
