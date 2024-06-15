@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 import { setCategories } from "../../store/categories/categories.reducer";
 
-import StartShop from "../categories-preview/StartShop";
+import StartShop from "../start-shop/StartShop";
 import CategoryProductList from "../category-product-list/CategoryProductList";
 import { Contact } from "../../components";
 
@@ -33,10 +33,7 @@ const Shop = () => {
         / Design {headerTitle}
       </h2>
       <Routes>
-        <Route
-          index
-          element={<StartShop headerTitle={headerTitle} />}
-        />
+        <Route index element={<StartShop headerTitle={headerTitle} />} />
         <Route path=":category" element={<CategoryProductList />} />
       </Routes>
       <Contact />

@@ -1,13 +1,17 @@
 //TODO: Change font-family
 // @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+//TODO: Unify COLORS -> text: white, lightblue...
 
 :root {
   --font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  --font-family-numbers: "Poppins", "Poppins Placeholder", sans-serif;
+
   // --font-family: "Open Sans Condensed", sans-serif;
   --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
   --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
 
   --color-bg: #042c54;
+  --color-prime: #4285f4;
   --color-footer: #031b34;
   --color-blog: #042c54;
   --color-text: #81afdd;
@@ -24,8 +28,7 @@ body {
     90deg,
     rgb(255, 254, 254) 10%,
     rgb(65, 112, 232) 53%,
-    /* rgb(41, 135, 197) 53%, */
-     rgb(155, 195, 204) 95%
+    /* rgb(41, 135, 197) 53%, */ rgb(155, 195, 204) 95%
   );
   text-align: center;
 }
@@ -44,11 +47,14 @@ body {
 // }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: var(--font-family);
+  // TODO: code???
+  // font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  //   monospace;
 }
 
 a {
+  // NOTE: links default!: color:black, without underline
   text-decoration: none;
   color: black;
 }

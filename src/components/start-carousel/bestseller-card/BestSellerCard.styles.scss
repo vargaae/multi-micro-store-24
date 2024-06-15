@@ -1,3 +1,4 @@
+// TODO: ->styled
 .bestseller-card {
   margin: 0.2rem;
   display: flex;
@@ -11,10 +12,10 @@
     height: calc(18vw + 3rem);
     // overflow: hidden;
     position: relative;
-    
+
     &:hover {
       .secondImg {
-          z-index: 2;
+        z-index: 2;
         transform: scale(1.1);
         transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
       }
@@ -47,8 +48,27 @@
   }
 
   h2 {
-    font-size: 16px;
-    font-weight: 400;
+    // TODO: SET the texts on the cards (unified and responsive/user friendly)
+    font-family: var(--font-family);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    // font-weight: 400;
+    font-style: normal;
+
+    font-size: 1em;
+    // font-size: 22px;
+
+    letter-spacing: 0em;
+    line-height: 1.6em;
+    paragraph-spacing: 20px;
+    text-alignment: start;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s cubic-bezier(0.44, 0, 0.56, 1) 0s;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .prices {
@@ -56,9 +76,19 @@
     justify-content: flex-end;
     gap: 20px;
 
+    // TODO: SET the prices/numbers on the cards (unified and responsive/user friendly)
     h3 {
-      font-size: 18px;
+      font-family: var(--font-family-numbers);
+
+      font-size: 0.8em;
       font-weight: 500;
+
+      font-style: normal;
+      letter-spacing: 0em;
+      line-height: 1.6em;
+      paragraph-spacing: 20px;
+      // text-alignment: start;
+      text-decoration: none;
 
       &:first-child {
         color: gray;

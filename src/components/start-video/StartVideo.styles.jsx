@@ -1,4 +1,4 @@
-// TODO: SET video textbox->mobile/tablet @media + arrow + underline hover animation
+// TODO: SET video textbox->mobile/tablet @media -> !fontsize
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -56,8 +56,13 @@ export const VideoTextBox = styled.div`
 `;
 
 export const VideoTextBoxTitle = styled.h3`
-  padding: 2rem 0;
-  font-size: calc(2vw + 1rem);
+  padding: 0.2em 0;
+
+  font-size: calc(2vw + 0.5em);
+  @media screen and (min-width: 810px) {
+    padding: 2em 0;
+    font-size: calc(2vw + 1rem);
+  }
 
   font-family: "Afacad", "Afacad Placeholder", sans-serif;
   font-optical-sizing: auto;
@@ -87,27 +92,102 @@ export const VideoTextBoxParagraph = styled.p`
   text-transform: none;
 `;
 
-export const VisitShopLink = styled(Link)`
-  .arrow {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 0 1rem;
-    color: white;
-  }
-  height: 40px;
-  color: #ffffff;
-  padding: 2rem 0;
+export const VisitStoreLink = styled(Link)`
+  padding-top: 0.5em;
 
-  font-size: calc(1vw + 0.5rem);
+  @media screen and (min-width: 810px) {
+    padding-top: 1em;
+  }
+  /* height: 40px; */
+
+  font-size: 1em;
+  @media screen and (min-width: 810px) {
+    /* font-size: 1.5em; */
+    font-size: calc(1vw + 1em);
+  }
+  
+  letter-spacing: -0.02em;
 
   font-family: "Afacad", "Afacad Placeholder", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  color: inherit;
+
+  /* Animated link styling: Animate the line from the left */
+  position: relative;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    color: var(--color-prime);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+
+    /* width: 100%; */
+    width: calc(33vw + 1em);
+    // TODO: unify media queries
+    @media screen and (min-width: 810px) {
+      width: calc(28vw + 1em);
+
+      /* width: 69%; */
+    }
+    @media screen and (min-width: 1200px) {
+      width: calc(25vw + 0.1em);
+
+      /* width: 69%; */
+    }
+    @media screen and (min-width: 1600px) {
+      width: calc(20vw + 0.1em);
+
+      /* width: 66%; */
+    }
+
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-prime);
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+
+  .arrow {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    color: inherit;
+  }
+`;
+
+export const VisitShopLink = styled(VisitStoreLink)`
+  &:hover {
+    color: var(--color-text);
+  }
+
+  &::before {
+    content: "";
+    width: calc(24vw + 1em);
+    background-color: var(--color-text);
+        // TODO: unify media queries
+        @media screen and (min-width: 810px) {
+      width: calc(20vw + 1em);
+    }
+    @media screen and (min-width: 1200px) {
+      /* width: 51%; */
+      width: calc(18vw + 0.1em);
+    }
+    @media screen and (min-width: 1600px) {
+      /* width: 48%; */
+      width: calc(14vw + 0.1em);
+    }
   }
 `;

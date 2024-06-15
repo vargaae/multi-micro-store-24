@@ -18,7 +18,7 @@ const StartShop = ({ headerTitle }) => {
     <>
       <StartCarousel headerTitle={headerTitle} />
           <FeaturedContainer>
-        <FeaturedTitle>Featured</FeaturedTitle>
+        <FeaturedTitle>Featured PRODUCTS</FeaturedTitle>
         <FeaturedShop type="featured" />
       </FeaturedContainer>
                 
@@ -30,7 +30,7 @@ const StartShop = ({ headerTitle }) => {
         );
       })}
       <FeaturedContainer>
-        <FeaturedTitle>Trending</FeaturedTitle>
+        <FeaturedTitle>Trending PRODUCTS</FeaturedTitle>
         <FeaturedShop type="trending" />
       </FeaturedContainer>
       <FeaturedContainer>

@@ -32,7 +32,7 @@ const Start = () => {
         ))}
       </div>
       <BestSellerContainer>
-        <BestSellerTitle>DESIGN STORE / SHOP FEATURED</BestSellerTitle>
+        <BestSellerTitle>DESIGN STORE / SHOP FEATURED PRODUCTS</BestSellerTitle>
         <FeaturedProducts type="featured" />
         {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
