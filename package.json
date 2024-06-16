@@ -26,6 +26,7 @@
     "react-slick": "^0.30.2",
     "react-spinners": "^0.13.8",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "sass": "^1.71.1",
     "scroll-lock": "^2.1.5",
     "styled-components": "^6.1.9"
