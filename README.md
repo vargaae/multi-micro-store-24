@@ -40,7 +40,7 @@ You can check out the deployed application [here](https://ecommerce-2024-y49k.on
 ## 🛠 Front End:
 
 - React 18.2
-- Redux (+Redux Toolkit)
+- Redux (+Redux Toolkit+Redux-Persist)
 - SASS
 - styled components
 - plugins(animation, sliders, icons)
