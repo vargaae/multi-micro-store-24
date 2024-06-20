@@ -47,6 +47,13 @@ export const strApi = createApi({
           )}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
         ),
     }),
+    postOrder: builder.query({
+      query: ({ products }) =>
+        createRequest(`/order`, {
+          method: "POST",
+          products,
+        }),
+    }),
   }),
 });
 
@@ -58,4 +65,5 @@ export const {
   useGetProductByIdQuery,
   useGetCategoryByIdQuery,
   useGetCategoryProductListQuery,
+  usePostOrderQuery,
 } = strApi;

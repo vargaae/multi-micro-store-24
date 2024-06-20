@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-2024",
   "private": true,
-  "version": "3.7.2",
+  "version": "3.8.1",
   "type": "module",
   "scripts": {
     "v": "vite",
@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
+    "@stripe/react-stripe-js": "^2.7.1",
+    "@stripe/stripe-js": "^3.5.0",
+    "axios": "^1.7.2",
     "firebase": "^10.9.0",
     "framer-motion": "^11.2.10",
     "react": "^18.2.0",
@@ -44,5 +47,6 @@
     "postcss": "^8.4.35",
     "vite": "^5.1.0",
     "vite-plugin-svgr": "^4.2.0"
-  }
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
