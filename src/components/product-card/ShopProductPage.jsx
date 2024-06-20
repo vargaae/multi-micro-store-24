@@ -72,8 +72,8 @@ const ShopProductPage = ({}) => {
               Home
             </Link>{" "}
             /{" "}
-            <Link className="link" to="/products/7">
-              Products
+            <Link className="link" to="/shop">
+              Design Shop
             </Link>{" "}
             / {singleProduct.name}
           </h2>
