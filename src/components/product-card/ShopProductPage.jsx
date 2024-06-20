@@ -13,16 +13,28 @@ import {
   Name,
   Price,
 } from "./ProductCard.styles";
-import { getSingleDocument } from "../../utils/firebase/firebase.utils";
+import { db, getSingleDocument } from "../../utils/firebase/firebase.utils";
+import { collection, onSnapshot } from "firebase/firestore";
 
 const ShopProductPage = ({}) => {
+  const [singleProduct, setSingleProduct] = useState([]);
+  console.log(singleProduct);
+
+  useEffect(() => {
+    onSnapshot(collection(db, "categories"), (snapshot) =>
+      setSingleProduct(
+        snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      )
+    );
+  }, []);
+
   useEffect(() => {
     const getProduct = async () => {
       // it's now categoriesArray!!!, not categoriesMap with OBJECT anymore:
       const singleProduct = await getSingleDocument(1);
       // dispatch(setCategories(categoriesArray));
 
-      console.log(singleProduct)
+      // setSingleProduct(singleProduct)
     };
 
     getProduct();
@@ -52,6 +64,10 @@ const ShopProductPage = ({}) => {
     <ProductCardContainer>
       <Link className="productpagelink" to={`/product/1/1`}></Link>
       NAME - PRICE - IMG
+      {Object.keys(singleProduct).map((title) => {
+        const products = singleProduct[title];
+        return <div key={title}>{title}</div>;
+      })}
       {/* <img src={imageUrl} alt={`${name}`} />
       <Footer>
         <Name>name{name}</Name>
