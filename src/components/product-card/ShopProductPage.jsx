@@ -1,7 +1,7 @@
 import { addItemToCart } from "../../store/cart/cart.reducer";
 import { useDispatch } from "react-redux";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -13,16 +13,29 @@ import {
   Name,
   Price,
 } from "./ProductCard.styles";
+import { getSingleDocument } from "../../utils/firebase/firebase.utils";
 
-const ProductCard = ({ product }) => {
+const ShopProductPage = ({}) => {
+  useEffect(() => {
+    const getProduct = async () => {
+      // it's now categoriesArray!!!, not categoriesMap with OBJECT anymore:
+      const singleProduct = await getSingleDocument(1);
+      // dispatch(setCategories(categoriesArray));
+
+      console.log(singleProduct)
+    };
+
+    getProduct();
+  }, []);
+
   //TODO:Clean->
-  const { name, price, imageUrl } = product;
+  // const { name, price, imageUrl } = product;
 
   const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
   //TODO:Clean->
-  const addProductToCart = () => dispatch(addItemToCart(product));
+  // const addProductToCart = () => dispatch(addItemToCart(product));
   // const addProductToCart = () =>
   //   dispatch(
   //     addItemToCart({
@@ -36,11 +49,12 @@ const ProductCard = ({ product }) => {
   // TODO: link to={`/product/1/1`}
 
   return (
-    <ProductCardContainer>  
-      <Link className="productpagelink" to={`product/1`}></Link>
-      <img src={imageUrl} alt={`${name}`} />
+    <ProductCardContainer>
+      <Link className="productpagelink" to={`/product/1/1`}></Link>
+      NAME - PRICE - IMG
+      {/* <img src={imageUrl} alt={`${name}`} />
       <Footer>
-        <Name>{name}</Name>
+        <Name>name{name}</Name>
         <Price>€{price}</Price>
       </Footer>
       <ButtonComponent
@@ -48,9 +62,9 @@ const ProductCard = ({ product }) => {
         onClick={addProductToCart}
       >
         Buy Now
-      </ButtonComponent>
+      </ButtonComponent> */}
     </ProductCardContainer>
   );
 };
 
-export default ProductCard;
+export default ShopProductPage;

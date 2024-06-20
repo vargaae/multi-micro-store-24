@@ -71,6 +71,54 @@ export const getCategoriesAndDocuments = async () => {
   return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
 };
 
+export const getSingleDocument = async (id) => {
+  const collectionRef = collection(db, "categories");
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+
+//   const collectionRef = collection(db, "categories");
+//   const q = query(collectionRef);
+
+// const d = await getDocs(query(collection(db, "categories", "Brown Brim"))) 
+//     return d.data()
+
+  // const querySnapshot = await getDocs(q);
+  // return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+};
+
+// const doc_refs = await getDocs(query(collection(getDb(), collection_name)))
+
+// export const findByContinent = async () => {
+//   const collection_ref = collection(getDb(), collection_name)
+//   const q = query(collection_ref, where("continent", "==", "Asia"))
+//   const doc_refs = await getDocs(q);
+
+//   const res = []
+
+//   doc_refs.forEach(country => {
+//       res.push({
+//           id: country.id, 
+//           ...country.data()
+//       })
+//   })
+
+//   return res
+// }
+
+export const getDocument = async (id) => {
+  const firestore = getFirestore();
+  const docRef = doc(firestore, this.collectionPath, id);
+  const docSnap = await getDoc(docRef);
+
+  const data = docSnap.exists() ? docSnap.data() : null;
+
+  if (data === null || data === undefined) return null;
+
+  return { id, ...data };
+};
+
 export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInformation = {} // additionalInformation:if there is no displayName, we will create it from SignUp instead of null

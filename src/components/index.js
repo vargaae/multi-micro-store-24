@@ -32,6 +32,7 @@ export { default as StartCategories } from "./start-categories/StartCategories";
 export { default as FeaturedProducts } from "./featured-products/FeaturedProducts";
 export { default as FeaturedShop } from "./featured-shop/FeaturedProducts";
 // PRODUCT
+export { default as ShopProductPage } from "./product-card/ShopProductPage";
 export { default as ProductCard } from "./product-card/ProductCard";
 export { default as Card } from "./card/Card";
 export { default as List } from "./list/List";

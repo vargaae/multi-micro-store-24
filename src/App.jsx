@@ -29,6 +29,7 @@ import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
 } from "./utils/firebase/firebase.utils";
+import { ShopProductPage } from "./components";
 
 export function ScrollToTop() {
   const { pathname } = useLocation();
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:catId/:id",
         element: <ProductPage />,
+      },
+      {
+        path: "shop/product/:id",
+        element: <ShopProductPage />,
       },
       {
         path: "/shop/*",
