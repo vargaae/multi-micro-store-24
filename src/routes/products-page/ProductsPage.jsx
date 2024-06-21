@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { Link, useParams } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+
 import {
   useGetSubCategoriesByCategoryIdQuery,
   useGetCategoryByIdQuery,
@@ -14,10 +16,9 @@ import { List } from "../../components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import "./ProductsPage.styles.scss";
-import { useDispatch } from "react-redux";
-
 import { FadeLoader } from "react-spinners";
+
+import "./ProductsPage.styles.scss";
 
 const override = {
   display: "block",
@@ -122,12 +123,12 @@ const Products = () => {
             Home
           </Link>{" "}
           /{" "}
-          <Link className="link" to="/products/7">
-            Products
+          <Link className="link" to="/interior">
+            Design Store
           </Link>{" "}
           /{" "}
-          <Link className="link" to="/shop">
-            Categories Preview
+          <Link className="link" to="/products/7">
+            Products
           </Link>{" "}
           / <strong>{categoryByCategoryId?.data?.attributes?.title}</strong>
         </h2>
@@ -135,10 +136,7 @@ const Products = () => {
       <div className="products">
         <div className="left">
           <div className="filterItem">
-            <h2>
-              <strong>{categoryByCategoryId?.data?.attributes?.title}</strong> /
-              Product Categories
-            </h2>
+            <h2>Product Categories</h2>
             {error ? (
               `Something went wrong! ${error}`
             ) : isFetching ? (

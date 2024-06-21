@@ -1,12 +1,20 @@
 .products {
-  padding: 30px 50px;
-  display: flex;
+
+  padding: 30px 10px;
+  @media screen and (min-width: 700px) {
+    
+    display: flex;
+
+    .left {
+      flex: 1;
+      position: sticky;
+      height: 100%;
+      top: 50px;
+  }
+  }
 
   .left {
-    flex: 1;
-    position: sticky;
-    height: 100%;
-    top: 50px;
+    margin-bottom: 30px;
 
     .filterItem {
       margin-bottom: 30px;
