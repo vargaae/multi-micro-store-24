@@ -8,7 +8,7 @@ import {
 } from "./CategoryDirectory.styles";
 
 const CategoryDirectory = () => (
-  <DirectoryContainer>
+  <DirectoryContainer id="storecategorieslink">
     <DirectoryColContainer>
       <DirectoryItemContainer to={`products/1`}>
         <BackgroundImage
