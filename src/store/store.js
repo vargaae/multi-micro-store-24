@@ -11,18 +11,19 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { PersistGate } from "redux-persist/integration/react";
+// TODO: CleanUP:PersistGate?, Middlewares
+// import { PersistGate } from "redux-persist/integration/react";
 
 import { setupListeners } from "@reduxjs/toolkit/query";
 
-import logger from "redux-logger";
+// import logger from "redux-logger";
 
 import { rootReducer } from "./root-reducer";
 import { strApi } from "../services/strApi";
 
-const middleWares = [
-  import.meta.env.NODE_ENV === "development" && logger,
-].filter(Boolean);
+// const middleWares = [
+//   import.meta.env.NODE_ENV === "development" && logger,
+// ].filter(Boolean);
 
 const persistConfig = {
   key: "root",
@@ -36,14 +37,14 @@ export const store = configureStore({
   [strApi.reducerPath]: strApi.reducer,
   reducer: persistedReducer,
   //   middleware: (getDefaultMiddleware) =>
-  //     getDefaultMiddleware().concat(middleWares),
+  //     getDefaultMiddleware().concat(strApi.middleware, middleWares),
   // });
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(strApi.middleware, middleWares),
+    }).concat(strApi.middleware),
 });
 
 export let persistor = persistStore(store);

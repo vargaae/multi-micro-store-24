@@ -7,7 +7,7 @@ import { userReducer } from "./user/user.reducer";
 import { categoriesReducer } from "./categories/categories.reducer";
 import { cartReducer } from "./cart/cart.reducer";
 
-import { scartReducer } from "./cart/scart.slice";
+// import { scartReducer } from "./cart/scart.slice";
 
 // export const rootReducer = combineSlices(strApi, {
 //   user: userReducer,
@@ -22,5 +22,5 @@ export const rootReducer = combineReducers({
   user: userReducer,
   categories: categoriesReducer,
   cart: cartReducer,
-  strapicart: scartReducer,
+  // strapicart: scartReducer,
 });

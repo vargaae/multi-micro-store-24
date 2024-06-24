@@ -1,3 +1,5 @@
+// LOADING SPINNER
+export { default as Spinner } from "./spinner/Spinner";
 // AUTH
 export { default as SignInForm } from "./sign-in-form/SignInForm";
 export { default as SignUpForm } from "./sign-up-form/SignUpForm";
