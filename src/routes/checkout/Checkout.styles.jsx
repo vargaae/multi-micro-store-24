@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
-  min-height: 90vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,10 +33,11 @@ export const HeaderBlock = styled.div`
 `;
 
 export const Total = styled.span`
-  margin-top: 1.5rem;
+  margin-top: auto;
   margin-bottom: 2rem;
   margin-left: auto;
   font-size: 2.3rem;
+  border-radius: 0.25rem;
 `;
 
 export const PayContainer = styled.div`
