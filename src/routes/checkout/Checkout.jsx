@@ -81,6 +81,7 @@ const Checkout = () => {
           <EmptyMessage>
             <h2>There is no products in your cart?!</h2>
             <h3>
+              <ShopLink to="/interior">Back to STORE something nice!</ShopLink>
               <ShopLink to="/shop">Back to SHOP something nice!</ShopLink>
             </h3>
           </EmptyMessage>
