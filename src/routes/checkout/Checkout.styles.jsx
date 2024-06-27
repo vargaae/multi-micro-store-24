@@ -27,8 +27,17 @@ export const HeaderBlock = styled.div`
   text-transform: capitalize;
   width: 23%;
 
+  &:nth-last-child(2) {
+    @media screen and (max-width: 550px) {
+      display: none;
+    }
+  }
+
   &:last-child {
-    width: 8%;
+    width: 10%;
+    @media screen and (min-width: 550px) {
+      width: 6%;
+    }
   }
 `;
 
@@ -36,8 +45,8 @@ export const Total = styled.span`
   margin-top: auto;
   margin-bottom: 2rem;
   margin-left: auto;
-  font-size: 2.3rem;
-  border-radius: 0.25rem;
+  font-size: 2.3em;
+  border-radius: 0.25em;
 `;
 
 export const PayContainer = styled.div`

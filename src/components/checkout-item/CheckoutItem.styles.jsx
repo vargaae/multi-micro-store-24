@@ -27,6 +27,12 @@ export const Name = styled.span`
 export const BaseSpan = styled.span`
   width: 23%;
   justify-content: space-around;
+
+  &:nth-last-child(2) {
+    @media screen and (max-width: 550px) {
+      display: none;
+    }
+  }
 `;
 
 export const Quantity = styled(BaseSpan)`
