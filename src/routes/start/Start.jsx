@@ -5,8 +5,15 @@ import "./Start.scss";
 import { brands } from "../../constants";
 import { BestSeller, Contact, FeaturedProducts, StartHeader, StartVideo } from "../../components";
 import { BestSellerContainer, BestSellerTitle } from "./Start.styles";
+// TODO: Add data to Firestore and then clean up
+// import { useEffect } from "react";
+// import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
+// import PRODUCTS from "../../shop-data.js";
 
 const Start = () => {
+  // useEffect(() => {
+  //   addCollectionAndDocuments('accesories', PRODUCTS);
+  // }, []);
   // const [brands, setBrands] = useState([]);
   return (
     <>

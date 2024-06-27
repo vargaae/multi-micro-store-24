@@ -54,14 +54,30 @@ export const addCollectionAndDocuments = async (
   const batch = writeBatch(db);
 
   objectsToAdd.forEach((object) => {
-    const docRef = doc(collectionRef, object.title.toLowerCase());
-    // const docRef = doc(collectionRef, object[field].toLowerCase());
+    // const docRef = doc(collectionRef, object.title.toLowerCase());
+    const docRef = doc(collectionRef, object[field].toLowerCase());
     batch.set(docRef, object);
   });
 
   await batch.commit();
   console.log("done");
 };
+
+// export const addCollectionAndDocuments = async (
+//   collectionKey,
+//   objectsToAdd
+// ) => {
+//   const batch = writeBatch(db);
+//   const collectionRef = collection(db, collectionKey);
+  
+//   objectsToAdd.forEach((object) => {
+//      const docRef = doc(collectionRef, object.title.toLowerCase());
+//      batch.set(docRef, object);
+//   });
+
+//   await batch.commit();
+//   console.log('done');
+// };
 
 export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, "categories");

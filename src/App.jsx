@@ -1,4 +1,5 @@
-import { Fragment, useEffect } from "react";
+// TODO: CLEAN UP: -> delete SCART(here, store, components), imports
+import { useEffect, lazy, Suspense } from "react";
 
 import {
   useLocation,
@@ -12,18 +13,32 @@ import ErrorPage from "./ErrorPage";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/user/user.reducer";
 
-import {
-  Navigation,
-  Authentication,
-  Start,
-  StartStore,
-  Shop,
-  ProductPage,
-  ProductsPage,
-  Checkout,
-  SCart,
-} from "./routes";
-import { Footer } from "./containers";
+import { Spinner } from "./components";
+
+// import {
+//   Navigation,
+//   Authentication,
+//   Start,
+//   StartStore,
+//   Shop,
+//   ProductPage,
+//   ProductsPage,
+//   Checkout,
+//   SCart,
+// } from "./routes";
+// import { Footer } from "./containers";
+
+const Navigation = lazy(() => import("./routes/navigation/Navigation"));
+const Footer = lazy(() => import("./containers/footer/Footer"));
+const Start = lazy(() => import("./routes/start/Start"));
+const StartStore = lazy(() => import("./routes/start-store/StartStore"));
+const Shop = lazy(() => import("./routes/shop/Shop"));
+const ProductPage = lazy(() => import("./routes/product-page/ProductPage"));
+const ProductsPage = lazy(() => import("./routes/products-page/ProductsPage"));
+const Checkout = lazy(() => import("./routes/checkout/Checkout"));
+const Authentication = lazy(() =>
+  import("./routes/authentication/Authentication")
+);
 
 import {
   createUserDocumentFromAuth,
@@ -43,12 +58,12 @@ export function ScrollToTop() {
 
 const Layout = () => {
   return (
-    <div className="app">
+    <Suspense fallback={<Spinner />}>
       <ScrollToTop />
       <Navigation />
       <Outlet />
       <Footer />
-    </div>
+    </Suspense>
   );
 };
 
@@ -94,10 +109,10 @@ const router = createBrowserRouter([
         path: "/authentication",
         element: <Authentication />,
       },
-      {
-        path: "/scart",
-        element: <SCart />,
-      },
+      // {
+      //   path: "/scart",
+      //   element: <SCart />,
+      // },
       {
         path: "/checkout",
         element: <Checkout />,
@@ -133,11 +148,7 @@ const App = () => {
     return unsubscribe;
   }, []);
 
-  return (
-    <Fragment>
-      <RouterProvider router={router} />
-    </Fragment>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

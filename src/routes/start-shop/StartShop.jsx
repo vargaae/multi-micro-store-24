@@ -19,7 +19,7 @@ const StartShop = ({ headerTitle }) => {
       <StartCarousel headerTitle={headerTitle} />
           <FeaturedContainer>
         <FeaturedTitle>Featured PRODUCTS</FeaturedTitle>
-        <FeaturedShop type="featured" />
+        <FeaturedShop type="featured-in-shop" />
       </FeaturedContainer>
                 
       {Object.keys(categoriesMap).map((title) => {

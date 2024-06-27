@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-2024",
   "private": true,
-  "version": "3.8.2",
+  "version": "3.8.4",
   "type": "module",
   "scripts": {
     "v": "vite",

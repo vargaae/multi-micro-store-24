@@ -23,6 +23,7 @@ Features/Structure:
 - 🚀Adding to CART,
 - 🚀CART+USERMENU DROPDOWNs,
 - 🚀CHECKOUT,
+- 🚀PAY WITH STRIPE,
 - 🚀CATEGORIES SERVICE - CATEGORIES SLICE,
 - 🚀Database for products and users with Firebase,
 - 🚀ProductPage,
@@ -46,6 +47,7 @@ You can check out the deployed application [here](https://ecommerce-2024-y49k.on
 - plugins(animation, sliders, icons)
 - Firebase connected
 - Strapi connected
+- Stripe connected
 
 ## 🛠 Back End - Services:
 
@@ -53,6 +55,7 @@ You can check out the deployed application [here](https://ecommerce-2024-y49k.on
 - NodeJS
 - Strapi
 - PostgreSQL
+- Stripe connected -> /order
 - SHOP \
 - Firebase
 - Firestore Database
@@ -71,7 +74,8 @@ Currently, two official plugins are available:
 3. Connect to STRAPI and FIREBASE -> You must add your own API key in the `utils/firebase/firebase-utils.js` file to connect to your Database.
 
 You can grab STRAPI API key and TOKEN [here](https://strapi.io/)
-and you can grab FIREBASE API key [here](https://firebase.google.com/)
+, you can grab FIREBASE API key [here](https://firebase.google.com/)
+and you can grab STRIPE keys [here](https://stripe.com/)
 
 **Set Up Environment Variables**
 
@@ -81,6 +85,7 @@ Create a new file named `.env` in the root of your project and add the following
 VITE_APP_STRAPI_TOKEN=
 VITE_APP_STRAPI_API_URL=
 VITE_FIREBASE_API_KEY=
+VITE_APP_STRIPE_KEY=
 ```
 
 1. **Running the Project**

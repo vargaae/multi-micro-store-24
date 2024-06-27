@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
-  min-height: 90vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,16 +27,26 @@ export const HeaderBlock = styled.div`
   text-transform: capitalize;
   width: 23%;
 
+  &:nth-last-child(2) {
+    @media screen and (max-width: 550px) {
+      display: none;
+    }
+  }
+
   &:last-child {
-    width: 8%;
+    width: 10%;
+    @media screen and (min-width: 550px) {
+      width: 6%;
+    }
   }
 `;
 
 export const Total = styled.span`
-  margin-top: 1.5rem;
+  margin-top: auto;
   margin-bottom: 2rem;
   margin-left: auto;
-  font-size: 2.3rem;
+  font-size: 2.3em;
+  border-radius: 0.25em;
 `;
 
 export const PayContainer = styled.div`
