@@ -134,6 +134,17 @@ export const getDocument = async (id) => {
 
   return { id, ...data };
 };
+// TODO: refactor to this getDocument function:
+// export const getDocument = async (id) => {
+
+// const docRef = await doc(db, "products", id.toLowerCase());
+
+// onSnapshot(docRef, (doc) => {
+  // return { id, ...doc.data };
+//   setSingleProduct(doc.data(), doc.id);
+// });
+// };
+
 
 export const createUserDocumentFromAuth = async (
   userAuth,

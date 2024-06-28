@@ -1,5 +1,73 @@
 const SHOP_DATA = [
   {
+    title: 'Swimsuits',
+    items: [
+      {
+        id: 1,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://www.swimsuitsforall.com/dw/image/v2/BBKT_PRD/on/demandware.static/-/Sites-masterCatalog_Swimsuitsforall/default/dw05e4d87d/images/hi-res/2466_10352_mc_1138.jpg?sw=653&sh=940&sm=fit&q=90&strip=false',
+        SKU: '1038351',
+        price: 56.28,
+      },
+      {
+        id: 2,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+        SKU: 'ypkgK0X',
+        price: 18,
+      },
+      {
+        id: 3,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+        SKU: 'QdJwgmp',
+        price: 35,
+      },
+      {
+        id: 4,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
+        SKU: 'RjBLWxB',
+        price: 25,
+      },
+      {
+        id: 5,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
+        SKU: 'YTjW3vF',
+        price: 18,
+      },
+      {
+        id: 6,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
+        SKU: 'rKBDvJX',
+        price: 14,
+      },
+      {
+        id: 7,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
+        SKU: 'bLB646Z',
+        price: 18,
+      },
+      {
+        id: 8,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
+        SKU: '1f2nWMM',
+        price: 14,
+      },
+      {
+        id: 9,
+        name: 'Lace Up One Piece Swimsuit',
+        imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
+        SKU: 'X2VJP2W',
+        price: 16,
+      },
+    ],
+  },
+  {
     title: 'Hats',
     items: [
       {
@@ -169,7 +237,7 @@ const SHOP_DATA = [
     ],
   },
   {
-    title: 'Womens',
+    title: 'Women',
     items: [
       {
         id: 23,
@@ -223,7 +291,7 @@ const SHOP_DATA = [
     ],
   },
   {
-    title: 'Mens',
+    title: 'Men',
     items: [
       {
         id: 30,

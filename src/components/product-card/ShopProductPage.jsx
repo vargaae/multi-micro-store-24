@@ -36,7 +36,7 @@ const ShopProductPage = ({}) => {
   // console.log(singleProduct);
 
   useEffect(() => {
-    const docRef = doc(db, "products", id);
+    const docRef = doc(db, "products", id.toLowerCase());
 
     onSnapshot(docRef, (doc) => {
       setSingleProduct(doc.data(), doc.id);
@@ -68,7 +68,7 @@ const ShopProductPage = ({}) => {
       addItemToCart({
         name: singleProduct.name,
         price: singleProduct.price,
-        imageUrl: singleProduct.imageUrl,
+        imageUrl: singleProduct.img,
         quantity: singleProduct.quantity,
       })
     );
