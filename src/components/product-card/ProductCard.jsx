@@ -16,7 +16,7 @@ import {
 
 const ProductCard = ({ product }) => {
   //TODO:Clean->
-  const { name, price, imageUrl } = product;
+  const { name, price, imageUrl, SKU } = product;
 
   const [quantity, setQuantity] = useState(1);
 
@@ -33,11 +33,12 @@ const ProductCard = ({ product }) => {
   //     })
   //   );
 
-  // TODO: link to={`/product/1/1`}
+  // TODO: link to={`/product/zyw3vtp`}
+  // TODO: link to={`/product/${SKU}`}
 
   return (
     <ProductCardContainer>  
-      <Link className="productpagelink" to={`product/NIM5TN1ErfOgfPmhsBmN`}></Link>
+      <Link className="productpagelink" to={`product/${SKU}`}></Link>
       <img src={imageUrl} alt={`${name}`} />
       <Footer>
         <Name>{name}</Name>

@@ -1,6 +1,7 @@
 import {
   BaseButton,
   ShopButton,
+  ShopProductPageButton,
   GoogleSignInButton,
   NavigationButton,
   DropDownSignOutButton,
@@ -10,6 +11,7 @@ import {
 export const BUTTON_TYPE_CLASSES = {
   base: "base",
   shop: "shop",
+  productpage: "productpage",
   google: "google-sign-in",
   navigation: "navigation",
   signout: "drop-down-sign-out",
@@ -20,6 +22,7 @@ const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
   ({
     [BUTTON_TYPE_CLASSES.base]: BaseButton,
     [BUTTON_TYPE_CLASSES.shop]: ShopButton,
+    [BUTTON_TYPE_CLASSES.productpage]: ShopProductPageButton,
     [BUTTON_TYPE_CLASSES.google]: GoogleSignInButton,
     [BUTTON_TYPE_CLASSES.navigation]: NavigationButton,
     [BUTTON_TYPE_CLASSES.signout]: DropDownSignOutButton,

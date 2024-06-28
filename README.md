@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/-Styled-black?style=for-the-badge&logoColor=white&logo=styled&color=06B6D4" alt="styled" />
   </div>
 
-# MICRO-STORE-24 - MULTI ECOMMERCE APPLICATION WITH MICROSERVICES 2024
+# MULTI-MICRO-STORE-24 - MULTI ECOMMERCE APPLICATION WITH MICROSERVICES 2024
 
 Features/Structure:
 

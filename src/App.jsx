@@ -15,6 +15,7 @@ import { setCurrentUser } from "./store/user/user.reducer";
 
 import { Spinner } from "./components";
 
+import { Navigation } from "./routes";
 // import {
 //   Navigation,
 //   Authentication,
@@ -28,7 +29,7 @@ import { Spinner } from "./components";
 // } from "./routes";
 // import { Footer } from "./containers";
 
-const Navigation = lazy(() => import("./routes/navigation/Navigation"));
+// const Navigation = lazy(() => import("./routes/navigation/Navigation"));
 const Footer = lazy(() => import("./containers/footer/Footer"));
 const Start = lazy(() => import("./routes/start/Start"));
 const StartStore = lazy(() => import("./routes/start-store/StartStore"));

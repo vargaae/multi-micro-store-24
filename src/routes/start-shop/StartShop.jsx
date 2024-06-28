@@ -31,11 +31,11 @@ const StartShop = ({ headerTitle }) => {
       })}
       <FeaturedContainer>
         <FeaturedTitle>Trending PRODUCTS</FeaturedTitle>
-        <FeaturedShop type="trending" />
+        <FeaturedShop type="featured-in-shop" />
       </FeaturedContainer>
       <FeaturedContainer>
         <FeaturedTitle>You may also like</FeaturedTitle>
-        <BestSeller type="featured" />
+        <BestSeller type="featured-in-shop" />
       </FeaturedContainer>
     </>
   );

@@ -26,8 +26,11 @@ export const ShoppingIcon = styled(ShoppingSvg)`
   width: 24px;
   height: 24px;
   fill: #add8e6;
+  transition: 0.6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   // I deleted 'fill' from the shopping-bag.svg icon to be colorable
   &:hover {
     fill: #73a5c6;
+    border: 10px dashed var(--color-prime);
+    border-radius: 4px;
   }
 `;

@@ -9,12 +9,6 @@ import { BestSellerCard } from "../";
 import { FadeLoader } from "react-spinners";
 import Slider from "react-slick";
 
-const override = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
-
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -47,9 +41,15 @@ function SamplePrevArrow(props) {
   );
 }
 
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
+
 const BestSeller = ({ type }) => {
-  const [count, setCount] = useState(0);
   let [color, setColor] = useState("#54b3d6");
+  const [count, setCount] = useState(0);
 
   const dispatch = useDispatch();
 

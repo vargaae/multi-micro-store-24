@@ -1,19 +1,26 @@
 import { motion } from "framer-motion";
 
-import "./Start.scss";
-
 import { brands } from "../../constants";
-import { BestSeller, Contact, FeaturedProducts, StartHeader, StartVideo } from "../../components";
+import {
+  BestSeller,
+  Contact,
+  FeaturedProducts,
+  StartHeader,
+  StartVideo,
+} from "../../components";
 import { BestSellerContainer, BestSellerTitle } from "./Start.styles";
+// TODO: turn SCSS -> styled
+import "./Start.scss";
 // TODO: Add data to Firestore and then clean up
-// import { useEffect } from "react";
-// import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
-// import PRODUCTS from "../../shop-data.js";
+import { useEffect } from "react";
+import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
+import SHOP_PRODUCTS from "../../shop-data.js";
+// import SHOP_DATA from "../../constants/shop-data";
 
 const Start = () => {
-  // useEffect(() => {
-  //   addCollectionAndDocuments('accesories', PRODUCTS);
-  // }, []);
+  useEffect(() => {
+    addCollectionAndDocuments("products", SHOP_PRODUCTS);
+  }, []);
   // const [brands, setBrands] = useState([]);
   return (
     <>

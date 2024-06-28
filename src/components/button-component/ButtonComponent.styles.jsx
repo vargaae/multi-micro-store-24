@@ -15,6 +15,7 @@ export const BaseButton = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
+  transition: 0.6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 
   &:hover {
     background-color: white;
@@ -40,13 +41,46 @@ export const ShopButton = styled(BaseButton)`
   }
 `;
 
+export const ShopProductPageButton = styled(BaseButton)`
+  max-width: 200px;
+  width: auto;
+
+  text-transform: none;
+  font-size: 20px;
+  line-height: 1.6em;
+  //TODO: font-family
+  font-family: Inter-Medium, Inter, "Inter Placeholder", sans-serif;
+  font-weight: 500;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  text-decoration: none;
+  font-style: normal;
+  letter-spacing: 0em;
+  padding: 16px 60px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(65, 112, 232);
+  user-select: none;
+  white-space: nowrap;
+  transform: none;
+
+  border-radius: 0px;
+  border: none;
+
+  &:hover {
+    color: rgb(255, 255, 255);
+    background-color: #000;
+    border: none;
+  }
+`;
+
 export const GoogleSignInButton = styled(BaseButton)`
   min-width: 165px;
   width: auto;
   height: 50px;
   line-height: 50px;
 
-  background-color: #4285f4;
+  background-color: var(--color-prime);
   color: white;
 
   border: none;
@@ -60,10 +94,11 @@ export const GoogleSignInButton = styled(BaseButton)`
 export const NavigationButton = styled(BaseButton)`
   background-color: transparent;
   color: lightblue;
-  border-radius: 5px;
+  border-radius: 4px;
+  border: none;
 
   &:hover {
-    background-color: #4170e8;
+    background-color: var(--color-prime);
     border: none;
   }
 `;
@@ -71,6 +106,7 @@ export const NavigationButton = styled(BaseButton)`
 export const DropDownSignOutButton = styled(BaseButton)`
   background-color: transparent;
   color: lightblue;
+  border: none;
 
   &:hover {
     background-color: transparent;

@@ -1,5 +1,6 @@
+export { default as Navigation } from "./navigation/Navigation";
+// REACT LAZY LOADING:
 // export { default as Authentication } from "./authentication/Authentication";
-// export { default as Navigation } from "./navigation/Navigation";
 // export { default as Start } from "./start/Start";
 // export { default as Shop } from "./shop/Shop";
 // export { default as StartShop } from "./start-shop/StartShop";
