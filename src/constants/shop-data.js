@@ -4,30 +4,30 @@ const SHOP_DATA = [
     items: [
       {
         id: 1,
+        name: 'FARM RIO STRAPLESS SWIMSUIT',
+        imageUrl: 'https://images.urbndata.com/is/image/Anthropologie/4142952480026_090_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540',
+        SKU: 'b8dEF',
+        price: 19.99,
+      },
+      {
+        id: 2,
         name: 'Lace Up One Piece Swimsuit',
         imageUrl: 'https://www.swimsuitsforall.com/dw/image/v2/BBKT_PRD/on/demandware.static/-/Sites-masterCatalog_Swimsuitsforall/default/dw05e4d87d/images/hi-res/2466_10352_mc_1138.jpg?sw=653&sh=940&sm=fit&q=90&strip=false',
         SKU: '1038351',
         price: 56.28,
       },
       {
-        id: 2,
-        name: 'Lace Up One Piece Swimsuit',
-        imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
-        SKU: 'ypkgK0X',
-        price: 18,
-      },
-      {
         id: 3,
-        name: 'Lace Up One Piece Swimsuit',
-        imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
-        SKU: 'QdJwgmp',
+        name: 'Boden Panel Underwire Swimsuit',
+        imageUrl: 'https://themomedit.com/wp-content/uploads/2024/02/Boden-Panel-Underwire-Swimsuit-Navy_-Ivory-Stripe-677x1024.jpg',
+        SKU: 'BPUSNIStr',
         price: 35,
       },
       {
         id: 4,
-        name: 'Lace Up One Piece Swimsuit',
-        imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
-        SKU: 'RjBLWxB',
+        name: 'Beach Riot Celine Ribbed One-Piece',
+        imageUrl: 'https://themomedit.com/wp-content/uploads/2024/02/Beach-Riot-Celine-Ribbed-One-Piece-875x1024.jpg',
+        SKU: 'BRCROP',
         price: 25,
       },
       {

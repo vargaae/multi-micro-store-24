@@ -12,15 +12,23 @@ import { BestSellerContainer, BestSellerTitle } from "./Start.styles";
 // TODO: turn SCSS -> styled
 import "./Start.scss";
 // TODO: Add data to Firestore and then clean up
-import { useEffect } from "react";
-import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
-import SHOP_PRODUCTS from "../../shop-data.js";
+// import { useEffect } from "react";
+// import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
+// 1.Categories
 // import SHOP_DATA from "../../constants/shop-data";
+// 2.Products
+// import SHOP_PRODUCTS from "../../shop-data.js";
 
 const Start = () => {
-  useEffect(() => {
-    addCollectionAndDocuments("products", SHOP_PRODUCTS);
-  }, []);
+  // 1.Categories
+  // useEffect(() => {
+    //   addCollectionAndDocuments("categories", SHOP_DATA);
+    // }, []);
+    // 2.Products
+    // useEffect(() => {
+    //   addCollectionAndDocuments("products", SHOP_PRODUCTS);
+    // }, []);
+    // 3.Brands
   // const [brands, setBrands] = useState([]);
   return (
     <>
@@ -47,7 +55,7 @@ const Start = () => {
       </div>
       <BestSellerContainer>
         <BestSellerTitle>DESIGN STORE / SHOP FEATURED PRODUCTS</BestSellerTitle>
-        <FeaturedProducts type="featured" />
+        <FeaturedProducts type="start-featured" />
         {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
       <StartVideo />
