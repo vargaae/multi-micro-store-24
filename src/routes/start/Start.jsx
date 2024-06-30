@@ -16,6 +16,7 @@ import {
   BestSellerContainer,
   BestSellerTitle,
   StartStoreShopContainer,
+  StartNavigationContainer,
 } from "./Start.styles";
 // TODO: turn SCSS -> styled
 import "./Start.scss";
@@ -77,55 +78,56 @@ const Start = () => {
         {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
       <StartVideo />
-      <StartStoreShopContainer>
-        <BestSellerTitle>
-          STORE
-          <ButtonComponent
-            onClick={goToStore}
-            buttonType={BUTTON_TYPE_CLASSES.productpage}
-            type="button"
-          >
-            Buy now
-          </ButtonComponent>
-        </BestSellerTitle>
-        <div className="startimages">
-          <img
-            className="selectStore"
-            src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Show image 1"
-          />
-          <img
-            className="selectShop"
-            src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Show image 2"
-          />
-        </div>
-      </StartStoreShopContainer>
-      <StartStoreShopContainer>
-        <BestSellerTitle>
-          SHOP
-          <ButtonComponent
-            onClick={goToStore}
-            buttonType={BUTTON_TYPE_CLASSES.productpage}
-            type="button"
-          >
-            Buy now
-          </ButtonComponent>
-          
-        </BestSellerTitle>
-        <div className="startimages">
-          <img
-            className="selectStore"
-            src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Show image 1"
-          />
-          <img
-            className="selectShop"
-            src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Show image 2"
-          />
-        </div>
-      </StartStoreShopContainer>
+      <StartNavigationContainer>
+        <StartStoreShopContainer>
+          <BestSellerTitle>
+          DESIGN STORE
+            <ButtonComponent
+              onClick={goToStore}
+              buttonType={BUTTON_TYPE_CLASSES.start}
+              type="button"
+            >
+              VISIT STORE
+            </ButtonComponent>
+          </BestSellerTitle>
+          <div className="startStoreImages">
+            <img
+              className="selectStore"
+              src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Show image 1"
+            />
+            <img
+              className="selectStore"
+              src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Show image 2"
+            />
+          </div>
+        </StartStoreShopContainer>
+        <StartStoreShopContainer>
+          <BestSellerTitle>
+            DESIGN SHOP
+            <ButtonComponent
+              onClick={goToStore}
+              buttonType={BUTTON_TYPE_CLASSES.start}
+              type="button"
+            >
+              VISIT SHOP
+            </ButtonComponent>
+          </BestSellerTitle>
+          <div className="startShopImages">
+            <img
+              className="selectShop"
+              src="https://images.pexels.com/photos/6113225/pexels-photo-6113225.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Show image 1"
+            />
+            <img
+              className="selectShop"
+              src="https://images.pexels.com/photos/3657400/pexels-photo-3657400.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Show image 2"
+            />
+          </div>
+        </StartStoreShopContainer>
+      </StartNavigationContainer>
       <BestSellerContainer>
         <BestSellerTitle>BEST SELLER</BestSellerTitle>
         <BestSeller type="trending" />

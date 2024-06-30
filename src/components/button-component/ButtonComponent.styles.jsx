@@ -24,6 +24,34 @@ export const BaseButton = styled.button`
   }
 `;
 
+export const StartButton = styled(BaseButton)`
+  width: auto;
+  padding: 0px 60px;
+  height: 2.9em;
+  background-color: rgb(65, 112, 232);
+  // background-color: var(--color-prime);
+  color: white;
+  text-transform: none;
+  font-size: 20px;
+  line-height: 2.9em;
+  font-family: var(--font-family-numbers);
+  font-weight: 500;
+  place-items: center;
+  place-content: center;
+  text-decoration: none;
+  font-style: normal;
+  letter-spacing: 0em;
+  color: rgb(255, 255, 255);
+  border-radius: 0px;
+  border: none;
+
+  &:hover {
+    color: rgb(255, 255, 255);
+    background-color: #000;
+    border: none;
+  }
+`;
+
 export const ShopButton = styled(BaseButton)`
   /* line-height: 20px; */
   line-height: 23px;
