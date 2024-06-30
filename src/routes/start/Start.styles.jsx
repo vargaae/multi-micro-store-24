@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const BestSellerContainer = styled.div`
-padding: calc(2vw + 1rem);
+  padding: calc(2vw + 1rem);
 
-@media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     padding: calc(4vw + 1rem) 200px;
   }
   @media screen and (min-width: 1600px) {
@@ -53,6 +53,36 @@ export const BreadcrumbLink = styled(Link)`
     text-decoration: underline;
   } */
 `;
+
+export const StartStoreShopContainer = styled.div`
+  .startimages {
+    display: flex;
+    margin: 0 auto;
+    gap: 10px;
+  }
+  img {
+    width: 100%;
+    height: 400px;
+  }
+  @media screen and (min-width: 390px) {
+    height: 70vh;
+    margin: 0 calc(4vw + 3rem);
+  }
+  @media screen and (min-width: 810px) {
+    height: 70vh;
+    margin: 0 calc(4vw + 3rem);
+  }
+  @media screen and (min-width: 1200px) {
+    height: 70vh;
+    margin: 0 calc(4vw + 3rem);
+  }
+  @media screen and (min-width: 1600px) {
+    height: 70vh;
+    margin: 120px calc(6vw + 3rem);
+    // margin: 120px 400px;
+  }
+`;
+
 // TODO: turn SCSS -> styled
 // h2.breadcrumb-nav {
 //   padding: 1rem 3rem 1rem;
