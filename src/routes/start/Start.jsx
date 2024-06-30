@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 import { motion } from "framer-motion";
+
+import { ButtonComponent, BUTTON_TYPE_CLASSES } from "../../components";
 
 import { brands } from "../../constants";
 import {
@@ -8,7 +12,11 @@ import {
   StartHeader,
   StartVideo,
 } from "../../components";
-import { BestSellerContainer, BestSellerTitle } from "./Start.styles";
+import {
+  BestSellerContainer,
+  BestSellerTitle,
+  StartStoreShopContainer,
+} from "./Start.styles";
 // TODO: turn SCSS -> styled
 import "./Start.scss";
 // TODO: Add data to Firestore and then clean up
@@ -22,13 +30,23 @@ import "./Start.scss";
 const Start = () => {
   // 1.Categories
   // useEffect(() => {
-    //   addCollectionAndDocuments("categories", SHOP_DATA);
-    // }, []);
-    // 2.Products
-    // useEffect(() => {
-    //   addCollectionAndDocuments("products", SHOP_PRODUCTS);
-    // }, []);
-    // 3.Brands
+  //   addCollectionAndDocuments("categories", SHOP_DATA);
+  // }, []);
+  // 2.Products
+  // useEffect(() => {
+  //   addCollectionAndDocuments("products", SHOP_PRODUCTS);
+  // }, []);
+  const navigateTo = useNavigate();
+
+  const goToStore = () => {
+    navigateTo("/interior");
+  };
+
+  const goToShop = () => {
+    navigateTo("/shop");
+  };
+
+  // 3.Brands
   // const [brands, setBrands] = useState([]);
   return (
     <>
@@ -59,6 +77,55 @@ const Start = () => {
         {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
       <StartVideo />
+      <StartStoreShopContainer>
+        <BestSellerTitle>
+          STORE
+          <ButtonComponent
+            onClick={goToStore}
+            buttonType={BUTTON_TYPE_CLASSES.productpage}
+            type="button"
+          >
+            Buy now
+          </ButtonComponent>
+        </BestSellerTitle>
+        <div className="startimages">
+          <img
+            className="selectStore"
+            src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Show image 1"
+          />
+          <img
+            className="selectShop"
+            src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Show image 2"
+          />
+        </div>
+      </StartStoreShopContainer>
+      <StartStoreShopContainer>
+        <BestSellerTitle>
+          SHOP
+          <ButtonComponent
+            onClick={goToStore}
+            buttonType={BUTTON_TYPE_CLASSES.productpage}
+            type="button"
+          >
+            Buy now
+          </ButtonComponent>
+          
+        </BestSellerTitle>
+        <div className="startimages">
+          <img
+            className="selectStore"
+            src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Show image 1"
+          />
+          <img
+            className="selectShop"
+            src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Show image 2"
+          />
+        </div>
+      </StartStoreShopContainer>
       <BestSellerContainer>
         <BestSellerTitle>BEST SELLER</BestSellerTitle>
         <BestSeller type="trending" />
