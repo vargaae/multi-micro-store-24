@@ -12,15 +12,15 @@ import { BestSellerContainer, BestSellerTitle } from "./Start.styles";
 // TODO: turn SCSS -> styled
 import "./Start.scss";
 // TODO: Add data to Firestore and then clean up
-import { useEffect } from "react";
-import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
-import SHOP_PRODUCTS from "../../shop-data.js";
+// import { useEffect } from "react";
+// import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
+// import SHOP_PRODUCTS from "../../shop-data.js";
 // import SHOP_DATA from "../../constants/shop-data";
 
 const Start = () => {
-  useEffect(() => {
-    addCollectionAndDocuments("products", SHOP_PRODUCTS);
-  }, []);
+  // useEffect(() => {
+  //   addCollectionAndDocuments("products", SHOP_PRODUCTS);
+  // }, []);
   // const [brands, setBrands] = useState([]);
   return (
     <>
