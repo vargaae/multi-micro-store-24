@@ -28,7 +28,7 @@ const StartCarousel = ({ headerTitle }) => {
         interval={8000}
         animation="cubeAnimation"
       >
-        {headerTitle === "SHOP"
+        {headerTitle === "Shop"
           ? shop.map((image) => (
               <div data-src={image.img} key={image.id}>
                 <CarouselTitle>

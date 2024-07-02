@@ -1,15 +1,24 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 export const ProductCardContainer = styled.div`
+  // height: 500px;
   width: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   margin: 0 0 10px;
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 390px) {
     height: 350px;
+    width: 90px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 2em 0;
   }
 
   img {
@@ -33,12 +42,11 @@ export const ProductCardContainer = styled.div`
   }
 
   &:hover {
-    transform: scale(1.3);
-    transition: transform 8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        transition: transform 8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 
-    opacity: 0.9;
+    opacity: 1;
     img {
-      /* opacity: 0.8; */
+      opacity: 0.8;
     }
 
     button {
@@ -59,21 +67,67 @@ export const ProductCardContainer = styled.div`
 
 export const Footer = styled.div`
   width: 100%;
-  height: 5%;
+  height: 15%;
   display: flex;
-
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
   font-size: 14px;
+
+  padding-bottom: 3em;
+
   @media screen and (min-width: 550px) {
     font-size: 18px;
-    justify-content: space-between;
+  }
+  @media screen and (min-width: 1600px) {
+    // flex-direction: row;
+    // justify-content: space-between;
   }
 `;
 
-export const Name = styled.span`
+export const Name = styled(Link)`
   width: 90%;
   margin-bottom: 15px;
+  justify-content: space-between;
+
+  text-align: start;
+
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  font-size: 22px;
+
+  letter-spacing: 0em;
+  line-height: 1.6em;
+  text-align: start;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s cubic-bezier(0.44, 0, 0.56, 1) 0s;
+  z-index: 2;
+
+  &:hover {
+    text-decoration: underline;
+
+  }
+
+  @media screen and (min-width: 810px) {
+  }
 `;
 
 export const Price = styled.span`
   width: 10%;
+
+  font-family: var(--font-family-numbers);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 1.6em;
+  text-align: start;
+  text-decoration: none;
+
+  @media screen and (min-width: 810px) {
+  }
 `;

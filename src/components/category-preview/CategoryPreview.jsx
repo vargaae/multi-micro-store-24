@@ -9,11 +9,11 @@ import {
 
 const CategoryPreview = ({ title, products }) => {
   return (
-    <CategoryPreviewContainer className="section__padding section__margin section__width">
+    <CategoryPreviewContainer>
       <Title>
         <CategoryTitleLink to={title}>{title}</CategoryTitleLink>
       </Title>
-      <Preview>
+      <Preview className="preview">
         {products
           // eslint-disable-next-line react/prop-types
           .slice()

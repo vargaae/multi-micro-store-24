@@ -53,8 +53,13 @@ export const Body = styled.div`
   opacity: 0.7;
   position: absolute;
 
+  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  
   h2 {
-    font-weight: bold;
+    font-weight: 500;
+
     margin: 0 6px 10px;
     font-size: 1.5rem;
     color: #4a4a4a;
@@ -63,7 +68,7 @@ export const Body = styled.div`
 
   p {
     font-weight: lighter;
-    font-size: 1rem;
+    font-size: 1em;
 
     &.sale {
       color: red; // <p> tagged with an additional CSS class ".SALE"

@@ -40,7 +40,7 @@ const Start = () => {
   const navigateTo = useNavigate();
 
   const goToStore = () => {
-    navigateTo("/interior");
+    navigateTo("/store");
   };
 
   const goToShop = () => {
@@ -81,7 +81,7 @@ const Start = () => {
       <StartNavigationContainer>
         <StartStoreShopContainer>
           <BestSellerTitle>
-          DESIGN STORE
+            DESIGN STORE
             <ButtonComponent
               onClick={goToStore}
               buttonType={BUTTON_TYPE_CLASSES.start}
@@ -91,23 +91,27 @@ const Start = () => {
             </ButtonComponent>
           </BestSellerTitle>
           <div className="startStoreImages">
-            <img
-              className="selectStore"
-              src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Show image 1"
-            />
-            <img
-              className="selectStore"
-              src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Show image 2"
-            />
+            <div className="startStoreImage">
+              <img
+                className="selectStore"
+                src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="Show image 1"
+              />
+            </div>
+            <div className="startStoreImage">
+              <img
+                className="selectStore"
+                src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="Show image 2"
+              />
+            </div>
           </div>
         </StartStoreShopContainer>
         <StartStoreShopContainer>
           <BestSellerTitle>
             DESIGN SHOP
             <ButtonComponent
-              onClick={goToStore}
+              onClick={goToShop}
               buttonType={BUTTON_TYPE_CLASSES.start}
               type="button"
             >
@@ -115,16 +119,20 @@ const Start = () => {
             </ButtonComponent>
           </BestSellerTitle>
           <div className="startShopImages">
-            <img
-              className="selectShop"
-              src="https://images.pexels.com/photos/6113225/pexels-photo-6113225.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Show image 1"
-            />
-            <img
-              className="selectShop"
-              src="https://images.pexels.com/photos/3657400/pexels-photo-3657400.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Show image 2"
-            />
+            <div className="startShopImage">
+              <img
+                className="selectShop"
+                src="https://framerusercontent.com/images/5uW8h1Y8Jk6czLgq84bc2MyPs.jpg"
+                alt="Men Shop image 1"
+              />
+            </div>
+            <div className="startShopImage">
+              <img
+                className="selectShop"
+                src="https://framerusercontent.com/images/cv9pTkCGUsKJxFT7RCuwQTwcs8.jpg"
+                alt="Women Shop image 2"
+              />
+            </div>
           </div>
         </StartStoreShopContainer>
       </StartNavigationContainer>

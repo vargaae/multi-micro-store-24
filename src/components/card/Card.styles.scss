@@ -92,8 +92,7 @@
 
     letter-spacing: 0em;
     line-height: 1.6em;
-    paragraph-spacing: 20px;
-    text-alignment: start;
+    text-align: start;
     text-decoration: none;
     text-transform: uppercase;
     transition: color 0.3s cubic-bezier(0.44, 0, 0.56, 1) 0s;
@@ -116,12 +115,8 @@
       font-weight: 500;
       letter-spacing: 0em;
       line-height: 1.6em;
-      paragraph-spacing: 20px;
-      text-alignment: start;
+      text-align: start;
       text-decoration: none;
-
-      // font-size: 18px;
-      // font-weight: 500;
 
       &:first-child {
         color: gray;

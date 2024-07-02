@@ -25,7 +25,6 @@ import { Navigation } from "./routes";
 //   ProductPage,
 //   ProductsPage,
 //   Checkout,
-//   SCart,
 // } from "./routes";
 // import { Footer } from "./containers";
 
@@ -35,6 +34,9 @@ const Start = lazy(() => import("./routes/start/Start"));
 const StartStore = lazy(() => import("./routes/start-store/StartStore"));
 const Shop = lazy(() => import("./routes/shop/Shop"));
 const ProductPage = lazy(() => import("./routes/product-page/ProductPage"));
+const ShopProductPage = lazy(() =>
+  import("./routes/product-page/ShopProductPage")
+);
 const ProductsPage = lazy(() => import("./routes/products-page/ProductsPage"));
 const Checkout = lazy(() => import("./routes/checkout/Checkout"));
 const Authentication = lazy(() =>
@@ -45,7 +47,6 @@ import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
 } from "./utils/firebase/firebase.utils";
-import { ShopProductPage } from "./components";
 
 export function ScrollToTop() {
   const { pathname } = useLocation();
@@ -79,7 +80,7 @@ const router = createBrowserRouter([
         element: <Start />,
       },
       {
-        path: "/interior/products/:id",
+        path: "/store/products/:id",
         element: <ProductsPage />,
       },
       {
@@ -87,7 +88,7 @@ const router = createBrowserRouter([
         element: <ProductsPage />,
       },
       {
-        path: "/interior/product/:catId/:id",
+        path: "/store/product/:catId/:id",
         element: <ProductPage />,
       },
       {
@@ -99,21 +100,21 @@ const router = createBrowserRouter([
         element: <ShopProductPage />,
       },
       {
+        path: "shop/:catName/product/:id",
+        element: <ShopProductPage />,
+      },
+      {
         path: "/shop/*",
         element: <Shop />,
       },
       {
-        path: "/interior/*",
+        path: "/store/*",
         element: <StartStore />,
       },
       {
         path: "/authentication",
         element: <Authentication />,
       },
-      // {
-      //   path: "/scart",
-      //   element: <SCart />,
-      // },
       {
         path: "/checkout",
         element: <Checkout />,

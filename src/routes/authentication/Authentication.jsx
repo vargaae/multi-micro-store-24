@@ -1,14 +1,23 @@
+import {
+  BreadcrumbNav,
+  SignInForm,
+  SignUpForm,
+  Contact,
+} from "../../components";
+
 import { AuthenticationContainer } from "./Authentication.styles";
 
-import SignInForm from "../../components/sign-in-form/SignInForm";
-import SignUpForm from "../../components/sign-up-form/SignUpForm";
-
 const Authentication = () => {
+  const headerTitle = "Sign In / Sign Up";
   return (
-    <AuthenticationContainer>
-      <SignInForm />
-      <SignUpForm />
-    </AuthenticationContainer>
+    <>
+      <BreadcrumbNav headerTitle={headerTitle} />
+      <AuthenticationContainer>
+        <SignInForm />
+        <SignUpForm />
+      </AuthenticationContainer>
+      <Contact />
+    </>
   );
 };
 

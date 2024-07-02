@@ -7,6 +7,7 @@ import {
   NavigationButton,
   DropDownSignOutButton,
   InvertedButton,
+  ContactButton,
 } from "./ButtonComponent.styles";
 
 export const BUTTON_TYPE_CLASSES = {
@@ -18,6 +19,7 @@ export const BUTTON_TYPE_CLASSES = {
   navigation: "navigation",
   signout: "drop-down-sign-out",
   inverted: "inverted",
+  contact: "contact",
 };
 
 const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
@@ -30,6 +32,7 @@ const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
     [BUTTON_TYPE_CLASSES.navigation]: NavigationButton,
     [BUTTON_TYPE_CLASSES.signout]: DropDownSignOutButton,
     [BUTTON_TYPE_CLASSES.inverted]: InvertedButton,
+    [BUTTON_TYPE_CLASSES.contact]: ContactButton,
   }[buttonType]);
 
 const ButtonComponent = ({ children, buttonType, ...otherProps }) => {

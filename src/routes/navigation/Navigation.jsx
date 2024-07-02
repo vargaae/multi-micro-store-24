@@ -56,7 +56,7 @@ const Navigation = () => {
   const goToStoreCloseCart = () => {
     if (isCartOpen) dispatch(setIsCartOpen(false));
 
-    navigateTo("/interior");
+    navigateTo("/store");
   };
 
   const signUpIn = () => {

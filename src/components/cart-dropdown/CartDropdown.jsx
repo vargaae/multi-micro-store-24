@@ -36,7 +36,7 @@ const CartDropdown = () => {
   };
   //TODO:Clean->
   const handleBackToStoreClick = () => {
-    navigateTo("/interior");
+    navigateTo("/store");
     closeCartIfClickToLink();
   };
   const handleBackToShopClick = () => {

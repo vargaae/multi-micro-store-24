@@ -79,24 +79,67 @@ export const StartNavigationContainer = styled.div`
 `;
 export const StartStoreShopContainer = styled.div`
   .startStoreImages {
-    display: flex;
     margin: 0 auto;
     gap: 10px;
+    @media screen and (min-width: 1200px) {
+      display: flex;
+    }
+    @media screen and (min-width: 1600px) {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      flex: none;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 18px;
+      height: min-content;
+      justify-content: flex-start;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      width: 100%;
+
+            .startStoreImage {
+        flex: 50%;
+      }
+    }
 
     img {
       width: 100%;
-      height: 500px;
+      height: min(600px, 100vw);
       object-fit: cover;
     }
   }
   .startShopImages {
-    display: flex;
     margin: 0 auto;
     gap: 10px;
 
+    @media screen and (min-width: 1200px) {
+      display: flex;
+    }
+    @media screen and (min-width: 1600px) {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      flex: none;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 18px;
+      height: min-content;
+      justify-content: flex-start;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      width: 100%;
+
+      .startShopImage {
+        flex: 50%;
+      }
+    }
+
     img {
       width: 100%;
-      height: 800px;
+      height: min(650px, 100vw);
       object-fit: cover;
     }
   }
@@ -114,7 +157,7 @@ export const StartStoreShopContainer = styled.div`
   }
   @media screen and (min-width: 1600px) {
     // height: 70vh;
-    margin: 120px calc(6vw + 3rem);
+    margin: 120px calc(8vw + 6em);
     // margin: 120px 400px;
   }
 `;

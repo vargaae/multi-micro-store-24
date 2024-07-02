@@ -18,7 +18,7 @@ const CategoryDirectory = () => (
         />
         <Body>
           <h2>Living Room</h2>
-          <p className={"ShopNow"}>{"ShopNow"}</p>
+          <p className={"sale"}>{"New Season"}</p>
         </Body>
       </DirectoryItemContainer>
       <DirectoryItemContainer to={`products/2`}>
@@ -29,7 +29,7 @@ const CategoryDirectory = () => (
         />
         <Body>
           <h2>Kitchen</h2>
-          <p className={"ShopNow"}>{"ShopNow"}</p>
+          <p className={"ShopNow"}>{"Shop Now"}</p>
         </Body>
       </DirectoryItemContainer>
     </DirectoryColContainer>
@@ -70,7 +70,7 @@ const CategoryDirectory = () => (
             />
             <Body>
               <h2>Office</h2>
-              <p className={"ShopNow"}>{"ShopNow"}</p>
+              <p className={"ShopNow"}>{"Shop Now"}</p>
             </Body>
           </DirectoryItemContainer>
         </DirectoryColContainer>
@@ -83,7 +83,7 @@ const CategoryDirectory = () => (
         />
         <Body>
           <h2>Dining Room</h2>
-          <p className={"ShopNow"}>{"ShopNow"}</p>
+          <p className={"ShopNow"}>{"Shop Now"}</p>
         </Body>
       </DirectoryItemContainer>
     </DirectoryColContainer>

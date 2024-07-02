@@ -28,3 +28,20 @@ export const ItemDetails = styled.div`
     cursor: pointer;
   }
 `;
+
+export const ProductNameContainer = styled.div`
+  // &::after {
+  //   content: "..."; /* Change the content to the desired element */
+  //   position: absolute;
+  //   right: 0;
+  //   bottom: 0;
+`;
+
+export const DotDotDot = styled.div`
+  &::after {
+    content: "..."; /* Change the content to the desired element */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+`;

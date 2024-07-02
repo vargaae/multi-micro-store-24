@@ -1,5 +1,4 @@
 //TODO: CleanUp
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const FeaturedContainer = styled.div`
@@ -47,12 +46,4 @@ export const FeaturedTitle = styled.h2`
     line-height: 1.2em;
     paragraph-spacing: 40px;
   }
-`;
-
-export const BreadcrumbLink = styled(Link)`
-  /* font-size: 2rem;
-  &:hover {
-    color: darkblue;
-    text-decoration: underline;
-  } */
 `;

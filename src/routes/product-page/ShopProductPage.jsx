@@ -3,14 +3,18 @@ import { useDispatch } from "react-redux";
 
 import { useEffect, useState } from "react";
 
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { ButtonComponent, BUTTON_TYPE_CLASSES, Contact, BestSeller } from "../";
+import {
+  ButtonComponent,
+  BUTTON_TYPE_CLASSES,
+  Contact,
+  BestSeller,
+  BreadcrumbNav,
+} from "../../components";
 
 import {
   ProductContainer,
-  BreadcrumbLink,
-  BreadcrumbNav,
   ProductPageTitle,
   FeaturedContainer,
   FeaturedTitle,
@@ -27,6 +31,10 @@ import { FadeLoader } from "react-spinners";
 // };
 
 const ShopProductPage = ({}) => {
+  const productPage = true;
+  const headerTitle = "Design Shop";
+  const headerLink = "/shop";
+
   // let [color, setColor] = useState("#54b3d6");
 
   const [selectedImg, setSelectedImg] = useState("img");
@@ -89,11 +97,13 @@ const ShopProductPage = ({}) => {
           <Loader></Loader>
         ) : (
           <>
-            <BreadcrumbNav className="breadcrumb-nav">
-              <BreadcrumbLink to="/">Home</BreadcrumbLink> /{" "}
-              <BreadcrumbLink to="/shop">Design Shop</BreadcrumbLink> /{" "}
-              {singleProduct?.name}
-            </BreadcrumbNav>
+            <BreadcrumbNav
+              productPage={productPage}
+              headerTitle={headerTitle}
+              headerLink={headerLink}
+              productTitle={singleProduct?.name}
+            />
+
             <div className="product">
               <ProductPageTitle className="mobileview">
                 {singleProduct?.name}
@@ -168,21 +178,23 @@ const ShopProductPage = ({}) => {
                 <hr />
                 <div className="info">
                   <span>
-                    <strong>Vendor</strong>
-                  </span>
-                  <span>{singleProduct?.brand}</span>
-                  <span>
-                    <strong>Product Type</strong>
+                    <strong>SPECIFICATIONS</strong>
                   </span>
                   <span>
-                    {singleProduct?.type}, {"singleProduct?.categories[0]"}
+                    PatternSolidFitSlim FitCollarNotched LapelBottom
+                    ClosureSlip-OnTypeBlazer and TrousersFabricCotton
+                    BlendOccasionFormalSleeve LengthLong SleevesFront
+                    StylingSingle-Breasted
                   </span>
+
+                  <span>Product Type</span>
                   <span>
-                    <strong>Tag</strong>
+                    {singleProduct?.type}, {singleProduct?.categories[0]}
                   </span>
+                  <span>Tag</span>
                   <span>
-                    {"singleProduct?.categories[0]"},{" "}
-                    {"singleProduct?.sub_category[0]"}, Design SHOP
+                    {singleProduct?.categories[0]},{" "}
+                    {singleProduct?.sub_category[0]}
                   </span>
                 </div>
                 <hr />

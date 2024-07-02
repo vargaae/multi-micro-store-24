@@ -1,36 +1,5 @@
 // TODO: turn SCSS -> unified Breadcrumb-nav styled: STORE-SHOP-PRODUCTPAGE-SHOPPRODUCTPAGE-CATEGORIES/SHOP-PREVIEW
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-
-export const BreadcrumbNav = styled.h2`
-  // TODO: turn SCSS -> styled
-  padding: 1rem 3rem 1rem;
-  background-color: lightblue;
-  font-weight: 500;
-
-  a:hover {
-    color: white;
-  }
-  a {
-    background: linear-gradient(0deg, lightblue, #54b3d6 50%) no-repeat right
-      bottom / 0 var(--bg-h);
-    transition: background-size 550ms;
-    --bg-h: 200%;
-  }
-  a:where(:hover, :focus-visible) {
-    background-size: 100% var(--bg-h);
-    background-position-x: left;
-  }
-`;
-
-export const BreadcrumbLink = styled(Link)`
-  // TODO: turn SCSS -> styled
-  /* font-size: 2rem;
-  &:hover {
-    color: darkblue;
-    text-decoration: underline;
-  } */
-`;
 
 export const ProductPageTitle = styled.h2`
   // TODO: turn SCSS -> styled
@@ -113,6 +82,11 @@ export const ProductContainer = styled.div`
     @media screen and (min-width: 900px) {
       gap: 50px;
     }
+    @media screen and (min-width: 1600px) {
+      // TODO: Set consistence css styles
+      width: 72%;
+      margin: 50px auto 20px;
+    }
     padding: 1.2em 2em;
     display: flex;
     flex-direction: column;
@@ -144,24 +118,19 @@ export const ProductContainer = styled.div`
       .mainImg {
         flex: 5;
         padding-bottom: 0.8em;
-        // TODO: SET IMG:
-        // <img
-        //   decoding="async"
-        //   sizes="calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3)"
-        //   src="https://framerusercontent.com/images/6cKC0PWCp1QT4U3h4ddQ1bSE.jpg"
-        //   alt=""
-        //   style="display: block; width: 100%; height: 100%; border-radius: inherit; object-position: center top; object-fit: cover; image-rendering: auto;"
-        // ></img>;
 
         img {
           width: 100%;
           height: auto;
-          @media screen and (min-width: 1200px) {
-            height: 800px;
-          }
+          object-position: center top;
           object-fit: cover;
-          /* border-radius: 15px;
-          border: 1px solid black; */
+          image-rendering: auto;
+          @media screen and (min-width: 1200px) {
+            height: min(800px, 100vw);
+            // FOR UNIFIED IMAGE SIZES:
+            // height: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
+            // width: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
+          }
         }
       }
     }
@@ -174,10 +143,10 @@ export const ProductContainer = styled.div`
       text-align: start;
 
       .price {
-        /* TODO: change family here: */
+        /* TODO: ?change family here: */
         /* font-family: var(--font-family-numbers); */
         // font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
-        font-family: var(--font-family-productpage);
+        font-family: var(--font-family-shopinfo);
         font-size: 20px;
         /* font-size: 1.5em; */
         font-style: normal;
@@ -193,9 +162,8 @@ export const ProductContainer = styled.div`
 
       p {
         // TODO: divide+turn SCSS -> styled
-        /* TODO: change family here: */
-        // font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
-        font-family: var(--font-family-productpage);
+        /* TODO: ?change family here: */
+        font-family: var(--font-family-shopinfo);
         font-size: 1.2em;
         font-weight: 400;
         font-optical-sizing: auto;
@@ -259,11 +227,11 @@ export const ProductContainer = styled.div`
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin-top: 30px;
+        margin-top: 0px;
 
         /* color: white; */
         /* font-size: 14px; */
-        font-family: var(--font-family-productpage);
+        font-family: var(--font-family-shopinfo);
         font-size: 1.2em;
         font-weight: 400;
         font-optical-sizing: auto;
@@ -282,7 +250,9 @@ export const ProductContainer = styled.div`
       }
 
       hr {
-        border: 1px solid rgb(238, 237, 237);
+        // border: 1px solid rgb(238, 237, 237);
+        border: 0 none rgb(238, 237, 237);
+        padding-bottom: 2em;
       }
     }
     @media screen and (min-width: 900px) {

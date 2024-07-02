@@ -7,7 +7,7 @@ export const CategoryPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 0 calc(4vw + 1rem);
+  padding: 1.2em calc(1vw + 1rem);
 
   @media screen and (min-width: 1600px) {
     padding: 0px calc(10vw + 3rem);
@@ -42,7 +42,7 @@ export const Preview = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
-  column-gap: 12px;
+  column-gap: 2px;
 
   @media screen and (min-width: 769px) {
     column-gap: 18px;

@@ -11,7 +11,12 @@ import {
 } from "../../services/strApi";
 // import useFetch from "../../hooks/useFetch";
 
-import { List } from "../../components";
+import {
+  BUTTON_TYPE_CLASSES,
+  BreadcrumbNav,
+  ButtonComponent,
+  List,
+} from "../../components";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -42,6 +47,10 @@ const Products = () => {
   const [sort, setSort] = useState(`asc`);
   // const [sort, setSort] = useState("asc")
   const [selectedSubCats, setSelectedSubCats] = useState([]);
+
+  const productsPage = true;
+  const headerTitle = "Design Store";
+  const headerLink = "/store";
 
   const {
     data: subCategoriesByCategoryId,
@@ -118,20 +127,12 @@ const Products = () => {
   return (
     <>
       <div className="product-container">
-        <h2 className="breadcrumb-nav">
-          <Link className="link" to="/">
-            Home
-          </Link>{" "}
-          /{" "}
-          <Link className="link" to="/interior">
-            Design Store
-          </Link>{" "}
-          /{" "}
-          <Link className="link" to="/products/7">
-            Products
-          </Link>{" "}
-          / <strong>{categoryByCategoryId?.data?.attributes?.title}</strong>
-        </h2>
+        <BreadcrumbNav
+          productsPage={productsPage}
+          headerTitle={headerTitle}
+          headerLink={headerLink}
+          productTitle={categoryByCategoryId?.data?.attributes?.title}
+        />
       </div>
       <div className="products">
         <div className="left">
@@ -149,14 +150,16 @@ const Products = () => {
               />
             ) : (
               subCategoriesByCategoryId?.data?.map((item) => (
-                <div className="inputItem" key={item.id}>
-                  <input
-                    type="checkbox"
-                    id={item.id}
-                    value={item.id}
-                    onChange={handleChange}
-                  />
-                  <label htmlFor={item.id}>{item.attributes.title}</label>
+                <div className="checkboxes">
+                  <div className="inputItem" key={item.id}>
+                    <input
+                      type="checkbox"
+                      id={item.id}
+                      value={item.id}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor={item.id}>{item.attributes.title}</label>
+                  </div>
                 </div>
               ))
             )}
@@ -164,7 +167,7 @@ const Products = () => {
           <div className="filterItem">
             <h2>Filter by price</h2>
             <div className="inputItem">
-              <span>{rangeMinimum}</span>
+              <span>{rangeMinimum} </span>
               <input
                 type="range"
                 min={rangeMinimum}
@@ -172,7 +175,7 @@ const Products = () => {
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(e.target.value)}
               />
-              <span>€{maxPrice}</span>
+              <span> €{maxPrice}</span>
             </div>
           </div>
           <div className="filterItem">
@@ -200,7 +203,15 @@ const Products = () => {
               <label htmlFor="desc">Price (Highest first)</label>
             </div>
           </div>
-          <button onClick={handleChange}>Filter</button>
+          <div className="buttonContainer">
+            <ButtonComponent
+              onClick={handleChange}
+              buttonType={BUTTON_TYPE_CLASSES.inverted}
+              type="button"
+            >
+              FILTER
+            </ButtonComponent>
+          </div>
         </div>
         <div className="right">
           <LazyLoadImage

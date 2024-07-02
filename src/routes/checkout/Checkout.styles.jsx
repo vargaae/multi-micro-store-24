@@ -9,6 +9,11 @@ export const CheckoutContainer = styled.div`
   background-image: linear-gradient(to top, #accbee 0%, #fff1eb 100%);
   border-radius: 0.25rem;
 
+  font-family: var(--font-family-shopinfo);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+
   @media screen and (min-width: 550px) {
     width: 55%;
     margin: 50px auto 20px;

@@ -1,22 +1,29 @@
+import { addItemToCart } from "../../store/cart/cart.reducer";
+import { useDispatch } from "react-redux";
+
+import { useGetProductByIdQuery, strApi } from "../../services/strApi";
+
 import { useState } from "react";
 
 import { useNavigate, Link, useParams } from "react-router-dom";
 
-// TODO: !!!CleanUP!!!
-// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-// import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-// import BalanceIcon from "@mui/icons-material/Balance";
+import {
+  ButtonComponent,
+  BUTTON_TYPE_CLASSES,
+  Contact,
+  BestSeller,
+  BreadcrumbNav,
+} from "../../components";
 
-import { useDispatch } from "react-redux";
-// TODO: Change scart to cart HERE and in Productcard
-// import { addItemToCart } from "../../store/cart/scart.slice";
-import { addItemToCart } from "../../store/cart/cart.reducer";
+import {
+  ProductContainer,
+  ProductPageTitle,
+  FeaturedContainer,
+  FeaturedTitle,
+  Loader,
+} from "./ProductPage.styles";
 
-import "./ProductPage.styles.scss";
-import { useGetProductByIdQuery, strApi } from "../../services/strApi";
-import { ButtonComponent } from "../../components";
-
-const ProductPage = () => {
+const ProductPage = ({}) => {
   const navigateTo = useNavigate();
 
   let { id } = useParams();
@@ -25,6 +32,9 @@ const ProductPage = () => {
 
   const [selectedImg, setSelectedImg] = useState("img");
   // const [quantity, setQuantity] = useState(1);
+  const productPage = true;
+  const headerTitle = "Design Store";
+  const headerLink = "/store";
 
   const dispatch = useDispatch();
   //TODO:Clean->
@@ -38,18 +48,6 @@ const ProductPage = () => {
         imageUrl: productDataById.data.attributes.img.data.attributes.url,
       })
     );
-  // TODO: !!!Delete or save out to my notes
-  // const addProductToCart = () =>
-  //   dispatch(
-  //     addItemToCart({
-  //       id: productDataById.data.id,
-  //       name: productDataById.data.attributes.title,
-  //       desc: productDataById.data.attributes.desc,
-  //       price: productDataById.data.attributes.price,
-  //       imageUrl: productDataById.data.attributes.img.data.attributes.url,
-  //       quantity,
-  //     })
-  //   );
 
   const {
     data: productDataById,
@@ -58,11 +56,6 @@ const ProductPage = () => {
     refetch,
   } = useGetProductByIdQuery(id);
 
-  // const { data, loading, error, errorMessage } = useFetch(
-  //   `/products/${id}?populate=*`
-  // );
-
-  // TODO: Use Refetch + Loader
   function handleRefetchOne() {
     // force re-fetches the data
     refetch();
@@ -95,187 +88,134 @@ const ProductPage = () => {
       </div>
     );
 
-  // if (isFetching) return <LinearProgress style={{ backgroundColor: "gold" }} />;
-
-  const goToSCart = () => {
-    navigateTo("/scart");
-  };
-
-  // TODO: Products link to breadcrumb??? - most a SHOP-ra tettem a linket
-  // TODO: PRODUCTS link to breadcrumb??? - most a category-ra tettem a linket
-  // <Link
-  //               className="link"
-  //               to={`/products/${data?.attributes?.categories.data[0].id}`}
-  //             >
-  //               {data?.attributes?.categories.data[0].attributes.title}
-  //             </Link>{" "}
-  //             /{" "}
-  //             <Link
-  //               className="link"
-  //               to={`/products/${data?.attributes?.categories.data[0].id}`}
-  //             >
-  //               {data?.attributes?.sub_category.data.attributes.title}
-  //             </Link>{" "}
-  // TODO: sub_categories link to breadcrumb??? - most a category-ra tettem a linket
-  // <Link
-  //               className="link"
-  //               to={`/products/${data?.attributes?.sub_category.data.id}`}
-  //             >
-  //               {data?.attributes?.sub_category.data.attributes.title}
-  //             </Link>{" "}
-
-  // TODO: map categories/sub_categories:
-  // {error
-  //   ? `Something went wrong! ${errorMessage}`
-  //   : loading
-  //   ? "loading"
-  //   : data?.map((item) => (
-  //       <div className="inputItem" key={item.id}>
-  //         <input
-  //           type="checkbox"
-  //           id={item.id}
-  //           value={item.id}
-  //           onChange={handleChange}
-  //         />
-  //         <label htmlFor={item.id}>{item.attributes.title}</label>
-  //       </div>
-  //     ))}
-
   return (
-    <div className="product-container">
-      {error ? (
-        `Something went wrong! Errormessage: "${error}"`
-      ) : isFetching ? (
-        "loading"
-      ) : (
-        <>
-          <h2 className="breadcrumb-nav">
-            <Link className="link" to="/">
-              Home
-            </Link>{" "}
-            /{" "}
-            <Link className="link" to="/products/7">
-              Products
-            </Link>{" "}
-            / {productDataById?.data?.attributes?.title}
-          </h2>
-          <div className="product">
-            <div className="left">
-              <div className="mainImg">
-                <img
-                  src={
-                    productDataById?.data?.attributes?.[selectedImg]?.data
-                      ?.attributes?.url
-                  }
-                  alt="Selected Show image"
-                />
+    <>
+      <ProductContainer className="product-container">
+        {error ? (
+          `Something went wrong! Errormessage: "${error}"`
+        ) : isFetching ? (
+          <Loader></Loader>
+        ) : (
+          <>
+            <BreadcrumbNav
+              productPage={productPage}
+              headerTitle={headerTitle}
+              headerLink={headerLink}
+              productTitle={productDataById?.data?.attributes?.title}
+            />
+
+            <div className="product">
+              <ProductPageTitle className="mobileview">
+                {productDataById?.data?.attributes?.title}
+              </ProductPageTitle>
+              <div className="left">
+                <div className="mainImg">
+                  <img
+                    src={
+                      productDataById?.data?.attributes?.[selectedImg]?.data
+                        ?.attributes?.url
+                    }
+                    alt="Selected Show image"
+                  />
+                </div>
+                <div className="images">
+                  <img
+                    className="selectImg"
+                    src={
+                      productDataById?.data?.attributes?.img?.data?.attributes
+                        ?.url
+                    }
+                    alt="Show image 1"
+                    onClick={(e) => setSelectedImg("img")}
+                  />
+                  <img
+                    className="selectImg"
+                    src={
+                      productDataById?.data?.attributes?.img2?.data?.attributes
+                        ?.url
+                    }
+                    alt="Show image 2"
+                    onClick={(e) => setSelectedImg("img2")}
+                  />
+                </div>
               </div>
-              <div className="images">
-                <img
-                  src={
-                    productDataById?.data?.attributes?.img?.data?.attributes
-                      ?.url
-                  }
-                  alt="Show image 1"
-                  onClick={(e) => setSelectedImg("img")}
-                />
-                <img
-                  src={
-                    productDataById?.data?.attributes?.img2?.data?.attributes
-                      ?.url
-                  }
-                  alt="Show image 2"
-                  onClick={(e) => setSelectedImg("img2")}
-                />
-              </div>
-            </div>
-            <div className="right">
-              <h1>{productDataById?.data?.attributes?.title}</h1>
-              <span className="price">
-                €{productDataById?.data?.attributes?.price}
-              </span>
-              <p>{productDataById?.data?.attributes?.desc}</p>
-              {/*
-              <div className="quantity">
-                <button
-                  onClick={() =>
-                    setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
-                  }
+              <div className="right">
+                <ProductPageTitle className="screenview">
+                  {productDataById?.data?.attributes?.title}
+                </ProductPageTitle>
+                <span className="price">
+                  €{productDataById?.data?.attributes?.price}
+                </span>
+                <p>{productDataById?.data?.attributes?.desc}</p>
+                <ButtonComponent
+                  onClick={addProductToCart}
+                  buttonType={BUTTON_TYPE_CLASSES.productpage}
+                  type="button"
                 >
-                  -
-                </button>
-                {quantity}
-                <button onClick={() => setQuantity((prev) => prev + 1)}>
-                  +
-                </button>
-              </div>
-                */}
-              <ButtonComponent onClick={addProductToCart}>
-                ADD TO CART
-              </ButtonComponent>
-              {/*   <button className="add" onClick={goToSCart}>
-                GO TO CART
-              </button>
-            */}
-              {/*   <div className="links">
-                <div className="item">ADD TO WISH LIST</div>
-                <div className="item">ADD TO COMPARE</div>
-          </div> */}
-              <hr />
-              <p>
-                <strong>Available: </strong>
-                {productDataById?.data?.attributes?.isAvailable}
-              </p>
-              <p>
-                <strong>Available Colors: </strong>
-                {productDataById?.data?.attributes?.colors}
-              </p>
-              <p>
-                <strong>SKU: </strong>
-                {productDataById?.data?.attributes?.SKU}
-              </p>
-              <p>
-                <strong>Brand: </strong>
-                {productDataById?.data?.attributes?.brand}
-              </p>
-              <hr />
-              <div className="info">
-                <span>Vendor: {productDataById?.data?.attributes?.brand}</span>
-                <span>
-                  Product Type: {productDataById?.data?.attributes?.type},{""}
-                  {
-                    productDataById?.data?.attributes?.categories.data[0]
-                      .attributes.title
-                  }
-                </span>
-                <span>
-                  Tag:{" "}
-                  {
-                    productDataById?.data?.attributes?.categories.data[0]
-                      .attributes.title
-                  }
-                  ,{" "}
-                  {
-                    productDataById?.data?.attributes?.sub_category.data
-                      .attributes.title
-                  }
-                  , Furniture, Interior Design
-                </span>
-              </div>
-              <hr />
-          {/*   
-           <div className="info">
-                <span>DESCRIPTION</span>
+                  Buy now
+                </ButtonComponent>
                 <hr />
-                <span>ADDITIONAL INFORMATION</span>
+                <p>
+                  <strong>Available</strong>
+                </p>
+                <p>{productDataById?.data?.attributes?.isAvailable}</p>
+                <p>
+                  <strong>Available Colors</strong>
+                </p>
+                <p>{productDataById?.data?.attributes?.colors}</p>
+                <p>
+                  <strong>SKU</strong>
+                </p>
+                <p>{productDataById?.data?.attributes?.SKU}</p>
+                <p>
+                  <strong>Brand</strong>
+                </p>
+                <p>{productDataById?.data?.attributes?.brand}</p>
                 <hr />
-                <span>FAQ</span>
-                </div> */}
+                <div className="info">
+                  <span>
+                    <strong>SPECIFICATIONS</strong>
+                  </span>
+                  <span>
+                    PatternSolidFitSlim FitCollarNotched LapelBottom
+                    ClosureSlip-OnTypeBlazer and TrousersFabricCotton
+                    BlendOccasionFormalSleeve LengthLong SleevesFront
+                    StylingSingle-Breasted
+                  </span>
+
+                  <span>Product Type</span>
+                  <span>
+                    {productDataById?.data?.attributes?.type},{" "}
+                    {
+                      productDataById?.data?.attributes?.categories.data[0]
+                        .attributes.title
+                    }
+                  </span>
+                  <span>Tag</span>
+                  <span>
+                    {
+                      productDataById?.data?.attributes?.categories.data[0]
+                        .attributes.title
+                    }
+                    ,{" "}
+                    {
+                      productDataById?.data?.attributes?.sub_category.data
+                        .attributes.title
+                    }
+                  </span>
+                </div>
+                <hr />
+              </div>
             </div>
-          </div>
-        </>
-      )}
-    </div>
+          </>
+        )}
+      </ProductContainer>
+      <FeaturedContainer>
+        <FeaturedTitle>You may also like</FeaturedTitle>
+        <BestSeller type="featured" />
+      </FeaturedContainer>
+      <Contact />
+    </>
   );
 };
 

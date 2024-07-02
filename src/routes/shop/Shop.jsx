@@ -8,11 +8,12 @@ import { setCategories } from "../../store/categories/categories.reducer";
 
 import StartShop from "../start-shop/StartShop";
 import CategoryProductList from "../category-product-list/CategoryProductList";
-import { Contact } from "../../components";
+import { BreadcrumbNav, Contact } from "../../components";
 
 const Shop = () => {
   const dispatch = useDispatch();
-  const headerTitle = "SHOP";
+  const headerTitle = "Design Shop";
+  const headerCarouselTitle = "Shop";
 
   useEffect(() => {
     const getCategoriesMap = async () => {
@@ -26,14 +27,13 @@ const Shop = () => {
 
   return (
     <>
-      <h2 className="breadcrumb-nav">
-        <Link className="link" to="/">
-          Home
-        </Link>{" "}
-        / Design {headerTitle}
-      </h2>
+      <BreadcrumbNav headerTitle={headerTitle} />
+
       <Routes>
-        <Route index element={<StartShop headerTitle={headerTitle} />} />
+        <Route
+          index
+          element={<StartShop headerTitle={headerCarouselTitle} />}
+        />
         <Route path=":category" element={<CategoryProductList />} />
       </Routes>
       <Contact />

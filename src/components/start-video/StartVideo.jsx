@@ -26,7 +26,7 @@ const StartVideo = () => {
           unparalleled elegance. Explore now!
         </VideoTextBoxParagraph>
 
-        <VisitStoreLink className="store" to="/interior">
+        <VisitStoreLink className="store" to="/store">
           Visit Interior Design Store
           <span className="arrow">
           <svg fill="none" viewBox="0 0 24 24" height="1em" width="1em">

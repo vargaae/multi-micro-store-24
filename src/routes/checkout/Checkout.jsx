@@ -9,7 +9,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 import { Link } from "react-router-dom";
 
-import { ButtonComponent } from "../../components";
+import { BreadcrumbNav, ButtonComponent, Contact } from "../../components";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
 
 import {
@@ -28,6 +28,8 @@ import {
 const stripePromise = loadStripe(import.meta.env.VITE_APP_STRIPE_KEY);
 
 const Checkout = () => {
+  const headerTitle = "Checkout";
+
   const products = useSelector(selectCartItems);
   const cartTotalPriceCount = useSelector(selectCartTotalPriceCount);
 
@@ -46,12 +48,8 @@ const Checkout = () => {
   };
   return (
     <>
-      <h2 className="breadcrumb-nav">
-        <Link className="link" to="/">
-          Home
-        </Link>{" "}
-        / Checkout
-      </h2>
+      <BreadcrumbNav headerTitle={headerTitle} />
+
       <CheckoutContainer className="section__padding">
         <CheckoutHeader>
           <HeaderBlock>
@@ -81,7 +79,7 @@ const Checkout = () => {
           <EmptyMessage>
             <h2>There is no products in your cart?!</h2>
             <h3>
-              <ShopLink to="/interior">Back to STORE something nice!</ShopLink>
+              <ShopLink to="/store">Back to STORE something nice!</ShopLink>
               <ShopLink to="/shop">Back to SHOP something nice!</ShopLink>
             </h3>
           </EmptyMessage>
@@ -102,6 +100,7 @@ const Checkout = () => {
           </>
         ) : null}
       </CheckoutContainer>
+      <Contact />
     </>
   );
 };

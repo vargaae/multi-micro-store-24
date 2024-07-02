@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const SignFormContainer = styled.div`
+  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.02em;
+
   h2 {
     margin: 10px 0;
   }
@@ -9,7 +15,7 @@ On screens that are 769px wide or more, make the columns in the middle */
   @media screen and (min-width: 769px) {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 350px;
   }
 
   /*  On screens that are 900px wide or more, go from one column to two columns, 

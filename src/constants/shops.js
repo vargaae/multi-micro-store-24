@@ -20,20 +20,20 @@ export const shops = [
     description: `Furniture Interior Design`,
     company: `IKEA, Caressa, ...`,
     imgUrl: images.furniture,
-    shopLink: "/interior",
+    shopLink: "/store",
   },
   {
     title: "Living Room Furniture",
     description: `Furniture Interior Design`,
     company: `IKEA, Caressa, ...`,
     imgUrl: images.furniture2,
-    shopLink: "/interior/products/1",
+    shopLink: "/store/products/1",
   },
   {
     title: "Kitchen",
     description: `Kitchen Furnitures`,
     company: `IKEA`,
     imgUrl: images.kitchen,
-    shopLink: "/interior/products/2",
+    shopLink: "/store/products/2",
   },
 ];

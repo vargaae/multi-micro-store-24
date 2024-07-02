@@ -41,7 +41,7 @@ const ProductCard = ({ product }) => {
       <Link className="productpagelink" to={`product/${SKU}`}></Link>
       <img src={imageUrl} alt={`${name}`} />
       <Footer>
-        <Name>{name}</Name>
+        <Name to={`product/${SKU}`}>{name}</Name>
         <Price>€{price}</Price>
       </Footer>
       <ButtonComponent

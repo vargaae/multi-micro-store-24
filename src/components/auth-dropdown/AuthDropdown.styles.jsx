@@ -19,6 +19,11 @@ export const AuthDropdownContainer = styled.div`
   right: 40px;
   z-index: 6;
 
+  font-family: var(--font-family-shopinfo);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+
   img {
     margin-top: 0.7rem;
   }
@@ -32,11 +37,11 @@ export const AuthDropdownContainer = styled.div`
 `;
 
 export const AuthDetailsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const DisplayNameContainer = styled.div`
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1em;
 `;

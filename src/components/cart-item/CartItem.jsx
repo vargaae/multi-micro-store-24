@@ -3,7 +3,12 @@ import {
   addItemToCart,
   removeItemFromCart,
 } from "../../store/cart/cart.reducer";
-import { CartItemContainer, ItemDetails } from "./CartItem.styles";
+import {
+  CartItemContainer,
+  DotDotDot,
+  ItemDetails,
+  ProductNameContainer,
+} from "./CartItem.styles";
 
 const CartItem = ({ product }) => {
   const { name, imageUrl, price, quantity } = product;
@@ -17,7 +22,9 @@ const CartItem = ({ product }) => {
     <CartItemContainer>
       <img src={imageUrl} alt={`${name}`} />
       <ItemDetails>
-        <span className="name">{name}</span>
+        <ProductNameContainer>
+          {name} <DotDotDot></DotDotDot>{" "}
+        </ProductNameContainer>
         <button onClick={removeProductToCart}>-</button>
         <span className="price">
           {quantity} x €{price}
