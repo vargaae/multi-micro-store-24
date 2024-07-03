@@ -75,9 +75,9 @@ a {
 
 .top {
   //TODO: SET TOP->here and in AI-2024:
-  height: 77px;
+  margin-top: 77px;
   @media screen and (min-width: 900px) {
-    height: 5em;
+    margin-top: 5em;
   }
 }
 
