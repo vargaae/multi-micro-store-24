@@ -15,7 +15,7 @@ export const AuthDropdownContainer = styled.div`
   padding: 20px;
   border: 1px solid rgba(4, 12, 24, 1);
   background-color: rgba(4, 12, 24, 1);
-  top: 90px;
+  top: 5em;
   right: 40px;
   z-index: 6;
 

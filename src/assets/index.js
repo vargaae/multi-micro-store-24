@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
+import profile from "./profile.svg";
 
 import background from "./background.png";
 
-export { logo, background };
+export { logo, profile, background };

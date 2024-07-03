@@ -15,7 +15,7 @@ import { setCurrentUser } from "./store/user/user.reducer";
 
 import { Spinner } from "./components";
 
-import { Navigation } from "./routes";
+import { Navbar } from "./routes";
 // import {
 //   Navigation,
 //   Authentication,
@@ -62,7 +62,8 @@ const Layout = () => {
   return (
     <Suspense fallback={<Spinner />}>
       <ScrollToTop />
-      <Navigation />
+      <Navbar />
+      <div className="top"></div>
       <Outlet />
       <Footer />
     </Suspense>

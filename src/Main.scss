@@ -2,6 +2,10 @@
 // @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
 //TODO: Unify COLORS -> text: white, lightblue...
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --font-family: "Afacad", "Afacad Placeholder", sans-serif;
   --font-family-numbers: "Poppins", "Poppins Placeholder", sans-serif;
@@ -69,6 +73,14 @@ a {
   margin: 0;
 }
 
+.top {
+  //TODO: SET TOP->here and in AI-2024:
+  height: 77px;
+  @media screen and (min-width: 900px) {
+    height: 5em;
+  }
+}
+
 /* BACKGROUND SETTINGS:APP-> gradient/gradient__bg... világos színátmenetet lehet, hogy visszahelyezem, ha túl sötét lesz így */
 .gradient__bg {
   background: -moz-radial-gradient(
@@ -129,4 +141,75 @@ a {
   .section__padding {
     padding: 1.5rem 3rem;
   }
+}
+
+//TODO: Search the importance of this setting:
+@layer base {
+  body {
+    // @apply font-sans bg-n-8 text-n-1 text-base;
+  }
+}
+
+.rotate-45 {
+  @apply rotate-[45deg];
+}
+
+.rotate-90 {
+  @apply rotate-[90deg];
+}
+
+.rotate-135 {
+  @apply rotate-[135deg];
+}
+
+.rotate-180 {
+  @apply rotate-[180deg];
+}
+
+.rotate-225 {
+  @apply rotate-[225deg];
+}
+
+.rotate-270 {
+  @apply rotate-[270deg];
+}
+
+.rotate-315 {
+  @apply rotate-[315deg];
+}
+
+.rotate-360 {
+  @apply rotate-[360deg];
+}
+
+.-rotate-45 {
+  @apply rotate-[-45deg];
+}
+
+.-rotate-90 {
+  @apply rotate-[-90deg];
+}
+
+.-rotate-135 {
+  @apply rotate-[-135deg];
+}
+
+.-rotate-180 {
+  @apply rotate-[-180deg];
+}
+
+.-rotate-225 {
+  @apply rotate-[-225deg];
+}
+
+.-rotate-270 {
+  @apply rotate-[-270deg];
+}
+
+.-rotate-315 {
+  @apply rotate-[-315deg];
+}
+
+.-rotate-360 {
+  @apply rotate-[-360deg];
 }

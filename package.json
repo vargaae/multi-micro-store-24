@@ -6,6 +6,7 @@
   "scripts": {
     "v": "vite",
     "dev": "code . & start http://localhost:5173 & vite",
+    "git": "git push && git checkout main && git merge develop && git push && git checkout prod && git merge main && git push && git checkout develop",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -45,6 +46,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.4",
     "vite": "^5.1.0",
     "vite-plugin-svgr": "^4.2.0"
   },
