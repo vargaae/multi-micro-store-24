@@ -35,7 +35,7 @@ import {
   LogoContainer,
   NavLinksContainer,
   UserContainer,
-} from "./Navigation.styles";
+} from "./Navbar.styles";
 
 import "./navbar.css";
 
@@ -102,9 +102,9 @@ const Navbar = () => {
   };
 
   return (
-    <div
+    <NavigationContainer
       className={`fixed top-0 left-0 w-full z-50  border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
-        openNavigation ? "bg-n-8 border-b" : "bg-n-8/90 backdrop-blur-sm"
+        openNavigation ? "bg-n-8 border-b-2" : "bg-n-8/90 backdrop-blur-sm"
       }`}
     >
       <div className="ai__navbar-links flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
@@ -137,14 +137,6 @@ const Navbar = () => {
           </div>
           <HamburgerMenu />
         </nav>
-
-        <div className="z-2 flex items-center justify-center">
-          <p
-            className={`md:text-2xl uppercase text-n-14 transition-colors `}
-          >
-            mmSTORE-24
-          </p>
-        </div>
         <NavLinksContainer>
           {currentUser !== null ? (
             <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
@@ -191,7 +183,7 @@ const Navbar = () => {
           <MenuSvg openNavigation={openNavigation} />
         </GradientButtonComponent>
       </div>
-    </div>
+    </NavigationContainer>
   );
 };
 

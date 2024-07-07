@@ -34,6 +34,10 @@ export const AuthDropdownContainer = styled.div`
   ${InvertedButton} {
     margin-top: auto;
   }
+
+  @media screen and (max-width: 550px) {
+    top: 77px;
+  }
 `;
 
 export const AuthDetailsContainer = styled.div`

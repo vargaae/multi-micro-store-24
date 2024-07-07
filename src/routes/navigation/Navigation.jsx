@@ -66,7 +66,7 @@ const Navigation = () => {
   };
 
   return (
-    <NavigationContainer className="gradient__bg">
+    <NavigationContainer className="transparent__bg">
       <LogoContainer onClick={goHomeCloseCart} to="/">
         <img src={logo} className="logo" alt="logo of Andras Varga" />
       </LogoContainer>

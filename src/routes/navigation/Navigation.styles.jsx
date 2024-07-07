@@ -2,7 +2,7 @@ import { styled, keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavigationContainer = styled.div`
-  height: 90px;
+  height: 9rem;
   width: 100%;
   padding: 20px 0px;
   display: flex;
@@ -12,6 +12,23 @@ export const NavigationContainer = styled.div`
     &:hover {
       color: #73a5c6;
     }
+  }
+`;
+
+export const NavigationBgContainer = styled.div`
+  // height: 9rem;
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: lightblue;
+    // &:hover {
+    //   color: #73a5c6;
+    // }
+  }
+  @media screen and (min-width: 550px) {
+    height: 1em;
   }
 `;
 

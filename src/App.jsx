@@ -1,5 +1,5 @@
 // TODO: CLEAN UP: -> delete SCART(here, store, components), imports
-import { useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 
 import {
   useLocation,
@@ -15,6 +15,8 @@ import { setCurrentUser } from "./store/user/user.reducer";
 
 import { Spinner } from "./components";
 
+import { Navigation } from "./routes";
+import { NavigationBg } from "./routes";
 import { Navbar } from "./routes";
 // import {
 //   Navigation,
@@ -59,16 +61,55 @@ export function ScrollToTop() {
 }
 
 const Layout = () => {
+  const [navSize, setnavSize] = useState("5rem");
+  const [navColor, setnavColor] = useState("transparent");
+  const listenScrollEvent = () => {
+    if (window.matchMedia("(min-width: 550px)").matches) {
+      window.scrollY > 9 ? setnavColor("transparent") : setnavColor("#040F1E");
+      setnavSize("9rem");
+      window.scrollY > 9 ? setnavSize("5rem") : setnavSize("9rem");
+    } else {
+      window.scrollY > 5
+        ? setnavColor("transparent")
+        : setnavColor("transparent");
+      window.scrollY > 5 ? setnavSize("5rem") : setnavSize("5rem");
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+    return () => {
+      window.removeEventListener("scroll", listenScrollEvent);
+    };
+  }, []);
   return (
     <Suspense fallback={<Spinner />}>
       <ScrollToTop />
-      <Navbar />
-      <div className="top"></div>
+      <nav
+        style={{
+          backgroundColor: navColor,
+          height: navSize,
+          transition: "all 1s",
+          paddingTop: "5rem",
+        }}
+      >
+        <Navbar />
+      </nav>
       <Outlet />
       <Footer />
     </Suspense>
   );
 };
+
+{
+  /* <div className="top"></div> */
+}
+{
+  /* <Navbar style={{
+    backgroundColor: navColor,
+    height: navSize,
+    transition: "all 1s"
+  }} /> */
+}
 
 const router = createBrowserRouter([
   {

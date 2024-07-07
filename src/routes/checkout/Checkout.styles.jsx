@@ -32,16 +32,19 @@ export const HeaderBlock = styled.div`
   text-transform: capitalize;
   width: 23%;
 
-  &:nth-last-child(2) {
-    @media screen and (max-width: 550px) {
-      display: none;
-    }
-  }
+  // &:nth-last-child(2) {
+  //   @media screen and (max-width: 550px) {
+  //     display: none;
+  //   }
+  // }
 
   &:last-child {
     width: 10%;
     @media screen and (min-width: 550px) {
       width: 6%;
+    }
+          @media screen and (max-width: 550px) {
+      display: none;
     }
   }
 `;

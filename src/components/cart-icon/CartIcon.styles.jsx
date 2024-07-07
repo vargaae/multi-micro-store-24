@@ -30,7 +30,7 @@ export const ShoppingIcon = styled(ShoppingSvg)`
   // I deleted 'fill' from the shopping-bag.svg icon to be colorable
   &:hover {
     fill: #73a5c6;
-    border: 10px dashed var(--color-prime);
+    border: 3px dashed var(--color-prime);
     border-radius: 4px;
   }
 `;
