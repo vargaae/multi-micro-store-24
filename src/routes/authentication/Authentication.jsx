@@ -14,6 +14,7 @@ const Authentication = () => {
       <BreadcrumbNav headerTitle={headerTitle} />
       <AuthenticationContainer>
         <SignInForm />
+        <hr />
         <SignUpForm />
       </AuthenticationContainer>
       <Contact />

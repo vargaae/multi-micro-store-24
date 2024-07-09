@@ -6,6 +6,10 @@ mobile-first: On screens that are 600px wide or more, there is one column in a r
   margin: 1.6rem;
   justify-content: space-between;
 
+  hr {
+    margin: 3em;
+  }
+
   /*  On screens that are 769px wide or more, there is one column in a row,
 On screens that are 769px wide or more, make the columns in the middle */
   @media screen and (min-width: 769px) {

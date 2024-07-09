@@ -15,8 +15,7 @@ import { setCurrentUser } from "./store/user/user.reducer";
 
 import { Spinner } from "./components";
 
-import { Navigation } from "./routes";
-import { NavigationBg } from "./routes";
+// import { Navigation } from "./routes";
 import { Navbar } from "./routes";
 // import {
 //   Navigation,
@@ -62,16 +61,20 @@ export function ScrollToTop() {
 
 const Layout = () => {
   const [navSize, setnavSize] = useState("5rem");
-  const [navColor, setnavColor] = useState("transparent");
+  const [navColor, setNavColor] = useState("transparent");
+  const [navGradient, setNavGradient] = useState("");
   const listenScrollEvent = () => {
     if (window.matchMedia("(min-width: 550px)").matches) {
-      window.scrollY > 9 ? setnavColor("transparent") : setnavColor("#040F1E");
-      setnavSize("9rem");
-      window.scrollY > 9 ? setnavSize("5rem") : setnavSize("9rem");
+      window.scrollY > 8 ? setNavColor("transparent") : setNavColor("#040F1E");
+      window.scrollY > 8
+        ? setNavGradient("gradient__bg")
+        : setNavGradient("");
+      setnavSize("8.2rem");
+      window.scrollY > 8 ? setnavSize("5rem") : setnavSize("8.2rem");
     } else {
       window.scrollY > 5
-        ? setnavColor("transparent")
-        : setnavColor("transparent");
+        ? setNavColor("transparent")
+        : setNavColor("transparent");
       window.scrollY > 5 ? setnavSize("5rem") : setnavSize("5rem");
     }
   };
@@ -85,31 +88,20 @@ const Layout = () => {
     <Suspense fallback={<Spinner />}>
       <ScrollToTop />
       <nav
+        className="gradient__bg"
         style={{
           backgroundColor: navColor,
           height: navSize,
           transition: "all 1s",
-          paddingTop: "5rem",
         }}
       >
-        <Navbar />
+        <Navbar navGradient={navGradient} />
       </nav>
       <Outlet />
       <Footer />
     </Suspense>
   );
 };
-
-{
-  /* <div className="top"></div> */
-}
-{
-  /* <Navbar style={{
-    backgroundColor: navColor,
-    height: navSize,
-    transition: "all 1s"
-  }} /> */
-}
 
 const router = createBrowserRouter([
   {

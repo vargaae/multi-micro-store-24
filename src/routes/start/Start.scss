@@ -30,9 +30,12 @@ div.breadcrumb {
 // TEXT ANIMATION
 .animatedtext {
   text-align: center;
-  // font-family: "Roboto";
+  font-family: var(--font-family-shopinfo);
   font-weight: 600;
   overflow: hidden;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   -webkit-transform: translate3d(0, 0, 0);
@@ -53,6 +56,9 @@ div.breadcrumb {
   .adtext:last-of-type {
     width: 0px;
     animation: reveal 7s infinite;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   }
 
   .adtext:last-of-type .adtextspan {

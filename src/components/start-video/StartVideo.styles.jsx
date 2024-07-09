@@ -23,7 +23,6 @@ export const StartVideoContainer = styled.div`
 `;
 
 export const VideoTextBox = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
   outline: none;
   display: flex;
   flex-direction: column;
@@ -105,7 +104,7 @@ export const VisitStoreLink = styled(Link)`
     /* font-size: 1.5em; */
     font-size: calc(1vw + 1em);
   }
-  
+
   letter-spacing: -0.02em;
 
   font-family: "Afacad", "Afacad Placeholder", sans-serif;
@@ -177,8 +176,8 @@ export const VisitShopLink = styled(VisitStoreLink)`
     content: "";
     width: calc(24vw + 1em);
     background-color: var(--color-text);
-        // TODO: unify media queries
-        @media screen and (min-width: 810px) {
+    // TODO: unify media queries
+    @media screen and (min-width: 810px) {
       width: calc(20vw + 1em);
     }
     @media screen and (min-width: 1200px) {
