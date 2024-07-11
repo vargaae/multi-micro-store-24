@@ -33,9 +33,9 @@ const CheckoutItem = ({ product }) => {
       </ImageContainer>
       <Name>{name}</Name>
       <Quantity>
-        <IncreaseDecrease onClick={removeProductHandler}>-</IncreaseDecrease>
-        <Value>{quantity}x</Value>{" "}
-        <IncreaseDecrease onClick={addProductHandler}>+</IncreaseDecrease>
+        <IncreaseDecrease onClick={removeProductHandler}>{" "} -</IncreaseDecrease>
+        <Value>{quantity}x</Value>
+        <IncreaseDecrease onClick={addProductHandler}>+ {" "}</IncreaseDecrease>
       </Quantity>
       <BaseSpan>€{price}</BaseSpan>
       <BaseSpan>€{price * quantity}</BaseSpan>

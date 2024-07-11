@@ -8,6 +8,10 @@ export const CheckoutItemContainer = styled.div`
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+
+  @media screen and (max-width: 550px) {
+    font-size: 14px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -28,9 +32,18 @@ export const BaseSpan = styled.span`
   width: 23%;
   justify-content: space-around;
 
+  font-family: var(--font-family-numbers);
+  font-style: normal;
+  letter-spacing: 0em;
+
   &:nth-last-child(2) {
     @media screen and (max-width: 550px) {
       display: none;
+    }
+  }
+  &:last-child {
+    @media screen and (min-width: 550px) {
+      width: 13%;
     }
   }
 `;
@@ -50,7 +63,17 @@ export const IncreaseDecrease = styled.div`
 `;
 
 export const Value = styled.span`
-  margin: 0 10px;
+  font-family: var(--font-family-numbers);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0em;
+  line-height: 1.6em;
+  text-align: start;
+  text-decoration: none;
+
+  @media screen and (min-width: 550px) {
+    margin: 0 10px;
+  }
 `;
 
 export const RemoveButton = styled.div`

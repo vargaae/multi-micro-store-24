@@ -14,7 +14,22 @@ export const CheckoutContainer = styled.div`
   font-weight: 400;
   letter-spacing: -0.02em;
 
-  @media screen and (min-width: 550px) {
+  width: 100%;
+  margin: 10px auto 10px;
+
+  @media screen and (max-width: 550px) {
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 810px) {
+    width: 85%;
+    margin: 10px auto 10px;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 75%;
+    margin: 50px auto 20px;
+  }
+  @media screen and (min-width: 1200px) {
     width: 55%;
     margin: 50px auto 20px;
   }
@@ -26,25 +41,34 @@ export const CheckoutHeader = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
+  @media screen and (min-width: 810px) {
+    padding: 10px 15px 10px 0;
+  }
 `;
 
 export const HeaderBlock = styled.div`
   text-transform: capitalize;
   width: 23%;
 
-  // &:nth-last-child(2) {
-  //   @media screen and (max-width: 550px) {
-  //     display: none;
-  //   }
-  // }
+  &:nth-last-child(4) {
+    @media screen and (min-width: 550px) {
+      padding-left: 2.5em;
+    }
+  }
+
+  &:nth-last-child(3) {
+    @media screen and (max-width: 550px) {
+      display: none;
+    }
+    @media screen and (min-width: 550px) {
+      padding-left: 2em;
+    }
+  }
 
   &:last-child {
     width: 10%;
     @media screen and (min-width: 550px) {
       width: 6%;
-    }
-          @media screen and (max-width: 550px) {
-      display: none;
     }
   }
 `;
@@ -60,7 +84,6 @@ export const Total = styled.span`
 export const PayContainer = styled.div`
   width: 100%;
   margin-top: 1.5rem;
-  // display: flex;
 `;
 
 export const ButtonContainer = styled.div`
