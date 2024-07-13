@@ -8,12 +8,16 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
-import { ButtonComponent } from "../";
+import { ButtonComponent, BUTTON_TYPE_CLASSES } from "../";
 import CartItem from "../cart-item/CartItem";
 import {
   CartDropdownContainer,
   CartItemsContainer,
   EmptyMessage,
+  ShopLink,
+  ButtonContainer,
+  ButtonsContainer,
+  ImageContainer,
   Total,
 } from "./CartDropdown.styles";
 
@@ -50,14 +54,36 @@ const CartDropdown = () => {
         {cartItems != 0 ? (
           cartItems.map((item) => <CartItem key={item.id} product={item} />)
         ) : (
-          <EmptyMessage>
-            <h2>There is no products in your cart:</h2>
-          {/*  <ButtonComponent onClick={handleBackToStoreClick}>
-              Back to STORE something nice!
-        </ButtonComponent> */}
-            <ButtonComponent onClick={handleBackToShopClick}>
-              Back to SHOP something nice!
+<EmptyMessage>
+            <h2>There is no product in your cart?!</h2>
+            <ImageContainer>
+                <img
+                  decoding="async"
+                  sizes="max(min(max(100vw, 0px), 1600px), 0px)"
+                  srcset="https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=512 512w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=1024 1024w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=2048 2048w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=4096 4096w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg 6000w"
+                  src="https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg"
+                  alt="About us picture"
+                />
+              </ImageContainer>
+            <h3>
+              <ShopLink to="/">Back to Buy something nice!</ShopLink>
+              <ButtonsContainer>
+            <ButtonComponent
+              onClick={handleBackToStoreClick}
+              buttonType={BUTTON_TYPE_CLASSES.start}
+              type="button"
+            >
+              VISIT STORE
             </ButtonComponent>
+            <ButtonComponent
+              onClick={handleBackToShopClick}
+              buttonType={BUTTON_TYPE_CLASSES.start}
+              type="button"
+            >
+              VISIT SHOP
+            </ButtonComponent>
+            </ButtonsContainer>
+            </h3>
           </EmptyMessage>
         )}
       </CartItemsContainer>

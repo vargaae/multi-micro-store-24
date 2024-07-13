@@ -42,7 +42,7 @@ export const navigation = [
   {
     id: "4",
     title: "About",
-    url: "/",
+    url: "/about",
     onlyMobile: true,
   },
   {

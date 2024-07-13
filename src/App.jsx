@@ -43,6 +43,7 @@ const Checkout = lazy(() => import("./routes/checkout/Checkout"));
 const Authentication = lazy(() =>
   import("./routes/authentication/Authentication")
 );
+const About = lazy(() => import("./routes/about/About"));
 
 import {
   createUserDocumentFromAuth,
@@ -66,9 +67,7 @@ const Layout = () => {
   const listenScrollEvent = () => {
     if (window.matchMedia("(min-width: 550px)").matches) {
       window.scrollY > 8 ? setNavColor("transparent") : setNavColor("#040F1E");
-      window.scrollY > 8
-        ? setNavGradient("gradient__bg")
-        : setNavGradient("");
+      window.scrollY > 8 ? setNavGradient("gradient__bg") : setNavGradient("");
       setnavSize("8.2rem");
       window.scrollY > 8 ? setnavSize("5rem") : setnavSize("8.2rem");
     } else {
@@ -152,6 +151,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },

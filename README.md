@@ -7,7 +7,16 @@
     <img src="https://img.shields.io/badge/-Styled-black?style=for-the-badge&logoColor=white&logo=styled&color=06B6D4" alt="styled" />
   </div>
 
-# MULTI-MICRO-STORE-24 - MULTI ECOMMERCE APPLICATION WITH MICROSERVICES 2024
+# MULTI-MICRO-STORE-24
+
+## MULTI ECOMMERCE APPLICATION WITH MICROSERVICES
+
+<div align="center">
+  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024-git.png" width="700" />
+</div>
+
+You can check out the deployed application [here](https://ecommerce-2024-y49k.onrender.com/)
+->deployed on Render: ClientSide App+API+PostgreSQL DB
 
 Features/Structure:
 
@@ -27,16 +36,8 @@ Features/Structure:
 - 🚀CATEGORIES SERVICE - CATEGORIES SLICE,
 - 🚀Database for products and users with Firebase,
 - 🚀ProductPage,
+- 🚀AboutPage,
 - 🚀Styled components
-
-## ClientSide Application
-
-<div align="center">
-  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024-git.png" width="700" />
-</div>
-
-You can check out the deployed application [here](https://ecommerce-2024-y49k.onrender.com/)
-->deployed on Render: ClientSide App+API+PostgreSQL DB
 
 ## 🛠 Front End:
 

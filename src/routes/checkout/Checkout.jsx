@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import { useSelector } from "react-redux";
 import {
   selectCartItems,
@@ -7,10 +9,7 @@ import {
 import { makeRequest } from "../../services/makeRequest";
 import { loadStripe } from "@stripe/stripe-js";
 
-import { Link } from "react-router-dom";
-
-import { BreadcrumbNav, ButtonComponent, Contact } from "../../components";
-import CheckoutItem from "../../components/checkout-item/CheckoutItem";
+import { BreadcrumbNav, CheckoutItem, ButtonComponent, BUTTON_TYPE_CLASSES, Contact } from "../../components";
 
 import {
   CheckoutContainer,
@@ -21,6 +20,8 @@ import {
   EmptyMessage,
   ShopLink,
   ButtonContainer,
+  ButtonsContainer,
+  ImageContainer,
 } from "./Checkout.styles";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -28,6 +29,16 @@ import {
 const stripePromise = loadStripe(import.meta.env.VITE_APP_STRIPE_KEY);
 
 const Checkout = () => {
+  const navigateTo = useNavigate();
+
+  const goToStore = () => {
+    navigateTo("/store");
+  };
+
+  const goToShop = () => {
+    navigateTo("/shop");
+  };
+
   const headerTitle = "Checkout";
 
   const products = useSelector(selectCartItems);
@@ -77,10 +88,34 @@ const Checkout = () => {
           ))
         ) : (
           <EmptyMessage>
-            <h2>There is no products in your cart?!</h2>
+            <h2>There is no product in your cart?!</h2>
+            <ImageContainer>
+                <img
+                  decoding="async"
+                  sizes="max(min(max(100vw, 0px), 1600px), 0px)"
+                  srcset="https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=512 512w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=1024 1024w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=2048 2048w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=4096 4096w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg 6000w"
+                  src="https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg"
+                  alt="About us picture"
+                />
+              </ImageContainer>
             <h3>
-              <ShopLink to="/store">Back to STORE something nice!</ShopLink>
-              <ShopLink to="/shop">Back to SHOP something nice!</ShopLink>
+              <ShopLink to="/">Back to Buy something nice!</ShopLink>
+              <ButtonsContainer>
+            <ButtonComponent
+              onClick={goToStore}
+              buttonType={BUTTON_TYPE_CLASSES.start}
+              type="button"
+            >
+              VISIT STORE
+            </ButtonComponent>
+            <ButtonComponent
+              onClick={goToShop}
+              buttonType={BUTTON_TYPE_CLASSES.start}
+              type="button"
+            >
+              VISIT SHOP
+            </ButtonComponent>
+            </ButtonsContainer>
             </h3>
           </EmptyMessage>
         )}

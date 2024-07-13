@@ -66,7 +66,7 @@ export const NavLinksContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 1020px) {
     width: 50%;
     padding-right: 40px;
   }

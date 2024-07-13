@@ -93,16 +93,59 @@ export const ButtonContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2.5em auto;
+  @media screen and (min-width: 550px) {
+  flex-direction: row;
+    }
+`;
+
 export const EmptyMessage = styled.div`
   color: red;
-  font-weight: 900;
+  font-weight: 600;
   margin: auto;
+  padding: 1em;
 `;
 
 export const ShopLink = styled(Link)`
   font-size: 2rem;
+
   &:hover {
     color: darkblue;
     text-decoration: underline;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  height: 300px;
+  inset: 0px;
+  margin:auto;
+  padding: 1em;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-position: center top;
+    object-fit: cover;
+    image-rendering: auto;
+
+    // height: max(min(max(100vw, 0px), 1600px), 0px);
+    // width: max(min(max(100vw, 0px), 1600px), 0px);
+  }
+
+  @media screen and (min-width: 550px) {
+    height: 400px;
+  }
+  @media screen and (min-width: 810px) {
+  }
+  @media screen and (min-width: 1200px) {
+  }
+  @media screen and (min-width: 1600px) {
+    width: 98%;
   }
 `;
