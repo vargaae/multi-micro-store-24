@@ -78,14 +78,20 @@ export const StartNavigationContainer = styled.div`
   }
 `;
 export const StartStoreShopContainer = styled.div`
+  padding: 60px 0;
+  margin: 0 auto;
+
   .startStoreImages {
     margin: 0 auto;
     gap: 10px;
     @media screen and (min-width: 1200px) {
       display: flex;
+
+      flex-direction: row;
     }
     @media screen and (min-width: 1600px) {
       display: flex;
+
       align-content: center;
       align-items: center;
       flex: none;
@@ -99,7 +105,7 @@ export const StartStoreShopContainer = styled.div`
       position: relative;
       width: 100%;
 
-            .startStoreImage {
+      .startStoreImage {
         flex: 50%;
       }
     }
@@ -162,6 +168,11 @@ export const StartStoreShopContainer = styled.div`
   }
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-content: center;
+  align-items: center;
+`;
 // TODO: turn SCSS -> styled
 // h2.breadcrumb-nav {
 //   padding: 1rem 3rem 1rem;

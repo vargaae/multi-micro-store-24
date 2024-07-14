@@ -10,11 +10,11 @@ export const ProductCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin: 0 0 10px;
+  // margin: 0 0 10px;
 
   @media screen and (max-width: 390px) {
-    height: 350px;
-    width: 90px;
+    // height: 350px;
+    // width: 90px;
   }
 
   @media screen and (min-width: 1200px) {
@@ -42,7 +42,7 @@ export const ProductCardContainer = styled.div`
   }
 
   &:hover {
-        transition: transform 8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    transition: transform 8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 
     opacity: 1;
     img {
@@ -74,7 +74,7 @@ export const Footer = styled.div`
   text-align: left;
   font-size: 14px;
 
-  padding-bottom: 3em;
+  margin: 5px;
 
   @media screen and (min-width: 550px) {
     font-size: 18px;
@@ -87,7 +87,7 @@ export const Footer = styled.div`
 
 export const Name = styled(Link)`
   width: 90%;
-  margin-bottom: 15px;
+
   justify-content: space-between;
 
   text-align: start;
@@ -96,8 +96,6 @@ export const Name = styled(Link)`
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-
-  font-size: 22px;
 
   letter-spacing: 0em;
   line-height: 1.6em;
@@ -109,10 +107,10 @@ export const Name = styled(Link)`
 
   &:hover {
     text-decoration: underline;
-
   }
 
   @media screen and (min-width: 810px) {
+    font-size: 22px;
   }
 `;
 
@@ -120,7 +118,6 @@ export const Price = styled.span`
   width: 10%;
 
   font-family: var(--font-family-numbers);
-  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0em;
@@ -129,5 +126,6 @@ export const Price = styled.span`
   text-decoration: none;
 
   @media screen and (min-width: 810px) {
+    font-size: 20px;
   }
 `;

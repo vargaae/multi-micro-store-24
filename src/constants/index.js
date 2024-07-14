@@ -17,9 +17,9 @@ export const list = [
 export const navigation = [
   {
     id: "0",
-    title: "Home",
+    title: "MMSTORE24",
     url: "/",
-    onlyMobile: true,
+    onlyMobile: false,
   },
   {
     id: "1",
@@ -43,7 +43,7 @@ export const navigation = [
     id: "4",
     title: "About",
     url: "/about",
-    onlyMobile: true,
+    onlyMobile: false,
   },
   {
     id: "5",
@@ -51,4 +51,10 @@ export const navigation = [
     url: "/",
     onlyMobile: true,
   },
+  // {
+  //   id: "6",
+  //   title: "MMSTORE24",
+  //   url: "/",
+  //   onlyMobile: false,
+  // },
 ];

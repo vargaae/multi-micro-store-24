@@ -17,6 +17,7 @@ import {
   BestSellerTitle,
   StartStoreShopContainer,
   StartNavigationContainer,
+  ButtonContainer
 } from "./Start.styles";
 // TODO: turn SCSS -> styled
 import "./Start.scss";
@@ -82,13 +83,15 @@ const Start = () => {
         <StartStoreShopContainer>
           <BestSellerTitle>
             DESIGN STORE
-            <ButtonComponent
-              onClick={goToStore}
-              buttonType={BUTTON_TYPE_CLASSES.start}
-              type="button"
-            >
-              VISIT STORE
-            </ButtonComponent>
+            <ButtonContainer>
+              <ButtonComponent
+                onClick={goToStore}
+                buttonType={BUTTON_TYPE_CLASSES.start}
+                type="button"
+              >
+                VISIT STORE
+              </ButtonComponent>
+            </ButtonContainer>
           </BestSellerTitle>
           <div className="startStoreImages">
             <div className="startStoreImage">

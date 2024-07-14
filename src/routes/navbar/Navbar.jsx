@@ -37,7 +37,7 @@ import {
   UserContainer,
 } from "./Navbar.styles";
 
-import "./navbar.css";
+// import "./navbar.css";
 
 const Navbar = ({ navGradient }) => {
   const currentUser = useSelector(selectCurrentUser);
@@ -103,11 +103,11 @@ const Navbar = ({ navGradient }) => {
 
   return (
     <NavigationContainer
-      className={`${navGradient} fixed top-0 left-0 w-full z-50 border-n-6 lg:backdrop-blur-sm ${
+      className={`${navGradient} navbar fixed top-0 left-0 w-full z-50 border-n-6 lg:backdrop-blur-sm ${
         openNavigation ? "bg-n-8 border-b-2" : "backdrop-blur-sm"
       }`}
     >
-      <div className="ai__navbar-links flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
+      <div className="navbar-links flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <LogoContainer onClick={goHomeCloseCart} to="/">
           <img src={logo} className="logo" alt="logo of Andras Varga" />
         </LogoContainer>
@@ -116,18 +116,18 @@ const Navbar = ({ navGradient }) => {
             openNavigation ? "flex" : "hidden"
           } fixed top-[5em] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
-          <div className="ai__navbar-links_container relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+          <div className="navbar-links_container relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             {navigation.map((item) => (
               <p key={item.id}>
                 <Link
                   to={item.url}
-                  className={`block relative text-2xl uppercase text-n-14 transition-colors hover:text-color-1 ${
+                  className={`block relative text-2xl text-n-2 transition-colors hover:text-n-14 ${
                     item.onlyMobile ? "lg:hidden" : ""
-                  } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                    item.url === pathname.hash
-                      ? "z-2 lg:text-n-14"
-                      : "lg:text-n-14/50"
-                  } lg:leading-5 lg:hover:text-n-14 xl:px-12`}
+                  } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-base lg:font-semibold ${
+                    item.url === pathname.pathname
+                      ? "z-2 lg:text-n-2"
+                      : "lg:text-n-2/50"
+                  } lg:leading-5 lg:hover:text-n-2 xl:px-12`}
                   onClick={handleClick}
                 >
                   {item.title}
@@ -135,6 +135,7 @@ const Navbar = ({ navGradient }) => {
               </p>
             ))}
           </div>
+          
           <HamburgerMenu />
         </nav>
         <NavLinksContainer>
@@ -158,7 +159,7 @@ const Navbar = ({ navGradient }) => {
                       width={45}
                       height={45}
                     />
-                  ) /* currentUser?.email */
+                  )
                 }
               </ButtonComponent>
 

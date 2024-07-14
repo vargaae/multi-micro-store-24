@@ -99,12 +99,12 @@ export const ButtonsContainer = styled.div`
   justify-content: center;
   margin: 2.5em auto;
   @media screen and (min-width: 550px) {
-  flex-direction: row;
-    }
+    flex-direction: row;
+  }
 `;
 
 export const EmptyMessage = styled.div`
-  color: red;
+  color: #ff776f;
   font-weight: 600;
   margin: auto;
   padding: 1em;
@@ -122,7 +122,7 @@ export const ShopLink = styled(Link)`
 export const ImageContainer = styled.div`
   height: 300px;
   inset: 0px;
-  margin:auto;
+  margin: auto;
   padding: 1em;
 
   img {

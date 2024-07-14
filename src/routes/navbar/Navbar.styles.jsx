@@ -1,26 +1,17 @@
 import { styled, keyframes } from "styled-components";
+
 import { Link } from "react-router-dom";
 
 export const NavigationContainer = styled.div`
   height: 5em;
-  // width: 100%;
-  // padding: 20px 0px;
-  // display: flex;
-  // justify-content: space-between;
-  a {
-    color: lightblue;
-    // &:hover {
-    //   color: #73a5c6;
-    // }
-  }
 
-  @media screen and (min-width: 550px) {
-      // height: 9em;
-  //       width: 100%;
-  // padding: 65px 0px;
-  // display: flex;
-  // align-content: flex-end;
-  }
+  font-family: var(
+    --font-family-shopinfo,
+    var(--font-family, Inter, Inter Placeholder, sans-serif)
+  );
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
 `;
 
 // Logo-float keyframes

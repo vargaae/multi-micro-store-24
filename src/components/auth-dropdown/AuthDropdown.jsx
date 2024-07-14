@@ -9,6 +9,7 @@ import {
   AuthDropdownContainer,
   AuthDetailsContainer,
   DisplayNameContainer,
+  ImageContainer,
 } from "./AuthDropdown.styles";
 
 const AuthDropdown = () => {
@@ -27,7 +28,9 @@ const AuthDropdown = () => {
             {currentUser.photoURL ? (
               <>
                 {currentUser.email}
+                <ImageContainer>
                 <img src={currentUser.photoURL} alt="User's Logo" />
+                </ImageContainer>
               </>
             ) : null}
           </div>

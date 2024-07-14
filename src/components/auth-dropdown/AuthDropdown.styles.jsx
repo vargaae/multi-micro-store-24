@@ -9,11 +9,11 @@ import {
 
 export const AuthDropdownContainer = styled.div`
   position: absolute;
-  width: 240px;
+  width: 270px;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid rgba(4, 12, 24, 1);
+  border: 10px solid rgba(4, 12, 24, 1);
   background-color: rgba(4, 12, 24, 1);
   top: 5em;
   right: 40px;
@@ -23,10 +23,6 @@ export const AuthDropdownContainer = styled.div`
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.02em;
-
-  img {
-    margin-top: 0.7rem;
-  }
 
   ${BaseButton},
   ${GoogleSignInButton},
@@ -43,9 +39,25 @@ export const AuthDropdownContainer = styled.div`
 export const AuthDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const DisplayNameContainer = styled.div`
   margin-bottom: 0.5rem;
+
   font-size: 1em;
+`;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  margin: 0 auto;
+
+  img {
+    object-position: center top;
+    object-fit: cover;
+    image-rendering: auto;
+  }
 `;

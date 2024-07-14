@@ -82,10 +82,11 @@ export const ShopContainer = styled.div`
     margin: 0 auto 5em;
   }
 `;
+
 export const ImageContainer = styled.div`
   height: 300px;
   inset: 0px;
-  margin:auto;
+  margin: auto;
 
   img {
     display: block;
@@ -125,7 +126,13 @@ export const AboutContainer = styled.div`
   }
 
   img {
-  display: block; width: 100%; height: 100%; border-radius: inherit; object-position: center center; object-fit: contain; image-rendering: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-position: center center;
+    object-fit: contain;
+    image-rendering: auto;
   }
 
   @media screen and (min-width: 1200px) {
@@ -133,23 +140,41 @@ export const AboutContainer = styled.div`
 `;
 
 export const BrandContainer = styled.div`
-padding: 4em 0;
+  padding: 4em 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-gap: 4em;
-
-  img {
-  display: block; width: 100%; height: 100%; border-radius: inherit; object-position: center center; object-fit: contain; image-rendering: auto;
-  }
-
-  @media screen and (min-width: 1200px) {
+  gap: 3em;
+  
+  @media screen and (min-width: 810px) {
+    flex-direction: row;
+    gap: 1em;
   }
 `;
-export const InstagramContainer = styled.div`
-padding: 4em 0;
+
+export const BrandLogoContainer = styled.div`
+  padding: 0 1em;
   display: flex;
   justify-content: center;
-gap: 4em;
+
+  
+  @media screen and (min-width: 810px) {
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-position: center center;
+      object-fit: contain;
+      image-rendering: auto;
+    }
+    }
+`;
+
+export const InstagramContainer = styled.div`
+  padding: 4em 0;
+  display: flex;
+  justify-content: center;
+  gap: 4em;
 
   @media screen and (min-width: 1200px) {
   }

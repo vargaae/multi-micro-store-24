@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { Link } from "react-router-dom";
 
 import {
@@ -61,48 +62,19 @@ export const CartItemsContainer = styled.div`
   }
 `;
 
-// export const EmptyMessage = styled.span`
-//   font-size: 1em;
-//   margin: 50px auto;
-// `;
-
 export const EmptyMessage = styled.div`
-font-size: 0.6em;
-width: 250px;
-  color: red;
+  font-size: 0.6em;
+  width: 250px;
+  color: #ff776f;
   font-weight: 600;
   margin: auto;
   padding: 1em;
 `;
 
-export const ShopLink = styled(Link)`
-  font-size: 1em;
-
-  &:hover {
-    color: darkblue;
-    text-decoration: underline;
-  }
-`;
-
-export const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-`;
-
-export const ButtonsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0.3em auto;
-
-`;
-
 export const ImageContainer = styled.div`
-  height: 110px;
+  height: 100px;
   inset: 0px;
-  margin:auto;
+  margin: auto;
   padding: 1em;
 
   img {
@@ -114,6 +86,23 @@ export const ImageContainer = styled.div`
     object-fit: cover;
     image-rendering: auto;
   }
+`;
+
+export const ShopLink = styled(Link)`
+  font-size: 1em;
+
+  &:hover {
+    color: darkblue;
+    text-decoration: underline;
+  }
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.6em auto;
+  padding-top: 0.5em;
 `;
 
 export const Total = styled.span`

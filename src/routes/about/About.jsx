@@ -8,6 +8,7 @@ import {
   AboutContainer,
   ImageContainer,
   BrandContainer,
+  BrandLogoContainer,
   InstagramContainer,
 } from "./About.styles";
 
@@ -141,54 +142,54 @@ const About = () => {
           </h4>
         </AboutContainer>
         <BrandContainer>
-          <div>
+          <BrandLogoContainer>
             <img
               decoding="async"
               loading="lazy"
               src="https://framerusercontent.com/images/zBWNdmAieoTmcQCkIkTZ9rfnqo.svg"
               alt="Brand image"
             />
-          </div>
-          <div>
+          </BrandLogoContainer>
+          <BrandLogoContainer>
             <img
               decoding="async"
               loading="lazy"
               src="https://framerusercontent.com/images/u8WevV7mCKQBN8jeLHALsSQQs34.svg"
               alt="Brand image"
             />
-          </div>
-          <div>
+          </BrandLogoContainer>
+          <BrandLogoContainer>
             <img
               decoding="async"
               loading="lazy"
               src="https://framerusercontent.com/images/StsYHkCZHpy4eY8jsBCQEWc.svg"
               alt="Brand image"
             />
-          </div>
-          <div>
+          </BrandLogoContainer>
+          <BrandLogoContainer>
             <img
               decoding="async"
               loading="lazy"
               src="https://framerusercontent.com/images/jOc8ocv3NkFD0PkOQbamqxXhuE.svg"
               alt="Brand image"
             />
-          </div>
-          <div>
+          </BrandLogoContainer>
+          <BrandLogoContainer>
             <img
               decoding="async"
               loading="lazy"
               src="https://framerusercontent.com/images/z336n0D2YdMY9XgDiBAU7XSW6s.svg"
               alt="Brand image"
             />
-          </div>
-          <div>
+          </BrandLogoContainer>
+          <BrandLogoContainer>
             <img
               decoding="async"
               loading="lazy"
               src="https://framerusercontent.com/images/WdroEkOLMZk4iQzRgxNWMhLTlY.svg"
               alt="Brand image"
             />
-          </div>
+          </BrandLogoContainer>
         </BrandContainer>
 
         <InstagramContainer>
