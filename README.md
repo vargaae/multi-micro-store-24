@@ -1,12 +1,13 @@
  <div align="center">
-  <img alt="Application image" src="https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_apps.jpg?v=1665592014" width="400" />
+  <img alt="Application image" src="https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_apps.jpg?v=1665592014" />
 </div>
-<br>
   <div align="center">
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
   </div>
 
-# ECOMMERCE 2024 APPLICATION
+# MULTI-MICRO-STORE-24
+
+## MULTI ECOMMERCE APPLICATION WITH MICROSERVICES
 
 Features/Structure:
 - 🚀AUTHENTICATION->Sign Up with email, 
@@ -18,20 +19,13 @@ Features/Structure:
 - 🚀Adding to CART,
 - 🚀CHECKOUT,
 - 🚀CART & CHECKOUT functionality (adding and decreasing amount, priceCount, TotalPriceCount) and STYLING<br> are built in this branch (🪵07-Context)
-- 🚀Database and STYLING<br> are built in this branch (🪵08-DB)
+- 🚀Database and STYLING<br> are built in this branch (🪵10-DB)
 
 ## 🛠 Front End:
 
 - React 18.2
 - SASS
 - Firebase
-
-## ECOMMERCE 2024 ClientSide Application - Screenshots
-
-<div align="center">
-  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024-git.png" width="700" />
-</div>
-[Deployed here]([https://ecommerce-2024-y49k.onrender.com/])
 
 ## React + Vite
 
