@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 
@@ -49,8 +49,9 @@ const Products = () => {
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
   const productsPage = true;
-  const headerTitle = "Design Store";
-  const headerLink = "/store";
+  const headerTitle = catId < 8 ? "Design Store" : "Design Shop";
+  const headerLink = catId < 8 ? "/store" : "/shop";
+  const productsPageLink = catId < 8 ? "/products/7" : "/products/10";
 
   const {
     data: subCategoriesByCategoryId,
@@ -129,6 +130,7 @@ const Products = () => {
       <div className="product-container">
         <BreadcrumbNav
           productsPage={productsPage}
+          productsPageLink={productsPageLink}
           headerTitle={headerTitle}
           headerLink={headerLink}
           productTitle={categoryByCategoryId?.data?.attributes?.title}
@@ -150,8 +152,8 @@ const Products = () => {
               />
             ) : (
               subCategoriesByCategoryId?.data?.map((item) => (
-                <div className="checkboxes">
-                  <div className="inputItem" key={item.id}>
+                <div className="checkboxes" key={item.id}>
+                  <div className="inputItem">
                     <input
                       type="checkbox"
                       id={item.id}

@@ -1,10 +1,20 @@
 // START-HEADER
 import banner from "../assets/banner/banner-blue.jpg";
 // START SELECTOR
-import furniture from "../assets/banner/furniture.avif";
-import furniture2 from "../assets/banner/furniture-fu001.avif";
-import kitchen from "../assets/banner/kitchen-appliances-ka001.avif";
-import kitchen2 from "../assets/banner/kitchen.avif";
+import furniture from "../assets/banner/office.avif";
+// import furniture from "../assets/banner/furniture.avif";
+import livingroom from "../assets/banner/livingroom.avif";
+import kitchen from "../assets/banner/kitchen.avif";
+// import kitchen2 from "../assets/banner/kitchen-appliances-ka001.avif";
+import office from "../assets/banner/office.webp";
+// import officelifestyle from "../assets/banner/officelifestyle.avif";
+import diningroom from "../assets/banner/diningroom.avif";
+// import dining from "../assets/banner/dining.webp";
+import bedroom from "../assets/banner/bedroom.avif";
+import designshop from "../assets/banner/designshop.jpg";
+import accessories from "../assets/banner/accessories.png";
+import clothes from "../assets/banner/clothes.jpg";
+
 // BRANDS
 import adidas from "../assets/brands/adidas.png";
 import amazon from "../assets/brands/amazon.png";
@@ -29,9 +39,14 @@ export default {
   banner,
 
   furniture,
-  furniture2,
+  livingroom,
   kitchen,
-  kitchen2,
+  office,
+  diningroom,
+  bedroom,
+  designshop,
+  clothes,
+  accessories,
 
   adidas,
   amazon,

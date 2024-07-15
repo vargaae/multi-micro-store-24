@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import { Link } from "react-router-dom";
 
 export const BreadcrumbNavContainer = styled.div`
   font-family: var(--font-family-shopinfo);
