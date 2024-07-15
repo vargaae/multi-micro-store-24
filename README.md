@@ -1,12 +1,15 @@
  <div align="center">
-  <img alt="Application image" src="https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_apps.jpg?v=1665592014" width="400" />
+  <img alt="Application image" src="https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_apps.jpg?v=1665592014" />
 </div>
-<br>
   <div align="center">
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
+    <img src="https://img.shields.io/badge/-Redux-black?style=for-the-badge&logoColor=white&logo=redux&color=764ABC" alt="redux" />
+    <img src="https://img.shields.io/badge/-Styled-black?style=for-the-badge&logoColor=white&logo=styled&color=06B6D4" alt="styled" />
   </div>
 
-# ECOMMERCE 2024 APPLICATION
+# MULTI-MICRO-STORE-24
+
+## MULTI ECOMMERCE APPLICATION WITH MICROSERVICES
 
 Features/Structure:
 - 🚀Redux for State Management<br> is set up in this branch (🪵18-Redux)
@@ -33,13 +36,6 @@ Features/Structure:
 ## 🛠 Back End:
 - Firebase
 - Firestore Database
-
-## ECOMMERCE 2024 ClientSide Application - Screenshots
-
-<div align="center">
-  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024-git.png" width="700" />
-</div>
-[Deployed here]([https://ecommerce-2024-y49k.onrender.com/])
 
 ## React + Vite
 
