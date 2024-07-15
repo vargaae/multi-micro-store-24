@@ -12,7 +12,7 @@
 ## MULTI ECOMMERCE APPLICATION WITH MICROSERVICES
 
 Features/Structure:
-- 🚀Redux for State Management<br> is set up in this branch (🪵18-Redux)
+- 🚀Redux for State Management<br> is set up in this branch (🪵12-Redux)
 - (Migrated from Context API), 
 - 🚀AUTHENTICATION->Sign Up with email, 
 - 🚀AUTHENTICATION->Log in with email, 
