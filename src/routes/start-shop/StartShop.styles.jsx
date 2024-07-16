@@ -1,13 +1,12 @@
 //TODO: CleanUp
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const FeaturedContainer = styled.div`
-padding: calc(2vw + 1rem);
+  padding: calc(2vw + 1rem);
 
-@media screen and (min-width: 1200px) {
-  /* Mekkora legyen ebben a méretben a behúzás? */
-  /* padding: calc(4vw + 1rem) 200px; */
+  @media screen and (min-width: 1200px) {
+    /* Mekkora legyen ebben a méretben a behúzás? */
+    /* padding: calc(4vw + 1rem) 200px; */
     padding: calc(4vw + 1rem) 0;
   }
   @media screen and (min-width: 1600px) {
@@ -16,7 +15,7 @@ padding: calc(2vw + 1rem);
   }
 `;
 export const FeaturedTitle = styled.h2`
-  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-family: var(--font-family);
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -47,12 +46,4 @@ export const FeaturedTitle = styled.h2`
     line-height: 1.2em;
     paragraph-spacing: 40px;
   }
-`;
-
-export const BreadcrumbLink = styled(Link)`
-  /* font-size: 2rem;
-  &:hover {
-    color: darkblue;
-    text-decoration: underline;
-  } */
 `;

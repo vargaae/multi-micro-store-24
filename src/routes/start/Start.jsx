@@ -1,27 +1,31 @@
+// TODO: Add data to Firestore+Strapi and then clean up
 import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
-import { ButtonComponent, BUTTON_TYPE_CLASSES } from "../../components";
-
 import { brands } from "../../constants";
 import {
+  ButtonComponent,
+  BUTTON_TYPE_CLASSES,
   BestSeller,
   Contact,
   FeaturedProducts,
   StartHeader,
   StartVideo,
 } from "../../components";
+
 import {
+  AnimatedContainer,
+  BrandsContainer,
   BestSellerContainer,
   BestSellerTitle,
   StartStoreShopContainer,
   StartNavigationContainer,
-  ButtonContainer
+  StartShopImages,
+  StartStoreImages,
+  StartShopImage,
+  ButtonContainer,
 } from "./Start.styles";
-// TODO: turn SCSS -> styled
-import "./Start.scss";
-// TODO: Add data to Firestore and then clean up
 // import { useEffect } from "react";
 // import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
 // 1.Categories
@@ -48,11 +52,9 @@ const Start = () => {
     navigateTo("/shop");
   };
 
-  // 3.Brands
-  // const [brands, setBrands] = useState([]);
   return (
     <>
-      <div className="breadcrumb animatedtext">
+      <AnimatedContainer>
         <div className="adtext">GET UPTO 65% OFF</div>
         <div className="adtext">
           <span className="adtextspan">FREE SHIPPING ON ORDERS €50+</span>
@@ -60,9 +62,9 @@ const Start = () => {
         <div className="adtext">
           <span className="adtextspan">GET YOUR €20 BONUS REWARD</span>
         </div>
-      </div>
+      </AnimatedContainer>
       <StartHeader />
-      <div className="app__brands app__flex">
+      <BrandsContainer>
         {brands.map((brand) => (
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -72,7 +74,7 @@ const Start = () => {
             <img src={brand.imgUrl} alt={brand.title} />
           </motion.div>
         ))}
-      </div>
+      </BrandsContainer>
       <BestSellerContainer>
         <BestSellerTitle>DESIGN STORE / SHOP FEATURED PRODUCTS</BestSellerTitle>
         <FeaturedProducts type="start-featured" />
@@ -93,22 +95,22 @@ const Start = () => {
               </ButtonComponent>
             </ButtonContainer>
           </BestSellerTitle>
-          <div className="startStoreImages">
-            <div className="startStoreImage">
+          <StartStoreImages>
+            <StartShopImage to="/store">
               <img
                 className="selectStore"
                 src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt="Show image 1"
               />
-            </div>
-            <div className="startStoreImage">
+            </StartShopImage>
+            <StartShopImage to="/store">
               <img
                 className="selectStore"
                 src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt="Show image 2"
               />
-            </div>
-          </div>
+            </StartShopImage>
+          </StartStoreImages>
         </StartStoreShopContainer>
         <StartStoreShopContainer>
           <BestSellerTitle>
@@ -121,22 +123,22 @@ const Start = () => {
               VISIT SHOP
             </ButtonComponent>
           </BestSellerTitle>
-          <div className="startShopImages">
-            <div className="startShopImage">
+          <StartShopImages>
+            <StartShopImage to="/shop">
               <img
                 className="selectShop"
                 src="https://framerusercontent.com/images/5uW8h1Y8Jk6czLgq84bc2MyPs.jpg"
                 alt="Men Shop image 1"
               />
-            </div>
-            <div className="startShopImage">
+            </StartShopImage>
+            <StartShopImage to="/shop">
               <img
                 className="selectShop"
                 src="https://framerusercontent.com/images/cv9pTkCGUsKJxFT7RCuwQTwcs8.jpg"
                 alt="Women Shop image 2"
               />
-            </div>
-          </div>
+            </StartShopImage>
+          </StartShopImages>
         </StartStoreShopContainer>
       </StartNavigationContainer>
       <BestSellerContainer>

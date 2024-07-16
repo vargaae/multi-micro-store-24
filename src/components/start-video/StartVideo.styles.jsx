@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 
 export const StartVideoContainer = styled.div`
   position: relative;
-  
+
   .bg-vid {
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    }
+  }
 
-    @media screen and (min-width: 1600px) {
-      height: 70vh;
-      margin: 0 calc(4vw + 3rem);
-    }
+  @media screen and (min-width: 1600px) {
+    height: 70vh;
+    margin: 0 calc(4vw + 3rem);
+  }
 `;
 
 export const VideoTextBox = styled.div`
@@ -52,7 +52,7 @@ export const VideoTextBoxTitle = styled.h3`
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.02em;
-  
+
   padding: 0.2em 0;
   font-size: calc(2vw + 0.5em);
   @media screen and (min-width: 550px) {
@@ -62,25 +62,38 @@ export const VideoTextBoxTitle = styled.h3`
 `;
 
 export const VideoTextBoxParagraph = styled.p`
-  padding: 0 0 0.5em 0;
+  padding: 0;
 
   font-family: var(--font-family-shopinfo);
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.6em;
 
-  font-size: 12px;
+  font-size: 10px;
   max-width: 250px;
 
+  @media screen and (max-width: 390px) {
+    font-size: 8px;
+  }
+
+  @media screen and (min-width: 390px) {
+    font-size: 12px;
+    max-width: 300px;
+  }
   @media screen and (min-width: 550px) {
     font-size: 16px;
     max-width: 400px;
   }
   @media screen and (min-width: 810px) {
+    padding: 0 0 0.5em 0;
+    line-height: 1.6em;
+
     font-size: 18px;
     max-width: 650px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 0 0 2em 0;
   }
   @media screen and (min-width: 1600px) {
     max-width: 700px;
@@ -90,8 +103,11 @@ export const VideoTextBoxParagraph = styled.p`
 export const VisitStoreContainer = styled.div`
   display: flex;
   padding: 4px 0;
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 810px) {
     padding: 14px 0;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 0 0 2em 0;
   }
 `;
 
@@ -131,8 +147,11 @@ export const VisitStoreLinkContainer = styled(Link)`
     transform: scaleX(1);
   }
 
-  font-size: 14px;
+  font-size: 12px;
 
+  @media screen and (max-width: 390px) {
+    font-size: 8px;
+  }
   @media screen and (min-width: 550px) {
     font-size: 1em;
   }
@@ -177,7 +196,6 @@ export const VisitStoreArrowContainer = styled.div`
   display: contents;
   box-sizing: border-box;
   width: 100%;
-  // height: 40px;
   height: 100%;
   padding: 0 0.1rem;
   color: inherit;
@@ -185,6 +203,12 @@ export const VisitStoreArrowContainer = styled.div`
   svg {
     width: 20px;
     height: 20px;
+
+    @media screen and (max-width: 390px) {
+      width: 10px;
+      height: 10px;
+    }
+
     @media screen and (min-width: 810px) {
       width: 30px;
       height: 30px;

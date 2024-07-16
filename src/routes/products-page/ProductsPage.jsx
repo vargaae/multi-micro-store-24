@@ -15,6 +15,7 @@ import {
   BUTTON_TYPE_CLASSES,
   BreadcrumbNav,
   ButtonComponent,
+  Contact,
   List,
 } from "../../components";
 
@@ -233,6 +234,7 @@ const Products = () => {
           />
         </div>
       </div>
+      <Contact />
     </>
   );
 };

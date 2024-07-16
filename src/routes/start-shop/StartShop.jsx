@@ -6,7 +6,6 @@ import CategoryPreview from "../../components/category-preview/CategoryPreview";
 import {
   StartCarousel,
   FeaturedShop,
-  Contact,
   BestSeller,
 } from "../../components";
 

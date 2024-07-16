@@ -8,9 +8,9 @@ import { shop } from "./shop";
 export { images, videos, shops, brands, shop, store };
 
 export const list = [
-  { name: "Shop", id: "113124br", link: "/shop" },
-  { name: "Company", id: "213124ea", link: "/shop" },
-  { name: "Counters", id: "313124ea", link: "/shop" },
+  { name: "Design Store", id: "113124br", link: "/store" },
+  { name: "Design Shop", id: "213124ea", link: "/shop" },
+  { name: "About us", id: "313124ea", link: "/about" },
   { name: "Contact", id: "413124hg", link: "/contact" },
 ];
 

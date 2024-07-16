@@ -1,4 +1,5 @@
-// import { Link } from "react-router-dom";
+// TODO: turn SCSS -> styled
+
 import styled from "styled-components";
 
 export const SliderContainer = styled.div`
@@ -14,7 +15,7 @@ export const SliderContainer = styled.div`
     margin: 50px auto 20px;
   } */
 `;
-
+// TODO: Clean up:
 // export const SliderLink = styled(Link)`
 //   font-size: 2rem;
 //   &:hover {
@@ -22,3 +23,22 @@ export const SliderContainer = styled.div`
 //     text-decoration: underline;
 //   }
 // `;
+
+// // BESTSELLER
+// .featured__container {
+//   margin: 0 auto calc(7vw + 3rem);
+//   text-align: center;
+// }
+// // BESTSELLER
+// .bestseller__container {
+//   width: 85%;
+//   margin: calc(7vw + 3rem) auto;
+//   text-align: center;
+// }
+
+// .bestseller {
+//   padding: 0 2rem;
+//   text-align: left;
+//   min-height: 10vh;
+//   font-size: 2.75rem;
+// }

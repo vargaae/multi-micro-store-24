@@ -1,170 +1,295 @@
-//TODO: CleanUp ->styled!!!
+import styled, { keyframes } from "styled-components";
+
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+
+const showup = keyframes`
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
+const slidein = keyframes`
+  0% {
+    margin-left: -800px;
+  }
+  20% {
+    margin-left: -800px;
+  }
+  35% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+`;
+
+const reveal = keyframes`
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  20% {
+    opacity: 1;
+    width: 0px;
+  }
+  30% {
+    width: 355px;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 355px;
+  }
+`;
+
+export const AnimatedContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.5rem 3rem 0.5rem;
+  background-color: #4170e8;
+
+  // TEXT ANIMATION
+  text-align: center;
+  font-family: var(--font-family-shopinfo);
+  letter-spacing: -0.02em;
+  line-height: 1.6em;
+  overflow: hidden;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+
+  font-weight: 500;
+  font-size: 12px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+
+  .adtext {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .adtext:first-of-type {
+    animation: ${showup} 7s infinite;
+  }
+
+  .adtext:last-of-type {
+    width: 0px;
+    animation: ${reveal} 7s infinite;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  .adtext:last-of-type .adtextspan {
+    margin-left: -355px;
+    animation: ${slidein} 7s infinite;
+  }
+`;
+
+export const BrandsContainer = styled.div`
+  margin-top: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  div {
+    width: 150px;
+    padding: 0 1.5rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      width: 120px;
+      margin: 1rem;
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 210px;
+      margin: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+`;
 
 export const BestSellerContainer = styled.div`
-  padding: calc(2vw + 1rem);
+  padding: 2em;
 
+  @media screen and (min-width: 810px) {
+    padding: calc(2vw + 1em);
+  }
   @media screen and (min-width: 1200px) {
-    padding: calc(4vw + 1rem) 200px;
+    padding: calc(4vw + 1em) 200px;
   }
   @media screen and (min-width: 1600px) {
     padding: 150px 250px;
   }
 `;
+
 export const BestSellerTitle = styled.h2`
-  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  margin: 0 auto;
+
+  font-family: var(--font-family);
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-
-  font-size: calc(3vw + 0.7rem);
-
   letter-spacing: -0.02em;
-  /* letter-spacing: -1px; */
-
-  text-align: start;
   text-decoration: none;
   text-transform: uppercase;
+  paragraph-spacing: 40px;
 
   /* padding-bottom: 60px; */
   padding-bottom: calc(2vw + 2rem);
 
-  font-style-bold: normal;
-  font-style-bold-italic: italic;
-  font-style-italic: italic;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: center;
+  height: min-content;
 
-  line-height: 1.2em;
-  paragraph-spacing: 40px;
+  font-size: calc(3vw + 0.7rem);
+
   @media (max-width: 1199px) and (min-width: 0px) {
     /* font-size: 34px; */
     /* font-size: calc(4vw + 1rem); */
-    font-weight: 500;
-    line-height: 1.2em;
     paragraph-spacing: 40px;
   }
-  @media screen and (min-width: 1200px) {
-    display: flex;
+  @media screen and (min-width: 810px) {
+    flex-direction: row;
+
     justify-content: space-between;
-    font-size: 60px;
+    text-align: start;
+    line-height: 1.2em;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 48px;
   }
   @media screen and (min-width: 1600px) {
-    display: flex;
-    justify-content: space-between;
     font-size: 60px;
   }
-`;
-
-export const BreadcrumbLink = styled(Link)`
-  /* font-size: 2rem;
-  &:hover {
-    color: darkblue;
-    text-decoration: underline;
-  } */
 `;
 
 export const StartNavigationContainer = styled.div`
+  margin: 1rem auto;
+
   @media screen and (min-width: 390px) {
-    // margin: 0 calc(4vw + 3rem);
+    margin: calc(4vw + 3rem) auto;
   }
   @media screen and (min-width: 810px) {
-    // margin: 0 calc(4vw + 3rem);
+    margin: calc(4vw + 3rem) auto;
   }
   @media screen and (min-width: 1200px) {
-    // margin: 0 calc(4vw + 3rem);
+    margin: calc(4vw + 3rem) auto;
   }
   @media screen and (min-width: 1600px) {
-    padding: 120px 0;
+    padding: 120px auto;
   }
 `;
 export const StartStoreShopContainer = styled.div`
-  padding: 60px 0;
+  padding: 30px 0;
   margin: 0 auto;
 
-  .startStoreImages {
-    margin: 0 auto;
-    gap: 10px;
-    @media screen and (min-width: 1200px) {
-      display: flex;
-
-      flex-direction: row;
-    }
-    @media screen and (min-width: 1600px) {
-      display: flex;
-
-      align-content: center;
-      align-items: center;
-      flex: none;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: 18px;
-      height: min-content;
-      justify-content: flex-start;
-      overflow: hidden;
-      padding: 0;
-      position: relative;
-      width: 100%;
-
-      .startStoreImage {
-        flex: 50%;
-      }
-    }
-
-    img {
-      width: 100%;
-      height: min(600px, 100vw);
-      object-fit: cover;
-    }
-  }
-  .startShopImages {
-    margin: 0 auto;
-    gap: 10px;
-
-    @media screen and (min-width: 1200px) {
-      display: flex;
-    }
-    @media screen and (min-width: 1600px) {
-      display: flex;
-      align-content: center;
-      align-items: center;
-      flex: none;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: 18px;
-      height: min-content;
-      justify-content: flex-start;
-      overflow: hidden;
-      padding: 0;
-      position: relative;
-      width: 100%;
-
-      .startShopImage {
-        flex: 50%;
-      }
-    }
-
-    img {
-      width: 100%;
-      height: min(650px, 100vw);
-      object-fit: cover;
-    }
+  @media screen and (max-width: 390px) {
+    margin: 0 4px;
   }
   @media screen and (min-width: 390px) {
-    // height: 70vh;
+    margin: 0 10px;
+  }
+  @media screen and (min-width: 550px) {
     margin: 0 calc(4vw + 3rem);
+    padding: 60px 0;
   }
   @media screen and (min-width: 810px) {
-    // height: 70vh;
     margin: 0 calc(4vw + 3rem);
   }
   @media screen and (min-width: 1200px) {
-    // height: 70vh;
-    margin: 0 calc(4vw + 3rem);
+    margin: 0 calc(2vw + 1rem);
   }
   @media screen and (min-width: 1600px) {
-    // height: 70vh;
     margin: 120px calc(8vw + 6em);
-    // margin: 120px 400px;
+  }
+`;
+
+export const StartShopImages = styled.div`
+  margin: 0 auto;
+  gap: 10px;
+  overflow: hidden;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 18px;
+    height: min-content;
+    justify-content: flex-start;
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: min(650px, 100vw);
+    object-fit: cover;
+    padding-bottom: 24px;
+  }
+`;
+
+export const StartStoreImages = styled(StartShopImages)`
+  img {
+    height: min(600px, 100vw);
+  }
+`;
+
+export const StartShopImage = styled(Link)`
+  flex: 50%;
+
+  &:hover {
+    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    opacity: 1;
+    img {
+      opacity: 0.7;
+    }
   }
 `;
 
@@ -173,177 +298,3 @@ export const ButtonContainer = styled.div`
   align-content: center;
   align-items: center;
 `;
-// TODO: turn SCSS -> styled
-// h2.breadcrumb-nav {
-//   padding: 1rem 3rem 1rem;
-//   background-color: lightblue;
-//   font-weight: 500;
-
-//   a:hover {
-//     color: white;
-//   }
-//   a {
-//     background: linear-gradient(0deg, lightblue, #54b3d6 50%) no-repeat right
-//       bottom / 0 var(--bg-h);
-//     transition: background-size 550ms;
-//     --bg-h: 200%;
-//   }
-//   a:where(:hover, :focus-visible) {
-//     background-size: 100% var(--bg-h);
-//     background-position-x: left;
-//   }
-// }
-
-// div.breadcrumb {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-around;
-//   padding: 0.5rem 3rem 0.5rem;
-//   background-color: #4170e8;
-// }
-// // TEXT ANIMATION
-// .animatedtext {
-//   text-align: center;
-//   // font-family: "Roboto";
-//   font-weight: 600;
-//   overflow: hidden;
-//   -webkit-backface-visibility: hidden;
-//   -webkit-perspective: 1000;
-//   -webkit-transform: translate3d(0, 0, 0);
-
-//   .adtext {
-//     display: inline-block;
-//     overflow: hidden;
-//     white-space: nowrap;
-//     @media screen and (max-width: 600px) {
-//       font-size: 10px;
-//     }
-//   }
-
-//   .adtext:first-of-type {
-//     animation: showup 7s infinite;
-//   }
-
-//   .adtext:last-of-type {
-//     width: 0px;
-//     animation: reveal 7s infinite;
-//   }
-
-//   .adtext:last-of-type .adtextspan {
-//     margin-left: -355px;
-//     animation: slidein 7s infinite;
-//   }
-
-//   @keyframes showup {
-//     0% {
-//       opacity: 0;
-//     }
-//     20% {
-//       opacity: 1;
-//     }
-//     80% {
-//       opacity: 1;
-//     }
-//     100% {
-//       opacity: 0;
-//     }
-//   }
-
-//   @keyframes slidein {
-//     0% {
-//       margin-left: -800px;
-//     }
-//     20% {
-//       margin-left: -800px;
-//     }
-//     35% {
-//       margin-left: 0px;
-//     }
-//     100% {
-//       margin-left: 0px;
-//     }
-//   }
-
-//   @keyframes reveal {
-//     0% {
-//       opacity: 0;
-//       width: 0px;
-//     }
-//     20% {
-//       opacity: 1;
-//       width: 0px;
-//     }
-//     30% {
-//       width: 355px;
-//     }
-//     80% {
-//       opacity: 1;
-//     }
-//     100% {
-//       opacity: 0;
-//       width: 355px;
-//     }
-//   }
-// }
-// // BESTSELLER
-// .featured__container {
-//   margin: 0 auto calc(7vw + 3rem);
-//   text-align: center;
-// }
-// // BESTSELLER
-// .bestseller__container {
-//   width: 85%;
-//   margin: calc(7vw + 3rem) auto;
-//   text-align: center;
-// }
-
-// .bestseller {
-//   padding: 0 2rem;
-//   text-align: left;
-//   min-height: 10vh;
-//   font-size: 2.75rem;
-// }
-// // BRANDS
-// .app__flex {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .app__brands {
-//   // width: 80%;
-//   flex-wrap: wrap;
-//   // align-items: center;
-//   margin-top: 2rem;
-
-//   div {
-//     width: 150px;
-//     padding: 0 1.5rem;
-
-//     img {
-//       width: 100%;
-//       height: auto;
-//       object-fit: cover;
-//       filter: grayscale(1);
-//     }
-
-//     &:hover {
-//       img {
-//         filter: grayscale(0);
-//       }
-//     }
-
-//     @media screen and (min-width: 2000px) {
-//       width: 210px;
-//       margin: 2rem;
-//     }
-
-//     @media screen and (max-width: 450px) {
-//       width: 120px;
-//       margin: 1rem;
-//     }
-//   }
-
-//   @media screen and (max-width: 800px) {
-//     width: 100%;
-//   }
-// }

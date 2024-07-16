@@ -60,7 +60,7 @@ export const ButtonContainer = styled.div`
   border: 1px solid #fff;
   text-align: center;
 
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   cursor: pointer;
 
   a {
@@ -107,14 +107,22 @@ export const LinksLogoContainer = styled.div`
     width: 118px;
     height: 30px;
 
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-family: var(--font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.6em;
+    text-transform: uppercase;
+    color: #ffffff;
   }
 
   p {
-    font-family: var(--font-family);
-    font-size: 12px;
-    line-height: 15px;
+    font-family: var(--font-family-shopinfo);
     color: #fff;
+    margin: 0.5rem 0;
   }
 `;
 
@@ -124,22 +132,81 @@ export const LinksDivContainer = styled.div`
   flex-direction: column;
 
   h4 {
-    font-size: 14px;
-    line-height: 17px;
     font-family: var(--font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.6em;
+    text-transform: uppercase;
     color: #fff;
-
-    margin-bottom: 0.9rem;
   }
 
   p {
-    font-size: 12px;
-    line-height: 15px;
-    font-family: var(--font-family);
+    font-family: var(--font-family-shopinfo);
     color: #fff;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.6em;
 
-    margin: 0.5rem 0;
-    cursor: pointer;
+    current-text-decoration: none;
+    text-decoration: none;
+    transition: color 0.3s cubic-bezier(0.44, 0, 0.56, 1) 0s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+export const FooterLink = styled(Link)`
+  p {
+    font-family: var(--font-family-shopinfo);
+    color: #fff;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.6em;
+
+    current-text-decoration: none;
+    text-decoration: none;
+    transition: color 0.3s cubic-bezier(0.44, 0, 0.56, 1) 0s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+export const IconsContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  height: auto;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: auto;
+`;
+
+export const IconContainer = styled.div`
+  display: contents;
+  color: #ffffff;
+  fill: #ffffff;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    user-select: none;
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    fill: #ffffff;
+    flex-shrink: 0;
   }
 `;
 
@@ -149,9 +216,11 @@ export const CopyrightContainer = styled.div`
   width: 100%;
 
   p {
-    font-size: 12px;
-    font-family: var(--font-family);
-    line-height: 15px;
+    font-family: var(Inter, Inter Placeholder, sans-serif, --font-family);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.2em;
     color: #fff;
   }
 `;

@@ -12,8 +12,10 @@ const demoImage =
 
 const Carousel = () => {
   const responsive = {
-    0: { items: 2 },
-    512: { items: 8 },
+    0: { items: 3 },
+    512: { items: 4 },
+    1024: { items: 6 },
+    1200: { items: 8 },
   };
 
   const items = shops.map((shop) => {
