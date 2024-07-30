@@ -21,7 +21,7 @@ const StartShop = ({ headerTitle }) => {
         <FeaturedShop type="featured-in-shop" />
       </FeaturedContainer>
                 
-      {Object.keys(categoriesMap).map((title) => {
+      {Object.keys(categoriesMap).slice().reverse().map((title) => {
         const products = categoriesMap[title];
         return (
                 <CategoryPreview key={title} title={title} products={products} />

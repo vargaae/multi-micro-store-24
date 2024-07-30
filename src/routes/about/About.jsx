@@ -1,5 +1,7 @@
 import { BreadcrumbNav, ButtonComponent, Contact } from "../../components";
 
+import { images } from "../../constants";
+
 import {
   ShopContainer,
   Title,
@@ -45,7 +47,8 @@ const About = () => {
                 <img
                   decoding="async"
                   sizes="max(min(max(100vw, 0px), 1600px), 0px)"
-                  src="https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg"
+                  srcSet={`${images.aboutSmall} 512w, ${images.aboutMedium} 1024w, ${images.aboutLarge} 2048w, ${images.aboutXLarge} 4096w, ${images.aboutFull} 6000w`}
+                  src={images.aboutFull}
                   alt="About us picture"
                 />
               </ImageContainer>
@@ -92,7 +95,6 @@ const About = () => {
             </div>
             <div>
               <div
-                class="framer-133yu3p"
                 data-framer-component-type="RichTextContainer"
               >
                 <p>
@@ -202,7 +204,7 @@ const About = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener"
-                tabindex="0"
+                tabIndex="0"
               >
                 <div>
                   <div>
@@ -222,10 +224,10 @@ const About = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke='var(--token-68c487d3-20d5-4991-b1f9-ddfccf417b35, rgb(255, 255, 255)) /* {"name":"White"} */'
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      stroke='rgb(255, 255, 255)'
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <rect
                         x="2"
@@ -247,7 +249,7 @@ const About = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener"
-                tabindex="0"
+                tabIndex="0"
               >
                 <div>
                   <div>
@@ -267,10 +269,10 @@ const About = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke='var(--token-68c487d3-20d5-4991-b1f9-ddfccf417b35, rgb(255, 255, 255)) /* {"name":"White"} */'
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      stroke='rgb(255, 255, 255)'
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <rect
                         x="2"
@@ -292,7 +294,7 @@ const About = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener"
-                tabindex="0"
+                tabIndex="0"
               >
                 <div>
                   <div>
@@ -312,10 +314,10 @@ const About = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke='var(--token-68c487d3-20d5-4991-b1f9-ddfccf417b35, rgb(255, 255, 255)) /* {"name":"White"} */'
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      stroke='rgb(255, 255, 255)'
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <rect
                         x="2"
@@ -337,7 +339,7 @@ const About = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener"
-                tabindex="0"
+                tabIndex="0"
               >
                 <div>
                   <div>
@@ -357,10 +359,10 @@ const About = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke='var(--token-68c487d3-20d5-4991-b1f9-ddfccf417b35, rgb(255, 255, 255)) /* {"name":"White"} */'
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      stroke='rgb(255, 255, 255)'
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <rect
                         x="2"

@@ -44,6 +44,7 @@ const Authentication = lazy(() =>
   import("./routes/authentication/Authentication")
 );
 const About = lazy(() => import("./routes/about/About"));
+const Success = lazy(() => import("./routes/success/Success"));
 
 import {
   createUserDocumentFromAuth,
@@ -151,6 +152,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/success=true",
+        element: <Success />,
       },
       {
         path: "/about",

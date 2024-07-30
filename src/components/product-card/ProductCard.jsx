@@ -16,9 +16,9 @@ import {
 
 const ProductCard = ({ product }) => {
   //TODO:Clean->
-  const { name, price, imageUrl, SKU } = product;
+  const { name, price, imageUrl, quantity, SKU } = product;
 
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
   //TODO:Clean->
@@ -30,6 +30,7 @@ const ProductCard = ({ product }) => {
   //       price: price,
   //       imageUrl: imageUrl,
   //       quantity: quantity,
+  // productPageUrl: `shop/product/${SKU}`,
   //     })
   //   );
 

@@ -18,7 +18,7 @@ import {
 } from "./CheckoutItem.styles";
 
 const CheckoutItem = ({ product }) => {
-  const { name, imageUrl, price, quantity } = product;
+  const { name, imageUrl, price, quantity, SKU, productPageUrl } = product;
 
   const dispatch = useDispatch();
 
@@ -31,7 +31,7 @@ const CheckoutItem = ({ product }) => {
       <ImageContainer>
         <img src={imageUrl} alt={`${name}`} />
       </ImageContainer>
-      <Name>{name}</Name>
+          <Name to={productPageUrl}>{name}</Name>
       <Quantity>
         <IncreaseDecrease onClick={removeProductHandler}>{" "} -</IncreaseDecrease>
         <Value>{quantity}x</Value>

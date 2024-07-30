@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import {
   addItemToCart,
   removeItemFromCart,
 } from "../../store/cart/cart.reducer";
+
 import {
   CartItemContainer,
   DotDotDot,
@@ -11,7 +14,7 @@ import {
 } from "./CartItem.styles";
 
 const CartItem = ({ product }) => {
-  const { name, imageUrl, price, quantity } = product;
+  const { name, price, imageUrl, quantity, SKU, productPageUrl } = product;
 
   const dispatch = useDispatch();
 
@@ -23,7 +26,8 @@ const CartItem = ({ product }) => {
       <img src={imageUrl} alt={`${name}`} />
       <ItemDetails>
         <ProductNameContainer>
-          {name} <DotDotDot></DotDotDot>{" "}
+          <Link to={productPageUrl}>{name}</Link>
+          <DotDotDot></DotDotDot>{" "}
         </ProductNameContainer>
         <button onClick={removeProductToCart}>-</button>
         <span className="price">

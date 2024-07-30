@@ -34,6 +34,14 @@ import shopStartCarouselImg2 from "../assets/start-carousel/pexels-photo-5709661
 import shopStartCarouselImg3 from "../assets/start-carousel/pexels-photo-2613260.jpeg";
 import shopStartCarouselImg4 from "../assets/start-carousel/pexels-photo-720606.webp";
 import shopStartCarouselImg5 from "../assets/start-carousel/pexels-photo-458649.webp";
+// ABOUT
+import aboutFull from "../assets/about/about.jpg";
+import aboutSmall from "../assets/about/about512.avif";
+import aboutMedium from "../assets/about/about1024.avif";
+import aboutLarge from "../assets/about/about2048.avif";
+import aboutXLarge from "../assets/about/about4096.avif";
+// CHECKOUT success
+import success from "../assets/checkout-pay/success.jpg";
 
 export default {
   banner,
@@ -66,4 +74,12 @@ export default {
   shopStartCarouselImg3,
   shopStartCarouselImg4,
   shopStartCarouselImg5,
+
+  aboutFull,
+  aboutSmall,
+  aboutMedium,
+  aboutLarge,
+  aboutXLarge,
+
+  success,
 };

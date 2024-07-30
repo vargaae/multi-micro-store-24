@@ -42,10 +42,12 @@ const ProductPage = ({}) => {
   const addProductToCart = () =>
     dispatch(
       addItemToCart({
-        id: productDataById.data.id,
         name: productDataById.data.attributes.title,
         price: productDataById.data.attributes.price,
         imageUrl: productDataById.data.attributes.img.data.attributes.url,
+        SKU: productDataById.data.attributes.SKU,
+        productPageUrl: `/product/1/${productDataById.data.id}`,
+        id: productDataById.data.id,
       })
     );
 

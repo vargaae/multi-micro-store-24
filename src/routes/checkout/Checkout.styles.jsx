@@ -1,5 +1,8 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import { Link } from "react-router-dom";
+
+import { ButtonComponent } from "../../components";
 
 export const CheckoutContainer = styled.div`
   min-height: 50vh;
@@ -81,9 +84,18 @@ export const Total = styled.span`
   border-radius: 0.25em;
 `;
 
-export const PayContainer = styled.div`
+export const PaymentFormContainer = styled.div`
   width: 100%;
   margin-top: 1.5rem;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+`;
+
+export const FormContainer = styled.form`
+  // height: 100px;
+  // min-width: 500px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -101,6 +113,10 @@ export const ButtonsContainer = styled.div`
   @media screen and (min-width: 550px) {
     flex-direction: row;
   }
+`;
+
+export const PaymentButton = styled(ButtonComponent)`
+  width: 260px;
 `;
 
 export const EmptyMessage = styled.div`

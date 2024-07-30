@@ -8,6 +8,7 @@ import {
   DropDownSignOutButton,
   InvertedButton,
   ContactButton,
+  ButtonSpinner,
 } from "./ButtonComponent.styles";
 
 export const BUTTON_TYPE_CLASSES = {
@@ -35,10 +36,19 @@ const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
     [BUTTON_TYPE_CLASSES.contact]: ContactButton,
   }[buttonType]);
 
-const ButtonComponent = ({ children, buttonType, ...otherProps }) => {
+const ButtonComponent = ({
+  children,
+  buttonType,
+  isLoading,
+  ...otherProps
+}) => {
   const CustomButton = getButton(buttonType);
 
-  return <CustomButton {...otherProps}>{children}</CustomButton>;
+  return (
+    <CustomButton disabled={isLoading} {...otherProps}>
+      {isLoading ? <ButtonSpinner /> : children}
+    </CustomButton>
+  );
 };
 
 export default ButtonComponent;

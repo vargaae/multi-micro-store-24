@@ -10,6 +10,9 @@ import { useNavigate } from "react-router-dom";
 
 import { ButtonComponent, BUTTON_TYPE_CLASSES } from "../";
 import CartItem from "../cart-item/CartItem";
+
+import { images } from "../../constants";
+
 import {
   CartDropdownContainer,
   CartItemsContainer,
@@ -40,7 +43,7 @@ const CartDropdown = () => {
     closeCartIfClickToLink();
   };
   const handleBackToShopClick = () => {
-    navigateTo("/");
+    navigateTo("/shop");
     closeCartIfClickToLink();
   };
 
@@ -48,7 +51,7 @@ const CartDropdown = () => {
     <CartDropdownContainer>
       <CartItemsContainer>
         {cartItems != 0 ? (
-          cartItems.map((item) => <CartItem key={item.id} product={item} />)
+          cartItems.map((item) => <CartItem key={item.SKU} product={item} />)
         ) : (
           <EmptyMessage>
             <h2>There is no product in your cart?!</h2>
@@ -56,8 +59,7 @@ const CartDropdown = () => {
               <img
                 decoding="async"
                 sizes="max(min(max(100vw, 0px), 1600px), 0px)"
-                srcset="https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=512 512w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=1024 1024w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=2048 2048w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg?scale-down-to=4096 4096w, https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg 6000w"
-                src="https://framerusercontent.com/images/xkSQZzf8aaWDeohirXzHK6tMCQ.jpg"
+                src={images.aboutSmall}
                 alt="About us picture"
               />
             </ImageContainer>

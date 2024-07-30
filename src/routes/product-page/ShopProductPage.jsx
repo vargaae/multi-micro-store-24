@@ -78,6 +78,8 @@ const ShopProductPage = ({}) => {
         price: singleProduct.price,
         imageUrl: singleProduct.img,
         quantity: singleProduct.quantity,
+        SKU: singleProduct.SKU,
+        productPageUrl: `/shop/product/${singleProduct.SKU}`,
       })
     );
 

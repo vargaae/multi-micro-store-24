@@ -1,6 +1,8 @@
 //TODO: font-family
 import styled from "styled-components";
 
+import { SpinnerContainer } from "../spinner/Spinner.styles";
+
 export const BaseButton = styled.button`
   line-height: 50px;
   letter-spacing: 0.5px;
@@ -15,6 +17,7 @@ export const BaseButton = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   transition: 0.6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 
   &:hover {
@@ -170,16 +173,21 @@ export const DropDownSignOutButton = styled(BaseButton)`
 `;
 
 export const InvertedButton = styled(BaseButton)`
-  max-width: 165px;
+  // max-width: 165px;
   width: auto;
   height: 50px;
   line-height: 50px;
   background-color: white;
   color: black;
   border: 1px solid black;
-  
+
   &:hover {
     background-color: black;
     color: white;
   }
+`;
+
+export const ButtonSpinner = styled(SpinnerContainer)`
+  width: 30px;
+  height: 30px;
 `;

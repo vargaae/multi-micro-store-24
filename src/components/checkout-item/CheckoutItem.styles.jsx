@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 export const CheckoutItemContainer = styled.div`
   width: 100%;
   display: flex;
@@ -24,7 +26,7 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const Name = styled.span`
+export const Name = styled(Link)`
   width: 23%;
 `;
 

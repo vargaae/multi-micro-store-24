@@ -3,16 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const addCartItem = (cartItems, productToAdd) => {
   // find if cartItems contains productToAdd
   const existingCartItem = cartItems.find(
-    (cartItem) => cartItem.id === productToAdd.id
+    (cartItem) => cartItem.SKU === productToAdd.SKU
   );
 
   // If found increment quantity
   if (existingCartItem) {
     return cartItems.map((cartItem) =>
-      cartItem.id === productToAdd.id
+      cartItem.SKU === productToAdd.SKU
         ? { ...cartItem, quantity: cartItem.quantity + 1 }
-        : 
-        //TODO: CLEAN->
+        : //TODO: CLEAN->
           // ? { ...cartItem }
           cartItem
     );
@@ -28,26 +27,26 @@ const removeCartItem = (cartItems, productToRemove) => {
   // find if cartItems contains productToRemove (to remove it)
   // Avoid mutating: create a new variable that is not the same as the one I used for adding and filtering a product
   const existingCartItemToRemove = cartItems.find(
-    (cartItem) => cartItem.id === productToRemove.id
+    (cartItem) => cartItem.SKU === productToRemove.SKU
   );
 
   // check if quantity is equal to 1, if it is remove that item from the cart
   if (existingCartItemToRemove.quantity === 1) {
     return cartItems
       .slice()
-      .filter((cartItem) => cartItem.id !== productToRemove.id);
+      .filter((cartItem) => cartItem.SKU !== productToRemove.SKU);
   }
 
   // return new array with modified cartItems/ new cart item with reduced quantity
   return cartItems.map((cartItem) =>
-    cartItem.id === productToRemove.id
+    cartItem.SKU === productToRemove.SKU
       ? { ...cartItem, quantity: cartItem.quantity - 1 }
       : cartItem
   );
 };
 
 const clearCartItem = (cartItems, cartItemToClear) =>
-  cartItems.slice().filter((cartItem) => cartItem.id !== cartItemToClear.id);
+  cartItems.slice().filter((cartItem) => cartItem.SKU !== cartItemToClear.SKU);
 
 const CART_INITIAL_STATE = {
   isCartOpen: false,
@@ -82,6 +81,9 @@ export const cartSlice = createSlice({
     clearItemFromCart(state, action) {
       state.cartItems = clearCartItem(state.cartItems, action.payload);
     },
+    resetCart: (state) => {
+      state.cartItems = [];
+    },
   },
 });
 
@@ -90,6 +92,7 @@ export const {
   addItemToCart,
   removeItemFromCart,
   clearItemFromCart,
+  resetCart,
 } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;
