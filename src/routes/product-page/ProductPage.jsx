@@ -104,6 +104,7 @@ const ProductPage = ({}) => {
               headerTitle={headerTitle}
               headerLink={headerLink}
               productTitle={productDataById?.data?.attributes?.title}
+              featuredShop={productDataById?.data?.attributes?.type}
             />
 
             <div className="product">
@@ -111,15 +112,28 @@ const ProductPage = ({}) => {
                 {productDataById?.data?.attributes?.title}
               </ProductPageTitle>
               <div className="left">
-                <div className="mainImg">
-                  <img
-                    src={
-                      productDataById?.data?.attributes?.[selectedImg]?.data
-                        ?.attributes?.url
-                    }
-                    alt="Selected Show image"
-                  />
-                </div>
+                {productDataById?.data?.attributes?.type ===
+                ("start-featured" || "featured-in-shop") ? (
+                  <div className="shopMainImg">
+                    <img
+                      src={
+                        productDataById?.data?.attributes?.[selectedImg]?.data
+                          ?.attributes?.url
+                      }
+                      alt="Selected Show image"
+                    />
+                  </div>
+                ) : (
+                  <div className="mainImg">
+                    <img
+                      src={
+                        productDataById?.data?.attributes?.[selectedImg]?.data
+                          ?.attributes?.url
+                      }
+                      alt="Selected Show image"
+                    />
+                  </div>
+                )}
                 <div className="images">
                   <img
                     className="selectImg"
@@ -214,7 +228,7 @@ const ProductPage = ({}) => {
       </ProductContainer>
       <FeaturedContainer>
         <FeaturedTitle>You may also like</FeaturedTitle>
-        <BestSeller type="featured" />
+        <BestSeller type={productDataById?.data?.attributes?.type} />
       </FeaturedContainer>
       <Contact />
     </>

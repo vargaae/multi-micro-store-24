@@ -27,8 +27,6 @@ const Success = () => {
 
   const dispatch = useDispatch();
 
-  // const resetCartHandler = () => dispatch(resetCart);
-
   useEffect(() => {
     dispatch(resetCart());
   }, [dispatch]);

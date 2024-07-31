@@ -115,6 +115,24 @@ export const ProductContainer = styled.div`
         }
         gap: 0.8em;
       }
+      .shopMainImg {
+        flex: 5;
+        padding-bottom: 0.8em;
+
+        img {
+          width: 100%;
+          height: auto;
+          object-position: center top;
+          object-fit: cover;
+          image-rendering: auto;
+          @media screen and (min-width: 1200px) {
+            height: min(800px, 100vw);
+            // FOR UNIFIED IMAGE SIZES:
+            // height: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
+            // width: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
+          }
+        }
+      }
       .mainImg {
         flex: 5;
         padding-bottom: 0.8em;
