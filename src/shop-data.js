@@ -1,7 +1,7 @@
 const PRODUCTS = [
   {
     // Price-checking key-value pairs:
-    //         id: "ZYW3VTp",
+    id: 23,
     // ! === SKU: "ZYW3VTp",
     //         price: 25,
     // Basic key-value pairs:
@@ -11,7 +11,7 @@ const PRODUCTS = [
     //         price: 25,
     // Full ProductPage key-value pairs:
     title: "ZYW3VTp",
-    id: "ZYW3VTp",
+    id: 23,
     SKU: "ZYW3VTp",
     name: "Brown Brim",
     desc: `Brown Brim Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -32,7 +32,7 @@ const PRODUCTS = [
   },
   {
     title: "ypkgK0X",
-    id: "ypkgK0X",
+    id: 23,
     SKU: "ypkgK0X",
     name: "Blue Beanie",
     desc: `Blu Beanie... Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -53,7 +53,7 @@ const PRODUCTS = [
   },
   {
     title: "QdJwgmp",
-    id: "QdJwgmp",
+    id: 23,
     SKU: "QdJwgmp",
     name: "Brown Cowboy",
     desc: `Cowoys' favourite wear... Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -74,7 +74,7 @@ const PRODUCTS = [
   },
   {
     title: "XzcwL5s",
-    id: "XzcwL5s",
+    id: 23,
     SKU: "XzcwL5s",
     name: "Black Jean Shearling",
     desc: `Blak Jean Shearling... Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -396,11 +396,9 @@ Bust: XL(60cm) XXL(62cm)`,
     categories: ["Design SHOP Accessories"],
     sub_category: ["Hats"],
   },
-  // TODO: Here we are!
-  // IN PROCESS:->
   {
     title: "RjBLWxB",
-    id: "RjBLWxB",
+    id: 23,
     SKU: "RjBLWxB",
     name: "Grey Brim",
     desc: `Grey Brim Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -421,7 +419,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "YTjW3vF",
-    id: "YTjW3vF",
+    id: 24,
     SKU: "YTjW3vF",
     name: "Green Beanie",
     desc: `Green Beanie Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -442,7 +440,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "rKBDvJX",
-    id: "rKBDvJX",
+    id: 25,
     SKU: "rKBDvJX",
     name: "Palm Tree Cap",
     desc: `Palm Tree Cap Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -463,7 +461,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "bLB646Z",
-    id: "bLB646Z",
+    id: 26,
     SKU: "bLB646Z",
     name: "Red Beanie",
     desc: `Red Beanie Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -484,7 +482,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "1f2nWMM",
-    id: "1f2nWMM",
+    id: 27,
     SKU: "1f2nWMM",
     name: "Wolf Cap",
     desc: `Wolf Cap Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -505,7 +503,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "X2VJP2W",
-    id: "X2VJP2W",
+    id: 28,
     SKU: "X2VJP2W",
     name: "Blue Snapback",
     desc: `Blue Snapback Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -547,7 +545,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "dJbG1cT",
-    id: "dJbG1cT",
+    id: 30,
     SKU: "dJbG1cT",
     name: "Adidas Yeezy",
     desc: `Adidas Yeezy Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -568,7 +566,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "bPmVXyP",
-    id: "bPmVXyP",
+    id: 31,
     SKU: "bPmVXyP",
     name: "Black Converse",
     desc: `Black Converse Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -589,7 +587,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "1RcFPk0",
-    id: "1RcFPk0",
+    id: 32,
     SKU: "1RcFPk0",
     name: "Nike White AirForce",
     desc: `Nike White AirForce Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -610,7 +608,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "QcvzydB",
-    id: "QcvzydB",
+    id: 33,
     SKU: "QcvzydB",
     name: "Nike Red High Tops",
     desc: `Nike Red High Tops Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -631,7 +629,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "fMTV342",
-    id: "fMTV342",
+    id: 34,
     SKU: "fMTV342",
     name: "Nike Brown High Tops",
     desc: `Nike Brown High Tops Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -652,7 +650,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "w4k6Ws9",
-    id: "w4k6Ws9",
+    id: 35,
     SKU: "w4k6Ws9",
     name: "Air Jordan Limited",
     desc: `Air Jordan Limited Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -673,7 +671,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "Mhh6wBg",
-    id: "Mhh6wBg",
+    id: 36,
     SKU: "Mhh6wBg",
     name: "Timberlands",
     desc: `Timberlands Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -694,7 +692,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "XzcwL5s",
-    id: 10,
+    id: 37,
     SKU: "XzcwL5s",
     name: "Black Jean Shearling",
     desc: `Black Jean Shearling Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -715,7 +713,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "mJS6vz0",
-    id: "mJS6vz0",
+    id: 38,
     SKU: "mJS6vz0",
     name: "Blue Jean Jacket",
     desc: `Blue Jean Jacket Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -736,7 +734,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "N71k1ML",
-    id: "N71k1ML",
+    id: 39,
     SKU: "N71k1ML",
     name: "Grey Jean Jacket",
     desc: `Grey Jean Jacket Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -757,7 +755,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "s96FpdP",
-    id: "s96FpdP",
+    id: 40,
     SKU: "s96FpdP",
     name: "Brown Shearling",
     desc: `Brown Shearling Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -778,7 +776,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "M6hHc3F",
-    id: "M6hHc3F",
+    id: 41,
     SKU: "M6hHc3F",
     name: "Tan Trench",
     desc: `Tan Trench Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -799,7 +797,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "7CQVJNm",
-    id: "7CQVJNm",
+    id: 42,
     SKU: "7CQVJNm",
     name: "Blue Tanktop",
     desc: `Blue Tanktop Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -820,7 +818,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "KV18Ysr",
-    id: "KV18Ysr",
+    id: 43,
     SKU: "KV18Ysr",
     name: "Floral Dress",
     desc: `Floral Dress Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -841,7 +839,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "N3BN1bh",
-    id: "N3BN1bh",
+    id: 44,
     SKU: "N3BN1bh",
     name: "Red Dots Dress",
     desc: `Red Dots Dress Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -862,7 +860,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "KmSkMbH",
-    id: "KmSkMbH",
+    id: 45,
     SKU: "KmSkMbH",
     name: "Striped Sweater",
     desc: `Striped Sweater Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -883,7 +881,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "v1cvwNf",
-    id: "v1cvwNf",
+    id: 46,
     SKU: "v1cvwNf",
     name: "Yellow Track Suit",
     desc: `Yellow Track Suit Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -904,7 +902,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "qBcrsJg",
-    id: "qBcrsJg",
+    id: 47,
     SKU: "qBcrsJg",
     name: "White Blouse",
     desc: `White Blouse Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -925,7 +923,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "xJS0T3Y",
-    id: "xJS0T3Y",
+    id: 48,
     SKU: "xJS0T3Y",
     name: "Camo Down Vest",
     desc: `Camo Down Vest Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -946,7 +944,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "qMQ75QZ",
-    id: "qMQ75QZ",
+    id: 49,
     SKU: "qMQ75QZ",
     name: "Floral T-shirt",
     desc: `Floral T-shirt Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -967,7 +965,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "55z32tw",
-    id: "55z32tw",
+    id: 50,
     SKU: "55z32tw",
     name: "Black & White Longsleeve",
     desc: `Black & White Longsleeve Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -988,7 +986,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "RvwnBL8",
-    id: "RvwnBL8",
+    id: 51,
     SKU: "RvwnBL8",
     name: "Pink T-shirt",
     desc: `Pink T-shirt Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -1009,7 +1007,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "VpW4x5t",
-    id: "VpW4x5t",
+    id: 52,
     SKU: "VpW4x5t",
     name: "Jean Long Sleeve",
     desc: `Jean Long Sleeve Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
@@ -1030,7 +1028,7 @@ Bust: XL(60cm) XXL(62cm)`,
   },
   {
     title: "mh3VM1f",
-    id: "mh3VM1f",
+    id: 53,
     SKU: "mh3VM1f",
     name: "Burgundy T-shirt",
     desc: `Burgundy T-shirt Solid Slim Fit Single Breasted Formal Blazer, has long sleeves, notched lapel collar and button closure
