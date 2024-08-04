@@ -74,6 +74,7 @@ const ShopProductPage = ({}) => {
   const addProductToCart = () =>
     dispatch(
       addItemToCart({
+        id: singleProduct.id,
         name: singleProduct.name,
         price: singleProduct.price,
         imageUrl: singleProduct.img,

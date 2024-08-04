@@ -26,19 +26,20 @@ import {
   StartShopImage,
   ButtonContainer,
 } from "./Start.styles";
+// 1.IMPORT
+// Categories
+// Products
 // import { useEffect } from "react";
 // import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
-// 1.Categories
 // import SHOP_DATA from "../../constants/shop-data";
-// 2.Products
 // import SHOP_PRODUCTS from "../../shop-data.js";
 
 const Start = () => {
-  // 1.Categories
+  // 2.Categories
+  //   Products
   // useEffect(() => {
   //   addCollectionAndDocuments("categories", SHOP_DATA);
   // }, []);
-  // 2.Products
   // useEffect(() => {
   //   addCollectionAndDocuments("products", SHOP_PRODUCTS);
   // }, []);

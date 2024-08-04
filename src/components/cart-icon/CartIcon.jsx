@@ -13,6 +13,7 @@ const CartIcon = () => {
 
   const toggleCartOpen = () => {
     if (cartCount !== 0) dispatch(setIsCartOpen(!isCartOpen));
+    else if ((cartCount === 0) && isCartOpen) dispatch(setIsCartOpen(!isCartOpen));
   };
 
   return (

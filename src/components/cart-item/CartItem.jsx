@@ -14,7 +14,7 @@ import {
 } from "./CartItem.styles";
 
 const CartItem = ({ product }) => {
-  const { name, price, imageUrl, quantity, SKU, productPageUrl } = product;
+  const { id, name, price, imageUrl, quantity, SKU, productPageUrl } = product;
 
   const dispatch = useDispatch();
 

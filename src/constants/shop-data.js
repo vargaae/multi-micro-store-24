@@ -3,12 +3,12 @@ const SHOP_DATA = [
     title: "Sportswear",
     items: [
       {
-        id: 1,
+        id: 13,
         name: "Individual XIX K.P. City white T-shirt",
         imageUrl:
           "https://storage.googleapis.com/sw-storage.appspot.com/Termek_kepek/Ruha/Polo/Individual/gorkorcsolya-polo-ruhazat-shirt-individual-kp-front.jpg",
         SKU: "gaggressiveprtshirtindividualxix",
-        price: 17.68,
+        price: 17,
       },
     ],
   },
@@ -16,23 +16,23 @@ const SHOP_DATA = [
     title: "Swimsuits",
     items: [
       {
-        id: 1,
+        id: 12,
         name: "FARM RIO STRAPLESS SWIMSUIT",
         imageUrl:
           "https://images.urbndata.com/is/image/Anthropologie/4142952480026_090_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
         SKU: "b8dEF",
-        price: 19.99,
+        price: 19,
       },
       {
-        id: 2,
+        id: 14,
         name: "Lace Up One Piece Swimsuit",
         imageUrl:
           "https://www.swimsuitsforall.com/dw/image/v2/BBKT_PRD/on/demandware.static/-/Sites-masterCatalog_Swimsuitsforall/default/dw05e4d87d/images/hi-res/2466_10352_mc_1138.jpg?sw=653&sh=940&sm=fit&q=90&strip=false",
         SKU: "1038351",
-        price: 56.28,
+        price: 56,
       },
       {
-        id: 3,
+        id: 15,
         name: "Boden Panel Underwire Swimsuit",
         imageUrl:
           "https://themomedit.com/wp-content/uploads/2024/02/Boden-Panel-Underwire-Swimsuit-Navy_-Ivory-Stripe-677x1024.jpg",
@@ -40,7 +40,7 @@ const SHOP_DATA = [
         price: 35,
       },
       {
-        id: 4,
+        id: 16,
         name: "Beach Riot Celine Ribbed One-Piece",
         imageUrl:
           "https://themomedit.com/wp-content/uploads/2024/02/Beach-Riot-Celine-Ribbed-One-Piece-875x1024.jpg",
@@ -48,39 +48,36 @@ const SHOP_DATA = [
         price: 25,
       },
       {
-        id: 5,
-        name: "Lace Up One Piece Swimsuit",
-        imageUrl: "https://i.ibb.co/YTjW3vF/green-beanie.png",
-        SKU: "YTjW3vF",
-        price: 18,
+        id: 17,
+        name: "Imagine Solo D-F Cup Bikini Top - Imagine / Snow",
+        imageUrl:
+          "https://www.bodyglove.com/cdn/shop/files/39-63815D_IMAGINE_SOLODFCUPTOP_LIFESTYLE2_1000x.jpg?v=1710272888",
+        SKU: "IBGS1706646505",
+        price: 69,
       },
       {
-        id: 6,
-        name: "Lace Up One Piece Swimsuit",
-        imageUrl: "https://i.ibb.co/rKBDvJX/palm-tree-cap.png",
-        SKU: "rKBDvJX",
-        price: 14,
+        id: 18,
+        name: "CUPSHE One Shoulder Cut Out One-piece Swimsuit",
+        imageUrl:
+          "https://ae01.alicdn.com/kf/H846b68f5691f405c8d714831cce17f73h/CUPSHE-One-Shoulder-Cut-Out-One-piece-Swimsuit-Women-Beach-Solid-Brown-Bathing-Suit-Swimwear-2023.jpg",
+        SKU: "CUPSHEOSCOOPS",
+        price: 62,
       },
       {
-        id: 7,
-        name: "Lace Up One Piece Swimsuit",
-        imageUrl: "https://i.ibb.co/bLB646Z/red-beanie.png",
-        SKU: "bLB646Z",
-        price: 18,
+        id: 19,
+        name: "One Shoulder Floral Print Hollow Backless Beachwear Swimsuit Swimwear",
+        imageUrl:
+          "https://s.alicdn.com/@sc04/kf/H1ed7663503804b66b0a0bd29dc113329o.jpg",
+        SKU: "OSFPHBBS1600128272496",
+        price: 50,
       },
       {
-        id: 8,
-        name: "Lace Up One Piece Swimsuit",
-        imageUrl: "https://i.ibb.co/1f2nWMM/wolf-cap.png",
-        SKU: "1f2nWMM",
-        price: 14,
-      },
-      {
-        id: 9,
-        name: "Lace Up One Piece Swimsuit",
-        imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
-        SKU: "X2VJP2W",
-        price: 16,
+        id: 20,
+        name: "Summer Beach Sunshine Womens Swimwear designer high-end Bikini",
+        imageUrl:
+          "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/s/23/2a009a06-efce-450b-adde-66b37bac3da6.jpg",
+        SKU: "SBSWSDHB972280638",
+        price: 20,
       },
     ],
   },
@@ -88,63 +85,64 @@ const SHOP_DATA = [
     title: "Hats",
     items: [
       {
-        id: 1,
+        id: 21,
         name: "Brown Brim",
         imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
         SKU: "ZYW3VTp",
         price: 25,
       },
       {
-        id: 2,
+        id: 22,
         name: "Blue Beanie",
         imageUrl: "https://i.ibb.co/ypkgK0X/blue-beanie.png",
         SKU: "ypkgK0X",
         price: 18,
       },
       {
-        id: 3,
+        id: 9,
         name: "Brown Cowboy",
         imageUrl: "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
         SKU: "QdJwgmp",
         price: 35,
       },
+      // TODO: Here we are!
       {
-        id: 4,
+        id: 23,
         name: "Grey Brim",
         imageUrl: "https://i.ibb.co/RjBLWxB/grey-brim.png",
         SKU: "RjBLWxB",
         price: 25,
       },
       {
-        id: 5,
+        id: 24,
         name: "Green Beanie",
         imageUrl: "https://i.ibb.co/YTjW3vF/green-beanie.png",
         SKU: "YTjW3vF",
         price: 18,
       },
       {
-        id: 6,
+        id: 25,
         name: "Palm Tree Cap",
         imageUrl: "https://i.ibb.co/rKBDvJX/palm-tree-cap.png",
         SKU: "rKBDvJX",
         price: 14,
       },
       {
-        id: 7,
+        id: 26,
         name: "Red Beanie",
         imageUrl: "https://i.ibb.co/bLB646Z/red-beanie.png",
         SKU: "bLB646Z",
         price: 18,
       },
       {
-        id: 8,
+        id: 27,
         name: "Wolf Cap",
         imageUrl: "https://i.ibb.co/1f2nWMM/wolf-cap.png",
         SKU: "1f2nWMM",
         price: 14,
       },
       {
-        id: 9,
+        id: 28,
         name: "Blue Snapback",
         imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
         SKU: "X2VJP2W",
@@ -156,7 +154,7 @@ const SHOP_DATA = [
     title: "Sneakers",
     items: [
       {
-        id: 10,
+        id: 11,
         name: "Adidas NMD",
         imageUrl: "https://i.ibb.co/0s3pdnc/adidas-nmd.png",
         SKU: "0s3pdnc",
@@ -217,7 +215,7 @@ const SHOP_DATA = [
     title: "Jackets",
     items: [
       {
-        id: 18,
+        id: 10,
         name: "Black Jean Shearling",
         imageUrl: "https://i.ibb.co/XzcwL5s/black-shearling.png",
         SKU: "XzcwL5s",
