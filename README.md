@@ -42,7 +42,7 @@ Features/Structure:
 ## 🛠 Front End:
 
 - React 18.2
-- Redux (+Redux Toolkit+Redux-Persist)
+- Redux (+Redux Toolkit)
 - SASS
 - styled components
 - plugins(animation, sliders, icons)

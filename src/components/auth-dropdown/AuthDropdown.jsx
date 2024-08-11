@@ -1,5 +1,7 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
 import { selectCurrentUser } from "../../store/user/user.selector";
+import { setIsComponentVisible } from "../../store/user/user.reducer";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -14,9 +16,14 @@ import {
 
 const AuthDropdown = () => {
   const currentUser = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
+
+  const closeAuthMenuOpen = () => {
+    dispatch(setIsComponentVisible(false));
+  };
 
   return (
-    <AuthDropdownContainer>
+    <AuthDropdownContainer onMouseLeave={closeAuthMenuOpen}>
       <AuthDetailsContainer>
         {currentUser !== null ? (
           <div>

@@ -11,8 +11,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsCartOpen } from "../../store/cart/cart.reducer";
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
-
-import useComponentVisible from "../../hooks/useComponentVisible";
+import { setIsComponentVisible } from "../../store/user/user.reducer";
+import { selectCurrentUserAuthOpen } from "../../store/user/user.selector";
 
 import {
   CartIcon,
@@ -38,12 +38,10 @@ const Navbar = ({ navGradient }) => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
   const isCartOpen = useSelector(selectIsCartOpen);
-
-  const { ref, isComponentVisible, setIsComponentVisible } =
-    useComponentVisible(false);
+  const isComponentVisible = useSelector(selectCurrentUserAuthOpen);
 
   const toggleAuthMenuOpen = () => {
-    setIsComponentVisible(!isComponentVisible);
+    dispatch(setIsComponentVisible(!isComponentVisible));
     if (isCartOpen) dispatch(setIsCartOpen(!isCartOpen));
   };
 
@@ -122,7 +120,7 @@ const Navbar = ({ navGradient }) => {
         </nav>
         <NavLinksContainer>
           {currentUser !== null ? (
-            <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
+            <UserContainer onClick={toggleAuthMenuOpen}>
               <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.signout}>
                 {currentUser?.displayName ? (
                   <img
