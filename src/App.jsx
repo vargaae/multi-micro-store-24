@@ -15,21 +15,8 @@ import { setCurrentUser } from "./store/user/user.reducer";
 
 import { Spinner } from "./components";
 
-// import { Navigation } from "./routes";
 import { Navbar } from "./routes";
-// import {
-//   Navigation,
-//   Authentication,
-//   Start,
-//   StartStore,
-//   Shop,
-//   ProductPage,
-//   ProductsPage,
-//   Checkout,
-// } from "./routes";
-// import { Footer } from "./containers";
 
-// const Navigation = lazy(() => import("./routes/navigation/Navigation"));
 const Footer = lazy(() => import("./containers/footer/Footer"));
 const Start = lazy(() => import("./routes/start/Start"));
 const StartStore = lazy(() => import("./routes/start-store/StartStore"));

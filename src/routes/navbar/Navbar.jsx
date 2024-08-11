@@ -1,26 +1,18 @@
-import { Link, useLocation } from "react-router-dom";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
-
-import { logo } from "../../assets";
-import { profile } from "../../assets";
-import { navigation } from "../../constants";
-// TODO: import from index: import Button from "../button/Button";
-import GradientButtonComponent from "../../components/button-component/GradientButtonComponent";
-import MenuSvg from "../../assets/svg/MenuSvg";
-import { HamburgerMenu } from "./NavbarDesign";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 import { useState } from "react";
+
+import { navigation } from "../../constants";
+
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import { useDispatch, useSelector } from "react-redux";
 
 import { setIsCartOpen } from "../../store/cart/cart.reducer";
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 import useComponentVisible from "../../hooks/useComponentVisible";
-
-import { useNavigate } from "react-router-dom";
-
-import { selectCurrentUser } from "../../store/user/user.selector";
 
 import {
   CartIcon,
@@ -28,7 +20,12 @@ import {
   AuthDropdown,
   ButtonComponent,
   BUTTON_TYPE_CLASSES,
+  GradientButtonComponent,
 } from "../../components";
+import { HamburgerMenu } from "./NavbarDesign";
+import MenuSvg from "../../assets/svg/MenuSvg";
+import { logo } from "../../assets";
+import { profile } from "../../assets";
 
 import {
   NavigationContainer,
@@ -36,8 +33,6 @@ import {
   NavLinksContainer,
   UserContainer,
 } from "./Navbar.styles";
-
-// import "./navbar.css";
 
 const Navbar = ({ navGradient }) => {
   const currentUser = useSelector(selectCurrentUser);
@@ -60,18 +55,6 @@ const Navbar = ({ navGradient }) => {
     navigateTo("/");
   };
 
-  const goToShopCloseCart = () => {
-    if (isCartOpen) dispatch(setIsCartOpen(false));
-
-    navigateTo("/shop");
-  };
-
-  const goToStoreCloseCart = () => {
-    if (isCartOpen) dispatch(setIsCartOpen(false));
-
-    navigateTo("/store");
-  };
-
   const signUpIn = () => {
     if (isCartOpen) dispatch(setIsCartOpen(false));
 
@@ -91,8 +74,7 @@ const Navbar = ({ navGradient }) => {
       disablePageScroll();
     }
   };
-  // const handleClick = (itemUrl) => {
-  //   navigateTo(itemUrl);
+
   const handleClick = () => {
     if (isCartOpen) dispatch(setIsCartOpen(false));
     if (!openNavigation) return;
@@ -135,32 +117,30 @@ const Navbar = ({ navGradient }) => {
               </p>
             ))}
           </div>
-          
+
           <HamburgerMenu />
         </nav>
         <NavLinksContainer>
           {currentUser !== null ? (
             <UserContainer ref={ref} onClick={toggleAuthMenuOpen}>
               <ButtonComponent buttonType={BUTTON_TYPE_CLASSES.signout}>
-                {
-                  currentUser?.displayName ? (
-                    <img
-                      src={currentUser.photoURL}
-                      className="user-logo"
-                      alt="User's Logo"
-                      width={45}
-                      height={45}
-                    />
-                  ) : (
-                    <img
-                      src={profile}
-                      className="user-logo"
-                      alt="logo of Andras Varga"
-                      width={45}
-                      height={45}
-                    />
-                  )
-                }
+                {currentUser?.displayName ? (
+                  <img
+                    src={currentUser.photoURL}
+                    className="user-logo"
+                    alt="User's Logo"
+                    width={45}
+                    height={45}
+                  />
+                ) : (
+                  <img
+                    src={profile}
+                    className="user-logo"
+                    alt="logo of Andras Varga"
+                    width={45}
+                    height={45}
+                  />
+                )}
               </ButtonComponent>
 
               {isComponentVisible && <AuthDropdown />}

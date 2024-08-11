@@ -1,4 +1,3 @@
-export { default as Navigation } from "./navigation/Navigation";
 export { default as Navbar } from './navbar/Navbar';
 // REACT LAZY LOADING:
 // export { default as Authentication } from "./authentication/Authentication";
