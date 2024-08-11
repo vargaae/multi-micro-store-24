@@ -9,7 +9,8 @@ import {
   useGetCategoryByIdQuery,
   strApi,
 } from "../../services/strApi";
-// import useFetch from "../../hooks/useFetch";
+
+import { FadeLoader } from "react-spinners";
 
 import {
   BUTTON_TYPE_CLASSES,
@@ -22,9 +23,12 @@ import {
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import { FadeLoader } from "react-spinners";
-
-import "./ProductsPage.styles.scss";
+import {
+  LeftFilterBar,
+  ProductsContainer,
+  ProductsPageContainer,
+  RightMainPage,
+} from "./ProductsPage.styles";
 
 const override = {
   display: "block",
@@ -34,19 +38,15 @@ const override = {
 
 const Products = () => {
   const dispatch = useDispatch();
-  // We can get the id in string:
-  // const param = useParams()
   const catId = parseInt(useParams().id);
 
   const [count, setCount] = useState(0);
   let [color, setColor] = useState("#54b3d6");
-  // <img src={imgSrc} onError = {() => setImgSrc("https://picsum.photos/1600")} />
   const rangeMinimum = 0;
   const rangeMaximum = 1600;
 
   const [maxPrice, setMaxPrice] = useState(rangeMaximum);
   const [sort, setSort] = useState(`asc`);
-  // const [sort, setSort] = useState("asc")
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
   const productsPage = true;
@@ -94,18 +94,6 @@ const Products = () => {
       </div>
     );
 
-  // TODO: Title: {data?.attributes?.categories.data[0].attributes.title}
-  // let { id } = 1;
-  // const { dataCategory, loadingC, errorC, errorMessageC } = useFetch(
-  //   `/products/${id}`
-  // );
-  // console.log(dataCategory);
-
-  // !!!TODO: subcategories-t így remekül behozza:
-  // const { data, loading, error, errorMessage } = useFetch(
-  //   `/sub-categories?[filters][categories][id][$eq]=${catId}`
-  // );
-
   const handleChange = (e) => {
     const value = e.target.value;
     const isChecked = e.target.checked;
@@ -127,18 +115,16 @@ const Products = () => {
   };
 
   return (
-    <>
-      <div className="product-container">
-        <BreadcrumbNav
-          productsPage={productsPage}
-          productsPageLink={productsPageLink}
-          headerTitle={headerTitle}
-          headerLink={headerLink}
-          productTitle={categoryByCategoryId?.data?.attributes?.title}
-        />
-      </div>
-      <div className="products">
-        <div className="left">
+    <ProductsPageContainer>
+      <BreadcrumbNav
+        productsPage={productsPage}
+        productsPageLink={productsPageLink}
+        headerTitle={headerTitle}
+        headerLink={headerLink}
+        productTitle={categoryByCategoryId?.data?.attributes?.title}
+      />
+      <ProductsContainer className="products">
+        <LeftFilterBar>
           <div className="filterItem">
             <h2>Product Categories</h2>
             {error ? (
@@ -215,8 +201,8 @@ const Products = () => {
               FILTER
             </ButtonComponent>
           </div>
-        </div>
-        <div className="right">
+        </LeftFilterBar>
+        <RightMainPage>
           <LazyLoadImage
             src={
               categoryByCategoryId?.data?.attributes?.img?.data?.attributes?.url
@@ -226,16 +212,19 @@ const Products = () => {
             /* effect="blur" */
             className="catImg"
           />
-          <List
-            catId={catId}
-            maxPrice={maxPrice}
-            sort={sort}
-            subCats={selectedSubCats}
-          />
-        </div>
-      </div>
+          {
+            <List
+              subCats={selectedSubCats}
+              maxPrice={maxPrice}
+              sort={sort}
+              catId={catId}
+              cat={categoryByCategoryId?.data?.attributes?.title}
+            />
+          }
+        </RightMainPage>
+      </ProductsContainer>
       <Contact />
-    </>
+    </ProductsPageContainer>
   );
 };
 

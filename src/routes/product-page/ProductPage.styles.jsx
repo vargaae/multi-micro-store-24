@@ -1,15 +1,12 @@
-// TODO: turn SCSS -> unified Breadcrumb-nav styled: STORE-SHOP-PRODUCTPAGE-SHOPPRODUCTPAGE-CATEGORIES/SHOP-PREVIEW
-import styled from "styled-components";
+import { styled, keyframes } from "styled-components";
 
 export const ProductPageTitle = styled.h2`
-  // TODO: turn SCSS -> styled
   font-family: var(--font-family);
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 2.6em;
   font-style: normal;
   letter-spacing: 0em;
-  /* spacing: 40px; */
   text-align: start;
   text-decoration: none;
   text-transform: uppercase;
@@ -30,252 +27,221 @@ export const ProductPageTitle = styled.h2`
   }
 `;
 
+const l16 = keyframes`
+   0% {
+    background-position: -150% 0, -150% 0;
+  }
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+  100% {
+    background-position: 250% 0, 250% 0;
+  }
+`;
+
 export const Loader = styled.div`
   height: 5px;
   /* width: 130px; */
   --c: no-repeat linear-gradient(var(--color-prime) 0 0);
   background: var(--c), var(--c), #d7b8fc;
   background-size: 60% 100%;
-  animation: l16 3s infinite;
-  @keyframes l16 {
-    0% {
-      background-position: -150% 0, -150% 0;
-    }
-    66% {
-      background-position: 250% 0, -150% 0;
-    }
-    100% {
-      background-position: 250% 0, 250% 0;
-    }
-  }
+  animation: ${l16} 3s infinite;
 `;
+export const ProductPageContainer = styled.div``;
+
 export const ProductContainer = styled.div`
-  // TODO: divide+turn SCSS -> styled
-  /* HTML: <div class="loader"></div> */
-  .loader {
-    height: 5px;
-    /* width: 130px; */
-    --c: no-repeat linear-gradient(var(--color-prime) 0 0);
-    background: var(--c), var(--c), #d7b8fc;
-    background-size: 60% 100%;
-    animation: l16 3s infinite;
+  margin: 0px auto 0px;
+  @media screen and (min-width: 550px) {
+    width: 70%;
+    margin: 50px auto 20px;
   }
-  @keyframes l16 {
-    0% {
-      background-position: -150% 0, -150% 0;
-    }
-    66% {
-      background-position: 250% 0, -150% 0;
-    }
-    100% {
-      background-position: 250% 0, 250% 0;
-    }
+  /* margin: 0 4em; */
+  gap: 15px;
+  @media screen and (min-width: 900px) {
+    gap: 50px;
   }
-  .product {
-    margin: 0px auto 0px;
-    @media screen and (min-width: 550px) {
-      width: 70%;
-      margin: 50px auto 20px;
-    }
-    /* margin: 0 4em; */
-    gap: 15px;
-    @media screen and (min-width: 900px) {
-      gap: 50px;
-    }
-    @media screen and (min-width: 1600px) {
-      // TODO: Set consistence css styles
-      width: 72%;
-      margin: 50px auto 20px;
-    }
-    padding: 1.2em 2em;
-    display: flex;
-    flex-direction: column;
+  @media screen and (min-width: 1600px) {
+    width: 72%;
+    margin: 50px auto 20px;
+  }
+  padding: 1.2em 2em;
+  display: flex;
+  flex-direction: column;
 
-    .left {
-      flex: 1;
-      gap: 20px;
+  .left {
+    flex: 1;
+    gap: 20px;
 
-      .images {
-        flex: 1;
-        display: flex;
-        flex-direction: row;
-
-        img {
-          width: 20%;
-          height: auto;
-          object-fit: cover;
-          cursor: pointer;
-          padding: 0 0.1rem 0 0;
-          margin-bottom: 10px;
-          /* border: 1px solid black;
-          border-radius: 5px; */
-        }
-        .selectImg {
-          flex: 1;
-        }
-        gap: 0.8em;
-      }
-      .shopMainImg {
-        flex: 5;
-        padding-bottom: 0.8em;
-
-        img {
-          width: 100%;
-          height: auto;
-          object-position: center top;
-          object-fit: cover;
-          image-rendering: auto;
-          @media screen and (min-width: 1200px) {
-            height: min(800px, 100vw);
-            // FOR UNIFIED IMAGE SIZES:
-            // height: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
-            // width: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
-          }
-        }
-      }
-      .mainImg {
-        flex: 5;
-        padding-bottom: 0.8em;
-
-        img {
-          width: 100%;
-          height: auto;
-          object-position: center top;
-          object-fit: cover;
-          image-rendering: auto;
-          @media screen and (min-width: 1200px) {
-            height: min(400px, 100vw);
-            // FOR UNIFIED IMAGE SIZES:
-            // height: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
-            // width: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
-          }
-        }
-      }
-    }
-    .right {
+    .images {
       flex: 1;
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      flex-direction: row;
 
+      img {
+        width: 20%;
+        height: auto;
+        object-fit: cover;
+        cursor: pointer;
+        padding: 0 0.1rem 0 0;
+        margin-bottom: 10px;
+        /* border: 1px solid black;
+          border-radius: 5px; */
+      }
+      .selectImg {
+        flex: 1;
+      }
+      gap: 0.8em;
+    }
+    .shopMainImg {
+      flex: 5;
+      padding-bottom: 0.8em;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-position: center top;
+        object-fit: cover;
+        image-rendering: auto;
+        @media screen and (min-width: 1200px) {
+          height: min(800px, 100vw);
+          // FOR UNIFIED IMAGE SIZES:
+          // height: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
+          // width: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
+        }
+      }
+    }
+    .mainImg {
+      flex: 5;
+      padding-bottom: 0.8em;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-position: center top;
+        object-fit: cover;
+        image-rendering: auto;
+        @media screen and (min-width: 1200px) {
+          height: min(400px, 100vw);
+          // FOR UNIFIED IMAGE SIZES:
+          // height: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
+          // width: calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3);
+        }
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    text-align: start;
+
+    .price {
+      font-family: var(--font-family-shopinfo);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0em;
+      line-height: 1.6em;
+      paragraph-spacing: 20px;
+      text-alignment: start;
+      text-decoration: none;
+    }
+
+    p {
+      font-family: var(--font-family-shopinfo);
+      font-size: 1.2em;
+      font-weight: 400;
+      font-optical-sizing: auto;
+      font-style: normal;
+      letter-spacing: -0.02em;
+      line-height: 1.6em;
+      paragraph-spacing: 20px;
       text-align: start;
-
-      .price {
-        /* TODO: ?change family here: */
-        /* font-family: var(--font-family-numbers); */
-        // font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
-        font-family: var(--font-family-shopinfo);
-        font-size: 20px;
-        /* font-size: 1.5em; */
-        font-style: normal;
-        font-weight: 600;
-        letter-spacing: 0em;
-        line-height: 1.6em;
-        paragraph-spacing: 20px;
-        text-alignment: start;
-        text-decoration: none;
-
-        // color: #2879fe;
+      text-decoration: none;
+      strong {
+        text-transform: uppercase;
+        margin-top: 20px;
       }
+    }
 
-      p {
-        // TODO: divide+turn SCSS -> styled
-        /* TODO: ?change family here: */
-        font-family: var(--font-family-shopinfo);
-        font-size: 1.2em;
-        font-weight: 400;
-        font-optical-sizing: auto;
-        font-style: normal;
-        letter-spacing: -0.02em;
-        line-height: 1.6em;
-        paragraph-spacing: 20px;
-        text-align: start;
-        text-decoration: none;
-        strong {
-          text-transform: uppercase;
-          margin-top: 20px;
-        }
-      }
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
 
-      .quantity {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.5rem;
-
-        button {
-          width: 50px;
-          height: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          border: none;
-        }
-      }
-
-      .add {
-        width: 250px;
-        padding: 10px;
-        background-color: #2879fe;
-        color: white;
+      button {
+        width: 50px;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
         cursor: pointer;
         border: none;
-        font-weight: 500;
       }
+    }
 
-      .links {
+    .add {
+      width: 250px;
+      padding: 10px;
+      background-color: #2879fe;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      cursor: pointer;
+      border: none;
+      font-weight: 500;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+
+      .item {
         display: flex;
-        gap: 20px;
-
-        .item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          color: #2879fe;
-          font-size: 14px;
-        }
-      }
-
-      .info {
-        display: flex;
-        flex-direction: column;
+        align-items: center;
         gap: 10px;
-        margin-top: 0px;
-
-        /* color: white; */
-        /* font-size: 14px; */
-        font-family: var(--font-family-shopinfo);
-        font-size: 1.2em;
-        font-weight: 400;
-        font-optical-sizing: auto;
-        font-style: normal;
-        letter-spacing: -0.02em;
-        line-height: 1.6em;
-        paragraph-spacing: 20px;
-        text-align: start;
-        text-decoration: none;
-        text-transform: uppercase;
-
-        hr {
-          width: 200px;
-          border: 1px solid rgb(238, 237, 237);
-        }
+        color: #2879fe;
+        font-size: 14px;
       }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 0px;
+
+      font-family: var(--font-family-shopinfo);
+      font-size: 1.2em;
+      font-weight: 400;
+      font-optical-sizing: auto;
+      font-style: normal;
+      letter-spacing: -0.02em;
+      line-height: 1.6em;
+      paragraph-spacing: 20px;
+      text-align: start;
+      text-decoration: none;
+      text-transform: uppercase;
 
       hr {
-        // border: 1px solid rgb(238, 237, 237);
-        border: 0 none rgb(238, 237, 237);
-        padding-bottom: 2em;
+        width: 200px;
+        border: 1px solid rgb(238, 237, 237);
       }
     }
-    @media screen and (min-width: 900px) {
-      flex-direction: row;
+
+    hr {
+      // border: 1px solid rgb(238, 237, 237);
+      border: 0 none rgb(238, 237, 237);
+      padding-bottom: 2em;
     }
+  }
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
   }
 `;
 
@@ -284,13 +250,11 @@ export const FeaturedContainer = styled.div`
   padding: calc(2vw + 1rem);
 
   @media screen and (min-width: 1200px) {
-    /* Mekkora legyen ebben a méretben a behúzás? */
     /* padding: calc(4vw + 1rem) 200px; */
     padding: calc(4vw + 1rem) 0;
   }
   @media screen and (min-width: 1600px) {
     padding: 150px 250px;
-    /* padding: 150px 250px; */
   }
 `;
 export const FeaturedTitle = styled.h2`

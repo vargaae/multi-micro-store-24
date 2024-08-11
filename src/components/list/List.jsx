@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-// TODO: !!!CleanUP!!!
-// import useFetch from "../../hooks/useFetch";
 import { useState } from "react";
-// import ClipLoader from "react-spinners/ClipLoader";
+
+import { useNavigate } from "react-router-dom";
+
 import { FadeLoader } from "react-spinners";
 
 import { useDispatch } from "react-redux";
@@ -11,7 +11,11 @@ import { strApi, useGetCategoryProductListQuery } from "../../services/strApi";
 
 import { Card } from "../";
 
-import "./List.styles.scss";
+import {
+  ListContainer,
+  ShopBreadcrumbNavContainer,
+  ShopBreadcrumbLink,
+} from "./List.styles";
 
 const override = {
   display: "block",
@@ -19,9 +23,11 @@ const override = {
   borderColor: "red",
 };
 
-const List = ({ subCats, maxPrice, sort, catId }) => {
+const List = ({ subCats, maxPrice, sort, catId, cat }) => {
   const [count, setCount] = useState(0);
   let [color, setColor] = useState("#54b3d6");
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -32,11 +38,6 @@ const List = ({ subCats, maxPrice, sort, catId }) => {
     refetch,
   } = useGetCategoryProductListQuery({ subCats, maxPrice, sort, catId });
 
-  // const { data, loading, error, errorMessage } = useFetch(
-  //   `/products/${id}?populate=*`
-  // );
-
-  // TODO: Use Refetch + Loader
   function handleRefetchOne() {
     // force re-fetches the data
     refetch();
@@ -69,21 +70,8 @@ const List = ({ subCats, maxPrice, sort, catId }) => {
       </div>
     );
 
-  // TODO: CleanUp:
-  // if (isFetching) return <LinearProgress style={{ backgroundColor: "gold" }} />;
-
-  // TODO: CleanUp:
-  // const { data, loading, error, errorMessage } = useFetch(
-  // `/products?populate=*&filters[categories][id]=${catId}${subCats.map(
-  //   (item) => `&filters[sub_category][id][$eq]=${item}&`
-  // )}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
-  // );
-
-  // TODO: no product notice: - >Check in ConfySloth
-  // {data.length !== 0 ? data?.map((item) => <Card item={item} key={item.id} />) : <div>no product in this sub_category</div>}
-
   return (
-    <div className="list">
+    <ListContainer>
       {error ? (
         `Something went wrong! Errormessage: "${error}"`
       ) : isFetching ? (
@@ -95,12 +83,29 @@ const List = ({ subCats, maxPrice, sort, catId }) => {
           aria-label="Loading Spinner"
           data-testid="loader"
         />
+      ) : categoryProductList?.data.length == 0 ? (
+        <ShopBreadcrumbNavContainer>
+          <ShopBreadcrumbLink onClick={() => navigate(-1)}>
+            go back
+          </ShopBreadcrumbLink>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+            data-slot="icon"
+            color="rgb(0, 0, 0)"
+          >
+            <path d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"></path>
+          </svg>
+          Sorry, no products matched your search / in <strong>'{cat}'</strong>{" "}
+        </ShopBreadcrumbNavContainer>
       ) : (
         categoryProductList?.data?.map((item) => (
           <Card item={item} key={item.id} />
         ))
       )}
-    </div>
+    </ListContainer>
   );
 };
 

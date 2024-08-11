@@ -1,8 +1,6 @@
-// TODO: turn SCSS -> unified Breadcrumb-nav styled: STORE-SHOP-PRODUCTPAGE-SHOPPRODUCTPAGE-CATEGORIES/SHOP-PREVIEW
-import styled from "styled-components";
+import { styled, keyframes } from "styled-components";
 
 export const ProductPageTitle = styled.h2`
-  // TODO: turn SCSS -> styled
   font-family: var(--font-family);
   font-optical-sizing: auto;
   font-weight: 400;
@@ -30,47 +28,28 @@ export const ProductPageTitle = styled.h2`
   }
 `;
 
+const l16 = keyframes`
+   0% {
+    background-position: -150% 0, -150% 0;
+  }
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+  100% {
+    background-position: 250% 0, 250% 0;
+  }
+`;
+
 export const Loader = styled.div`
   height: 5px;
   /* width: 130px; */
   --c: no-repeat linear-gradient(var(--color-prime) 0 0);
   background: var(--c), var(--c), #d7b8fc;
   background-size: 60% 100%;
-  animation: l16 3s infinite;
-  @keyframes l16 {
-    0% {
-      background-position: -150% 0, -150% 0;
-    }
-    66% {
-      background-position: 250% 0, -150% 0;
-    }
-    100% {
-      background-position: 250% 0, 250% 0;
-    }
-  }
+  animation: ${l16} 3s infinite;
 `;
+
 export const ProductContainer = styled.div`
-  // TODO: divide+turn SCSS -> styled
-  /* HTML: <div class="loader"></div> */
-  .loader {
-    height: 5px;
-    /* width: 130px; */
-    --c: no-repeat linear-gradient(var(--color-prime) 0 0);
-    background: var(--c), var(--c), #d7b8fc;
-    background-size: 60% 100%;
-    animation: l16 3s infinite;
-  }
-  @keyframes l16 {
-    0% {
-      background-position: -150% 0, -150% 0;
-    }
-    66% {
-      background-position: 250% 0, -150% 0;
-    }
-    100% {
-      background-position: 250% 0, 250% 0;
-    }
-  }
   .product {
     margin: 0px auto 0px;
     @media screen and (min-width: 550px) {
@@ -83,7 +62,6 @@ export const ProductContainer = styled.div`
       gap: 50px;
     }
     @media screen and (min-width: 1600px) {
-      // TODO: Set consistence css styles
       width: 72%;
       margin: 50px auto 20px;
     }
@@ -143,9 +121,6 @@ export const ProductContainer = styled.div`
       text-align: start;
 
       .price {
-        /* TODO: ?change family here: */
-        /* font-family: var(--font-family-numbers); */
-        // font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
         font-family: var(--font-family-shopinfo);
         font-size: 20px;
         /* font-size: 1.5em; */
@@ -156,13 +131,9 @@ export const ProductContainer = styled.div`
         paragraph-spacing: 20px;
         text-alignment: start;
         text-decoration: none;
-
-        // color: #2879fe;
       }
 
       p {
-        // TODO: divide+turn SCSS -> styled
-        /* TODO: ?change family here: */
         font-family: var(--font-family-shopinfo);
         font-size: 1.2em;
         font-weight: 400;
@@ -229,7 +200,6 @@ export const ProductContainer = styled.div`
         gap: 10px;
         margin-top: 0px;
 
-        /* color: white; */
         /* font-size: 14px; */
         font-family: var(--font-family-shopinfo);
         font-size: 1.2em;
@@ -266,7 +236,6 @@ export const FeaturedContainer = styled.div`
   padding: calc(2vw + 1rem);
 
   @media screen and (min-width: 1200px) {
-    /* Mekkora legyen ebben a méretben a behúzás? */
     /* padding: calc(4vw + 1rem) 200px; */
     padding: calc(4vw + 1rem) 0;
   }

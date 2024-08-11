@@ -1,11 +1,11 @@
+import { useState } from "react";
+
+import { useNavigate, Link, useParams } from "react-router-dom";
+
 import { addItemToCart } from "../../store/cart/cart.reducer";
 import { useDispatch } from "react-redux";
 
 import { useGetProductByIdQuery, strApi } from "../../services/strApi";
-
-import { useState } from "react";
-
-import { useNavigate, Link, useParams } from "react-router-dom";
 
 import {
   ButtonComponent,
@@ -16,6 +16,7 @@ import {
 } from "../../components";
 
 import {
+  ProductPageContainer,
   ProductContainer,
   ProductPageTitle,
   FeaturedContainer,
@@ -37,8 +38,6 @@ const ProductPage = ({}) => {
   const headerLink = "/store";
 
   const dispatch = useDispatch();
-  //TODO:Clean->
-  // const addProductToCart = () => dispatch(addItemToCart(product));
   const addProductToCart = () =>
     dispatch(
       addItemToCart({
@@ -92,7 +91,7 @@ const ProductPage = ({}) => {
 
   return (
     <>
-      <ProductContainer className="product-container">
+      <ProductPageContainer>
         {error ? (
           `Something went wrong! Errormessage: "${error}"`
         ) : isFetching ? (
@@ -107,7 +106,7 @@ const ProductPage = ({}) => {
               featuredShop={productDataById?.data?.attributes?.type}
             />
 
-            <div className="product">
+            <ProductContainer>
               <ProductPageTitle className="mobileview">
                 {productDataById?.data?.attributes?.title}
               </ProductPageTitle>
@@ -223,10 +222,10 @@ const ProductPage = ({}) => {
                 </div>
                 <hr />
               </div>
-            </div>
+            </ProductContainer>
           </>
         )}
-      </ProductContainer>
+      </ProductPageContainer>
       <FeaturedContainer>
         <FeaturedTitle>You may also like</FeaturedTitle>
         <BestSeller type={productDataById?.data?.attributes?.type} />

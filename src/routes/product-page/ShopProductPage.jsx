@@ -1,9 +1,9 @@
-import { addItemToCart } from "../../store/cart/cart.reducer";
-import { useDispatch } from "react-redux";
-
 import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
+
+import { addItemToCart } from "../../store/cart/cart.reducer";
+import { useDispatch } from "react-redux";
 
 import {
   ButtonComponent,
@@ -24,18 +24,10 @@ import { db, getSingleDocument } from "../../utils/firebase/firebase.utils";
 import { collection, doc, onSnapshot } from "firebase/firestore";
 import { FadeLoader } from "react-spinners";
 
-// const override = {
-//   display: "block",
-//   margin: "0 auto",
-//   borderColor: "red",
-// };
-
 const ShopProductPage = ({}) => {
   const productPage = true;
   const headerTitle = "Design Shop";
   const headerLink = "/shop";
-
-  // let [color, setColor] = useState("#54b3d6");
 
   const [selectedImg, setSelectedImg] = useState("img");
 
@@ -51,26 +43,10 @@ const ShopProductPage = ({}) => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   const getProduct = async () => {
-  //     // it's now categoriesArray!!!, not categoriesMap with OBJECT anymore:
-  //     const singleProduct = await getSingleDocument(1);
-  //     // dispatch(setCategories(categoriesArray));
-
-  //     // setSingleProduct(singleProduct)
-  //   };
-
-  //   getProduct();
-  // }, []);
-
-  //TODO:Clean->
-  // const { name, price, imageUrl } = product;
-
   const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
-  //TODO:Clean->
-  // const addProductToCart = () => dispatch(addItemToCart(product));
+
   const addProductToCart = () =>
     dispatch(
       addItemToCart({
@@ -83,15 +59,6 @@ const ShopProductPage = ({}) => {
         productPageUrl: `/shop/product/${singleProduct.SKU}`,
       })
     );
-
-  // TODO: SET IMG:
-  // <img
-  //   decoding="async"
-  //   sizes="calc((min(max(100vw, 0px), 1440px) - 60px) / 2.3)"
-  //   src="https://framerusercontent.com/images/6cKC0PWCp1QT4U3h4ddQ1bSE.jpg"
-  //   alt=""
-  //   style="display: block; width: 100%; height: 100%; border-radius: inherit; object-position: center top; object-fit: cover; image-rendering: auto;"
-  // ></img>;
 
   return (
     <>
@@ -139,21 +106,6 @@ const ShopProductPage = ({}) => {
                 </ProductPageTitle>
                 <span className="price">€{singleProduct?.price}</span>
                 <p>{singleProduct?.desc}</p>
-                {/*
-        <div className="quantity">
-          <button
-            onClick={() =>
-              setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
-            }
-          >
-            -
-          </button>
-          {quantity}
-          <button onClick={() => setQuantity((prev) => prev + 1)}>
-            +
-          </button>
-        </div>
-          */}
                 <ButtonComponent
                   onClick={addProductToCart}
                   buttonType={BUTTON_TYPE_CLASSES.productpage}
@@ -201,14 +153,6 @@ const ShopProductPage = ({}) => {
                   </span>
                 </div>
                 <hr />
-                {/*
-     <div className="info">
-          <span>DESCRIPTION</span>
-          <hr />
-          <span>ADDITIONAL INFORMATION</span>
-          <hr />
-          <span>FAQ</span>
-          </div> */}
               </div>
             </div>
           </>
