@@ -79,7 +79,6 @@ const Start = () => {
       <BestSellerContainer>
         <BestSellerTitle>DESIGN STORE / SHOP FEATURED PRODUCTS</BestSellerTitle>
         <FeaturedProducts type="start-featured" />
-        {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
       <StartVideo />
       <StartNavigationContainer>
@@ -100,14 +99,14 @@ const Start = () => {
             <StartShopImage to="/store">
               <img
                 className="selectStore"
-                src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/6580222/pexels-photo-6580222.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Show image 1"
               />
             </StartShopImage>
             <StartShopImage to="/store">
               <img
                 className="selectStore"
-                src="https://images.pexels.com/photos/4409672/pexels-photo-4409672.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Show image 2"
               />
             </StartShopImage>

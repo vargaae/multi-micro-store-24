@@ -31,7 +31,6 @@ const StartVideo = () => {
 
   return (
     <StartVideoContainer>
-
       <video
         className="bg-vid"
         playsInline
@@ -43,7 +42,6 @@ const StartVideo = () => {
       />
 
       <VideoTextBox>
-
         <VideoTextBoxTitle>MultiStore-24 Exclusive Deal</VideoTextBoxTitle>
         <VideoTextBoxParagraph>
           MultiStore Exclusive Deal Discover the epitome of style with
@@ -90,9 +88,7 @@ const StartVideo = () => {
             </VisitStoreArrowContainer>
           </VisitShopLinkContainer>
         </VisitStoreContainer>
-
       </VideoTextBox>
-
     </StartVideoContainer>
   );
 };

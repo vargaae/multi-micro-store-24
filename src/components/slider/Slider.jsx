@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-import "./Slider.styles.scss";
+import {
+  IconContainer,
+  IconsContainer,
+  SliderComponent,
+  SliderContainer,
+} from "./Slider.styles";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,24 +35,19 @@ const Slider = () => {
   };
 
   return (
-    <div className="slider">
-      <div
-        className="container"
+    <SliderComponent>
+      <SliderContainer
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
       >
         <img src={data[0]} alt="" />
         <img src={data[1]} alt="" />
         <img src={data[2]} alt="" />
-      </div>
-      <div className="icons">
-        <div className="icon" onClick={prevSlide}>
-          &larr;
-        </div>
-        <div className="icon" onClick={nextSlide}>
-          &rarr;
-        </div>
-      </div>
-    </div>
+      </SliderContainer>
+      <IconsContainer>
+        <IconContainer onClick={prevSlide}>&larr;</IconContainer>
+        <IconContainer onClick={nextSlide}>&rarr;</IconContainer>
+      </IconsContainer>
+    </SliderComponent>
   );
 };
 

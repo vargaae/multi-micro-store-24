@@ -7,7 +7,7 @@ import { Card } from "../";
 
 import { FadeLoader } from "react-spinners";
 
-import "./FeaturedProducts.styles.scss";
+import { FeaturedGrid } from "./FeaturedProducts.styles";
 
 const override = {
   display: "block",
@@ -60,25 +60,21 @@ const FeaturedProducts = ({ type }) => {
       </div>
     );
   return (
-    <>
-      <div className="grid">
-        {error ? (
-          `Something went wrong! ${error}`
-        ) : isFetching ? (
-          <FadeLoader
-            color={color}
-            loading={isFetching}
-            cssOverride={override}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-        ) : (
-          productsByType?.data?.map((item) => (
-            <Card item={item} key={item.id} />
-          ))
-        )}
-      </div>
-    </>
+    <FeaturedGrid>
+      {error ? (
+        `Something went wrong! ${error}`
+      ) : isFetching ? (
+        <FadeLoader
+          color={color}
+          loading={isFetching}
+          cssOverride={override}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      ) : (
+        productsByType?.data?.map((item) => <Card item={item} key={item.id} />)
+      )}
+    </FeaturedGrid>
   );
 };
 

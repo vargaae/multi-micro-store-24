@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const ProductCardContainer = styled.div`
-  // height: 500px;
   width: 100%;
 
   display: flex;
@@ -37,10 +36,6 @@ export const ProductCardContainer = styled.div`
     display: none;
   }
 
-  .productpagelink {
-    color: transparent;
-  }
-
   &:hover {
     transition: transform 8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 
@@ -65,6 +60,10 @@ export const ProductCardContainer = styled.div`
   }
 `;
 
+export const CardProductPageLink = styled(Link)`
+  color: transparent;
+`;
+
 export const Footer = styled.div`
   width: 100%;
   height: 15%;
@@ -87,7 +86,6 @@ export const Footer = styled.div`
 
 export const Name = styled(Link)`
   width: 90%;
-
   justify-content: space-between;
 
   text-align: start;

@@ -20,9 +20,9 @@ import {
   FeaturedTitle,
   Loader,
 } from "./ShopProductPage.styles";
-import { db, getSingleDocument } from "../../utils/firebase/firebase.utils";
-import { collection, doc, onSnapshot } from "firebase/firestore";
-import { FadeLoader } from "react-spinners";
+import { db } from "../../utils/firebase/firebase.utils";
+// import { getSingleDocument } from "../../utils/firebase/firebase.utils";
+import { doc, onSnapshot } from "firebase/firestore";
 
 const ShopProductPage = ({}) => {
   const productPage = true;
@@ -33,7 +33,6 @@ const ShopProductPage = ({}) => {
 
   const [singleProduct, setSingleProduct] = useState({});
   let { id } = useParams();
-  // console.log(singleProduct);
 
   useEffect(() => {
     const docRef = doc(db, "products", id.toLowerCase());

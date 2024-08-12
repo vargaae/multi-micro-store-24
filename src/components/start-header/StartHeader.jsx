@@ -2,8 +2,12 @@ import Carousel from "./Carousel";
 
 import { images } from "../../constants";
 
-import "./StartHeader.styles.scss";
-import { BannerContainer, CarouselContainer, CarouselTitle } from "./Carousel.styles";
+import {
+  BannerContainer,
+  BannerContent,
+  CarouselContainer,
+  CarouselTitle,
+} from "./StartHeader.styles";
 
 const StartHeader = () => {
   return (
@@ -12,8 +16,8 @@ const StartHeader = () => {
         backgroundImage: `url(${images.banner})`,
       }}
     >
-      <div className="bannerContent">
-        <CarouselContainer className="tagline">
+      <BannerContent>
+        <CarouselContainer>
           <CarouselTitle>MULTIMICRO-STORE-24</CarouselTitle>
           <p
             style={{
@@ -26,7 +30,7 @@ const StartHeader = () => {
           </p>
           <Carousel />
         </CarouselContainer>
-      </div>
+      </BannerContent>
     </BannerContainer>
   );
 };

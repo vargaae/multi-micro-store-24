@@ -1,10 +1,6 @@
 import { addItemToCart } from "../../store/cart/cart.reducer";
 import { useDispatch } from "react-redux";
 
-import { useState } from "react";
-
-import { Link } from "react-router-dom";
-
 import { ButtonComponent, BUTTON_TYPE_CLASSES } from "../";
 
 import {
@@ -12,34 +8,21 @@ import {
   Footer,
   Name,
   Price,
+  CardProductPageLink,
 } from "./ProductCard.styles";
 
 const ProductCard = ({ product }) => {
-  //TODO:Clean->
   const { name, price, imageUrl, quantity, SKU } = product;
 
-  // const [quantity, setQuantity] = useState(1);
-
   const dispatch = useDispatch();
-  //TODO:Clean->
   const addProductToCart = () => dispatch(addItemToCart(product));
-  // const addProductToCart = () =>
-  //   dispatch(
-  //     addItemToCart({
-  //       name: name,
-  //       price: price,
-  //       imageUrl: imageUrl,
-  //       quantity: quantity,
-  // productPageUrl: `shop/product/${SKU}`,
-  //     })
-  //   );
-
-  // TODO: link to={`/product/zyw3vtp`}
-  // TODO: link to={`/product/${SKU}`}
 
   return (
-    <ProductCardContainer>  
-      <Link className="productpagelink" to={`product/${SKU}`}></Link>
+    <ProductCardContainer>
+      <CardProductPageLink
+        className="productpagelink"
+        to={`product/${SKU}`}
+      ></CardProductPageLink>
       <img src={imageUrl} alt={`${name}`} />
       <Footer>
         <Name to={`product/${SKU}`}>{name}</Name>

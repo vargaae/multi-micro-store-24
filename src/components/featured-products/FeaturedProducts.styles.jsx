@@ -1,11 +1,11 @@
-//TODO: ->styled+Clean Up
-// @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500;&display=swap");
+import styled from "styled-components";
 
-.grid {
-  display: block;
+import { Link } from "react-router-dom";
+
+export const FeaturedGrid = styled.div`
+display: block;
 
   @media screen and (min-width: 1200px) {
-    // height: 300px;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
@@ -73,10 +73,6 @@
     width: 100%;
     z-index: 1;
 
-    // text-align: start;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: flex-start;
     a {
       font-family: "Afacad", "Afacad Placeholder", sans-serif;
       font-optical-sizing: auto;
@@ -142,8 +138,6 @@
   }
 
   .card-image {
-    // height: 100%;
-    // width: 100%;
     height: 750px;
     width: 600px;
     @media (min-width: 810px) and (max-width: 1199px) {
@@ -195,10 +189,6 @@
     width: 100%;
     z-index: 1;
 
-    // text-align: start;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: flex-start;
     a {
       font-family: "Afacad", "Afacad Placeholder", sans-serif;
       font-optical-sizing: auto;
@@ -206,9 +196,6 @@
       font-style: normal;
 
       font-size: 22px;
-      // font-size: calc(3vw + 0.7rem);
-
-      // letter-spacing: -0.02em;
       letter-spacing: 0em;
       line-height: 1.6em;
       paragraph-spacing: 20px;
@@ -233,46 +220,4 @@
       text-transform: capitalize;
     }
   }
-}
-
-.featuredProducts {
-  // margin: 100px 200px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  overflow-x: hidden;
-  // overflow-x: auto;
-
-  // TODO: style scroller/slider
-  // ::-webkit-scrollbar {
-  //   height: 10px;              /* height of horizontal scrollbar ← You're missing this */
-  //   border: 1px solid lightblue;
-  // }
-
-  // .top {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: space-between;
-  //   margin-bottom: 50px;
-
-  //   h1 {
-  //     flex: 2;
-  //     text-transform: capitalize;
-  //   }
-
-  //   p {
-  //     flex: 3;
-  //     color: gray;
-  //   }
-  // }
-
-  .bottom {
-    @media screen and (min-width: 1200px) {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 18px;
-    }
-  }
-}
+`;

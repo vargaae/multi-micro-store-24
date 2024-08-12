@@ -1,6 +1,8 @@
-//TODO: ->styled+Clean Up
+import styled from "styled-components";
 
-.grid {
+import { Link } from "react-router-dom";
+
+export const FeaturedGrid = styled.div`
   display: block;
 
   @media screen and (min-width: 1200px) {
@@ -9,17 +11,7 @@
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
   }
-  .serena-card {
-    border-radius: 4px;
-    overflow: hidden;
-    padding: 1rem 0;
-    @media (min-width: 810px) and (max-width: 1199px) {
-      padding: 1rem 6rem;
-      
-    }
-  
-  }
-  
+
   .card-image {
     // height: 100%;
     // width: 100%;
@@ -76,11 +68,9 @@
     width: 100%;
     z-index: 1;
   
-    // text-align: start;
-  // display: flex; 
-  // flex-direction: column;
-    // justify-content: flex-start; 
-  a{    font-family: "Afacad", "Afacad Placeholder", sans-serif;
+
+  a {
+  font-family: "Afacad", "Afacad Placeholder", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
@@ -114,38 +104,6 @@
     text-transform: capitalize;
   }
   }
-}
-.serena {
-  display: flex; 
-  flex-direction: column; 
-  // justify-content: center; 
-// justify-content: stretch;
-
-
-// flex-shrink: 0;
-
-@media (min-width: 1200px)  {
-  // flex-direction: row; 
-  gap: 18px;
-}
-@media (min-width: 810px) and (max-width: 1199px) {
-flex-direction: column;
-align-content: center;
-align-items: center;
-  margin: auto;
-max-width: 800px;
-
-}
-
-.serena-card {
-  border-radius: 4px;
-  overflow: hidden;
-  padding: 1rem 0;
-  @media (min-width: 810px) and (max-width: 1199px) {
-    padding: 1rem 6rem;
-    
-  }
-
 }
 
 .card-image {
@@ -204,10 +162,6 @@ max-width: 800px;
   width: 100%;
   z-index: 1;
 
-  // text-align: start;
-// display: flex; 
-// flex-direction: column;
-  // justify-content: flex-start; 
 a{    font-family: "Afacad", "Afacad Placeholder", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -242,46 +196,4 @@ p{
   text-transform: capitalize;
 }
 }
-}
-
-.featuredProducts {
-  // margin: 100px 200px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  overflow-x: hidden;
-  // overflow-x: auto;
-
-  // TODO: style scroller/slider
-  // ::-webkit-scrollbar {
-  //   height: 10px;              /* height of horizontal scrollbar ← You're missing this */
-  //   border: 1px solid lightblue;
-  // }
-
-  // .top {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: space-between;
-  //   margin-bottom: 50px;
-
-  //   h1 {
-  //     flex: 2;
-  //     text-transform: capitalize;
-  //   }
-
-  //   p {
-  //     flex: 3;
-  //     color: gray;
-  //   }
-  // }
-
-  .bottom {
-    @media screen and (min-width: 1200px) {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 18px;
-    }
-  }
-}
+`;

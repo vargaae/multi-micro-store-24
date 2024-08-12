@@ -11,36 +11,64 @@ from {
   }
 `;
 
-export const CarouselContainer = styled.div`
-  // HOME>CAROUSEL animation and styling
+export const BannerContainer = styled.div`
+  // BANNER>CAROUSEL animation and styling
   /* background-color: rgb(36, 243, 147); */
   animation: ${cardEntrance} 1000ms ease-out;
   animation-fill-mode: backwards;
   animation-delay: calc(1 * 100ms);
 
-  .imgItem {
-    width: 100%;
-    height: 95%;
-    object-fit: cover;
-  }
-  
-  height: 600px;
-  overflow: hidden;
-  position: relative;
-  @media screen and (min-width: 1200px) {
-    height: calc(100vh - 192px);
-    overflow: hidden;
-  }
+  /* banner styles:
+  background-image: url(./); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 65vh;
+
+  /* @media screen and (min-width: 1200px) {
+    height: calc(100vh - 110px);
+  } */
+`;
+export const BannerContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  justify-content: space-around;
+`;
+
+export const CarouselContainer = styled.div`
+  // BANNERCONTENT>CAROUSEL animation and styling
+  /* background-color: rgb(36, 243, 147); */
+  animation: ${cardEntrance} 1000ms ease-out;
+  animation-fill-mode: backwards;
+  animation-delay: calc(1 * 100ms);
+
+  padding: 0.4rem;
+
+  display: flex;
+  height: 40%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 `;
 
 export const CarouselTitle = styled.h1`
   cursor: default;
   color: #ffffff;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  border-radius: 50%;
-  opacity: 0.6;
+  font-size: calc(5vw + 1rem);
+  /* font-size: 110px; */
+
+  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 800;
+
+  letter-spacing: 10px;
+
+  border-radius: 20px;
+  margin-bottom: 15px;
+
+  opacity: 0.3;
   background: -moz-radial-gradient(
     circle at 3% 25%,
     rgba(0, 40, 83, 1) 0%,
@@ -79,25 +107,6 @@ export const CarouselTitle = styled.h1`
   animation-fill-mode: backwards;
   animation-delay: calc(3 * 100ms);
 
-  z-index: 999;
-  padding: 1.5rem;
-  // text-align: center;
-  margin: 0;
-  position: absolute; /* 2 */
-  // top: calc(50% - 110px); /* 3 */
-  top: 50%;
-  left: 50%; /* 3 */
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  /* 4 */
-
-  @media screen and (min-width: 1200px) {
-    top: calc(50% - 282px);
-    font-size: 3.5rem;
-  }
-  @media screen and (max-width: 1200px) {
-    img {
-      height: 1.3rem;
-    }
-  }
+  /* z-index: 999; */
+  padding: calc(1vw + 0.8rem);
 `;

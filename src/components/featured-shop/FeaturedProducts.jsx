@@ -7,7 +7,7 @@ import { Card } from "../";
 
 import { FadeLoader } from "react-spinners";
 
-import "./FeaturedProducts.styles.scss";
+import { FeaturedGrid } from "./FeaturedProducts.styles";
 
 const override = {
   display: "block",
@@ -61,7 +61,7 @@ const FeaturedShop = ({ type }) => {
     );
   return (
     <>
-      <div className="grid">
+      <FeaturedGrid>
         {error ? (
           `Something went wrong! ${error}`
         ) : isFetching ? (
@@ -77,7 +77,7 @@ const FeaturedShop = ({ type }) => {
             <Card item={item} key={item.id} />
           ))
         )}
-      </div>
+      </FeaturedGrid>
     </>
   );
 };

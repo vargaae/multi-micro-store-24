@@ -11,16 +11,28 @@ const addCartItem = (cartItems, productToAdd) => {
     return cartItems.map((cartItem) =>
       cartItem.SKU === productToAdd.SKU
         ? { ...cartItem, quantity: cartItem.quantity + 1 }
-        : //TODO: CLEAN->
-          // ? { ...cartItem }
-          cartItem
+        : cartItem
+    );
+  }
+
+  return [...cartItems, { ...productToAdd, quantity: 1 }];
+};
+
+const addMoreCartItem = (cartItems, productToAdd) => {
+  // find if cartItems contains productToAdd
+  const existingCartItem = cartItems.find(
+    (cartItem) => cartItem.SKU === productToAdd.SKU
+  );
+
+  // If found increment quantity
+  if (existingCartItem) {
+    return cartItems.map((cartItem) =>
+      cartItem.SKU === productToAdd.SKU ? { ...cartItem } : cartItem
     );
   }
 
   // return new array with modified cartItems/ new cart item -> this part won't be true, because now we add the product to the Cart at the Shop page, so we increase the amount if it's existing in the Cart
-  //TODO: CLEAN->
-  return [...cartItems, { ...productToAdd, quantity: 1 }];
-  // return [...cartItems, { ...productToAdd }];
+  return [...cartItems, { ...productToAdd }];
 };
 
 const removeCartItem = (cartItems, productToRemove) => {
@@ -60,21 +72,20 @@ export const cartSlice = createSlice({
     setIsCartOpen(state, action) {
       state.isCartOpen = action.payload;
     },
-    //TODO: CLEAN->
     addItemToCart(state, action) {
       state.cartItems = addCartItem(state.cartItems, action.payload);
     },
-    // TODO: make good solution for add quantity - more items at one time
-    // addItemToCart: (state, action) => {
-    //   const item = state.cartItems.find(
-    //     (item) => item.id === action.payload.id
-    //   );
-    //   if (item) {
-    //     item.quantity += action.payload.quantity;
-    //   } else {
-    //     state.cartItems = addCartItem(state.cartItems, action.payload);
-    //   }
-    // },
+    // For more items at one time
+    addMoreItemToCart: (state, action) => {
+      const item = state.cartItems.find(
+        (item) => item.id === action.payload.id
+      );
+      if (item) {
+        item.quantity += action.payload.quantity;
+      } else {
+        state.cartItems = addMoreCartItem(state.cartItems, action.payload);
+      }
+    },
     removeItemFromCart(state, action) {
       state.cartItems = removeCartItem(state.cartItems, action.payload);
     },
@@ -90,6 +101,7 @@ export const cartSlice = createSlice({
 export const {
   setIsCartOpen,
   addItemToCart,
+  addMoreItemToCart,
   removeItemFromCart,
   clearItemFromCart,
   resetCart,

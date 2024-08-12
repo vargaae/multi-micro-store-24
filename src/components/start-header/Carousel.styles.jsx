@@ -1,110 +1,40 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const cardEntrance = keyframes`
-from {
-    opacity: 0;
-    filter: hue-rotate(180deg);
-  }
-  to {
-    opacity: 1;
-    filter: hue-rotate(0deg);
-  }
-`;
+import { Link } from "react-router-dom";
 
-export const BannerContainer = styled.div`
-  // BANNER>CAROUSEL animation and styling
-  /* background-color: rgb(36, 243, 147); */
-  animation: ${cardEntrance} 1000ms ease-out;
-  animation-fill-mode: backwards;
-  animation-delay: calc(1 * 100ms);
-
-  /* banner styles:
-  background-image: url(./); */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  min-height: 65vh; 
-
-  /* @media screen and (min-width: 1200px) {
-    height: calc(100vh - 110px);
-  } */
-`;
 export const CarouselContainer = styled.div`
-  // BANNERCONTENT>CAROUSEL animation and styling
-  /* background-color: rgb(36, 243, 147); */
-  animation: ${cardEntrance} 1000ms ease-out;
-  animation-fill-mode: backwards;
-  animation-delay: calc(1 * 100ms);
-
-  padding: 0.4rem;
-
-  /* bannercontent styles:
+  height: 50%;
   display: flex;
-  flex-direction: column;
-  padding-top: 25px;
-  justify-content: space-around;
-  height: 300px; */
-
-  /* @media screen and (min-width: 1200px) {
-    height: calc(100vh - 110px);
-  } */
-`;
-
-export const CarouselTitle = styled.h1`
-  cursor: default;
-  color: #ffffff;
-  font-size: calc(5vw + 1rem);
-  /* font-size: 110px; */
+  align-items: center;
+  padding: 0.1rem;
 
   font-family: "Afacad", "Afacad Placeholder", sans-serif;
   font-optical-sizing: auto;
+  font-weight: 300;
   font-style: normal;
-  font-weight: 800;
+  letter-spacing: -0.02em;
+`;
 
-  letter-spacing: 10px;
-  
-  border-radius: 20px;
-  margin-bottom: 15px;
+export const CarouselItem = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  // color: white;
+  margin: 0.7rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(255, 255, 255, 0.9);
+  // background-color: rgba(0, 0, 40, 0.6);
+  // background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  // BOX-SHADOW
+  -webkit-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.75);
 
-  opacity: 0.3;
-  background: -moz-radial-gradient(
-    circle at 3% 25%,
-    rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 25%
-  );
-
-  /* safari 5.1+,chrome 10+ */
-  background: -webkit-radial-gradient(
-    circle at 3% 25%,
-    rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 25%
-  );
-
-  /* opera 11.10+ */
-  background: -o-radial-gradient(
-    circle at 3% 25%,
-    rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 25%
-  );
-
-  /* ie 10+ */
-  background: -ms-radial-gradient(
-    circle at 3% 25%,
-    rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 25%
-  );
-
-  /* global 92%+ browsers support */
-  background: radial-gradient(
-    circle at 3% 25%,
-    rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 25%
-  );
-
-  animation: ${cardEntrance} 700ms ease-out;
-  animation-fill-mode: backwards;
-  animation-delay: calc(3 * 100ms);
-
-  /* z-index: 999; */
-  padding: calc(1vw + 0.8rem);
+  img {
+    border-radius: 1rem;
+  }
 `;

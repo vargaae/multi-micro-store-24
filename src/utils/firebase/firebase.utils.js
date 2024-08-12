@@ -69,7 +69,7 @@ export const addCollectionAndDocuments = async (
 // ) => {
 //   const batch = writeBatch(db);
 //   const collectionRef = collection(db, collectionKey);
-  
+
 //   objectsToAdd.forEach((object) => {
 //      const docRef = doc(collectionRef, object.title.toLowerCase());
 //      batch.set(docRef, object);
@@ -88,63 +88,14 @@ export const getCategoriesAndDocuments = async () => {
 };
 
 export const getSingleDocument = async (id) => {
-  const collectionRef = collection(db, "categories");
-  const q = query(collectionRef);
+  const docRef = doc(db, "products", id.toLowerCase());
+  const q = query(docRef);
 
-  const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
-
-//   const collectionRef = collection(db, "categories");
-//   const q = query(collectionRef);
-
-// const d = await getDocs(query(collection(db, "categories", "Brown Brim"))) 
-//     return d.data()
-
-  // const querySnapshot = await getDocs(q);
-  // return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+  const querySnapshot = await onSnapshot(q, doc);
+  return onSnapshot(docRef, (doc) => {
+    doc.data(), doc.id;
+  });
 };
-
-// const doc_refs = await getDocs(query(collection(getDb(), collection_name)))
-
-// export const findByContinent = async () => {
-//   const collection_ref = collection(getDb(), collection_name)
-//   const q = query(collection_ref, where("continent", "==", "Asia"))
-//   const doc_refs = await getDocs(q);
-
-//   const res = []
-
-//   doc_refs.forEach(country => {
-//       res.push({
-//           id: country.id, 
-//           ...country.data()
-//       })
-//   })
-
-//   return res
-// }
-
-export const getDocument = async (id) => {
-  const firestore = getFirestore();
-  const docRef = doc(firestore, this.collectionPath, id);
-  const docSnap = await getDoc(docRef);
-
-  const data = docSnap.exists() ? docSnap.data() : null;
-
-  if (data === null || data === undefined) return null;
-
-  return { id, ...data };
-};
-// TODO: refactor to this getDocument function:
-// export const getDocument = async (id) => {
-
-// const docRef = await doc(db, "products", id.toLowerCase());
-
-// onSnapshot(docRef, (doc) => {
-  // return { id, ...doc.data };
-//   setSingleProduct(doc.data(), doc.id);
-// });
-// };
-
 
 export const createUserDocumentFromAuth = async (
   userAuth,
