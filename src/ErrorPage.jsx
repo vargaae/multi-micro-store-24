@@ -34,7 +34,7 @@ export default function ErrorPage() {
       </ShopBreadcrumbNavContainer>
       <ErrorContainer className="gradient__bg">
         <div title="404">
-          {error.statusText || error.message == "Not Found" ? "404" : "Error"}
+          {error.statusText || error.message == "Not Found" ? "404" : "ERROR"}
         </div>
       </ErrorContainer>
     </ErrorPageContainer>

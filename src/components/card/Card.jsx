@@ -14,7 +14,7 @@ const Card = ({ item }) => {
   return (
     <CardLink to={`/product/1/${item.id}`}>
       <CardContainer>
-        <CardImageContainer>
+        <CardImageContainer className="card-image">
           {item?.attributes.isNew && <span>New Season</span>}
           <img
             src={item.attributes?.img?.data?.attributes?.url}

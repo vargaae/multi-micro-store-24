@@ -7,7 +7,7 @@ export const CardContainer = styled.div`
   overflow: hidden;
   padding: 1rem 0;
   @media (min-width: 810px) and (max-width: 1199px) {
-    padding: 1rem 6rem;
+    // padding: 1rem 6rem;
   }
 `;
 

@@ -171,7 +171,6 @@ export const BestSellerTitle = styled.h2`
   text-transform: uppercase;
   paragraph-spacing: 40px;
 
-  /* padding-bottom: 60px; */
   padding-bottom: calc(2vw + 2rem);
 
   display: flex;
@@ -184,13 +183,8 @@ export const BestSellerTitle = styled.h2`
   justify-content: center;
   height: min-content;
 
-  font-size: calc(3vw + 0.7rem);
+  font-size: 34px;
 
-  @media (max-width: 1199px) and (min-width: 0px) {
-    /* font-size: 34px; */
-    /* font-size: calc(4vw + 1rem); */
-    paragraph-spacing: 40px;
-  }
   @media screen and (min-width: 810px) {
     flex-direction: row;
 

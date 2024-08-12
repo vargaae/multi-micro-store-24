@@ -7,7 +7,12 @@ import {
 } from "../../components";
 import { CategoryDirectory } from "../../containers";
 
-import { FeaturedContainer, FeaturedTitle } from "./StartStore.styles";
+import {
+  BestSellerContainer,
+  BestSellerTitle,
+  FeaturedContainer,
+  FeaturedTitle,
+} from "./StartStore.styles";
 
 const StartStore = () => {
   const headerTitle = "Design Store";
@@ -31,11 +36,11 @@ const StartStore = () => {
         <FeaturedTitle>Trending Products</FeaturedTitle>
         <FeaturedProducts type="trending" />
       </FeaturedContainer>
-      
-      <FeaturedContainer>
-        <FeaturedTitle>You may also like</FeaturedTitle>
+
+      <BestSellerContainer>
+        <BestSellerTitle>You may also like</BestSellerTitle>
         <BestSeller type="featured&filters[type][$eq]=trending&filters[type][$eq]=start-featured&filters[type][$eq]=trending-in-store" />
-      </FeaturedContainer>
+      </BestSellerContainer>
 
       <Contact />
     </>
