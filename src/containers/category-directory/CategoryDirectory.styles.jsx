@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const DirectoryContainer = styled.div`
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 810px) {
     display: flex;
     height: 80vh;
     gap: 10px;
@@ -12,7 +12,7 @@ export const DirectoryContainer = styled.div`
 `;
 
 export const DirectoryColContainer = styled.div`
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 810px) {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@ export const DirectoryColContainer = styled.div`
 `;
 
 export const DirectoryLastItemContainer = styled.div`
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 810px) {
     flex: 1;
     display: flex;
     gap: 10px;

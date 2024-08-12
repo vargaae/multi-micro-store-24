@@ -30,6 +30,7 @@ const Authentication = lazy(() =>
   import("./routes/authentication/Authentication")
 );
 const About = lazy(() => import("./routes/about/About"));
+const ContactPage = lazy(() => import("./routes/contact-page/ContactPage"));
 const Success = lazy(() => import("./routes/success/Success"));
 
 import {
@@ -146,6 +147,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
     ],
   },

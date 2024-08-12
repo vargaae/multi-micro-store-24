@@ -48,8 +48,8 @@ export const navigation = [
   {
     id: "5",
     title: "Contact",
-    url: "/",
-    onlyMobile: true,
+    url: "/contact",
+    onlyMobile: false,
   },
   // {
   //   id: "6",

@@ -1,4 +1,3 @@
-//TODO: font-family
 import styled from "styled-components";
 
 import { SpinnerContainer } from "../spinner/Spinner.styles";
@@ -105,8 +104,7 @@ export const ShopProductPageButton = styled(BaseButton)`
   text-transform: none;
   font-size: 20px;
   line-height: 1.6em;
-  //TODO: font-family
-  font-family: Inter-Medium, Inter, "Inter Placeholder", sans-serif;
+  font-family: var(--font-family-button);
   font-weight: 500;
   display: flex;
   place-items: center;
@@ -173,7 +171,6 @@ export const DropDownSignOutButton = styled(BaseButton)`
 `;
 
 export const InvertedButton = styled(BaseButton)`
-  // max-width: 165px;
   width: auto;
   height: 50px;
   line-height: 50px;

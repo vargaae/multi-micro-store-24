@@ -107,7 +107,7 @@ const Navbar = ({ navGradient }) => {
                     item.url === pathname.pathname
                       ? "z-2 lg:text-n-2"
                       : "lg:text-n-2/50"
-                  } lg:leading-5 lg:hover:text-n-2 xl:px-12`}
+                  } lg:hover:text-n-2 xl:px-6`}
                   onClick={handleClick}
                 >
                   {item.title}

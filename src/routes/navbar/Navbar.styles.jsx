@@ -58,8 +58,14 @@ export const NavLinksContainer = styled.div`
   justify-content: flex-end;
 
   @media screen and (min-width: 1020px) {
-    width: 50%;
+    width: 20%;
     padding-right: 40px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 35%;
+  }
+  @media screen and (min-width: 1600px) {
+    width: 50%;
   }
 `;
 

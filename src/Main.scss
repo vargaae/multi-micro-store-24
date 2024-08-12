@@ -1,6 +1,3 @@
-//TODO: Change font-family
-//TODO: Unify COLORS -> text: white, lightblue...
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,14 +6,15 @@
   --font-family: "Afacad", "Afacad Placeholder", sans-serif;
   --font-family-numbers: "Poppins", "Poppins Placeholder", sans-serif;
   --font-family-shopinfo: "Montserrat", "Montserrat Placeholder", sans-serif;
+  --font-family-button: Inter-Medium, Inter, "Inter Placeholder", sans-serif;
 
-  // --font-family: "Open Sans Condensed", sans-serif;
   --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
   --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
 
   --color-bg: #042c54;
 
   --color-prime: #4170e8;
+  --color-white: #f2f2f2;
 
   --color-footer: #031b34;
   --color-blog: #042c54;
@@ -50,13 +48,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: lightblue;
   outline: 1px solid slategrey;
-}
-
-code {
-  font-family: var(--font-family);
-  // TODO: code???
-  // font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  //   monospace;
 }
 
 a {
@@ -109,17 +100,7 @@ a {
   );
 }
 
-// TODO: clean if not used elsewhere: Footer?
-.gradient__text {
-  background: var(--gradient-text);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 // MY MOBILE FIRST DESIGN for SHOP's containers
-// TODO: delete: .section__width
-
 .section__padding {
   padding: 1.5rem;
 }
@@ -134,10 +115,9 @@ a {
   }
 }
 
-//TODO: Search the importance of this setting:
 @layer base {
   body {
-    // @apply font-sans bg-n-8 text-n-1 text-base;
+    @apply font-sans;
   }
 }
 

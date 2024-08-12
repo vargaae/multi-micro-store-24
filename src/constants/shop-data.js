@@ -105,7 +105,6 @@ const SHOP_DATA = [
         SKU: "QdJwgmp",
         price: 35,
       },
-      // TODO: Here we are!
       {
         id: 23,
         name: "Grey Brim",
