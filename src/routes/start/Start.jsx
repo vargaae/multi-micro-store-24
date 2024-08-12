@@ -1,4 +1,3 @@
-// TODO: Add data to Firestore+Strapi and then clean up
 import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
@@ -26,23 +25,8 @@ import {
   StartShopImage,
   ButtonContainer,
 } from "./Start.styles";
-// 1.IMPORT
-// Categories
-// Products
-// import { useEffect } from "react";
-// import { addCollectionAndDocuments } from "../../utils/firebase/firebase.utils";
-// import SHOP_DATA from "../../constants/shop-data";
-// import SHOP_PRODUCTS from "../../shop-data.js";
 
 const Start = () => {
-  // 2.Categories
-  //   Products
-  // useEffect(() => {
-  //   addCollectionAndDocuments("categories", SHOP_DATA);
-  // }, []);
-  // useEffect(() => {
-  //   addCollectionAndDocuments("products", SHOP_PRODUCTS);
-  // }, []);
   const navigateTo = useNavigate();
 
   const goToStore = () => {
@@ -144,7 +128,6 @@ const Start = () => {
       <BestSellerContainer>
         <BestSellerTitle>BEST SELLER</BestSellerTitle>
         <BestSeller type="trending" />
-        {/* <BestSeller type={"bestseller"} /> */}
       </BestSellerContainer>
 
       <Contact />

@@ -34,7 +34,7 @@ const StartStore = () => {
       
       <FeaturedContainer>
         <FeaturedTitle>You may also like</FeaturedTitle>
-        <BestSeller type="featured&filters[type][$eq]=trending&filters[type][$eq]=start-featured" />
+        <BestSeller type="featured&filters[type][$eq]=trending&filters[type][$eq]=start-featured&filters[type][$eq]=trending-in-store" />
       </FeaturedContainer>
 
       <Contact />

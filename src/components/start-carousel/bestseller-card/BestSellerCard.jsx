@@ -2,6 +2,7 @@ import {
   BestsellerCardContainer,
   CardImageContainer,
   CardLink,
+  CardTitle,
   PricesContainer,
 } from "./BestSellerCard.styles";
 
@@ -27,7 +28,7 @@ const BestSellerCard = ({ item }) => {
             className="secondImg"
           />
         </CardImageContainer>
-        <h2>{item?.attributes.title}</h2>
+        <CardTitle>{item?.attributes.title}</CardTitle>
         <PricesContainer>
           <h3>€{item?.attributes.oldPrice || item?.attributes.price + 20}</h3>
           <h3>€{item?.attributes.price}</h3>
