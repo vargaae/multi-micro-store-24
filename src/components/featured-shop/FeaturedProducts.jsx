@@ -1,9 +1,7 @@
-// TODO: !!!CleanUP!!!
-// import useFetch from "../../hooks/useFetch";
+import { useState } from "react";
+
 import { strApi, useGetProductsByTypeQuery } from "../../services/strApi";
 import { useDispatch } from "react-redux";
-
-import { useState } from "react";
 
 import { Card } from "../";
 
@@ -22,10 +20,6 @@ const FeaturedShop = ({ type }) => {
   let [color, setColor] = useState("#54b3d6");
 
   const dispatch = useDispatch();
-
-  // const { data, loading, error, errorMessage } = useFetch(
-  //   `/products?populate=*&filters[type][$eq]=${type}`
-  // );
 
   const {
     data: productsByType,
@@ -83,18 +77,6 @@ const FeaturedShop = ({ type }) => {
             <Card item={item} key={item.id} />
           ))
         )}
-        {/*  <div className="serena-card">
-    <div className="card-image">
-  <img src="https://framerusercontent.com/images/6cKC0PWCp1QT4U3h4ddQ1bSE.jpg" alt="" />
-  </div>
-
-  <div className="text">
-  <a href="https://cosmicui.lemonsqueezy.com/checkout/buy/f5d874fb-7143-4473-b567-535ae989583c" target="_blank">OVERSIZED FIT COTTON T-SHIRT</a>
-  <div><p>$420</p></div>
-  </div>
-  
-  </div>
-*/}
       </div>
     </>
   );

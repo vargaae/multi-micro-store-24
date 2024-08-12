@@ -8,4 +8,3 @@ export { default as Navbar } from './navbar/Navbar';
 // export { default as ProductPage } from "./product-page/ProductPage";
 // export { default as ProductsPage } from "./products-page/ProductsPage";
 // export { default as Checkout } from "./checkout/Checkout";
-// export { default as SCart } from "./scart/SCart";

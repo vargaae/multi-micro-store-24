@@ -1,4 +1,3 @@
-// TODO: CLEAN UP: -> delete SCART(here, store, components), imports
 import { useState, useEffect, lazy, Suspense } from "react";
 
 import {
