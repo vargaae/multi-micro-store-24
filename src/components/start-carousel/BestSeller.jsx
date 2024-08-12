@@ -1,13 +1,14 @@
-// TODO: !!!CleanUP!!!
+import { useState } from "react";
+
 import { strApi, useGetProductsByTypeQuery } from "../../services/strApi";
 import { useDispatch } from "react-redux";
-
-import { useState } from "react";
 
 import { BestSellerCard } from "../";
 
 import { FadeLoader } from "react-spinners";
+
 import Slider from "react-slick";
+import { SliderContainer } from "./BestSeller.styles";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -131,7 +132,7 @@ const BestSeller = ({ type }) => {
   };
 
   return (
-    <div className="slider-container">
+    <SliderContainer>
       <Slider {...settings}>
         {error ? (
           `Something went wrong! ${error}`
@@ -149,7 +150,7 @@ const BestSeller = ({ type }) => {
           ))
         )}
       </Slider>
-    </div>
+    </SliderContainer>
   );
 };
 
