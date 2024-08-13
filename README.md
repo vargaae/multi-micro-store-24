@@ -12,15 +12,15 @@
 ## MULTI ECOMMERCE APPLICATION WITH MICROSERVICES
 
 <div align="center">
-  <img alt="Application image" src="https://vargaae.hu/images/projects/e-comm-2024-git.png" width="700" />
+  <img alt="Application image" src="https://vargaae.hu/images/projects/multi-micro-store-24-git.png" width="700" />
 </div>
 
-You can check out the deployed application [here](https://ecommerce-2024-y49k.onrender.com/)
+You can check out the deployed application [here](https://multi-micro-store-24.onrender.com/)
 ->deployed on Render: ClientSide App+API+PostgreSQL DB
 
 Features/Structure:
 
-- 🚀React APP -> Redux for State Management<br> is set up in this branch (🪵18-Redux - Migrated from Context API),
+- 🚀React APP -> Redux for State Management,
 - 🚀STORE SERVICE: API and Database for products with headless CMS: Strapi and PostgreSQL database,
 - 🚀SHOP SERVICE: Database for products with Firebase,
 - 🚀AUTHENTICATION/USER SERVICE - USER SLICE,
@@ -37,7 +37,7 @@ Features/Structure:
 - 🚀Database for products and users with Firebase,
 - 🚀ProductPage,
 - 🚀AboutPage,
-- 🚀ContactPage,
+- 🚀ContactPage-> Contact with working(email-js),
 - 🚀Styled components
 
 ## 🛠 Front End:
@@ -48,6 +48,7 @@ Features/Structure:
 - styled components
 - TailwindCSS
 - plugins(animation, sliders, icons)
+- emailJS
 - Firebase connected
 - Strapi connected
 - Stripe connected

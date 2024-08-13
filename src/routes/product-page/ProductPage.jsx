@@ -111,7 +111,7 @@ const ProductPage = ({}) => {
                 {productDataById?.data?.attributes?.title}
               </ProductPageTitle>
               <div className="left">
-                {productDataById?.data?.attributes?.type === "start-featured" ||
+                {productDataById?.data?.attributes?.portrait === true ||
                 productDataById?.data?.attributes?.type ===
                   "featured-in-shop" ? (
                   <div className="shopMainImg">

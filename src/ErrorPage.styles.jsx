@@ -24,11 +24,16 @@ export const ShopBreadcrumbNavContainer = styled.div`
   flex-direction: column;
   gap: 10px;
   padding: 0px 0px 60px;
+
   @media screen and (min-width: 1200px) {
     padding: 0px 0px 120px;
     flex-direction: row;
     flex: 0 0 auto;
     flex-flow: row;
+
+    h5 {
+      font-size: 14px;
+    }
   }
 
   svg {
