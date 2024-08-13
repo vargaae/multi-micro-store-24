@@ -20,6 +20,8 @@ export { default as CategoryPreview } from "./category-preview/CategoryPreview";
 export { default as DirectoryItem } from "./directory-item/DirectoryItem";
 
 export { default as InputComponent } from "./input-component/InputComponent";
+export { default as TextareaComponent } from "./input-component/TextareaComponent";
+
 // START - STORE - SHOP
 export { default as Slider } from "./slider/Slider";
 export { default as StartCarousel } from "./start-carousel/StartCarousel";

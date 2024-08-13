@@ -17,7 +17,7 @@ export const list = [
 export const navigation = [
   {
     id: "0",
-    title: "MMSTORE24",
+    title: "MMSTORE-24",
     url: "/",
     onlyMobile: false,
   },

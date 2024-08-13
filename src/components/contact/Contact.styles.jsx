@@ -6,7 +6,7 @@ export const ContactContainer = styled.div`
   color: white;
 
   font-size: 2em;
-  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-family: var(--font-family);
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;

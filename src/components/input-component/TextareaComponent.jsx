@@ -1,6 +1,6 @@
-import { Group, Input, FormInputLabel } from "./InputComponent.styles";
+import { Group, Input, FormInputLabel } from "./TextareaComponent.styles";
 
-const InputComponent = ({ label, ...otherProps }) => {
+const TextareaComponent = ({ label, ...otherProps }) => {
   return (
     <Group>
       <Input {...otherProps} />
@@ -13,4 +13,4 @@ const InputComponent = ({ label, ...otherProps }) => {
   );
 };
 
-export default InputComponent;
+export default TextareaComponent;

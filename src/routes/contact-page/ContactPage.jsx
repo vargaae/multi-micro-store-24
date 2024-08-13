@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+import emailjs from "emailjs-com";
 
 import {
   BreadcrumbNav,
   ButtonComponent,
   Contact,
   InputComponent,
+  TextareaComponent,
 } from "../../components";
 
 import {
@@ -14,8 +17,6 @@ import {
   ShopBreadcrumbLink,
   ContactContainer,
   ContactFormContainer,
-  Message,
-  FormInputLabel,
   ContactTextContainer,
   TextBox,
 } from "./ContactPage.styles";
@@ -30,6 +31,34 @@ const ContactPage = () => {
   const headerTitle = "Contact";
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, message } = formFields;
+
+  const formRef = useRef();
+  const [done, setDone] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_oz92q8v",
+        "template_khzskgm",
+        formRef.current,
+        "user_83iut0ltHexzhXQ2piWeI"
+      )
+      .then(
+        (result) => {
+          setDone(true);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormFields({ ...formFields, [name]: value });
+  };
 
   return (
     <>
@@ -70,37 +99,54 @@ const ContactPage = () => {
           </ContactTextContainer>
           <hr />
           <ContactFormContainer>
-            <form>
+            <form ref={formRef} onSubmit={handleSubmit}>
               <InputComponent
                 className="name"
                 label="Name"
+                id="Name"
                 type="text"
                 required
+                autoComplete="true"
+                onChange={handleChange}
                 name="displayName"
                 value={displayName}
               />
 
               <InputComponent
                 label="Email"
+                id="Email"
                 type="text"
                 required
+                autoComplete="true"
+                onChange={handleChange}
                 name="email"
                 value={email}
               />
 
-              <Message
+              <TextareaComponent
                 label="Message"
+                id="Message"
                 type="text"
                 required
+                autoComplete="true"
+                onChange={handleChange}
                 name="message"
                 value={message}
                 rows="10"
-                cols="50"
-              >
-                <FormInputLabel>Message</FormInputLabel>
-              </Message>
+              />
 
-              <ButtonComponent type="submit">Send</ButtonComponent>
+              <ButtonComponent>Send an email to us</ButtonComponent>
+              <ContactTextContainer>
+                {done && (
+                  <h5>
+                    Thank you! We have got your email.
+                    <p>We will reply as soon as possible.</p>
+                    <p>
+                      <strong>Andras</strong> from <strong>MMSTORE-24</strong>
+                    </p>
+                  </h5>
+                )}
+              </ContactTextContainer>
             </form>
           </ContactFormContainer>
         </ContactContainer>

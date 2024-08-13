@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Title = styled.h2`
-  font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  font-family: var(--font-family);
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -96,9 +96,6 @@ export const ImageContainer = styled.div`
     object-position: center top;
     object-fit: cover;
     image-rendering: auto;
-
-    // height: max(min(max(100vw, 0px), 1600px), 0px);
-    // width: max(min(max(100vw, 0px), 1600px), 0px);
   }
 
   @media screen and (min-width: 550px) {
@@ -114,28 +111,47 @@ export const ImageContainer = styled.div`
 `;
 
 export const AboutContainer = styled.div`
+  padding: 60px 20vw;
   outline: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+
   flex-shrink: 0;
   transform: none;
 
-  h4 {
-    text-alignment: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
   }
 
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    object-position: center center;
-    object-fit: contain;
-    image-rendering: auto;
+  p {
+    font-family: var(--font-family-shopinfo);
+
+    font-size: 18px;
+  }
+
+  a {
+    font-family: var(--font-family-numbers);
+
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 810px) {
+    flex-direction: row;
+    text-align: left;
+    padding: 60px 120px;
+    div {
+      gap: 20px;
+      max-width: 400px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 80px 240px;
   }
 
   @media screen and (min-width: 1200px) {
+    padding: 80px 300px;
   }
 `;
 
@@ -145,7 +161,7 @@ export const BrandContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 3em;
-  
+
   @media screen and (min-width: 810px) {
     flex-direction: row;
     gap: 1em;
@@ -157,7 +173,6 @@ export const BrandLogoContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  
   @media screen and (min-width: 810px) {
     img {
       display: block;
@@ -167,15 +182,26 @@ export const BrandLogoContainer = styled.div`
       object-fit: contain;
       image-rendering: auto;
     }
-    }
+  }
 `;
+export const MottoContainer = styled.h4`
+  padding: 60px 40px;
+  display: block;
+  font-weight: bold;
+  unicode-bidi: isolate;
+  letter-spacing: 0em;
+  font-size: 20px;
+  line-height: 1.4em;
 
-export const InstagramContainer = styled.div`
-  padding: 4em 0;
-  display: flex;
-  justify-content: center;
-  gap: 4em;
-
-  @media screen and (min-width: 1200px) {
+  font-family: var(--font-family);
+  @media screen and (min-width: 810px) {
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 120px 240px;
+    font-size: 36px;
+    font-style: normal;
+    paragraph-spacing: 40px;
   }
 `;

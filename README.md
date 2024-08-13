@@ -37,6 +37,7 @@ Features/Structure:
 - 🚀Database for products and users with Firebase,
 - 🚀ProductPage,
 - 🚀AboutPage,
+- 🚀ContactPage,
 - 🚀Styled components
 
 ## 🛠 Front End:
@@ -45,6 +46,7 @@ Features/Structure:
 - Redux (+Redux Toolkit)
 - SASS
 - styled components
+- TailwindCSS
 - plugins(animation, sliders, icons)
 - Firebase connected
 - Strapi connected

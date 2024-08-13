@@ -119,10 +119,6 @@ so make the columns stack on top of each other instead of next to each other */
   }
 `;
 
-export const TextBox = styled.div`
-  margin-bottom: 2em;
-`;
-
 export const ContactTextContainer = styled.div`
   font-family: var(--font-family);
   font-optical-sizing: auto;
@@ -161,6 +157,10 @@ so make the columns stack on top of each other instead of next to each other */
   }
 `;
 
+export const TextBox = styled.div`
+  margin-bottom: 2em;
+`;
+
 export const ContactFormContainer = styled.div`
   font-family: "Afacad", "Afacad Placeholder", sans-serif;
   font-optical-sizing: auto;
@@ -180,49 +180,5 @@ On screens that are 769px wide or more, make the columns in the middle */
 so make the columns stack on top of each other instead of next to each other */
   @media screen and (min-width: 900px) {
     width: 380px;
-  }
-`;
-
-export const FormInputLabel = styled.label`
-  color: ${subColor};
-  font-size: 16px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 300ms ease all;
-
-  ${({ $shrink }) => $shrink && shrinkLabelStyles}
-`;
-
-export const Group = styled.div`
-  position: relative;
-  margin: 45px 0;
-`;
-
-export const Message = styled.textarea`
-  background: none;
-  background-color: white;
-  color: ${subColor};
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 98%;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid ${subColor};
-  margin: 25px 0;
-
-  &:focus {
-    outline: none;
-    background-color: #e3edfb;
-  }
-
-  &:focus ~ ${FormInputLabel} {
-    ${shrinkLabelStyles};
-  }
-  @media screen and (min-width: 769px) {
-    width: 100%;
   }
 `;
