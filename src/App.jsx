@@ -141,7 +141,7 @@ const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: "/success=true",
+        path: "/success",
         element: <Success />,
       },
       {
