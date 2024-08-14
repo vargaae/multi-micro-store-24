@@ -5,6 +5,7 @@
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
     <img src="https://img.shields.io/badge/-Redux-black?style=for-the-badge&logoColor=white&logo=redux&color=764ABC" alt="redux" />
     <img src="https://img.shields.io/badge/-Styled-black?style=for-the-badge&logoColor=white&logo=styled&color=06B6D4" alt="styled" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
   </div>
 
 # MULTI-MICRO-STORE-24
@@ -20,7 +21,7 @@ You can check out the deployed application [here](https://multi-micro-store-24.o
 
 Features/Structure:
 
-- 🚀React APP -> Redux for State Management,
+- 🚀React APP -> Redux for State Management + Redux-Persist for Persistance,
 - 🚀STORE SERVICE: API and Database for products with headless CMS: Strapi and PostgreSQL database,
 - 🚀SHOP SERVICE: Database for products with Firebase,
 - 🚀AUTHENTICATION/USER SERVICE - USER SLICE,
@@ -37,13 +38,13 @@ Features/Structure:
 - 🚀Database for products and users with Firebase,
 - 🚀ProductPage,
 - 🚀AboutPage,
-- 🚀ContactPage-> Contact with working(email-js),
+- 🚀ContactPage-> Contact with working email sending for the owner(email-js),
 - 🚀Styled components
 
 ## 🛠 Front End:
 
 - React 18.2
-- Redux (+Redux Toolkit)
+- Redux (+Redux Toolkit, Redux-Persist)
 - SASS
 - styled components
 - TailwindCSS
@@ -57,7 +58,7 @@ Features/Structure:
 
 - STORE \
 - NodeJS
-- Strapi
+- Strapi -  CMS
 - PostgreSQL
 - Stripe connected -> /order
 - SHOP \
