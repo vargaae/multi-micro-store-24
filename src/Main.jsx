@@ -2,11 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { Provider } from "react-redux";
-import { store } from "./store/store";
-// import { store, persistor } from "./store/store";
-// import { PersistGate } from "redux-persist/integration/react";
-// import { Elements } from "@stripe/react-stripe-js";
-// import { stripePromise } from "./utils/stripe/stripe.utils"
+import { store, persistor } from "./store/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 import App from "./App";
 
@@ -16,19 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-          <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <Provider store={store}>
-//       <PersistGate loading={null} persistor={persistor}>
-//         <Elements stripe={stripePromise}>
-//           <App />
-//         </Elements>
-//       </PersistGate>
-//     </Provider>
-//   </React.StrictMode>
-// );

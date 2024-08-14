@@ -32,7 +32,7 @@ export const shops = [
   {
     title: "Living Room Furniture",
     description: `Furniture Interior Design`,
-    company: `Spirithome, Caressa, ...`,
+    company: `AnthroLiving, Caressa, ...`,
     imgUrl: images.livingroom,
     shopLink: "/store/products/1",
   },
@@ -53,14 +53,14 @@ export const shops = [
   {
     title: "Bedroom Furniture",
     description: `Beds & Mattrasses`,
-    company: `Innoshop, JYSK, ...`,
+    company: `AnthroLiving, IKEA, ...`,
     imgUrl: images.bedroom,
     shopLink: "/store/products/3",
   },
   {
     title: "Office Furniture",
     description: `Office Interior Design`,
-    company: `IKEA, Innoshop, ...`,
+    company: `IKEA, JYSK, ...`,
     imgUrl: images.office,
     shopLink: "/store/products/6",
   },
