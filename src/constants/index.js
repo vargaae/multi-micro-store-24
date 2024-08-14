@@ -51,10 +51,10 @@ export const navigation = [
     url: "/contact",
     onlyMobile: false,
   },
-  {
-    id: "6",
-    title: "Orders",
-    url: "/success",
-    onlyMobile: false,
-  },
+  // {
+  //   id: "6",
+  //   title: "Orders",
+  //   url: "/success",
+  //   onlyMobile: false,
+  // },
 ];
