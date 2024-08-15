@@ -22,10 +22,10 @@
 This project is an online B2C shopping application that contains a basic e-commerce’s
     functions from shopping to placing order with
     using microservices (!Demonstration only - Microservices are being further developed!).
-You can check out the deployed application [here](https://multi-micro-store-24.onrender.com/)
+You can check out the deployed application [here](https://multi-micro-store-24.onrender.com)
 ->deployed on Render: ClientSide App+API+PostgreSQL DB
 
-Features/Structure:
+## 🛠 Features/Structure:
 
 - 🚀React APP -> Redux for State Management + Redux-Persist for Persistance,
 - 🚀STORE SERVICE: API [here](https://github.com/vargaae/ecommerce-2024-api)
